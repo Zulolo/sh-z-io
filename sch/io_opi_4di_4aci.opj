@@ -1,0 +1,77 @@
+(ExpressProject "io_opi_4di_4aci"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "d:\cadence\spb_17.2\tools\capture\library\opamp.olb"
+        (Type "Schematic Library"))
+      (File "d:\cadence\spb_17.2\tools\capture\library\connector.olb"
+        (Type "Schematic Library"))
+      (File "d:\cadence\spb_17.2\tools\capture\library\discrete.olb"
+        (Type "Schematic Library"))
+      (File "d:\cadence\spb_17.2\tools\capture\library\capsym.olb"
+        (Type "Schematic Library"))
+      (File "d:\cadence\spb_17.2\tools\capture\library\misc.olb"
+        (Type "Schematic Library"))
+      (File "d:\cadence\spb_17.2\tools\capture\library\misc2.olb"
+        (Type "Schematic Library"))
+      (File "d:\cadence\spb_17.2\tools\capture\library\misc3.olb"
+        (Type "Schematic Library"))
+      (File "g:\cadence\schematic_lib\core.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\io_opi_4di_4aci.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x"))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (C1X8Gen
+      (FullPartName "C1X8Gen.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
+    (C1X3
+      (FullPartName "C1X3.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
+    (C1X5
+      (FullPartName "C1X5.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
+    (C2X13_opi_zero
+      (FullPartName "C2X13_opi_zero.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
+    (ADS1115
+      (FullPartName "ADS1115.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
+    (PS2801-4/SM
+      (FullPartName "PS2801-4/SM.Normal")
+      (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "3")))
+  (MPSSessionName "Zulolo")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "G:\WORK\IO\sch\io_opi_4di_4aci.dsn")
+      (Path "Design Resources" "Library")
+      (Path "Design Resources" "Library" "g:\cadence\schematic_lib\core.olb")
+      (Select "Design Resources" "Library" "g:\cadence\schematic_lib\core.olb"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 594"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 52 1613 52 685")
+        (Scroll "0 938")
+        (Zoom "268")
+        (Occurrence "/"))
+      (Path "G:\WORK\IO\SCH\IO_OPI_4DI_4ACI.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))
