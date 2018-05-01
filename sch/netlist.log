@@ -1,0 +1,6 @@
+{ Using PSTWRITER 17.2.0 d001May-01-2018 at 14:40:59 }
+
+#1 WARNING(ORCAP-36038): "No_connect" property on Pin "MCU1.12" ignored for MCU1: SCHEMATIC1, MCU (2.50, 1.60). Connecting pin to net "N3795822".
+#2 WARNING(ORCAP-36038): "No_connect" property on Pin "MCU1.13" ignored for MCU1: SCHEMATIC1, MCU (2.50, 1.60). Connecting pin to net "N3795840".
+#3 ERROR(ORCAP-36033): Net named "NC" found on the design. Please rename the net.
+#4 ERROR(ORCAP-36018): Aborting Netlisting... Please correct the above errors and retry.

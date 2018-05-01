@@ -1,0 +1,1481 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 17.2.0 d001May-01-2018 at 15:34:41 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='IO_TWO_ETH';
+ POST_TIME='Mar  2 2016 00:37:24';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4549789@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4549789@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4549789@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C10 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4559001@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4559001@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4559001@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C11 'CAP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4545209@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4545209@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4545209@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C12 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554504@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554504@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554504@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C13 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554803@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554803@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554803@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C14 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4555002@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4555002@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4555002@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C15 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4555188@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4555188@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4555188@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C16 'CAP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4545577@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4545577@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4545577@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C17 'CAP_SMD_C_1206_1NF/2KV':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543840@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543840@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543840@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C18 'CAP NP_SMD_C_0805_18PF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4551683@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4551683@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4551683@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C19 'CAP NP_SMD_C_0805_18PF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4551747@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4551747@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4551747@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4549805@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4549805@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4549805@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C20 'CAP_SMD_C_1206_1NF/2KV':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543770@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543770@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543770@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C21 'CAP_SMD_C_1206_1NF/2KV':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544329@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544329@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544329@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C22 'CAP_SMD_C_1206_1NF/2KV':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544475@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544475@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544475@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C23 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787619@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787619@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787619@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C24 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787597@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787597@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787597@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C25 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791686@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791686@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791686@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C26 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791764@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791764@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791764@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C27 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791816@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791816@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791816@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C28 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791712@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791712@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791712@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C29 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791738@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791738@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791738@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C3 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4549941@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4549941@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4549941@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C30 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791790@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791790@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791790@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C31 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791963@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791963@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791963@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C32 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788538@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3788538@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788538@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C33 'CAP NP_SMD_C_0805_22PF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3795780@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3795780@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3795780@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C34 'CAP_SMD_C_1206_1NF/2KV':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4559836@DISCRETE.CAP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4559836@discrete.\cap.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4559836@discrete.\cap.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C35 'CAP NP_SMD_C_0805_22PF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3795806@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3795806@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3795806@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C36 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3793799@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3793799@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3793799@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C37 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3799760@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3799760@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3799760@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C38 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3799786@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3799786@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3799786@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C39 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3799698@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3799698@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3799698@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C4 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550169@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550169@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550169@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C40 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3799734@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3799734@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3799734@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C41 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3789008@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3789008@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3789008@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C42 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3789057@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3789057@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3789057@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C43 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788512@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3788512@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788512@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C44 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4517576@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4517576@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4517576@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C45 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4517592@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4517592@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4517592@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C46 'CAP NP_SMD_C_0805_47UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4519773@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4519773@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4519773@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C47 'CAP NP_SMD_C_0805_47UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4519799@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4519799@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4519799@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C48 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791384@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791384@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791384@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C49 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791424@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791424@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791424@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C5 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550185@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550185@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550185@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C50 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791450@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791450@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791450@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C51 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791476@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3791476@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791476@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C6 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550201@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550201@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550201@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C7 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550571@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550571@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550571@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C8 'CAP NP_SMD_C_0805_10UF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550587@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550587@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550587@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C9 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550603@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550603@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550603@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D1 'DIODE TVS_SOD123_5.1V':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787581@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787581@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787581@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D2 'DIODE TVS_SOD123_5.1V':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787559@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787559@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787559@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D3 'DIODE TVS_SOD123_5.1V':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4520552@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4520552@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4520552@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D4 'DIODE TVS_SOD123_5.1V':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4520957@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4520957@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4520957@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D5 'DIODE_DO-214AB_1N5822':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4536238@DISCRETE.DIODE.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4536238@discrete.\diode.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4536238@discrete.\diode.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ F1 'FUSE_SMD_R_0805_500MA':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803090@DISCRETE.FUSE.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3803090@discrete.\fuse.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803090@discrete.\fuse.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'RJ45-T-568A_1_RJ45-T-568A-LED_E':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4542038@IO_TWO_ETH.RJ45-T-568A_1.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4542038@io_two_eth.\rj45-t-568a_1.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4542038@io_two_eth.\rj45-t-568a_1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'RJ45-T-568A_1_RJ45-T-568A-LED_1':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4542076@IO_TWO_ETH.RJ45-T-568A_1.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4542076@io_two_eth.\rj45-t-568a_1.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4542076@io_two_eth.\rj45-t-568a_1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J3 'C1X3_C1X3_PWR_SELECT':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787337@CORE.C1X3.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787337@core.\c1x3.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787337@core.\c1x3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J4 'C1X8GEN_C1X8_P381_4~20MA':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787439@CORE.C1X8GEN.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787439@core.\c1x8gen.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787439@core.\c1x8gen.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J5 'C1X8GEN_C1X8_P381_4~20MA':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787467@CORE.C1X8GEN.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787467@core.\c1x8gen.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787467@core.\c1x8gen.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J6 'MICROUSB_SOCKET_MICROUSB_2FIX_U':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4566410@CORE.MICROUSB_SOCKET.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4566410@core.\microusb_socket.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4566410@core.\microusb_socket.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J7 'C1X6GEN_C1X6_RELAY':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3800968@CORE.C1X6GEN.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3800968@core.\c1x6gen.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3800968@core.\c1x6gen.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J8 'C2X3_C2X3_SWD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3794484@CORE.C2X3.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3794484@core.\c2x3.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3794484@core.\c2x3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J9 'C1X2_C1X2_PWR':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4535785@CORE.C1X2.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4535785@core.\c1x2.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4535785@core.\c1x2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L1 'INDUCTOR_SMD_L_0805_BEAD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550119@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550119@discrete.\inductor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550119@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L2 'INDUCTOR_SMD_L_0805_BEAD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4550523@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4550523@discrete.\inductor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4550523@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L3 'INDUCTOR_SMD_L_0805_BEAD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787379@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787379@discrete.\inductor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787379@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L4 'INDUCTOR_SMD_L_0805_BEAD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787363@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787363@discrete.\inductor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787363@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L5 'INDUCTOR_SMD_L_0805_BEAD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788856@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3788856@discrete.\inductor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788856@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L6 'INDUCTOR_SMD_L_0805_BEAD':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788769@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3788769@discrete.\inductor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788769@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ MCU1 'STM32F407VET_LQFP100_STM32F407V':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788115@CORE.STM32F407VET.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3788115@core.\stm32f407vet.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788115@core.\stm32f407vet.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R1 'RESISTOR_SMD_R_0805_10K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4558091@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4558091@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4558091@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R10 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4555018@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4555018@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4555018@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R11 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4555050@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4555050@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4555050@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R12 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4555204@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4555204@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4555204@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R13 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4555236@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4555236@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4555236@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R14 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4552545@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4552545@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4552545@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R15 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4553082@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4553082@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4553082@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R16 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543245@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543245@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543245@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R17 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4545835@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4545835@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4545835@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R18 'RESISTOR_SMD_R_0805_75R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543726@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543726@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543726@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R19 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543483@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543483@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543483@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554318@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554318@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554318@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R20 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543281@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543281@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543281@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R21 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4545863@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4545863@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4545863@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R22 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543323@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543323@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543323@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R23 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543509@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543509@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543509@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R24 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4543339@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4543339@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4543339@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R25 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544357@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544357@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544357@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R26 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4545891@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4545891@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4545891@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R27 'RESISTOR_SMD_R_0805_75R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544373@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544373@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544373@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R28 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544389@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544389@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544389@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R29 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544413@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544413@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544413@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R3 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554292@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554292@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554292@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R30 'RESISTOR_SMD_R_0805_1K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4545919@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4545919@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4545919@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R31 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544459@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544459@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544459@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R32 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544491@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544491@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544491@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R33 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4544515@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4544515@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4544515@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R34 'RESISTOR_SMD_R_0805_2K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4538200@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4538200@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4538200@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R35 'RESISTOR_SMD_R_0805_150R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4537843@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4537843@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4537843@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R36 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3761255@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3761255@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3761255@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R37 'RESISTOR_SMD_R_0805_3K3':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3761271@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3761271@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3761271@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R38 'RESISTOR_SMD_R_0805_100R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3761395@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3761395@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3761395@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R39 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3761491@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3761491@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3761491@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R4 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554452@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554452@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554452@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R40 'RESISTOR_SMD_R_0805_3K3':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3761507@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3761507@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3761507@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R41 'RESISTOR_SMD_R_0805_100R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3790667@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3790667@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3790667@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R42 'RESISTOR_SMD_R_0805_2K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4538650@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4538650@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4538650@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R43 'RESISTOR_SMD_R_0805_150R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4538674@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4538674@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4538674@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R44 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3789704@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3789704@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3789704@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R45 'RESISTOR_SMD_R_0805_3K3':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3789720@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3789720@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3789720@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R46 'RESISTOR_SMD_R_0805_100R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3790741@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3790741@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3790741@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R47 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3789782@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3789782@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3789782@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R48 'RESISTOR_SMD_R_0805_3K3':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3789798@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3789798@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3789798@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R49 'RESISTOR_SMD_R_0805_100R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3790816@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3790816@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3790816@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R5 'RESISTOR_SMD_R_0805_4.7K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554091@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554091@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554091@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R50 'RESISTOR_SMD_R_0805_2K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4539058@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4539058@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4539058@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R51 'RESISTOR_SMD_R_0805_150R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4539082@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4539082@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4539082@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R52 'RESISTOR_SMD_R_0805_2K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4538849@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4538849@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4538849@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R53 'RESISTOR_SMD_R_0805_150R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4538873@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4538873@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins4538873@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R54 'RESISTOR_SMD_R_0805_10K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788369@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3788369@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788369@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R55 'RESISTOR_SMD_R_0805_22R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803448@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3803448@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803448@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R56 'RESISTOR_SMD_R_0805_22R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803474@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3803474@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803474@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R57 'RESISTOR_SMD_R_0805_1.5K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803522@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3803522@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803522@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R58 'RESISTOR_SMD_R_0805_1M':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3795754@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3795754@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3795754@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R59 'RESISTOR_SMD_R_0805_10K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3794003@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3794003@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3794003@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R6 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554478@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554478@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554478@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R60 'RESISTOR_SMD_R_0805_22R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4547744@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4547744@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4547744@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R61 'RESISTOR_SMD_R_0805_22R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4547655@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4547655@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4547655@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R62 'RESISTOR_SMD_R_0805_22R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4547681@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4547681@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4547681@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R63 'RESISTOR_SMD_R_0805_10K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3796314@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3796314@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3796314@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R64 'RESISTOR_SMD_R_0805_22R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4547512@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4547512@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4547512@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R7 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554819@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554819@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554819@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R8 'RESISTOR_SMD_R_0805_50R':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4554851@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4554851@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4554851@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R9 'RESISTOR_SMD_R_0805_11.8K/1%':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4548459@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4548459@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4548459@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ SW1 'DIP_SWITCH4_SMD_SW4_RESERVED':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3797810@CORE.DIP_SWITCH4.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3797810@core.\dip_switch4.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3797810@core.\dip_switch4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'HR601680_1_ETH_TRANS_HR601680':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4540387@IO_TWO_ETH.HR601680_1.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4540387@io_two_eth.\hr601680_1.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4540387@io_two_eth.\hr601680_1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U2 'KSZ8863RLL_LQFP48_KSZ8863RLL':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4548311@CORE.KSZ8863RLL.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4548311@core.\ksz8863rll.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4548311@core.\ksz8863rll.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U3 'HR601680_1_ETH_TRANS_HR601680':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4540433@IO_TWO_ETH.HR601680_1.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4540433@io_two_eth.\hr601680_1.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4540433@io_two_eth.\hr601680_1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U4 'PS2801-4/SM_SOP16_PS2801-4/SM':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787778@DISCRETE.PS2801-4/SM.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787778@discrete.\ps2801-4/sm.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787778@discrete.\ps2801-4/sm.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787811@DISCRETE.PS2801-4/SM.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787811@discrete.\ps2801-4/sm.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787811@discrete.\ps2801-4/sm.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787844@DISCRETE.PS2801-4/SM.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787844@discrete.\ps2801-4/sm.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787844@discrete.\ps2801-4/sm.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787877@DISCRETE.PS2801-4/SM.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3787877@discrete.\ps2801-4/sm.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787877@discrete.\ps2801-4/sm.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+PART_NAME
+ U5 'AMS1117-33_SOT-223_AMS1117-33':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4517504@CORE.AMS1117-33.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4517504@core.\ams1117-33.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4517504@core.\ams1117-33.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Y1 'CRYSTAL_CRYSTAL_2PIN_SMD_25M':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4551719@DISCRETE.CRYSTAL.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4551719@discrete.\crystal.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4551719@discrete.\crystal.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Y2 'CRYSTAL_CRYSTAL_2PIN_SMD_8M':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3795728@DISCRETE.CRYSTAL.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins3795728@discrete.\crystal.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3795728@discrete.\crystal.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

@@ -1,0 +1,35 @@
+{ Using PSTWRITER 17.2.0 d001May-01-2018 at 15:34:40 }
+
+#1 WARNING(ORCAP-36038): "No_connect" property on Pin "MCU1.12" ignored for MCU1: SCHEMATIC1, MCU (2.50, 1.60). Connecting pin to net "N3795822".
+#2 WARNING(ORCAP-36038): "No_connect" property on Pin "MCU1.13" ignored for MCU1: SCHEMATIC1, MCU (2.50, 1.60). Connecting pin to net "N3795840".
+#3 WARNING(ORCAP-36006): Part Name "RJ45-T-568A_1_RJ45-T-568A-LED_ETH1" is renamed to "RJ45-T-568A_1_RJ45-T-568A-LED_E".
+#4 WARNING(ORCAP-36006): Part Name "RJ45-T-568A_1_RJ45-T-568A-LED_ETH2" is renamed to "RJ45-T-568A_1_RJ45-T-568A-LED_1".
+#5 WARNING(ORCAP-36006): Part Name "MICROUSB_SOCKET_MICROUSB_2FIX_USB_SOCKET" is renamed to "MICROUSB_SOCKET_MICROUSB_2FIX_U".
+#6 WARNING(ORCAP-36006): Part Name "STM32F407VET_LQFP100_STM32F407VET6" is renamed to "STM32F407VET_LQFP100_STM32F407V".
+#7 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#10" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#8 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#11" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#9 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#19" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#10 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#27" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#11 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#28" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#12 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#50" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#13 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#74" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#14 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#75" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#15 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#99" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#16 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#100" as visible power pin of same name already exists in Package STM32F407VET , MCU1: SCHEMATIC1, MCU (2.50, 1.60).
+#17 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#21" as visible power pin of same name already exists in Package KSZ8863RLL , U2: SCHEMATIC1, ETH (6.20, 1.90).
+#18 WARNING(ORCAP-36042): Pin "VDDIO" is renamed to "VDDIO#22" as visible power pin of same name already exists in Package KSZ8863RLL , U2: SCHEMATIC1, ETH (6.20, 1.90).
+#19 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#31" as visible power pin of same name already exists in Package KSZ8863RLL , U2: SCHEMATIC1, ETH (6.20, 1.90).
+#20 WARNING(ORCAP-36042): Pin "VDDIO" is renamed to "VDDIO#40" as visible power pin of same name already exists in Package KSZ8863RLL , U2: SCHEMATIC1, ETH (6.20, 1.90).
+#21 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#41" as visible power pin of same name already exists in Package KSZ8863RLL , U2: SCHEMATIC1, ETH (6.20, 1.90).
+#22 WARNING(ORCAP-36042): Pin "Vout" is renamed to "VOUT#2" as visible power pin of same name already exists in Package AMS1117-33 , U5: SCHEMATIC1, MCU (7.20, 4.80).
+#23 WARNING(ORCAP-36042): Pin "Vout" is renamed to "VOUT#4" as visible power pin of same name already exists in Package AMS1117-33 , U5: SCHEMATIC1, MCU (7.20, 4.80).
+INFO(ORCAP-36080): Scanning netlist files ...
+
+Loading... G:\WORK\IO\DESIGN\PCB/pstchip.dat
+
+Loading... G:\WORK\IO\DESIGN\PCB/pstchip.dat
+
+Loading... G:\WORK\IO\DESIGN\PCB/pstxprt.dat
+
+Loading... G:\WORK\IO\DESIGN\PCB/pstxnet.dat
+packaging the design view...
