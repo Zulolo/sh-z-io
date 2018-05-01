@@ -15,11 +15,7 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" "g:\work\io\design\sch\io_two_eth.dsn")
-      (Path "Design Resources" "g:\work\io\design\sch\io_two_eth.dsn"
-         "SCHEMATIC1")
-      (Path "Design Resources" "Library")
-      (Select "Design Resources" "Library" "g:\cadence\schematic_lib\core.olb"))
+      (Path "Design Resources" "Library"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -30,7 +26,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 279 1836 44 743")
-        (Scroll "-104 0")
+        (Scroll "-104 107")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -40,8 +36,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 78 1613 78 755")
-        (Scroll "212 625")
-        (Zoom "268")
+        (Scroll "-93 0")
+        (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
       (Schematic "SCHEMATIC1")
@@ -49,25 +45,25 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 234 1475 234 911")
-        (Scroll "0 0")
-        (Zoom "134")
+        (Placement "44 2 3 -1 -1 -8 -31 234 1475 234 911")
+        (Scroll "1780 708")
+        (Zoom "536")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "ETH"))
-    (Doc
-      (Type "COrPartDoc")
-      (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 338 1579 338 1015")
-        (PackageScroll "0 0")
-        (PackageZoom "1")
-        (PartPackage "Part")
-        (Scroll "1789 855")
-        (Zoom "375"))
-      (Path "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
-      (Package "RJ45_LED")))
+      (Page "ETH")))
   (PartMRUSelector
+    (GND_EARTH
+      (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (CAP
+      (FullPartName "CAP.Normal")
+      (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (RJ45-T-568A
+      (FullPartName "RJ45-T-568A.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
     (HR601680
       (FullPartName "HR601680.Normal")
       (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
