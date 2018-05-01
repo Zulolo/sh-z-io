@@ -1,0 +1,97 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Allegro Netrev Import Logic                                      )
+(                                                                     )
+(    Drawing          : io_4di_4aic.brd                               )
+(    Software Version : 17.2P019                                      )
+(    Date/Time        : Tue May 01 21:54:01 2018                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+------ Directives ------------
+
+Ripup etch:                  No
+Ripup delete first segment:  No
+Ripup retain bondwire:       No
+Ripup symbols:               Always
+Missing symbol has error:    No
+DRC update:                  Yes
+Schematic directory:         'G:/Work/io/design/pcb'
+Design Directory:            '.'
+Old design name:             'io_4di_4aic.brd'
+New design name:             'io_4di_4aic.brd'
+
+CmdLine: netrev -$ -i G:/Work/io/design/pcb -y 1 -q netrev_constraint_report.xml G:/Work/io/design/pcb/#Taaaaan13960.tmp
+
+------ Preparing to read pst files ------
+
+Starting to read G:/Work/io/design/pcb/pstchip.dat 
+   Finished reading G:/Work/io/design/pcb/pstchip.dat (00:00:00.04)
+Starting to read G:/Work/io/design/pcb/pstxprt.dat 
+   Finished reading G:/Work/io/design/pcb/pstxprt.dat (00:00:00.00)
+Starting to read G:/Work/io/design/pcb/pstxnet.dat 
+   Finished reading G:/Work/io/design/pcb/pstxnet.dat (00:00:00.01)
+
+------ Oversights/Warnings/Errors ------
+
+
+------ Library Paths ------
+MODULEPATH =  . 
+           D:/Cadence/SPB_17.2/share/local/pcb/modules 
+           G:/Cadence/Package_Symbol/ 
+           G:/Cadence/PADs/ 
+
+PSMPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/SPB_17.2/share/local/pcb/symbols 
+           D:/Cadence/SPB_17.2/share/pcb/pcb_lib/symbols 
+           D:/Cadence/SPB_17.2/share/pcb/allegrolib/symbols 
+           G:/Cadence/Package_Symbol/ 
+           G:/Cadence/PADs/ 
+           G:/CADENCE/Shape/ 
+
+PADPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/SPB_17.2/share/local/pcb/padstacks 
+           D:/Cadence/SPB_17.2/share/pcb/pcb_lib/symbols 
+           D:/Cadence/SPB_17.2/share/pcb/allegrolib/symbols 
+           G:/Cadence/PADs/ 
+           G:/Cadence/Package_Symbol/ 
+
+
+------ Summary Statistics ------
+
+
+netrev run on May 1 21:54:01 2018
+   DESIGN NAME : 'IO_TWO_ETH'
+   PACKAGING ON Mar  2 2016 00:37:24
+
+   COMPILE 'logic'
+   CHECK_PIN_NAMES OFF
+   CROSS_REFERENCE OFF
+   FEEDBACK OFF
+   INCREMENTAL OFF
+   INTERFACE_TYPE PHYSICAL
+   MAX_ERRORS 500
+   MERGE_MINIMUM 5
+   NET_NAME_CHARS '#%&()*+-./:=>?@[]^_`|'
+   NET_NAME_LENGTH 24
+   OVERSIGHTS ON
+   REPLACE_CHECK OFF
+   SINGLE_NODE_NETS ON
+   SPLIT_MINIMUM 0
+   SUPPRESS   20
+   WARNINGS ON
+
+ No error detected
+ No oversight detected
+ No warning detected
+
+cpu time      0:01:58
+elapsed time  0:00:01
+
