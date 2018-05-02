@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.2.0 d001May-01-2018 at 15:34:41 }
+{ Using PSTWRITER 17.2.0 d001May-02-2018 at 22:28:56 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='IO_TWO_ETH';
@@ -534,26 +534,6 @@ SECTION_NUMBER 1
  '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3787559@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
  C_PATH='@io_two_eth.schematic1(sch_1):ins3787559@discrete.\diode tvs.normal\(chips)',
  P_PATH='@io_two_eth.schematic1(sch_1):page2_ins3787559@discrete.\diode tvs.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- D3 'DIODE TVS_SOD123_5.1V':;
-
-SECTION_NUMBER 1
- '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4520552@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
- C_PATH='@io_two_eth.schematic1(sch_1):ins4520552@discrete.\diode tvs.normal\(chips)',
- P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4520552@discrete.\diode tvs.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- D4 'DIODE TVS_SOD123_5.1V':;
-
-SECTION_NUMBER 1
- '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4520957@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
- C_PATH='@io_two_eth.schematic1(sch_1):ins4520957@discrete.\diode tvs.normal\(chips)',
- P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4520957@discrete.\diode tvs.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 
@@ -1234,36 +1214,6 @@ SECTION_NUMBER 1
  '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3788369@DISCRETE.RESISTOR.NORMAL(CHIPS)':
  C_PATH='@io_two_eth.schematic1(sch_1):ins3788369@discrete.\resistor.normal\(chips)',
  P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3788369@discrete.\resistor.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- R55 'RESISTOR_SMD_R_0805_22R':;
-
-SECTION_NUMBER 1
- '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803448@DISCRETE.RESISTOR.NORMAL(CHIPS)':
- C_PATH='@io_two_eth.schematic1(sch_1):ins3803448@discrete.\resistor.normal\(chips)',
- P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803448@discrete.\resistor.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- R56 'RESISTOR_SMD_R_0805_22R':;
-
-SECTION_NUMBER 1
- '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803474@DISCRETE.RESISTOR.NORMAL(CHIPS)':
- C_PATH='@io_two_eth.schematic1(sch_1):ins3803474@discrete.\resistor.normal\(chips)',
- P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803474@discrete.\resistor.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- R57 'RESISTOR_SMD_R_0805_1.5K':;
-
-SECTION_NUMBER 1
- '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3803522@DISCRETE.RESISTOR.NORMAL(CHIPS)':
- C_PATH='@io_two_eth.schematic1(sch_1):ins3803522@discrete.\resistor.normal\(chips)',
- P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3803522@discrete.\resistor.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 

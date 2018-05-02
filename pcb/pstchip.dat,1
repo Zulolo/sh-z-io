@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001May-01-2018 at 14:47:22}
+{ Using PSTWRITER 17.2.0 d001May-01-2018 at 15:34:41}
 primitive 'CAP NP_SMD_C_0805_10UF';
   pin
     '1':
@@ -291,7 +291,7 @@ primitive 'C1X8GEN_C1X8_P381_4~20MA';
     VALUE='4~20mA';
   end_body;
 end_primitive;
-primitive 'MINIUSB_SOCKET_MICROUSB_4PLUG_M';
+primitive 'MICROUSB_SOCKET_MICROUSB_2FIX_U';
   pin
     '5V':
       PIN_NUMBER='(1)';
@@ -314,17 +314,11 @@ primitive 'MINIUSB_SOCKET_MICROUSB_4PLUG_M';
     'G2':
       PIN_NUMBER='(7)';
       PINUSE='UNSPEC';
-    'G3':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'G4':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='MiniUSB_Socket';
-    JEDEC_TYPE='microUSB_4plug';
-    VALUE='microUSB';
+    PART_NAME='MicroUSB_Socket';
+    JEDEC_TYPE='microUSB_2fix';
+    VALUE='USB_Socket';
   end_body;
 end_primitive;
 primitive 'C1X6GEN_C1X6_RELAY';
