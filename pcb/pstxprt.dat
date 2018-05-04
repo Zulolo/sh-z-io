@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.2.0 d001May-03-2018 at 20:59:09 }
+{ Using PSTWRITER 17.2.0 d001May-04-2018 at 23:02:03 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='IO_TWO_ETH';
@@ -454,6 +454,26 @@ SECTION_NUMBER 1
  '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS3791476@DISCRETE.CAP NP.NORMAL(CHIPS)':
  C_PATH='@io_two_eth.schematic1(sch_1):ins3791476@discrete.\cap np.normal\(chips)',
  P_PATH='@io_two_eth.schematic1(sch_1):page3_ins3791476@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C52 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4578171@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4578171@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4578171@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C53 'CAP NP_SMD_C_0805_100NF':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4578197@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4578197@discrete.\cap np.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4578197@discrete.\cap np.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 

@@ -3,47 +3,49 @@
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
 |  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Thu May 03 20:59:16 2018  |
+|                                                    Fri May 04 23:02:12 2018  |
 |------------------------------------------------------------------------------|
-| COMPONENTS DELETED from design                                               |
+| NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        |    device type      |   x   |   y                        |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- C2                  CAP NP_SMD_C_0805_10UF 120.100  91.900
- C5                  CAP NP_SMD_C_0805_10UF  33.500  71.300
- C8                  CAP NP_SMD_C_0805_10UF  86.073 107.717
+  3.3V         pins ADDED TO this existing net (pins not previously on any net)
+                                 C52.1                          
+                                 C53.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND          pins ADDED TO this existing net (pins not previously on any net)
+                                 C52.2                          
+                                 C53.2                          
 |------------------------------------------------------------------------------|
 |                                 ECO   REPORT                                 |
 |                                                                    Page   2  |
 |------------------------------------------------------------------------------|
 |  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Thu May 03 20:59:16 2018  |
+|                                                    Fri May 04 23:02:12 2018  |
 |------------------------------------------------------------------------------|
-| COMPONENTS CHANGED from one device type to another in design                 |
+| COMPONENTS ADDED to design                                                   |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|    ref des        |    device type                                           |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- C1                  CAP NP_SMD_C_0805_47UF 122.475  86.941 CAP NP_SMD_C_0805_10UF
- C4                  CAP NP_SMD_C_0805_47UF  45.500  31.700 CAP NP_SMD_C_0805_10UF
- C7                  CAP NP_SMD_C_0805_47UF  88.702 107.717 CAP NP_SMD_C_0805_10UF
+ C52                 CAP NP_SMD_C_0805_100NF 
+ C53                 CAP NP_SMD_C_0805_100NF 
 |------------------------------------------------------------------------------|
 |                                 ECO   REPORT                                 |
 |                                                                    Page   3  |
 |------------------------------------------------------------------------------|
 |  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Thu May 03 20:59:16 2018  |
+|                                                    Fri May 04 23:02:12 2018  |
 |------------------------------------------------------------------------------|
 | SLOT PROPERTIES added to design                                              |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   slot_id    |   x   |   y   |   property   |             value              |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- C1.2           122.475  86.941 PRIM_FILE      .\pstchip.dat
- C4.2            45.500  31.700 PRIM_FILE      .\pstchip.dat
- C7.2            88.702 107.717 PRIM_FILE      .\pstchip.dat
+ C52.2                          PRIM_FILE      .\pstchip.dat
+ C53.2                          PRIM_FILE      .\pstchip.dat
 |------------------------------------------------------------------------------|
-|       Components deleted    :       3                                        |
-|       Components changed    :       3                                        |
-|       Slot property added   :       3                                        |
+|       Nets changed          :       4                                        |
+|       Components added      :       2                                        |
+|       Slot property added   :       2                                        |
 |                                                                              |
-|   Total ECO changes reported:       9                                        |
+|   Total ECO changes reported:       8                                        |
 |------------------------------------------------------------------------------|
