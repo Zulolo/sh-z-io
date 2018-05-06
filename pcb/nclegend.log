@@ -1,0 +1,19 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    DRILL LEGEND                                                     )
+(                                                                     )
+(    Drawing          : io_4di_4aic.brd                               )
+(    Software Version : 17.2P028                                      )
+(    Date/Time        : Sat May 05 11:19:04 2018                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Begin processing of drill legend template file 'd:/cadence/spb_17.2/share/pcb/text/nclegend/default-mm.dlt' ...
+WARNING(SPMHSK-47): Column type 'HoleSize' does not exist.
+WARNING(SPMHSK-47): Column type 'PlateStatus' does not exist.
+End of drill legend template file processing.
+
+Begin processing drill holes.
+Warning : Hole 1.600-0.000-C-M0-P-0.000-0.000-0.000-0.000- uses multiple drill figures.
+End processing drill holes.

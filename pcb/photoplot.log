@@ -1,0 +1,347 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    ARTWORK LOG                                                      )
+(                                                                     )
+(    Drawing          : io_4di_4aic_dbdoctor.brd                      )
+(    Software Version : 17.2P019                                      )
+(    Date/Time        : Sat May 05 11:38:41 2018                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+ ---- Photoplot outline rectangle not found; using drawing extents.
+
+
+
+Results from parameter file ...
+    DEVICE-TYPE           GERBER_RS274X
+    OUTPUT-UNITS          MM
+    FILM-SIZE             25000000 20000000
+    FORMAT                2.5
+    ABORT-ON-ERROR        NO
+    SCALE                 1
+    SUPPRESS-LEAD-ZEROES  YES
+    SUPPRESS-TRAIL-ZEROES NO
+    SUPPRESS-EQUAL        YES
+    UNDEF-APT-CONT        NO
+
+
+
+================================================================
+     PROCESSING FILM < TOP >
+     TO FILE < G:/Work/io/design/pcb/TOP.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.20000                                  DARK 
+  CIRCLE     0.25000                                  DARK 
+  CIRCLE     0.30000                                  DARK 
+  CIRCLE     0.40000                                  DARK 
+  CIRCLE     0.50000                                  DARK 
+  CIRCLE     0.60000                                  DARK 
+  CIRCLE     0.80000                                  DARK 
+  CIRCLE     1.00000                                  DARK 
+  CIRCLE     1.50000                                  DARK 
+  CIRCLE     1.60000                                  DARK 
+  CIRCLE     2.20000                                  DARK 
+  CIRCLE     3.20000                                  DARK 
+  SQUARE     0.80000                     0.000 NO     DARK 
+  SQUARE     1.60000                     0.000 NO     DARK 
+  SQUARE     2.20000                     0.000 NO     DARK 
+  RECTANGLE  0.35000     x 1.50000      90.000 NO     DARK 
+  RECTANGLE  0.80000     x 3.00000      90.000 NO     DARK 
+  RECTANGLE  1.20000     x 0.25000       0.000 NO     DARK 
+  RECTANGLE  1.20000     x 0.25000      90.000 NO     DARK 
+  RECTANGLE  1.20000     x 0.30000       0.000 NO     DARK 
+  RECTANGLE  1.20000     x 0.30000      90.000 NO     DARK 
+  RECTANGLE  1.20000     x 1.60000       0.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.80000       0.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.80000      90.000 NO     DARK 
+  RECTANGLE  1.50000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  1.50000     x 0.90000      90.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.60000       0.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  1.80000     x 1.20000      90.000 NO     DARK 
+  RECTANGLE  3.60000     x 1.80000       0.000 NO     DARK 
+  RECTANGLE  4.50000     x 1.50000       0.000 NO     DARK 
+  RECTANGLE  4.50000     x 1.50000      90.000 NO     DARK 
+
+     TOP created.
+
+
+================================================================
+     PROCESSING FILM < BOTTOM >
+     TO FILE < G:/Work/io/design/pcb/BOTTOM.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.20000                                  DARK 
+  CIRCLE     0.25000                                  DARK 
+  CIRCLE     0.30000                                  DARK 
+  CIRCLE     0.50000                                  DARK 
+  CIRCLE     0.60000                                  DARK 
+  CIRCLE     0.80000                                  DARK 
+  CIRCLE     1.00000                                  DARK 
+  CIRCLE     1.50000                                  DARK 
+  CIRCLE     1.60000                                  DARK 
+  CIRCLE     2.20000                                  DARK 
+  CIRCLE     3.20000                                  DARK 
+  SQUARE     1.60000                     0.000 NO     DARK 
+  SQUARE     2.20000                     0.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.80000       0.000 NO     DARK 
+  RECTANGLE  1.50000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  1.50000     x 0.90000      90.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.90000      90.000 NO     DARK 
+
+     BOTTOM created.
+
+
+================================================================
+     PROCESSING FILM < DRILL >
+     TO FILE < G:/Work/io/design/pcb/DRILL.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+    WARNING: 0 width line found at (-6.700 113.900)
+           ... using undefined line width of 0.200
+
+    WARNING: Multiple 0 width lines; all will be treated the same as the first.
+           ... using undefined line width of 0.200
+
+    WARNING: text composed 0 width line found at (4.715 166.288)
+           ... using undefined line width of 0.200
+
+    WARNING: text having Multiple 0 width lines; all will be treated the same as the first.
+           ... using undefined line width of 0.200
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.20000                                  DARK 
+
+     DRILL created with warnings
+
+
+================================================================
+     PROCESSING FILM < OUTLINE >
+     TO FILE < G:/Work/io/design/pcb/OUTLINE.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.20000                                  DARK 
+
+     OUTLINE created.
+
+
+================================================================
+     PROCESSING FILM < SILKSCREEN_TOP >
+     TO FILE < G:/Work/io/design/pcb/SILKSCREEN_TOP.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.20000                                  DARK 
+  CIRCLE     0.30000                                  DARK 
+
+     SILKSCREEN_TOP created.
+
+
+================================================================
+     PROCESSING FILM < SILKSCREEN_BOTTOM >
+     TO FILE < G:/Work/io/design/pcb/SILKSCREEN_BOTTOM.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.20000                                  DARK 
+
+     SILKSCREEN_BOTTOM created.
+
+
+================================================================
+     PROCESSING FILM < SOLDERMASK_TOP >
+     TO FILE < G:/Work/io/design/pcb/SOLDERMASK_TOP.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     1.20000                                  DARK 
+  CIRCLE     1.70000                                  DARK 
+  CIRCLE     2.40000                                  DARK 
+  SQUARE     1.00000                     0.000 NO     DARK 
+  SQUARE     1.70000                     0.000 NO     DARK 
+  SQUARE     2.40000                     0.000 NO     DARK 
+  RECTANGLE  0.40000     x 1.60000      90.000 NO     DARK 
+  RECTANGLE  0.90000     x 3.20000      90.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.30000       0.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.30000      90.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.40000       0.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.40000      90.000 NO     DARK 
+  RECTANGLE  1.40000     x 1.80000       0.000 NO     DARK 
+  RECTANGLE  1.60000     x 1.00000       0.000 NO     DARK 
+  RECTANGLE  1.60000     x 1.00000      90.000 NO     DARK 
+  RECTANGLE  1.70000     x 1.00000       0.000 NO     DARK 
+  RECTANGLE  1.70000     x 1.00000      90.000 NO     DARK 
+  RECTANGLE  1.90000     x 0.70000       0.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.10000       0.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.40000      90.000 NO     DARK 
+  RECTANGLE  3.80000     x 2.00000       0.000 NO     DARK 
+  RECTANGLE  4.70000     x 1.70000       0.000 NO     DARK 
+  RECTANGLE  4.70000     x 1.70000      90.000 NO     DARK 
+
+     SOLDERMASK_TOP created.
+
+
+================================================================
+     PROCESSING FILM < SOLDERMASK_BOTTOM >
+     TO FILE < G:/Work/io/design/pcb/SOLDERMASK_BOTTOM.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.200
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     1.20000                                  DARK 
+  CIRCLE     1.70000                                  DARK 
+  CIRCLE     2.40000                                  DARK 
+  SQUARE     1.70000                     0.000 NO     DARK 
+  SQUARE     2.40000                     0.000 NO     DARK 
+  RECTANGLE  1.60000     x 1.00000       0.000 NO     DARK 
+  RECTANGLE  1.70000     x 1.00000       0.000 NO     DARK 
+  RECTANGLE  1.70000     x 1.00000      90.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.10000      90.000 NO     DARK 
+
+     SOLDERMASK_BOTTOM created.
+
+
+------------------------------------------------------
+ SUMMARY:
+        TOP created.
+        BOTTOM created.
+        DRILL created with warnings
+        OUTLINE created.
+        SILKSCREEN_TOP created.
+        SILKSCREEN_BOTTOM created.
+        SOLDERMASK_TOP created.
+        SOLDERMASK_BOTTOM created.
+
+ ARTWORK had warnings

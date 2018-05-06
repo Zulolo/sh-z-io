@@ -4,18 +4,17 @@
 (                                                                     )
 (    Drawing          : io_4di_4aic.brd                               )
 (    Software Version : 17.2P028                                      )
-(    Date/Time        : Fri May 04 23:02:16 2018                      )
+(    Date/Time        : Sat May 05 09:28:18 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 State: Placing on layer TOP
 
-         Placed symbol:  C52 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (2.076 102.911)
-         Placed symbol:  C53 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (5.002 102.911)
+         Placed symbol:  R65 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805 at (2.076 102.911)
 
 
-Placed 2 of 2 applicable (2 total) symbols.
+Placed 1 of 1 applicable (1 total) symbols.
 
 -----------------------------------------------------------------------
 

@@ -1,9 +1,9 @@
-Thu May 03 22:38:53 2018				Page     1
+Sat May 05 09:37:40 2018				Page     1
 
 
  
 Update Symbols/Modules Logfile
-	Thu May 03 22:38:53 2018
+	Sat May 05 09:37:40 2018
 
 ------ Module Refresh Messages ------
 
@@ -19,12 +19,12 @@ SUMMARY:    Updated 0 out of 0 modules
 (                                                                     )
 (    Drawing          : io_4di_4aic.brd                               )
 (    Software Version : 17.2P019                                      )
-(    Date/Time        : Thu May 03 22:38:53 2018                      )
+(    Date/Time        : Sat May 05 09:37:41 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
-Thu May 03 22:38:53 2018				Page     1
+Sat May 05 09:37:41 2018				Page     1
 
 
 ------ Symbol Refresh Directives ------
@@ -32,10 +32,10 @@ Thu May 03 22:38:53 2018				Page     1
 Input design  = 'G:/Work/io/design/pcb/io_4di_4aic.brd'
 Output design = ''
 
-Update mechanical symbols              = 'YES'
+Update mechanical symbols              = 'NO'
 Update format symbols                  = 'NO'
 Update package symbols                 = 'YES'
-Update shape/flash symbols             = 'YES'
+Update shape/flash symbols             = 'NO'
 Update symbol padstacks                = 'NO'
 Preserve padstacks replaced on pins    = 'NO'
 Reset symbol text and size locations   = 'NO'
@@ -69,7 +69,6 @@ PADPATH =  .
 
 ------ Symbol Refresh Messages ------
 
-'FIX_HOLE'  symbol refreshed successfully.
 'CRYSTAL_2PIN_SMD'  symbol refreshed successfully.
 'SMD_L_0805'  symbol refreshed successfully.
 'C1X2'  symbol refreshed successfully.
@@ -90,14 +89,10 @@ PADPATH =  .
 'SOP16'  symbol refreshed successfully.
 'LQFP48'  symbol refreshed successfully.
 'LQFP100'  symbol refreshed successfully.
-'AB00'  symbol refreshed successfully.
-'HOLE_CIR_16_FLASH'  symbol refreshed successfully.
-'SQR_16_FLASH'  symbol refreshed successfully.
-'HOLE_CIR_13_FLASH'  symbol refreshed successfully.
 
 
 ----- Symbol Update Summary ----
 
-Updated symbols: 25 out 25
+Updated symbols: 20 out 20
     Design updated.
 

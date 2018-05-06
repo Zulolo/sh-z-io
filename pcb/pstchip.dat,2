@@ -1,6 +1,6 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001May-02-2018 at 22:28:56}
-primitive 'CAP NP_SMD_C_0805_10UF';
+{ Using PSTWRITER 17.2.0 d001May-04-2018 at 23:02:03}
+primitive 'CAP NP_SMD_C_0805_47UF';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -12,7 +12,7 @@ primitive 'CAP NP_SMD_C_0805_10UF';
   body
     PART_NAME='CAP NP';
     JEDEC_TYPE='SMD_C_0805';
-    VALUE='10uF';
+    VALUE='47uF';
   end_body;
 end_primitive;
 primitive 'CAP NP_SMD_C_0805_100NF';
@@ -75,6 +75,21 @@ primitive 'CAP NP_SMD_C_0805_18PF';
     VALUE='18pF';
   end_body;
 end_primitive;
+primitive 'CAP NP_SMD_C_0805_10UF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='SMD_C_0805';
+    VALUE='10uF';
+  end_body;
+end_primitive;
 primitive 'CAP NP_SMD_C_0805_22PF';
   pin
     '1':
@@ -88,21 +103,6 @@ primitive 'CAP NP_SMD_C_0805_22PF';
     PART_NAME='CAP NP';
     JEDEC_TYPE='SMD_C_0805';
     VALUE='22pF';
-  end_body;
-end_primitive;
-primitive 'CAP NP_SMD_C_0805_47UF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='SMD_C_0805';
-    VALUE='47uF';
   end_body;
 end_primitive;
 primitive 'DIODE TVS_SOD123_5.1V';

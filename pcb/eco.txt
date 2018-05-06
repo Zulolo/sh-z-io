@@ -3,49 +3,20 @@
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
 |  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Fri May 04 23:02:12 2018  |
+|                                                    Sat May 05 10:23:40 2018  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-  3.3V         pins ADDED TO this existing net (pins not previously on any net)
-                                 C52.1                          
-                                 C53.1                          
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  GND          pins ADDED TO this existing net (pins not previously on any net)
-                                 C52.2                          
-                                 C53.2                          
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   2  |
+  GND_EARTH    net RENAMED (to net name listed on right)           GND_EARTH_1  
+               pins MOVED FROM this net (to net name listed on right)
+                                 C21.2            24.100  18.300
+                                                                    GND_EARTH_2
+                                 C22.2            24.100  21.000
+                                                                    GND_EARTH_2
 |------------------------------------------------------------------------------|
-|  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Fri May 04 23:02:12 2018  |
-|------------------------------------------------------------------------------|
-| COMPONENTS ADDED to design                                                   |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        |    device type                                           |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- C52                 CAP NP_SMD_C_0805_100NF 
- C53                 CAP NP_SMD_C_0805_100NF 
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   3  |
-|------------------------------------------------------------------------------|
-|  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Fri May 04 23:02:12 2018  |
-|------------------------------------------------------------------------------|
-| SLOT PROPERTIES added to design                                              |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|   slot_id    |   x   |   y   |   property   |             value              |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- C52.2                          PRIM_FILE      .\pstchip.dat
- C53.2                          PRIM_FILE      .\pstchip.dat
-|------------------------------------------------------------------------------|
-|       Nets changed          :       4                                        |
-|       Components added      :       2                                        |
-|       Slot property added   :       2                                        |
+|       Nets changed          :       3                                        |
 |                                                                              |
-|   Total ECO changes reported:       8                                        |
+|   Total ECO changes reported:       3                                        |
 |------------------------------------------------------------------------------|
