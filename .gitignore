@@ -53,6 +53,10 @@
 *.uvgui.*
 *.uvguix.*
 
+# cadence backup files
+*.log,*
+*.txt,*
+
 
 
 # End of https://www.gitignore.io/api/keil
