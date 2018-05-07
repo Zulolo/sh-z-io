@@ -7,14 +7,22 @@
 
 #define SH_Z_002_SLAVE_DSCRPT		""
 
+typedef enum {
+	MB_TCP_SVR_FUNC_RD_COLIS_BIT = 0,
+    MB_TCP_SVR_FUNC_RD_INPUT_BIT,           
+    MB_TCP_SVR_FUNC_RD_HOLDING_BIT,     
+    MB_TCP_SVR_FUNC_WR_HOLDING_BIT
+} MB_TCP_ServerFuncBit;
+
 typedef struct {
 	uint16_t unRegAddr;
-	uint16_t unRegLen;
+	uint16_t unRegByteLen;
 	void* pRegValue;
-	eMBErrorCode (*preReadF) (UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs);
-	eMBErrorCode (*postReadF) (UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs);
-	eMBErrorCode (*preWriteF) (UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs);
-	eMBErrorCode (*postWriteF) (UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs);
+	uint32_t unMB_RegFuncEnBits;
+	eMBErrorCode (*preReadF) (UCHAR * pucRegBuffer, USHORT usAddrOffset, USHORT usNBytes);
+	eMBErrorCode (*postReadF) (UCHAR * pucRegBuffer, USHORT usAddrOffset, USHORT usNBytes);
+	eMBErrorCode (*preWriteF) (UCHAR * pucRegBuffer, USHORT usAddrOffset, USHORT usNBytes);
+	eMBErrorCode (*postWriteF) (UCHAR * pucRegBuffer, USHORT usAddrOffset, USHORT usNBytes);
 } MB_RegAccessTypeDef;
 
 #endif
