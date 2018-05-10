@@ -159,6 +159,9 @@ void start_modbus_tcp_server(void const * argument) {
 	eMBErrorCode    xStatus;
 	
 	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, cSN, SH_Z_SN_LEN);
+	while (1) {
+		osDelay(10);
+	}
 	if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR ) {
 		printf( "%s: can't initialize modbus stack!\r\n", PROG );
 	} else if( eMBEnable(  ) != MB_ENOERR ) {

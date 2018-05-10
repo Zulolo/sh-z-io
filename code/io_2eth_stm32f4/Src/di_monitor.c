@@ -13,6 +13,8 @@ void DI_get_DI_values(uint8_t* pDestBuf, uint8_t unDIValueLen) {
 }
 
 void start_di_monitor(void const * argument) {
-	
+	while (1) {
+		osDelay(10);
+	}
 }
 

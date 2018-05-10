@@ -81,12 +81,10 @@
 #define LWIP_DHCP 1
 /*----- Value in opt.h for MEM_ALIGNMENT: 1 -----*/
 #define MEM_ALIGNMENT 4
+/*----- Value in opt.h for MEMP_NUM_SYS_TIMEOUT: (LWIP_TCP + IP_REASSEMBLY + LWIP_ARP + (2*LWIP_DHCP) + LWIP_AUTOIP + LWIP_IGMP + LWIP_DNS + (PPP_SUPPORT*6*MEMP_NUM_PPP_PCB) + (LWIP_IPV6 ? (1 + LWIP_IPV6_REASS + LWIP_IPV6_MLD) : 0)) -*/
+#define MEMP_NUM_SYS_TIMEOUT 5
 /*----- Value in opt.h for LWIP_ETHERNET: LWIP_ARP || PPPOE_SUPPORT -*/
 #define LWIP_ETHERNET 1
-/*----- Default Value for LWIP_AUTOIP: 0 ---*/
-#define LWIP_AUTOIP 1
-/*----- Default Value for LWIP_DHCP_AUTOIP_COOP: 0 ---*/
-#define LWIP_DHCP_AUTOIP_COOP 1
 /*----- Value in opt.h for LWIP_DNS_SECURE: (LWIP_DNS_SECURE_RAND_XID | LWIP_DNS_SECURE_NO_MULTIPLE_OUTSTANDING | LWIP_DNS_SECURE_RAND_SRC_PORT) -*/
 #define LWIP_DNS_SECURE 7
 /*----- Value in opt.h for TCP_SND_QUEUELEN: (4*TCP_SND_BUF + (TCP_MSS - 1))/TCP_MSS -----*/
@@ -141,6 +139,28 @@
 #define CHECKSUM_CHECK_ICMP 0
 /*----- Value in opt.h for CHECKSUM_CHECK_ICMP6: 1 -----*/
 #define CHECKSUM_CHECK_ICMP6 0
+/*----- Default Value for ETHARP_DEBUG: LWIP_DBG_OFF ---*/
+#define ETHARP_DEBUG LWIP_DBG_ON
+/*----- Default Value for NETIF_DEBUG: LWIP_DBG_OFF ---*/
+#define NETIF_DEBUG LWIP_DBG_ON
+/*----- Default Value for API_LIB_DEBUG: LWIP_DBG_OFF ---*/
+#define API_LIB_DEBUG LWIP_DBG_ON
+/*----- Default Value for API_MSG_DEBUG: LWIP_DBG_OFF ---*/
+#define API_MSG_DEBUG LWIP_DBG_ON
+/*----- Default Value for SOCKETS_DEBUG: LWIP_DBG_OFF ---*/
+#define SOCKETS_DEBUG LWIP_DBG_ON
+/*----- Default Value for ICMP_DEBUG: LWIP_DBG_OFF ---*/
+#define ICMP_DEBUG LWIP_DBG_ON
+/*----- Default Value for IP_DEBUG: LWIP_DBG_OFF ---*/
+#define IP_DEBUG LWIP_DBG_ON
+/*----- Default Value for SYS_DEBUG: LWIP_DBG_OFF ---*/
+#define SYS_DEBUG LWIP_DBG_ON
+/*----- Default Value for TCP_DEBUG: LWIP_DBG_OFF ---*/
+#define TCP_DEBUG LWIP_DBG_ON
+/*----- Default Value for TCPIP_DEBUG: LWIP_DBG_OFF ---*/
+#define TCPIP_DEBUG LWIP_DBG_ON
+/*----- Default Value for DHCP_DEBUG: LWIP_DBG_OFF ---*/
+#define DHCP_DEBUG LWIP_DBG_ON
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
 
