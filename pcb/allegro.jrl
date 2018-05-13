@@ -1,27 +1,21 @@
-\t (00:00:01) allegro 17.2 P028 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Sat May 05 11:46:03 2018
-\t (00:00:01)         Host=ZULOLO-PC User=Zulolo Pid=13912 CPUs=8
-\t (00:00:01) CmdLine= D:\Cadence\SPB_17.2\tools\bin\allegro.exe
-\t (00:00:01) 
-   (00:00:01) Loading axlcore.cxt 
-\t (00:00:03) Opening existing design...
-\d (00:00:03) Design opened: G:/Work/io/design/pcb/io_4di_4aic.brd
-\t (00:00:03) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:03) trapsize 1117
-\i (00:00:03) trapsize 1143
-\t (00:00:03) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:03) trapsize 1143
-\i (00:00:04) generaledit 
-\i (00:00:12) opencd G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd 
-\t (00:00:12) Opening existing design...
-\t (00:00:12) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:12) trapsize 1143
-\d (00:00:12) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
-\i (00:00:12) generaledit 
-\i (00:00:14) artwork 
-\i (00:00:34) setwindow form.film_control
-\i (00:00:34) FORM film_control cancel  
-\i (00:00:34) setwindow pcb
-\i (00:00:34) generaledit 
-\i (00:06:45) exit 
-\t (00:06:45)     Journal end - Sat May 05 11:52:47 2018
+\t (00:00:00) allegro 17.2 P028 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Sun May 13 14:41:18 2018
+\t (00:00:00)         Host=ZULOLO-PC User=Zulolo Pid=9124 CPUs=8
+\t (00:00:00) CmdLine= D:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:00:00) 
+   (00:00:00) Loading axlcore.cxt 
+\t (00:00:01) Opening existing design...
+\d (00:00:01) Design opened: G:/Work/io/design/pcb/io_4di_4aic.brd
+\t (00:00:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:00:02) trapsize 1117
+\i (00:00:02) trapsize 1143
+\t (00:00:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:00:02) trapsize 1143
+\i (00:00:02) generaledit 
+\i (00:00:11) opencd G:/Cadence/Package_Symbol/RJ45-T-568A-LED.dra 
+\t (00:00:11) Opening existing design...
+\t (00:00:11) Grids are drawn 0.4000, 0.4000 apart for enhanced viewability.
+\i (00:00:11) trapsize 838
+\i (00:00:11) trapsize 857
+\i (00:00:11) trapsize 857
+\t (00:00:11)     Journal end - Sun May 13 14:41:30 2018

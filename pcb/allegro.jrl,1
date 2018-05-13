@@ -1,39 +1,27 @@
-\t (00:00:00) allegro 17.2 P028 Windows SPB 64-bit Edition
-\t (00:00:00)     Journal start - Sat May 05 11:38:31 2018
-\t (00:00:00)         Host=ZULOLO-PC User=Zulolo Pid=5844 CPUs=8
-\t (00:00:00) CmdLine= d:\cadence\spb_17.2\tools\bin\allegro.exe G:\Work\io\design\pcb\io_4di_4aic_dbdoctor.brd
-\t (00:00:00) 
-   (00:00:00) Loading axlcore.cxt 
-\t (00:00:02) Opening existing design...
-\d (00:00:02) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
-\t (00:00:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:02) trapsize 1117
-\i (00:00:02) trapsize 1143
-\t (00:00:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:02) trapsize 1143
-\i (00:00:03) generaledit 
-\i (00:00:06) artwork 
-\i (00:00:08) setwindow form.film_control
-\i (00:00:08) FORM film_control select_all  
-\i (00:00:09) FORM film_control create  
-\i (00:00:10) fillin yes 
-\t (00:00:10) Checking db records
-\t (00:00:10)     checking for orphans...
-\t (00:00:10)     Checked  46 percent
-\t (00:00:10)     Checked  92 percent
-\t (00:00:10)     Checked 100 percent
-\t (00:00:10) Done dbdoctor.
-\t (00:00:10) Starting Create artwork films...
-\w (00:00:10) WARNING(SPMHGE-269): artwork had warnings, use Viewlog to review the log file.
-\w (00:00:11) Artwork generated with warnings.
-\i (00:00:59) setwindow text
-\i (00:00:59) close 
-\i (00:01:00) setwindow form.film_control
-\i (00:01:00) FORM film_control cancel  
-\i (00:01:00) setwindow pcb
-\i (00:01:00) generaledit 
-\i (00:01:48) exit 
-\e (00:01:48) Do you want to save the changes you made to io_4di_4aic_dbdoctor.brd?
-\i (00:01:50) fillin yes 
-   (00:01:50) Loading signal.cxt 
-\t (00:01:50)     Journal end - Sat May 05 11:40:21 2018
+\t (00:00:01) allegro 17.2 P028 Windows SPB 64-bit Edition
+\t (00:00:01)     Journal start - Sat May 05 11:46:03 2018
+\t (00:00:01)         Host=ZULOLO-PC User=Zulolo Pid=13912 CPUs=8
+\t (00:00:01) CmdLine= D:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+\t (00:00:03) Opening existing design...
+\d (00:00:03) Design opened: G:/Work/io/design/pcb/io_4di_4aic.brd
+\t (00:00:03) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:00:03) trapsize 1117
+\i (00:00:03) trapsize 1143
+\t (00:00:03) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:00:03) trapsize 1143
+\i (00:00:04) generaledit 
+\i (00:00:12) opencd G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd 
+\t (00:00:12) Opening existing design...
+\t (00:00:12) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:00:12) trapsize 1143
+\d (00:00:12) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
+\i (00:00:12) generaledit 
+\i (00:00:14) artwork 
+\i (00:00:34) setwindow form.film_control
+\i (00:00:34) FORM film_control cancel  
+\i (00:00:34) setwindow pcb
+\i (00:00:34) generaledit 
+\i (00:06:45) exit 
+\t (00:06:45)     Journal end - Sat May 05 11:52:47 2018

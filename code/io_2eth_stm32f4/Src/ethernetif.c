@@ -233,7 +233,7 @@ static void low_level_init(struct netif *netif)
 
    uint8_t MACAddr[6] ;
   heth.Instance = ETH;
-  heth.Init.AutoNegotiation = ETH_AUTONEGOTIATION_DISABLE;
+  heth.Init.AutoNegotiation = ETH_AUTONEGOTIATION_ENABLE;
   heth.Init.PhyAddress = LAN8742A_PHY_ADDRESS;
   MACAddr[0] = 0x02;
   MACAddr[1] = 0x80;
@@ -303,14 +303,14 @@ static void low_level_init(struct netif *netif)
   
 
   /* Read Register Configuration */
-  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
-  regvalue |= (PHY_ISFR_INT4);
+//  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
+//  regvalue |= (PHY_ISFR_INT4);
 
   /* Enable Interrupt on change of link status */ 
-  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR , regvalue );
+//  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR , regvalue );
   
   /* Read Register Configuration */
-  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR , &regvalue);
+//  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR , &regvalue);
 
 /* USER CODE BEGIN PHY_POST_CONFIG */ 
     

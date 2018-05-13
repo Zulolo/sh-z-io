@@ -59,6 +59,8 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define AI_0_Pin GPIO_PIN_3
+#define AI_0_GPIO_Port GPIOA
 #define AI_1_Pin GPIO_PIN_4
 #define AI_1_GPIO_Port GPIOA
 #define AI_2_Pin GPIO_PIN_5

@@ -68,8 +68,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 182 1739 182 881")
-        (Scroll "-104 0")
+        (Placement "44 2 3 -1 -1 -8 -31 182 1739 182 881")
+        (Scroll "-270 42")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_OPI_4DI_4ACI.DSN")

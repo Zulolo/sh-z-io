@@ -60,6 +60,8 @@
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
 
+SPI_HandleTypeDef hspi3;
+
 TIM_HandleTypeDef htim7;
 
 osThreadId defaultTaskHandle;
@@ -80,6 +82,7 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM7_Init(void);
+static void MX_SPI3_Init(void);
 void StartDefaultTask(void const * argument);
 extern void start_modbus_tcp_server(void const * argument);
 extern void start_ai_monitor(void const * argument);
@@ -126,18 +129,19 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_TIM7_Init();
+  MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
   /* definition and creation of ai_data_access */
-  osMutexDef(ai_data_access);
-  ai_data_accessHandle = osMutexCreate(osMutex(ai_data_access));
+//  osMutexDef(ai_data_access);
+//  ai_data_accessHandle = osMutexCreate(osMutex(ai_data_access));
 
   /* definition and creation of di_data_access */
-  osMutexDef(di_data_access);
-  di_data_accessHandle = osMutexCreate(osMutex(di_data_access));
+//  osMutexDef(di_data_access);
+//  di_data_accessHandle = osMutexCreate(osMutex(di_data_access));
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -157,16 +161,16 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of modbus_tcp */
-  osThreadDef(modbus_tcp, start_modbus_tcp_server, osPriorityIdle, 0, 2048);
-  modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
+//  osThreadDef(modbus_tcp, start_modbus_tcp_server, osPriorityIdle, 0, 2048);
+//  modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
 
-  /* definition and creation of ai_monitor */
-  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 256);
-  ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
+//  /* definition and creation of ai_monitor */
+//  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 256);
+//  ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
 
-  /* definition and creation of di_monitor */
-  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 256);
-  di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
+//  /* definition and creation of di_monitor */
+//  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 256);
+//  di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -310,6 +314,30 @@ static void MX_ADC1_Init(void)
   sConfig.Channel = ADC_CHANNEL_6;
   sConfig.Rank = 4;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+/* SPI3 init function */
+static void MX_SPI3_Init(void)
+{
+
+  /* SPI3 parameter configuration*/
+  hspi3.Instance = SPI3;
+  hspi3.Init.Mode = SPI_MODE_MASTER;
+  hspi3.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi3.Init.NSS = SPI_NSS_HARD_INPUT;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi3.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi3) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
