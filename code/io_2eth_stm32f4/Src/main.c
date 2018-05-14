@@ -68,8 +68,8 @@ osThreadId defaultTaskHandle;
 osThreadId modbus_tcpHandle;
 osThreadId ai_monitorHandle;
 osThreadId di_monitorHandle;
-osMutexId ai_data_accessHandle;
-osMutexId di_data_accessHandle;
+osMutexId AI_DataAccessHandle;
+osMutexId DI_DataAccessHandle;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
@@ -135,13 +135,13 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
-  /* definition and creation of ai_data_access */
-//  osMutexDef(ai_data_access);
-//  ai_data_accessHandle = osMutexCreate(osMutex(ai_data_access));
+  /* definition and creation of AI_DataAccess */
+  osMutexDef(AI_DataAccess);
+  AI_DataAccessHandle = osMutexCreate(osMutex(AI_DataAccess));
 
-  /* definition and creation of di_data_access */
-//  osMutexDef(di_data_access);
-//  di_data_accessHandle = osMutexCreate(osMutex(di_data_access));
+  /* definition and creation of DI_DataAccess */
+  osMutexDef(DI_DataAccess);
+  DI_DataAccessHandle = osMutexCreate(osMutex(DI_DataAccess));
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -161,16 +161,16 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of modbus_tcp */
-//  osThreadDef(modbus_tcp, start_modbus_tcp_server, osPriorityIdle, 0, 2048);
-//  modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
+  osThreadDef(modbus_tcp, start_modbus_tcp_server, osPriorityIdle, 0, 256);
+  modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
 
-//  /* definition and creation of ai_monitor */
-//  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 256);
-//  ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
+  /* definition and creation of ai_monitor */
+  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 128);
+  ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
 
-//  /* definition and creation of di_monitor */
-//  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 256);
-//  di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
+  /* definition and creation of di_monitor */
+  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 128);
+  di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

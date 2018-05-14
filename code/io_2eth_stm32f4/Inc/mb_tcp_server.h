@@ -8,10 +8,10 @@
 #define SH_Z_002_SLAVE_DSCRPT		""
 
 typedef enum {
-	MB_TCP_SVR_FUNC_RD_COLIS_BIT = 0,
-    MB_TCP_SVR_FUNC_RD_INPUT_BIT,           
-    MB_TCP_SVR_FUNC_RD_HOLDING_BIT,     
-    MB_TCP_SVR_FUNC_WR_HOLDING_BIT
+	MB_TCP_SVR_FUNC_RD_COLIS_BIT = 0x01,
+    MB_TCP_SVR_FUNC_RD_INPUT_BIT = 0x02,           
+    MB_TCP_SVR_FUNC_RD_HOLDING_BIT = 0x04,     
+    MB_TCP_SVR_FUNC_WR_HOLDING_BIT = 0x08
 } MB_TCP_ServerFuncBit;
 
 typedef struct {

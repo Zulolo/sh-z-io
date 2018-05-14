@@ -4,7 +4,7 @@
 
 void start_ai_monitor(void const * argument) {
 	while (1) {
-		osDelay(10);
+		osDelay(100);
 	}
 	
 }
