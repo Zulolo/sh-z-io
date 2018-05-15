@@ -10,15 +10,17 @@
 
 extern uint8_t cSN[SH_Z_SN_LEN];
 extern struct netif gnetif;
+extern __IO uint16_t unADCxConvertedValue[4];
 
-static uint8_t DI_ValuesBuf[SH_Z_002_DI_BYTE_NUM];
+static uint32_t DI_ValuesBuf;
 
 static eMBErrorCode get_DI_value( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
-	DI_get_DI_values(DI_ValuesBuf, SH_Z_002_DI_BYTE_NUM);
+	DI_ValuesBuf = DI_get_DI_values();
 	return 	MB_ENOERR;
 }
 const MB_RegAccessTypeDef SH_Z_X_MB_REG[] = {
-	{100, sizeof(DI_ValuesBuf), DI_ValuesBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_value, NULL, NULL, NULL},
+	{100, sizeof(DI_ValuesBuf), &DI_ValuesBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_value, NULL, NULL, NULL},
+	{200, sizeof(unADCxConvertedValue), unADCxConvertedValue , MB_TCP_SVR_FUNC_RD_INPUT_BIT, NULL, NULL, NULL, NULL},
 	{0, 0, NULL, 0, NULL, NULL, NULL, NULL}
 };
 

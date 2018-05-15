@@ -12,5 +12,5 @@
 #define SH_Z_002_DI_BYTE_NUM		GET_DI_BYTE_NUM(SH_Z_002_DI_NUM)
 #define IS_DI_PIN_NUM(NUM)          (((NUM) <= 32 ))
 
-void DI_get_DI_values(uint8_t* pDestBuf, uint8_t unDIValueLen);
+uint32_t DI_get_DI_values(void);
 #endif
