@@ -1,21 +1,1748 @@
-\t (00:00:00) allegro 17.2 P028 Windows SPB 64-bit Edition
-\t (00:00:00)     Journal start - Sun May 13 14:41:18 2018
-\t (00:00:00)         Host=ZULOLO-PC User=Zulolo Pid=9124 CPUs=8
-\t (00:00:00) CmdLine= D:\Cadence\SPB_17.2\tools\bin\allegro.exe
-\t (00:00:00) 
-   (00:00:00) Loading axlcore.cxt 
-\t (00:00:01) Opening existing design...
-\d (00:00:01) Design opened: G:/Work/io/design/pcb/io_4di_4aic.brd
-\t (00:00:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:02) trapsize 1117
-\i (00:00:02) trapsize 1143
-\t (00:00:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:02) trapsize 1143
-\i (00:00:02) generaledit 
-\i (00:00:11) opencd G:/Cadence/Package_Symbol/RJ45-T-568A-LED.dra 
-\t (00:00:11) Opening existing design...
-\t (00:00:11) Grids are drawn 0.4000, 0.4000 apart for enhanced viewability.
-\i (00:00:11) trapsize 838
-\i (00:00:11) trapsize 857
-\i (00:00:11) trapsize 857
-\t (00:00:11)     Journal end - Sun May 13 14:41:30 2018
+\t (00:29:16) allegro 17.2 P028 Windows SPB 64-bit Edition
+\t (00:29:16)     Journal start - Wed May 16 22:20:03 2018
+\t (00:29:16)         Host=ZULOLO-PC User=Zulolo Pid=14184 CPUs=8
+\t (00:29:16) CmdLine= D:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:29:16) 
+\d (00:29:16) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
+\i (00:29:17) generaledit 
+\i (00:29:22) netin 
+\i (00:29:24) setwindow form.niparams
+\i (00:29:24) FORM niparams import  
+\t (00:29:24) Starting Cadence Logic Import...
+\t (00:29:25) Opening existing design...
+\t (00:29:25) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:29:25) setwindow pcb
+\i (00:29:25) trapsize 1143
+\i (00:29:26) generaledit 
+\i (00:29:31) color192 
+\i (00:29:31) generaledit 
+\i (00:29:33) QtSignal CVDLayerContainer CVDVisibilityOff clicked
+\i (00:29:37) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Manufacturing
+\i (00:29:42) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry
+\i (00:29:45) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
+\i (00:29:47) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 9 0
+\i (00:29:47) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Outline BrdGeo
+\i (00:29:47) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:29:49) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:29:53) QtSignal CVPLayerGrid CVPAllConductors clicked true
+\i (00:29:54) QtSignal CVPLayerGrid CVPAllAll_Layers clicked true
+\i (00:29:56) QtSignal CVPLayerGrid CVPAllAll_Layers clicked false
+\i (00:29:57) QtSignal CVPLayerGrid CVPBoxAllTop clicked true
+\i (00:30:01) QtSignal CVPLayerGrid CVPBoxAllBottom clicked true
+\i (00:30:02) prepopup 25.486 63.714
+\i (00:30:04) pick grid 180.686 42.685
+\t (00:30:04) last pick:  180.700 42.700
+\i (00:30:05) zoom in 1 
+\i (00:30:05) setwindow pcb
+\i (00:30:05) zoom in 15.657 33.999
+\t (00:30:05) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:30:05) trapsize 571
+\i (00:30:05) zoom in 1 
+\i (00:30:05) setwindow pcb
+\i (00:30:05) zoom in 17.943 33.885
+\t (00:30:05) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:30:05) trapsize 286
+\i (00:30:06) zoom in 1 
+\i (00:30:06) setwindow pcb
+\i (00:30:06) zoom in 17.086 36.857
+\t (00:30:06) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:30:06) trapsize 143
+\i (00:30:07) zoom out 1 
+\i (00:30:07) setwindow pcb
+\i (00:30:07) zoom out 17.086 36.857
+\t (00:30:07) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:30:07) trapsize 286
+\i (00:30:07) zoom out 1 
+\i (00:30:07) setwindow pcb
+\i (00:30:07) zoom out 17.086 36.858
+\t (00:30:07) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:30:07) trapsize 571
+\i (00:30:08) roam start
+\i (00:30:08) roam x -32
+\i (00:30:08) roam y 64
+\i (00:30:09) roam x -32
+\i (00:30:09) roam y 80
+\i (00:30:09) roam x -16
+\i (00:30:09) roam y 32
+\i (00:30:09) roam end
+\i (00:30:09) zoom in 1 
+\i (00:30:09) setwindow pcb
+\i (00:30:09) zoom in 10.743 35.315
+\t (00:30:09) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:30:09) trapsize 286
+\i (00:30:11) zoom out 1 
+\i (00:30:11) setwindow pcb
+\i (00:30:11) zoom out 10.858 35.315
+\t (00:30:11) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:30:11) trapsize 571
+\i (00:30:13) roam start
+\i (00:30:13) roam x 32
+\i (00:30:13) roam y -64
+\i (00:30:13) roam y -64
+\i (00:30:13) roam y -16
+\i (00:30:13) roam end
+\i (00:30:26) pick grid 128.458 79.886
+\t (00:30:26) last pick:  128.500 79.900
+\i (00:30:26) prepopup 128.458 79.886
+\i (00:30:27) pick grid 126.744 80.800
+\t (00:30:27) last pick:  126.700 80.800
+\i (00:30:29) delete 
+\i (00:30:32) setwindow form.find
+\i (00:30:32) FORM find shapes YES 
+\i (00:30:33) FORM find cline_segs NO 
+\i (00:30:34) FORM find text NO 
+\i (00:30:35) FORM find vias NO 
+\i (00:30:36) setwindow pcb
+\i (00:30:36) pick grid 23.429 64.800
+\t (00:30:36) last pick:  23.400 64.800
+\t (00:30:36) Dynamic Shape "Gnd, Boundary/Top"
+\i (00:30:37) pick grid 120.229 65.943
+\t (00:30:37) last pick:  120.200 65.900
+\i (00:30:38) pick grid 24.343 65.486
+\t (00:30:38) last pick:  24.300 65.500
+\t (00:30:38) Dynamic Shape "Gnd, Boundary/Bottom"
+\i (00:30:38) pick grid 149.715 64.915
+\t (00:30:38) last pick:  149.700 64.900
+\i (00:30:40) prepopup 126.744 62.972
+\i (00:30:40) done 
+\i (00:30:41) generaledit 
+\i (00:30:54) zoom out 1 
+\i (00:30:54) setwindow pcb
+\i (00:30:54) zoom out 49.372 57.943
+\t (00:30:54) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:30:54) trapsize 1143
+\i (00:30:58) prepopup 4.914 179.086
+\i (00:30:59) pick grid 1.943 173.143
+\t (00:30:59) last pick:  1.900 173.100
+\i (00:31:00) delete 
+\i (00:31:01) setwindow form.find
+\i (00:31:01) FORM find all_off  
+\i (00:31:03) FORM find clines YES 
+\i (00:31:04) FORM find vias YES 
+\i (00:31:05) setwindow pcb
+\i (00:31:05) drag_start grid -7.657 113.029
+\i (00:31:06) drag_stop 144.800 -17.486
+\i (00:31:07) prepopup 119.200 13.143
+\i (00:31:07) done 
+\i (00:31:07) generaledit 
+\i (00:31:09) zoom in 1 
+\i (00:31:09) setwindow pcb
+\i (00:31:09) zoom in 3.543 18.172
+\t (00:31:09) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:31:09) trapsize 571
+\i (00:31:15) zoom in 1 
+\i (00:31:15) setwindow pcb
+\i (00:31:15) zoom in 17.372 32.000
+\t (00:31:15) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:31:15) trapsize 286
+\i (00:31:17) zoom out 1 
+\i (00:31:17) setwindow pcb
+\i (00:31:17) zoom out 17.372 32.000
+\t (00:31:17) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:31:17) trapsize 571
+\i (00:31:20) zoom in 1 
+\i (00:31:20) setwindow pcb
+\i (00:31:20) zoom in 17.601 35.543
+\t (00:31:20) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:31:20) trapsize 286
+\i (00:31:20) zoom in 1 
+\i (00:31:20) setwindow pcb
+\i (00:31:20) zoom in 17.601 35.544
+\t (00:31:20) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:31:20) trapsize 143
+\i (00:31:20) zoom out 1 
+\i (00:31:20) setwindow pcb
+\i (00:31:20) zoom out 17.601 35.544
+\t (00:31:20) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:31:20) trapsize 286
+\i (00:31:24) color192 
+\i (00:31:24) generaledit 
+\i (00:31:27) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
+\i (00:31:29) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 0
+\i (00:31:29) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Assembly_Top PkgGeo
+\i (00:31:29) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:31:29) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 0 0
+\i (00:31:29) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Assembly_Bottom PkgGeo
+\i (00:31:29) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:31:34) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 13 0
+\i (00:31:34) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Place_Bound_Top PkgGeo
+\i (00:31:34) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:31:34) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 12 0
+\i (00:31:35) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Place_Bound_Bottom PkgGeo
+\i (00:31:35) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:31:37) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 15 0
+\i (00:31:37) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Silkscreen_Top PkgGeo
+\i (00:31:37) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:31:37) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 14 0
+\i (00:31:37) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Silkscreen_Bottom PkgGeo
+\i (00:31:37) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:31:42) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:31:43) zoom out 1 
+\i (00:31:43) setwindow pcb
+\i (00:31:43) zoom out 48.687 36.573
+\t (00:31:43) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:31:43) trapsize 571
+\i (00:31:43) zoom out 1 
+\i (00:31:43) setwindow pcb
+\i (00:31:43) zoom out 67.772 36.573
+\t (00:31:43) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:31:43) trapsize 1143
+\i (00:31:44) zoom in 1 
+\i (00:31:44) setwindow pcb
+\i (00:31:44) zoom in -8.571 37.829
+\t (00:31:44) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:31:44) trapsize 571
+\i (00:31:45) roam start
+\i (00:31:45) roam end
+\i (00:31:53) quickplace 
+\i (00:31:54) setwindow form.quickplc
+\i (00:31:54) FORM quickplc place  
+\i (00:31:59) FORM quickplc place  
+\i (00:32:00) FORM quickplc done  
+\i (00:32:00) setwindow pcb
+\i (00:32:00) generaledit 
+\i (00:32:01) roam start
+\i (00:32:01) roam y 112
+\i (00:32:01) roam x 16
+\i (00:32:01) roam y 128
+\i (00:32:02) roam end
+\i (00:32:02) zoom out 1 
+\i (00:32:02) setwindow pcb
+\i (00:32:02) zoom out 27.886 50.058
+\t (00:32:02) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:32:02) trapsize 1143
+\i (00:32:03) zoom in 1 
+\i (00:32:03) setwindow pcb
+\i (00:32:03) zoom in 58.629 7.657
+\t (00:32:03) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:32:03) trapsize 571
+\i (00:32:04) roam start
+\i (00:32:04) roam x -64
+\i (00:32:04) roam y -48
+\i (00:32:04) roam x -48
+\i (00:32:04) roam y -16
+\i (00:32:04) roam y -16
+\i (00:32:05) roam end
+\i (00:32:06) roam start
+\i (00:32:06) roam x -48
+\i (00:32:06) roam y 32
+\i (00:32:06) roam x -96
+\i (00:32:06) roam x -16
+\i (00:32:06) roam x -16
+\i (00:32:06) roam end
+\i (00:32:08) prepopup 53.829 46.857
+\i (00:32:09) pick grid 125.029 55.200
+\t (00:32:09) last pick:  125.000 55.200
+\i (00:32:15) move 
+\t (00:32:15) Select element(s) to move.
+\i (00:32:17) setwindow form.find
+\i (00:32:17) FORM find all_off  
+\i (00:32:20) FORM find pins YES 
+\i (00:32:20) FORM find pins NO 
+\i (00:32:24) FORM find symbols YES 
+\i (00:32:25) setwindow pcb
+\i (00:32:25) pick grid 33.600 20.343
+\t (00:32:25) last pick:  33.600 20.300
+\t (00:32:25) last pick:  34.900 16.000
+\t (00:32:25) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:32:25) Pick new location for the element(s).
+\i (00:32:27) pick grid 79.657 83.314
+\t (00:32:27) last pick:  79.700 83.300
+\i (00:32:31) pick grid 56.114 14.971
+\t (00:32:31) last pick:  56.100 15.000
+\t (00:32:31) last pick:  56.000 16.000
+\t (00:32:31) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:32:31) Pick new location for the element(s).
+\i (00:32:33) pick grid 33.600 22.628
+\t (00:32:33) last pick:  33.600 22.600
+\i (00:32:38) roam start
+\i (00:32:38) roam x 16
+\i (00:32:38) roam y -64
+\i (00:32:38) roam x 16
+\i (00:32:38) roam y -32
+\i (00:32:38) roam x 16
+\i (00:32:38) roam y -32
+\i (00:32:38) roam x 16
+\i (00:32:38) roam y -32
+\i (00:32:39) roam x -16
+\i (00:32:39) roam y 16
+\i (00:32:40) roam x -16
+\i (00:32:40) roam y 16
+\i (00:32:41) roam x -16
+\i (00:32:41) roam y 16
+\i (00:32:41) roam x -16
+\i (00:32:41) roam x -16
+\i (00:32:41) roam y 16
+\i (00:32:41) roam x -16
+\i (00:32:41) roam y 16
+\i (00:32:41) roam x -16
+\i (00:32:41) roam y 16
+\i (00:32:42) roam y 32
+\i (00:32:42) roam y 32
+\i (00:32:42) roam y 48
+\i (00:32:43) roam y 16
+\i (00:32:43) roam end
+\i (00:32:44) prepopup 72.571 28.114
+\i (00:32:44) done 
+\i (00:32:44) generaledit 
+\i (00:32:45) roam start
+\i (00:32:45) roam y -96
+\i (00:32:46) roam y -96
+\i (00:32:46) roam end
+\i (00:32:47) roam start
+\i (00:32:47) roam y 48
+\i (00:32:47) roam y 16
+\i (00:32:47) roam y 64
+\i (00:32:47) roam y 48
+\i (00:32:48) roam x 16
+\i (00:32:48) roam y 32
+\i (00:32:48) roam x 16
+\i (00:32:48) roam y 16
+\i (00:32:48) roam y 32
+\i (00:32:49) roam x 16
+\i (00:32:49) roam y -64
+\i (00:32:49) roam x 16
+\i (00:32:49) roam y -48
+\i (00:32:49) roam y -16
+\i (00:32:50) roam x 16
+\i (00:32:50) roam y -16
+\i (00:32:50) roam x 16
+\i (00:32:50) roam y -48
+\i (00:32:51) roam y 32
+\i (00:32:51) roam y 48
+\i (00:32:51) roam y 16
+\i (00:32:53) roam end
+\i (00:32:59) roam start
+\i (00:32:59) roam y -80
+\i (00:32:59) roam y -80
+\i (00:32:59) roam y -16
+\i (00:33:00) roam y 48
+\i (00:33:00) roam y 16
+\i (00:33:00) roam y 32
+\i (00:33:00) roam y 32
+\i (00:33:00) roam y 32
+\i (00:33:02) roam end
+\i (00:33:04) move 
+\t (00:33:04) Select element(s) to move.
+\i (00:33:05) drag_start grid -5.371 52.686
+\i (00:33:07) drag_stop 64.915 12.915
+\i (00:33:08) pick grid 8.115 40.915
+\t (00:33:08) last pick:  8.100 40.900
+\t (00:33:08) Moving J2 / RJ45_HR911105A_RJ45_HR911105A_1 / RJ45_HR911105A.
+\t (00:33:08) Moving J1 / RJ45_HR911105A_RJ45_HR911105A_E / RJ45_HR911105A.
+\t (00:33:08) Moving R25 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:08) Moving R29 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:33:08) Moving R31 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:33:08) Moving R33 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:08) Moving R16 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:08) Moving R20 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:08) Moving R22 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:08) Moving R24 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R28 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:08) Moving R32 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R19 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:33:08) Moving R23 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:33:08) Moving C21 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C22 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving R27 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving C17 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C20 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving R18 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:33:08) Moving U1 / KSZ8863RLL_LQFP48_KSZ8863RLL / LQFP48.
+\t (00:33:08) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:33:08) Moving C16 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:33:08) Moving R13 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R12 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R11 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:33:08) Moving R10 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R8 / RESISTOR_SMD_R_0805_11.8K/1% / SMD_R_0805.
+\t (00:33:08) Moving R7 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R6 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R4 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:33:08) Moving C15 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:33:08) Moving C14 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C13 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C12 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C3 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:08) Moving L1 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:33:08) Moving C6 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C9 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C5 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:08) Moving L2 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:33:08) Moving C10 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving R1 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:33:08) Moving R26 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:33:08) Moving R30 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:08) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving C1 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:08) Moving R17 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:08) Moving R21 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:08) Moving R3 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:08) Moving R2 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:33:08) Moving C8 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C2 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Moving C7 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:08) Pick new location for the element(s).
+\i (00:33:13) pick grid 13.486 38.515
+\t (00:33:13) last pick:  13.500 38.500
+\i (00:33:14) pick grid 32.686 11.657
+\t (00:33:14) last pick:  32.700 11.700
+\t (00:33:14) last pick:  32.600 11.500
+\t (00:33:14) Moving C11 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:14) Pick new location for the element(s).
+\i (00:33:15) pick grid 38.515 10.057
+\t (00:33:15) last pick:  38.500 10.100
+\i (00:33:16) roam start
+\i (00:33:16) roam y -224
+\i (00:33:16) roam y -96
+\i (00:33:16) roam x 16
+\i (00:33:16) roam y -48
+\i (00:33:16) roam y -16
+\i (00:33:16) roam y 80
+\i (00:33:16) roam x 16
+\i (00:33:16) roam y 32
+\i (00:33:17) roam y 32
+\i (00:33:17) roam x -64
+\i (00:33:17) roam y 144
+\i (00:33:17) roam x -64
+\i (00:33:17) roam y 208
+\i (00:33:17) roam y 16
+\i (00:33:17) roam y 16
+\i (00:33:17) roam end
+\i (00:33:19) drag_start grid 4.228 46.858
+\i (00:33:24) drag_stop 64.457 11.201
+\i (00:33:25) pick grid 50.857 25.943
+\t (00:33:25) last pick:  50.900 25.900
+\t (00:33:25) Moving J2 / RJ45_HR911105A_RJ45_HR911105A_1 / RJ45_HR911105A.
+\t (00:33:25) Moving J1 / RJ45_HR911105A_RJ45_HR911105A_E / RJ45_HR911105A.
+\t (00:33:25) Moving R25 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:25) Moving R29 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:33:25) Moving R31 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:33:25) Moving R33 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:25) Moving R16 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:25) Moving R20 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:25) Moving R22 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:25) Moving R24 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R28 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:25) Moving R32 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R19 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:33:25) Moving R23 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:33:25) Moving C21 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving C22 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving R27 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving C17 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving C20 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving R18 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:33:25) Moving U1 / KSZ8863RLL_LQFP48_KSZ8863RLL / LQFP48.
+\t (00:33:25) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:33:25) Moving C16 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:33:25) Moving R13 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R12 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R11 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:33:25) Moving R10 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R8 / RESISTOR_SMD_R_0805_11.8K/1% / SMD_R_0805.
+\t (00:33:25) Moving R7 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R6 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving R4 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:33:25) Moving C12 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving C15 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:33:25) Moving C14 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving C3 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:25) Moving C13 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving L1 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:33:25) Moving C6 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving C9 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving C5 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:25) Moving L2 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:33:25) Moving R1 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:33:25) Moving C10 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:25) Moving R26 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:33:25) Moving R30 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:25) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:25) Moving C1 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:25) Moving R17 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:25) Moving R21 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:25) Moving R2 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:33:25) Pick new location for the element(s).
+\i (00:33:28) pick grid 51.314 17.943
+\t (00:33:28) last pick:  51.300 17.900
+\i (00:33:30) pick grid 107.543 14.743
+\t (00:33:30) last pick:  107.500 14.700
+\i (00:33:32) zoom in 1 
+\i (00:33:32) setwindow pcb
+\i (00:33:32) zoom in 98.629 7.886
+\t (00:33:32) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:33:32) trapsize 286
+\i (00:33:34) drag_start grid 60.229 25.772
+\i (00:33:35) drag_stop 87.543 1.829
+\i (00:33:36) pick grid 77.429 9.772
+\t (00:33:36) last pick:  77.400 9.800
+\t (00:33:36) Moving C43 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:36) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:36) Moving C42 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:36) Moving C1 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:36) Moving U4 / AMS1117-33_SOT-223_AMS1117-33 / SOT-223.
+\t (00:33:36) Moving C8 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:36) Moving J9 / C1X2_C1X2_P381_PWR / C1X2_P381.
+\t (00:33:36) Moving C41 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:33:36) Moving D3 / DIODE_DO-214AB_1N5822 / DO-214AB.
+\t (00:33:36) Moving C44 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:36) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:33:36) Pick new location for the element(s).
+\i (00:33:38) pick grid 82.858 9.715
+\t (00:33:38) last pick:  82.900 9.700
+\i (00:33:39) zoom out 1 
+\i (00:33:39) setwindow pcb
+\i (00:33:39) zoom out 62.915 15.144
+\t (00:33:39) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:33:39) trapsize 571
+\i (00:33:40) roam start
+\i (00:33:40) roam x -48
+\i (00:33:40) roam x -192
+\i (00:33:40) roam x -16
+\i (00:33:40) roam end
+\i (00:33:41) zoom in 1 
+\i (00:33:41) setwindow pcb
+\i (00:33:41) zoom in 54.057 34.857
+\t (00:33:41) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:33:41) trapsize 286
+\i (00:33:42) drag_start grid 56.572 43.200
+\i (00:33:43) drag_stop 70.629 29.886
+\i (00:33:43) pick grid 71.372 32.057
+\t (00:33:43) last pick:  71.400 32.100
+\t (00:33:43) Moving C10 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:43) Moving R1 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:33:43) Moving R26 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:33:43) Moving R30 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:43) Moving R17 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:43) Moving R21 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:43) Moving R2 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:33:43) Moving R3 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:43) Moving C2 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:43) Moving C7 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:43) Pick new location for the element(s).
+\i (00:33:44) pick grid 74.972 32.343
+\t (00:33:44) last pick:  75.000 32.300
+\i (00:33:44) roam start
+\i (00:33:44) roam x -32
+\i (00:33:44) roam y 64
+\i (00:33:44) roam x -64
+\i (00:33:44) roam y 80
+\i (00:33:44) roam x -80
+\i (00:33:44) roam y 80
+\i (00:33:44) roam x -48
+\i (00:33:44) roam y 32
+\i (00:33:45) roam x -112
+\i (00:33:45) roam y -64
+\i (00:33:45) roam x -80
+\i (00:33:45) roam y -32
+\i (00:33:45) roam x -16
+\i (00:33:45) roam y -16
+\i (00:33:45) roam end
+\i (00:33:46) zoom out 1 
+\i (00:33:46) setwindow pcb
+\i (00:33:46) zoom out 27.543 28.400
+\t (00:33:46) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:33:46) trapsize 571
+\i (00:33:46) drag_start grid 13.600 44.800
+\i (00:33:48) drag_stop 56.000 2.629
+\i (00:33:49) pick grid 42.857 26.057
+\t (00:33:49) last pick:  42.900 26.100
+\t (00:33:49) Moving J2 / RJ45_HR911105A_RJ45_HR911105A_1 / RJ45_HR911105A.
+\t (00:33:49) Moving J1 / RJ45_HR911105A_RJ45_HR911105A_E / RJ45_HR911105A.
+\t (00:33:49) Moving R25 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:49) Moving R29 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:33:49) Moving R31 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:33:49) Moving R33 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:49) Moving R16 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:49) Moving R20 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:33:49) Moving R22 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:49) Moving R24 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R28 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:33:49) Moving R32 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R19 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:33:49) Moving R23 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:33:49) Moving C21 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C22 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving R27 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving C17 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C20 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving R18 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:33:49) Moving U1 / KSZ8863RLL_LQFP48_KSZ8863RLL / LQFP48.
+\t (00:33:49) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:33:49) Moving C11 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C16 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:33:49) Moving R13 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R12 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R11 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:33:49) Moving R10 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R8 / RESISTOR_SMD_R_0805_11.8K/1% / SMD_R_0805.
+\t (00:33:49) Moving R7 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R6 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:33:49) Moving R4 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:33:49) Moving C15 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:33:49) Moving C14 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C13 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C12 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving L1 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:33:49) Moving C3 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:49) Moving C6 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C9 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:33:49) Moving C5 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:33:49) Moving L2 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:33:49) Pick new location for the element(s).
+\i (00:33:51) pick grid 52.000 25.943
+\t (00:33:51) last pick:  52.000 25.900
+\i (00:33:53) roam start
+\i (00:33:53) roam y -80
+\i (00:33:53) roam y -80
+\i (00:33:53) roam y -32
+\i (00:33:53) roam y -32
+\i (00:33:54) roam end
+\i (00:33:56) drag_start grid 23.200 97.943
+\i (00:33:58) drag_stop 80.572 51.657
+\i (00:34:01) prepopup 78.057 47.886
+\i (00:34:01) oops 
+\t (00:34:01) last pick:  42.900 26.100
+\t (00:34:01) Select element(s) to move.
+\i (00:34:02) roam start
+\i (00:34:02) roam y 48
+\i (00:34:02) roam y 16
+\i (00:34:02) roam y 112
+\i (00:34:02) roam y 48
+\i (00:34:02) roam end
+\i (00:34:03) zoom in 1 
+\i (00:34:03) setwindow pcb
+\i (00:34:03) zoom in 99.086 3.886
+\t (00:34:03) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:34:03) trapsize 286
+\i (00:34:03) pick grid 93.429 13.772
+\t (00:34:03) last pick:  93.400 13.800
+\t (00:34:03) last pick:  92.300 14.600
+\t (00:34:03) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:34:03) Pick new location for the element(s).
+\i (00:34:04) pick grid 89.486 16.686
+\t (00:34:04) last pick:  89.500 16.700
+\i (00:34:05) pick grid 95.886 14.743
+\t (00:34:05) last pick:  95.900 14.700
+\t (00:34:05) last pick:  95.500 14.700
+\t (00:34:05) Moving J6 / MICROUSB_SOCKET_MICROUSB_2FIX_U / MICROUSB_2FIX.
+\t (00:34:05) Pick new location for the element(s).
+\i (00:34:05) pick grid 95.486 12.000
+\t (00:34:05) last pick:  95.500 12.000
+\i (00:34:06) pick grid 94.800 4.972
+\t (00:34:06) last pick:  94.800 5.000
+\w (00:34:06) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:07) pick grid 95.143 4.172
+\t (00:34:07) last pick:  95.100 4.200
+\w (00:34:07) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:09) setwindow form.find
+\i (00:34:09) FORM find pins YES 
+\i (00:34:10) setwindow pcb
+\i (00:34:10) pick grid 94.000 4.857
+\t (00:34:10) last pick:  94.000 4.900
+\w (00:34:10) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:16) setwindow form.find
+\i (00:34:16) FORM find all_on  
+\i (00:34:17) setwindow pcb
+\i (00:34:17) pick grid 95.486 4.972
+\t (00:34:17) last pick:  95.500 5.000
+\w (00:34:17) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:18) prepopup 103.371 7.772
+\i (00:34:19) done 
+\i (00:34:19) generaledit 
+\i (00:34:19) zoom in 1 
+\i (00:34:19) setwindow pcb
+\i (00:34:19) zoom in 95.429 4.572
+\t (00:34:19) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:34:19) trapsize 143
+\i (00:34:19) zoom in 1 
+\i (00:34:19) setwindow pcb
+\i (00:34:19) zoom in 95.429 4.572
+\i (00:34:19) trapsize 71
+\i (00:34:22) move 
+\t (00:34:22) Select element(s) to move.
+\i (00:34:24) pick grid 94.487 5.058
+\t (00:34:24) last pick:  94.500 5.100
+\w (00:34:24) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:30) prepopup 89.101 5.944
+\i (00:34:31) done 
+\i (00:34:31) generaledit 
+\i (00:34:32) move 
+\t (00:34:32) Select element(s) to move.
+\i (00:34:33) pick grid 94.573 5.029
+\t (00:34:33) last pick:  94.600 5.000
+\w (00:34:33) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:34) pick grid 91.701 3.258
+\t (00:34:34) last pick:  91.700 3.300
+\i (00:34:35) pick grid 94.744 4.686
+\t (00:34:35) last pick:  94.700 4.700
+\w (00:34:35) WARNING(SPMHA1-268): There are unmatched pin numbers.
+\i (00:34:38) prepopup 94.744 4.686
+\i (00:34:40) done 
+\i (00:34:40) generaledit 
+\i (00:34:41) delete 
+\i (00:34:43) setwindow form.find
+\i (00:34:43) FORM find all_off  
+\i (00:34:44) FORM find all_on  
+\i (00:34:45) setwindow pcb
+\i (00:34:45) pick grid 94.715 4.386
+\t (00:34:45) last pick:  94.700 4.400
+\t (00:34:45) Symbol "Fix_Hole"
+\i (00:34:45) zoom out 1 
+\i (00:34:45) setwindow pcb
+\i (00:34:45) zoom out 94.773 4.086
+\i (00:34:45) trapsize 143
+\i (00:34:45) zoom out 1 
+\i (00:34:45) setwindow pcb
+\i (00:34:45) zoom out 72.600 1.601
+\t (00:34:45) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:34:45) trapsize 286
+\i (00:34:45) zoom out 1 
+\i (00:34:45) setwindow pcb
+\i (00:34:45) zoom out 72.600 1.601
+\t (00:34:45) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:34:45) trapsize 571
+\i (00:34:46) roam start
+\i (00:34:46) roam x -128
+\i (00:34:46) roam x -432
+\i (00:34:46) roam x -80
+\i (00:34:47) roam end
+\i (00:34:48) pick grid 4.458 4.802
+\t (00:34:48) last pick:  4.500 4.800
+\t (00:34:48) Symbol "Fix_Hole"
+\i (00:34:50) pick grid 6.286 58.403
+\t (00:34:50) last pick:  6.300 58.400
+\t (00:34:50) Symbol "Fix_Hole"
+\i (00:34:50) roam start
+\i (00:34:50) roam y -64
+\i (00:34:50) roam y -192
+\i (00:34:50) roam y -112
+\i (00:34:50) roam y -144
+\i (00:34:50) roam y -64
+\i (00:34:50) roam end
+\i (00:34:51) pick grid 6.172 95.430
+\t (00:34:51) last pick:  6.200 95.400
+\t (00:34:51) Symbol "Fix_Hole"
+\i (00:34:52) pick grid 90.174 95.202
+\t (00:34:52) last pick:  90.200 95.200
+\t (00:34:52) Symbol "Fix_Hole"
+\i (00:34:53) prepopup 67.887 112.459
+\i (00:34:55) done 
+\i (00:34:55) generaledit 
+\i (00:34:55) zoom out 1 
+\i (00:34:55) setwindow pcb
+\i (00:34:55) zoom out 69.487 112.116
+\t (00:34:55) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:34:55) trapsize 1143
+\i (00:34:55) zoom out 1 
+\i (00:34:55) setwindow pcb
+\i (00:34:55) zoom out 155.775 112.117
+\t (00:34:55) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
+\i (00:34:55) trapsize 2286
+\i (00:34:56) zoom in 1 
+\i (00:34:56) setwindow pcb
+\i (00:34:56) zoom in -19.086 1.943
+\t (00:34:56) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:34:56) trapsize 1143
+\i (00:34:56) zoom in 1 
+\i (00:34:56) setwindow pcb
+\i (00:34:56) zoom in -19.086 1.943
+\t (00:34:56) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:34:56) trapsize 571
+\i (00:34:57) roam start
+\i (00:34:57) roam x 32
+\i (00:34:57) roam y 48
+\i (00:34:57) roam x 16
+\i (00:34:57) roam x 16
+\i (00:34:57) roam y 16
+\i (00:34:58) roam x 32
+\i (00:34:58) roam end
+\i (00:34:59) roam start
+\i (00:34:59) roam y -80
+\i (00:34:59) roam end
+\i (00:35:00) move 
+\t (00:35:00) Select element(s) to move.
+\i (00:35:01) setwindow form.find
+\i (00:35:01) FORM find all_off  
+\i (00:35:02) FORM find symbols YES 
+\i (00:35:04) setwindow pcb
+\i (00:35:04) pick grid 95.772 11.315
+\t (00:35:04) last pick:  95.800 11.300
+\t (00:35:04) last pick:  95.500 12.000
+\t (00:35:04) Moving J6 / MICROUSB_SOCKET_MICROUSB_2FIX_U / MICROUSB_2FIX.
+\t (00:35:04) Pick new location for the element(s).
+\i (00:35:04) pick grid 95.772 7.772
+\t (00:35:04) last pick:  95.800 7.800
+\i (00:35:05) drag_start grid 103.886 80.686
+\i (00:35:06) drag_stop 97.257 45.143
+\i (00:35:06) pick grid 97.257 45.143
+\t (00:35:06) last pick:  97.300 45.100
+\t (00:35:06) Moving J4 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:35:06) Moving J5 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:35:06) Pick new location for the element(s).
+\i (00:35:08) pick grid 97.600 32.686
+\t (00:35:08) last pick:  97.600 32.700
+\i (00:35:09) pick grid 107.314 48.915
+\t (00:35:09) last pick:  107.300 48.900
+\i (00:35:09) pick grid 97.600 58.058
+\t (00:35:09) last pick:  97.600 58.100
+\t (00:35:09) last pick:  97.300 52.600
+\t (00:35:09) Moving J5 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:35:09) Pick new location for the element(s).
+\i (00:35:11) pick grid 97.372 49.258
+\t (00:35:11) last pick:  97.400 49.300
+\i (00:35:11) roam start
+\i (00:35:11) roam x -64
+\i (00:35:11) roam y -128
+\i (00:35:11) roam x -16
+\i (00:35:11) roam y -48
+\i (00:35:12) roam y -32
+\i (00:35:13) roam end
+\i (00:35:14) drag_start grid 19.771 97.143
+\i (00:35:18) drag_stop 90.971 45.143
+\i (00:35:19) pick grid 58.171 74.514
+\t (00:35:19) last pick:  58.200 74.500
+\t (00:35:19) Moving Y2 / CRYSTAL-4PIN_1_SMD3225_CRYSTA_1 / SMD3225_CRYSTAL.
+\t (00:35:19) Moving R43 / RESISTOR_SMD_R_0805_1M / SMD_R_0805.
+\t (00:35:19) Moving L6 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:19) Moving L5 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:19) Moving C28 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:35:19) Moving C34 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C33 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C25 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C36 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving MCU1 / STM32F407VET_LQFP100_STM32F407V / LQFP100.
+\t (00:35:19) Moving C31 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:35:19) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:35:19) Moving C47 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C46 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C45 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C27 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving R42 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:19) Moving R48 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:19) Moving R49 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:19) Moving C35 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:19) Moving C30 / CAP_SMD_C_1206_1NF/2KV / SMD_C_1206.
+\t (00:35:19) Moving R46 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:19) Moving C29 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:19) Moving C26 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:35:19) Moving C38 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving C37 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving R38 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:19) Moving C40 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving R40 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:19) Moving C39 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:35:19) Moving R44 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:19) Moving U2 / PS2801-4/SM_SOP16_PS2801-4/SM / SOP16.
+\t (00:35:19) Moving R45 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:19) Moving C23 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:19) Moving D1 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:35:19) Moving R34 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:35:19) Moving R41 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:35:19) Moving R47 / RESISTOR_SMD_R_0805_1.5K / SMD_R_0805.
+\t (00:35:19) Moving L3 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:19) Pick new location for the element(s).
+\i (00:35:23) pick grid 56.914 65.714
+\t (00:35:23) last pick:  56.900 65.700
+\i (00:35:24) drag_start grid 19.086 91.771
+\i (00:35:27) drag_stop 89.943 48.228
+\i (00:35:28) pick grid 51.543 64.457
+\t (00:35:28) last pick:  51.500 64.500
+\t (00:35:28) Moving Y2 / CRYSTAL-4PIN_1_SMD3225_CRYSTA_1 / SMD3225_CRYSTAL.
+\t (00:35:28) Moving L6 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:28) Moving R43 / RESISTOR_SMD_R_0805_1M / SMD_R_0805.
+\t (00:35:28) Moving L5 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:28) Moving C28 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:35:28) Moving C34 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C33 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C25 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C36 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving MCU1 / STM32F407VET_LQFP100_STM32F407V / LQFP100.
+\t (00:35:28) Moving C46 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C45 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C31 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:35:28) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:35:28) Moving C47 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C27 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving R42 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:28) Moving R48 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:28) Moving R49 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:28) Moving C35 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:28) Moving C30 / CAP_SMD_C_1206_1NF/2KV / SMD_C_1206.
+\t (00:35:28) Moving R46 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:28) Moving C26 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C29 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:28) Moving C38 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C37 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C40 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving C39 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:35:28) Moving R38 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:28) Moving R40 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:28) Moving U2 / PS2801-4/SM_SOP16_PS2801-4/SM / SOP16.
+\t (00:35:28) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:35:28) Moving R44 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:28) Moving D1 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:35:28) Moving C23 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:28) Moving R41 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:35:28) Moving L3 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:28) Pick new location for the element(s).
+\i (00:35:30) pick grid 51.771 56.457
+\t (00:35:30) last pick:  51.800 56.500
+\i (00:35:32) zoom in 1 
+\i (00:35:32) setwindow pcb
+\i (00:35:32) zoom in 58.857 76.800
+\t (00:35:32) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:35:32) trapsize 286
+\i (00:35:33) pick grid 56.343 79.886
+\t (00:35:33) last pick:  56.300 79.900
+\t (00:35:33) last pick:  44.000 80.700
+\t (00:35:33) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:35:33) Pick new location for the element(s).
+\i (00:35:34) pick grid 43.829 77.657
+\t (00:35:34) last pick:  43.800 77.700
+\i (00:35:35) pick grid 68.057 78.229
+\t (00:35:35) last pick:  68.100 78.200
+\t (00:35:35) last pick:  67.300 79.900
+\t (00:35:35) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:35:35) Pick new location for the element(s).
+\i (00:35:37) pick grid 64.857 78.800
+\t (00:35:37) last pick:  64.900 78.800
+\i (00:35:38) pick grid 74.343 69.429
+\t (00:35:38) last pick:  74.300 69.400
+\t (00:35:38) last pick:  78.700 66.500
+\t (00:35:38) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:35:38) Pick new location for the element(s).
+\i (00:35:39) pick grid 76.400 64.858
+\t (00:35:39) last pick:  76.400 64.900
+\i (00:35:40) zoom out 1 
+\i (00:35:40) setwindow pcb
+\i (00:35:40) zoom out 76.400 64.858
+\t (00:35:40) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:35:40) trapsize 571
+\i (00:35:40) roam start
+\i (00:35:40) roam y 16
+\i (00:35:40) roam y 48
+\i (00:35:40) roam y 64
+\i (00:35:40) roam y 112
+\i (00:35:40) roam y 32
+\i (00:35:41) roam y 144
+\i (00:35:41) roam y 48
+\i (00:35:41) roam end
+\i (00:35:43) roam start
+\i (00:35:43) roam y -176
+\i (00:35:43) roam y -48
+\i (00:35:44) roam y 32
+\i (00:35:44) roam end
+\i (00:35:44) zoom out 1 
+\i (00:35:44) setwindow pcb
+\i (00:35:44) zoom out 110.172 29.486
+\t (00:35:44) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:35:44) trapsize 1143
+\i (00:35:45) drag_start grid 112.800 84.457
+\i (00:35:47) drag_stop 12.457 -11.086
+\i (00:35:48) pick grid 24.343 5.829
+\t (00:35:48) last pick:  24.300 5.800
+\t (00:35:48) Moving J2 / RJ45_HR911105A_RJ45_HR911105A_1 / RJ45_HR911105A.
+\t (00:35:48) Moving J1 / RJ45_HR911105A_RJ45_HR911105A_E / RJ45_HR911105A.
+\t (00:35:48) Moving Y2 / CRYSTAL-4PIN_1_SMD3225_CRYSTA_1 / SMD3225_CRYSTAL.
+\t (00:35:48) Moving R25 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:48) Moving R29 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:35:48) Moving R31 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:35:48) Moving R33 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:48) Moving R16 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:35:48) Moving R20 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:35:48) Moving R22 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:48) Moving R24 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R28 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:48) Moving R32 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R19 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:35:48) Moving R23 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:35:48) Moving R43 / RESISTOR_SMD_R_0805_1M / SMD_R_0805.
+\t (00:35:48) Moving C21 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C22 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving R27 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving C17 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C20 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving R18 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:35:48) Moving L6 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:48) Moving L5 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:48) Moving C28 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:35:48) Moving C34 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C33 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C25 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C36 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving U1 / KSZ8863RLL_LQFP48_KSZ8863RLL / LQFP48.
+\t (00:35:48) Moving C45 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving MCU1 / STM32F407VET_LQFP100_STM32F407V / LQFP100.
+\t (00:35:48) Moving C31 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:35:48) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:35:48) Moving C11 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:35:48) Moving C16 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:35:48) Moving C47 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C46 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C27 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving R42 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:48) Moving R48 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:48) Moving R13 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R12 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R11 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:48) Moving R10 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R8 / RESISTOR_SMD_R_0805_11.8K/1% / SMD_R_0805.
+\t (00:35:48) Moving R7 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R6 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R4 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:35:48) Moving R49 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:48) Moving C15 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:35:48) Moving C14 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C13 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C12 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C35 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:48) Moving C3 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:35:48) Moving C6 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C9 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C10 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C30 / CAP_SMD_C_1206_1NF/2KV / SMD_C_1206.
+\t (00:35:48) Moving R46 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:48) Moving L1 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:48) Moving C5 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:35:48) Moving R1 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:48) Moving R30 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:48) Moving C29 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:48) Moving C26 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving L2 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:48) Moving R26 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:35:48) Moving R21 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:35:48) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:35:48) Moving C43 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:35:48) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R17 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:35:48) Moving R2 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:35:48) Moving C38 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C37 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C40 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C39 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving C42 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:35:48) Moving C1 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:35:48) Moving C2 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:48) Moving R3 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:35:48) Moving R38 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:48) Moving R40 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:49) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:35:49) Moving U4 / AMS1117-33_SOT-223_AMS1117-33 / SOT-223.
+\t (00:35:49) Moving R44 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:35:49) Moving C8 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:49) Moving C7 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:49) Moving U2 / PS2801-4/SM_SOP16_PS2801-4/SM / SOP16.
+\t (00:35:49) Moving J9 / C1X2_C1X2_P381_PWR / C1X2_P381.
+\t (00:35:49) Moving C41 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:35:49) Moving J3 / C1X3_C1X3_PWR_SELECT / C1X3.
+\t (00:35:49) Moving D1 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:35:49) Moving D3 / DIODE_DO-214AB_1N5822 / DO-214AB.
+\t (00:35:49) Moving C44 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:49) Moving L4 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:49) Moving R37 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:35:49) Moving R45 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:35:49) Moving C23 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:49) Moving R41 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:35:49) Moving C24 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:35:49) Moving R34 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:35:49) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:35:49) Moving R36 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:35:49) Moving D2 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:35:49) Moving R39 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:35:49) Moving L3 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:35:49) Moving R47 / RESISTOR_SMD_R_0805_1.5K / SMD_R_0805.
+\t (00:35:49) Moving J6 / MICROUSB_SOCKET_MICROUSB_2FIX_U / MICROUSB_2FIX.
+\t (00:35:49) Moving J4 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:35:49) Moving J5 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:35:49) Pick new location for the element(s).
+\i (00:35:52) pick grid 9.714 6.743
+\t (00:35:52) last pick:  9.700 6.700
+\i (00:35:53) zoom in 1 
+\i (00:35:53) setwindow pcb
+\i (00:35:53) zoom in 63.886 0.800
+\t (00:35:53) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:35:53) trapsize 571
+\i (00:35:54) prepopup 99.429 30.514
+\i (00:35:55) done 
+\i (00:35:56) generaledit 
+\i (00:35:56) zoom in 1 
+\i (00:35:56) setwindow pcb
+\i (00:35:56) zoom in 82.400 0.229
+\t (00:35:56) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:35:56) trapsize 286
+\i (00:36:03) zoom out 1 
+\i (00:36:03) setwindow pcb
+\i (00:36:03) zoom out 84.400 4.458
+\t (00:36:03) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:36:03) trapsize 571
+\i (00:36:04) roam start
+\i (00:36:04) roam x -96
+\i (00:36:04) roam y -64
+\i (00:36:04) roam x -144
+\i (00:36:04) roam y -128
+\i (00:36:04) roam x -48
+\i (00:36:04) roam y -32
+\i (00:36:05) roam end
+\i (00:36:11) roam start
+\i (00:36:11) roam y 16
+\i (00:36:11) roam x -16
+\i (00:36:11) roam y 16
+\i (00:36:11) roam x -32
+\i (00:36:11) roam y 80
+\i (00:36:11) roam y 32
+\i (00:36:11) roam end
+\i (00:36:14) roam start
+\i (00:36:15) roam y -80
+\i (00:36:15) roam end
+\i (00:36:21) roam start
+\i (00:36:21) roam y 80
+\i (00:36:21) roam y 128
+\i (00:36:22) roam end
+\i (00:36:57) move 
+\t (00:36:57) Select element(s) to move.
+\i (00:36:58) pick grid 83.658 10.743
+\t (00:36:58) last pick:  83.700 10.700
+\t (00:36:58) last pick:  81.200 8.700
+\t (00:36:58) Moving J6 / MICROUSB_SOCKET_MICROUSB_2FIX_U / MICROUSB_2FIX.
+\t (00:36:58) Pick new location for the element(s).
+\i (00:37:02) prepopup 78.743 4.343
+\i (00:37:11) pick grid 79.086 5.372
+\t (00:37:11) last pick:  79.100 5.400
+\i (00:37:11) roam start
+\i (00:37:11) roam y -16
+\i (00:37:11) roam x 48
+\i (00:37:11) roam y -128
+\i (00:37:12) roam end
+\i (00:37:13) drag_start grid 89.828 56.572
+\i (00:37:13) drag_stop 81.486 33.943
+\i (00:37:14) pick grid 81.486 33.943
+\t (00:37:14) last pick:  81.500 33.900
+\t (00:37:14) Moving J4 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:37:14) Moving J5 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:37:14) Pick new location for the element(s).
+\i (00:37:17) pick grid 79.886 30.743
+\t (00:37:17) last pick:  79.900 30.700
+\i (00:37:23) drag_start grid 110.628 82.515
+\i (00:37:23) roam y 16
+\i (00:37:23) roam y 16
+\i (00:37:23) roam y 32
+\i (00:37:23) roam y 16
+\i (00:37:23) roam y 16
+\i (00:37:23) roam y 16
+\i (00:37:23) roam y 16
+\i (00:37:24) drag_stop -0.915 -1.600
+\i (00:37:25) pick grid 9.942 7.543
+\t (00:37:25) last pick:  9.900 7.500
+\t (00:37:25) Moving J2 / RJ45_HR911105A_RJ45_HR911105A_1 / RJ45_HR911105A.
+\t (00:37:25) Moving J1 / RJ45_HR911105A_RJ45_HR911105A_E / RJ45_HR911105A.
+\t (00:37:25) Moving Y2 / CRYSTAL-4PIN_1_SMD3225_CRYSTA_1 / SMD3225_CRYSTAL.
+\t (00:37:25) Moving R29 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:37:25) Moving R25 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving R31 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:37:25) Moving R33 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving R20 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:37:25) Moving R16 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:37:25) Moving R22 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving R24 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R43 / RESISTOR_SMD_R_0805_1M / SMD_R_0805.
+\t (00:37:25) Moving R28 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving R32 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R19 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:37:25) Moving R23 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:37:25) Moving L6 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:37:25) Moving C21 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C22 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving R27 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving C17 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C20 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving R18 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:37:25) Moving L5 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:37:25) Moving C28 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:37:25) Moving C34 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C33 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C25 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C36 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving U1 / KSZ8863RLL_LQFP48_KSZ8863RLL / LQFP48.
+\t (00:37:25) Moving MCU1 / STM32F407VET_LQFP100_STM32F407V / LQFP100.
+\t (00:37:25) Moving C31 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:37:25) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:37:25) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:37:25) Moving C47 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C46 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C45 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C27 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C11 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C16 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:37:25) Moving R42 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:37:25) Moving R48 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:37:25) Moving R13 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R12 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R11 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:37:25) Moving R10 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R8 / RESISTOR_SMD_R_0805_11.8K/1% / SMD_R_0805.
+\t (00:37:25) Moving R7 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R6 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving R4 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:37:25) Moving R49 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:37:25) Moving C15 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:37:25) Moving C14 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C3 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:37:25) Moving C13 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C12 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C35 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:37:25) Moving L1 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:37:25) Moving C9 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C6 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C5 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:37:25) Moving R1 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:37:25) Moving C10 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C30 / CAP_SMD_C_1206_1NF/2KV / SMD_C_1206.
+\t (00:37:25) Moving R46 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:37:25) Moving C29 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:37:25) Moving C26 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving L2 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:37:25) Moving R26 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:37:25) Moving R30 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:37:25) Moving R17 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:37:25) Moving R21 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:37:25) Moving C43 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:37:25) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving C1 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:37:25) Moving R2 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:37:25) Moving R3 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:37:25) Moving C38 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C37 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C40 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C39 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:37:25) Moving C42 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:37:25) Moving C2 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving R38 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving R40 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving U4 / AMS1117-33_SOT-223_AMS1117-33 / SOT-223.
+\t (00:37:25) Moving C8 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving C7 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving U2 / PS2801-4/SM_SOP16_PS2801-4/SM / SOP16.
+\t (00:37:25) Moving R44 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:37:25) Moving C41 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:37:25) Moving J9 / C1X2_C1X2_P381_PWR / C1X2_P381.
+\t (00:37:25) Moving D3 / DIODE_DO-214AB_1N5822 / DO-214AB.
+\t (00:37:25) Moving C44 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving J3 / C1X3_C1X3_PWR_SELECT / C1X3.
+\t (00:37:25) Moving C23 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving D1 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:37:25) Moving R37 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:37:25) Moving L4 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:37:25) Moving R34 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:37:25) Moving R45 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:37:25) Moving R41 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:37:25) Moving D2 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:37:25) Moving C24 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:37:25) Moving L3 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:37:25) Moving R47 / RESISTOR_SMD_R_0805_1.5K / SMD_R_0805.
+\t (00:37:25) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:37:25) Moving R36 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:37:25) Moving R39 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:37:25) Moving J6 / MICROUSB_SOCKET_MICROUSB_2FIX_U / MICROUSB_2FIX.
+\t (00:37:25) Moving J4 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:37:25) Moving J5 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:37:25) Pick new location for the element(s).
+\i (00:37:28) pick grid 8.114 7.314
+\t (00:37:28) last pick:  8.100 7.300
+\i (00:37:29) roam start
+\i (00:37:29) roam y -144
+\i (00:37:29) roam y -128
+\i (00:37:29) roam y -16
+\i (00:37:30) roam y 16
+\i (00:37:30) roam x -16
+\i (00:37:30) roam y 16
+\i (00:37:31) roam end
+\i (00:37:32) zoom in 1 
+\i (00:37:32) setwindow pcb
+\i (00:37:32) zoom in 46.629 65.372
+\t (00:37:32) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:37:32) trapsize 286
+\i (00:37:33) zoom out 1 
+\i (00:37:33) setwindow pcb
+\i (00:37:33) zoom out 55.086 53.829
+\t (00:37:33) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:37:33) trapsize 571
+\i (00:37:34) zoom in 1 
+\i (00:37:34) setwindow pcb
+\i (00:37:34) zoom in 1.600 47.086
+\t (00:37:34) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:37:34) trapsize 286
+\i (00:37:37) pick grid 37.486 77.144
+\t (00:37:37) last pick:  37.500 77.100
+\t (00:37:37) last pick:  27.400 78.400
+\t (00:37:37) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:37:37) Pick new location for the element(s).
+\i (00:37:39) pick grid 27.143 76.972
+\t (00:37:39) last pick:  27.100 77.000
+\i (00:37:40) pick grid 48.857 74.401
+\t (00:37:40) last pick:  48.900 74.400
+\t (00:37:40) last pick:  48.500 79.500
+\t (00:37:40) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:37:40) Pick new location for the element(s).
+\i (00:37:42) pick grid 45.828 76.515
+\t (00:37:42) last pick:  45.800 76.500
+\i (00:37:44) zoom out 1 
+\i (00:37:44) setwindow pcb
+\i (00:37:44) zoom out 42.514 64.858
+\t (00:37:44) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:37:44) trapsize 571
+\i (00:38:00) roam start
+\i (00:38:00) roam y 96
+\i (00:38:01) roam y 80
+\i (00:38:01) roam y 16
+\i (00:38:01) roam end
+\i (00:38:09) drag_start grid 24.914 36.915
+\i (00:38:13) drag_stop 55.543 4.000
+\i (00:38:13) pick grid 36.000 27.657
+\t (00:38:13) last pick:  36.000 27.700
+\t (00:38:13) Moving U1 / KSZ8863RLL_LQFP48_KSZ8863RLL / LQFP48.
+\t (00:38:13) Moving C11 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving Y1 / CRYSTAL-4PIN_1_SMD3225_CRYSTAL_ / SMD3225_CRYSTAL.
+\t (00:38:13) Moving C16 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:38:13) Moving R13 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:38:13) Moving R12 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:38:13) Moving R11 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:38:13) Moving R10 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:38:13) Moving R8 / RESISTOR_SMD_R_0805_11.8K/1% / SMD_R_0805.
+\t (00:38:13) Moving R7 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:38:13) Moving R6 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:38:13) Moving R4 / RESISTOR_SMD_R_0805_4.7K / SMD_R_0805.
+\t (00:38:13) Moving C15 / CAP NP_SMD_C_0805_18PF / SMD_C_0805.
+\t (00:38:13) Moving C14 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving C13 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving C12 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving C3 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:38:13) Moving C6 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving C9 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving C10 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Moving L1 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:38:13) Moving C5 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:38:13) Moving L2 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:38:13) Moving R1 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:38:13) Moving R30 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:38:13) Moving R26 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:38:13) Moving R21 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:38:13) Moving C43 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:38:13) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:38:13) Moving R17 / RESISTOR_SMD_R_0805_220R / SMD_R_0805.
+\t (00:38:13) Moving R2 / RESISTOR_SMD_R_0805_1K / SMD_R_0805.
+\t (00:38:13) Moving C42 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:38:13) Moving C1 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:38:13) Moving C2 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:13) Pick new location for the element(s).
+\i (00:38:15) pick grid 35.886 24.229
+\t (00:38:15) last pick:  35.900 24.200
+\i (00:38:16) roam start
+\i (00:38:16) roam y -112
+\i (00:38:16) roam y -48
+\i (00:38:16) roam end
+\i (00:38:19) drag_start grid 8.114 67.429
+\i (00:38:22) drag_stop 46.286 45.258
+\i (00:38:24) drag_start grid tgl 42.972 36.343
+\i (00:38:24) drag_stop tgl 24.114 50.972
+\i (00:38:26) pick grid 33.943 56.229
+\t (00:38:26) last pick:  33.900 56.200
+\t (00:38:26) Moving C46 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:26) Moving C45 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:26) Moving MCU1 / STM32F407VET_LQFP100_STM32F407V / LQFP100.
+\t (00:38:26) Moving C47 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:26) Moving C27 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:26) Moving R48 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:38:26) Moving R49 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:38:26) Moving C35 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:38:26) Moving C30 / CAP_SMD_C_1206_1NF/2KV / SMD_C_1206.
+\t (00:38:26) Pick new location for the element(s).
+\i (00:38:30) pick grid 34.057 50.515
+\t (00:38:30) last pick:  34.100 50.500
+\i (00:38:31) pick grid 46.972 49.258
+\t (00:38:31) last pick:  47.000 49.300
+\t (00:38:31) last pick:  44.100 49.900
+\t (00:38:31) Moving R46 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:38:31) Pick new location for the element(s).
+\i (00:38:31) pick grid 46.514 45.943
+\t (00:38:31) last pick:  46.500 45.900
+\i (00:38:32) drag_start grid 7.314 67.086
+\i (00:38:33) drag_stop 23.657 49.029
+\i (00:38:34) pick grid 23.086 51.658
+\t (00:38:34) last pick:  23.100 51.700
+\t (00:38:34) Moving Y2 / CRYSTAL-4PIN_1_SMD3225_CRYSTA_1 / SMD3225_CRYSTAL.
+\t (00:38:34) Moving L6 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:38:34) Moving R43 / RESISTOR_SMD_R_0805_1M / SMD_R_0805.
+\t (00:38:34) Moving L5 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:38:34) Moving C28 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:38:34) Moving C34 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:34) Moving C33 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:34) Moving C25 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:34) Pick new location for the element(s).
+\i (00:38:35) pick grid 22.743 46.401
+\t (00:38:35) last pick:  22.700 46.400
+\i (00:38:36) zoom in 1 
+\i (00:38:36) setwindow pcb
+\i (00:38:36) zoom in 32.229 58.629
+\t (00:38:36) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:38:36) trapsize 286
+\i (00:38:36) zoom in 1 
+\i (00:38:36) setwindow pcb
+\i (00:38:36) zoom in 32.229 58.629
+\t (00:38:36) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:38:36) trapsize 143
+\i (00:38:37) zoom out 1 
+\i (00:38:37) setwindow pcb
+\i (00:38:37) zoom out 32.229 58.629
+\t (00:38:37) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:38:37) trapsize 286
+\i (00:38:37) zoom out 1 
+\i (00:38:37) setwindow pcb
+\i (00:38:37) zoom out 32.229 58.629
+\t (00:38:37) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:38:37) trapsize 571
+\i (00:38:39) zoom in 1 
+\i (00:38:39) setwindow pcb
+\i (00:38:39) zoom in 46.058 44.001
+\t (00:38:39) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:38:39) trapsize 286
+\i (00:38:40) roam start
+\i (00:38:40) roam x -96
+\i (00:38:40) roam x -176
+\i (00:38:40) roam x -128
+\i (00:38:40) roam end
+\i (00:38:41) zoom out 1 
+\i (00:38:41) setwindow pcb
+\i (00:38:41) zoom out 56.971 43.429
+\t (00:38:41) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:38:41) trapsize 571
+\i (00:38:43) drag_start grid 20.114 80.115
+\i (00:38:43) drag_stop 38.972 67.658
+\i (00:38:44) pick grid 36.572 75.773
+\t (00:38:44) last pick:  36.600 75.800
+\t (00:38:44) Moving C36 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:44) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:38:44) Moving R42 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:38:44) Pick new location for the element(s).
+\i (00:38:45) pick grid 36.114 71.773
+\t (00:38:45) last pick:  36.100 71.800
+\i (00:38:47) drag_start grid 43.543 69.144
+\i (00:38:47) drag_stop 46.629 63.887
+\i (00:38:47) pick grid 46.514 65.487
+\t (00:38:47) last pick:  46.500 65.500
+\t (00:38:47) Moving C26 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:38:47) Moving C29 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:38:47) Pick new location for the element(s).
+\i (00:38:48) pick grid 48.114 55.087
+\t (00:38:48) last pick:  48.100 55.100
+\i (00:38:49) pick grid 49.600 73.601
+\t (00:38:49) last pick:  49.600 73.600
+\t (00:38:49) last pick:  45.800 76.500
+\t (00:38:49) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:38:49) Pick new location for the element(s).
+\i (00:38:50) pick grid 43.772 72.573
+\t (00:38:50) last pick:  43.800 72.600
+\i (00:38:51) pick grid 55.772 66.401
+\t (00:38:51) last pick:  55.800 66.400
+\t (00:38:51) last pick:  60.000 65.600
+\t (00:38:51) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:38:51) Pick new location for the element(s).
+\i (00:38:53) pick grid 59.886 65.258
+\t (00:38:53) last pick:  59.900 65.300
+\i (00:38:53) pick grid 56.800 78.858
+\t (00:38:53) last pick:  56.800 78.900
+\t (00:38:53) last pick:  56.700 78.700
+\t (00:38:53) Moving R44 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:38:53) Pick new location for the element(s).
+\i (00:38:56) pick grid 50.057 70.858
+\t (00:38:56) last pick:  50.100 70.900
+\i (00:39:00) roam start
+\i (00:39:00) roam y 64
+\i (00:39:00) roam y 112
+\i (00:39:00) roam y 16
+\i (00:39:01) roam y -32
+\i (00:39:01) roam end
+\i (00:39:04) drag_start grid 48.457 13.257
+\i (00:39:05) drag_stop 70.515 -0.686
+\i (00:39:06) pick grid 70.172 10.057
+\t (00:39:06) last pick:  70.200 10.100
+\t (00:39:06) Moving C43 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:39:06) Moving R14 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:39:06) Moving C42 / CAP NP_SMD_C_0805_47UF / SMD_C_0805.
+\t (00:39:06) Moving U4 / AMS1117-33_SOT-223_AMS1117-33 / SOT-223.
+\t (00:39:06) Moving J9 / C1X2_C1X2_P381_PWR / C1X2_P381.
+\t (00:39:06) Moving D3 / DIODE_DO-214AB_1N5822 / DO-214AB.
+\t (00:39:06) Pick new location for the element(s).
+\i (00:39:07) pick grid 65.600 10.057
+\t (00:39:07) last pick:  65.600 10.100
+\i (00:39:08) drag_start grid 60.914 21.486
+\i (00:39:09) drag_stop 75.429 17.028
+\i (00:39:09) pick grid 74.400 17.143
+\t (00:39:09) last pick:  74.400 17.100
+\t (00:39:09) Moving C41 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:39:09) Moving C44 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:09) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:39:09) Pick new location for the element(s).
+\i (00:39:10) pick grid 70.629 17.943
+\t (00:39:10) last pick:  70.600 17.900
+\i (00:39:11) drag_start grid 61.714 45.943
+\i (00:39:12) drag_stop 73.143 28.114
+\i (00:39:13) pick grid 72.457 31.543
+\t (00:39:13) last pick:  72.500 31.500
+\t (00:39:13) Moving J3 / C1X3_C1X3_PWR_SELECT / C1X3.
+\t (00:39:13) Moving D1 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:39:13) Moving L4 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:39:13) Moving R37 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:39:13) Moving R45 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:39:13) Moving C23 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:13) Moving C24 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:13) Moving R34 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:39:13) Moving L3 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:39:13) Moving R36 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:39:13) Moving D2 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:39:13) Moving R39 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:39:13) Moving R47 / RESISTOR_SMD_R_0805_1.5K / SMD_R_0805.
+\t (00:39:13) Pick new location for the element(s).
+\i (00:39:15) pick grid 67.772 30.400
+\t (00:39:15) last pick:  67.800 30.400
+\i (00:39:17) pick grid 69.486 17.714
+\t (00:39:17) last pick:  69.500 17.700
+\t (00:39:17) last pick:  69.300 18.200
+\t (00:39:17) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:39:17) Pick new location for the element(s).
+\i (00:39:18) pick grid 66.972 17.943
+\t (00:39:18) last pick:  67.000 17.900
+\i (00:39:20) pick grid 90.172 60.343
+\t (00:39:20) last pick:  90.200 60.300
+\i (00:39:20) drag_start grid 90.172 60.343
+\i (00:39:21) drag_stop 78.857 -3.886
+\i (00:39:22) pick grid 79.772 3.657
+\t (00:39:22) last pick:  79.800 3.700
+\t (00:39:22) Moving J6 / MICROUSB_SOCKET_MICROUSB_2FIX_U / MICROUSB_2FIX.
+\t (00:39:22) Moving J4 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:39:22) Moving J5 / C1X8GEN_C1X8_P381_4~20MA / C1X8_P381.
+\t (00:39:22) Pick new location for the element(s).
+\i (00:39:24) pick grid 74.400 4.000
+\t (00:39:24) last pick:  74.400 4.000
+\i (00:39:25) pick grid 68.343 59.771
+\t (00:39:25) last pick:  68.300 59.800
+\t (00:39:25) last pick:  68.100 59.700
+\t (00:39:25) Moving R41 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:39:25) Pick new location for the element(s).
+\i (00:39:26) pick grid 64.343 62.057
+\t (00:39:26) last pick:  64.300 62.100
+\i (00:39:34) prepopup 78.743 29.600
+\i (00:39:34) done 
+\i (00:39:34) generaledit 
+\i (00:39:35) zoom out 1 
+\i (00:39:35) setwindow pcb
+\i (00:39:35) zoom out 33.257 23.886
+\t (00:39:35) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:39:35) trapsize 1143
+\i (00:39:41) zoom in 1 
+\i (00:39:41) setwindow pcb
+\i (00:39:41) zoom in 3.314 60.914
+\t (00:39:41) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:39:41) trapsize 571
+\i (00:39:44) move 
+\t (00:39:44) Select element(s) to move.
+\i (00:39:45) roam start
+\i (00:39:45) roam x -80
+\i (00:39:45) roam y 48
+\i (00:39:45) roam end
+\i (00:39:46) drag_start grid 7.314 75.657
+\i (00:39:49) drag_stop 55.086 45.143
+\i (00:39:50) pick grid 32.686 51.886
+\t (00:39:50) last pick:  32.700 51.900
+\t (00:39:50) Moving Y2 / CRYSTAL-4PIN_1_SMD3225_CRYSTA_1 / SMD3225_CRYSTAL.
+\t (00:39:50) Moving R43 / RESISTOR_SMD_R_0805_1M / SMD_R_0805.
+\t (00:39:50) Moving L6 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:39:50) Moving L5 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:39:50) Moving C28 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:39:50) Moving C34 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C33 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C25 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C36 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C31 / CAP NP_SMD_C_0805_22PF / SMD_C_0805.
+\t (00:39:50) Moving MCU1 / STM32F407VET_LQFP100_STM32F407V / LQFP100.
+\t (00:39:50) Moving J7 / C1X6GEN_C1X6_RELAY / C1X6.
+\t (00:39:50) Moving C27 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving R42 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:39:50) Moving J8 / C2X3_C2X3_SWD / C2X3.
+\t (00:39:50) Moving R46 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:39:50) Moving C29 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:39:50) Moving C26 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving R44 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:39:50) Moving C38 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C37 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C40 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving C39 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:50) Moving R38 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:39:50) Moving R40 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:39:50) Moving U3 / GD25Q64C_SOIC8_208MIL_W25Q64 / SOIC8_208MIL.
+\t (00:39:50) Pick new location for the element(s).
+\i (00:39:52) pick grid 26.400 51.543
+\t (00:39:52) last pick:  26.400 51.500
+\i (00:39:54) drag_start grid 25.600 41.371
+\i (00:39:56) drag_stop 43.886 34.971
+\i (00:39:57) pick grid 43.543 39.657
+\t (00:39:57) last pick:  43.500 39.700
+\t (00:39:57) Moving C45 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:57) Moving C46 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:57) Moving C47 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:39:57) Moving R48 / RESISTOR_SMD_R_0805_10K / SMD_R_0805.
+\t (00:39:57) Moving R49 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:39:57) Moving C35 / CAP NP_SMD_C_0805_10UF / SMD_C_0805.
+\t (00:39:57) Moving C30 / CAP_SMD_C_1206_1NF/2KV / SMD_C_1206.
+\t (00:39:57) Pick new location for the element(s).
+\i (00:40:00) pick grid 40.114 40.228
+\t (00:40:00) last pick:  40.100 40.200
+\i (00:40:01) roam start
+\i (00:40:01) roam y 16
+\i (00:40:01) roam y 32
+\i (00:40:01) roam x -16
+\i (00:40:01) roam y 80
+\i (00:40:01) roam y 16
+\i (00:40:01) roam end
+\i (00:40:02) pick grid 53.371 38.972
+\t (00:40:02) last pick:  53.400 39.000
+\t (00:40:02) last pick:  53.000 40.300
+\t (00:40:02) Moving R3 / RESISTOR_SMD_R_0805_51R / SMD_R_0805.
+\t (00:40:02) Pick new location for the element(s).
+\i (00:40:04) pick grid 46.514 39.429
+\t (00:40:04) last pick:  46.500 39.400
+\i (00:40:06) pick grid 62.285 52.572
+\t (00:40:06) last pick:  62.300 52.600
+\t (00:40:06) last pick:  64.600 49.900
+\t (00:40:06) Moving U2 / PS2801-4/SM_SOP16_PS2801-4/SM / SOP16.
+\t (00:40:06) Pick new location for the element(s).
+\i (00:40:08) pick grid 59.543 50.172
+\t (00:40:08) last pick:  59.500 50.200
+\i (00:40:10) drag_start grid 58.857 44.686
+\i (00:40:11) drag_stop 70.057 38.400
+\i (00:40:11) pick grid 68.686 38.400
+\t (00:40:11) last pick:  68.700 38.400
+\t (00:40:11) Moving D1 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:40:11) Moving R45 / RESISTOR_SMD_R_0805_22R / SMD_R_0805.
+\t (00:40:11) Moving C23 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:40:11) Moving R34 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:40:11) Moving R39 / RESISTOR_SMD_R_0805_150R / SMD_R_0805.
+\t (00:40:11) Moving L3 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:40:11) Moving R47 / RESISTOR_SMD_R_0805_1.5K / SMD_R_0805.
+\t (00:40:11) Pick new location for the element(s).
+\i (00:40:12) pick grid 62.514 39.086
+\t (00:40:12) last pick:  62.500 39.100
+\i (00:40:13) zoom in 1 
+\i (00:40:13) setwindow pcb
+\i (00:40:13) zoom in 63.771 27.429
+\t (00:40:13) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:40:13) trapsize 286
+\i (00:40:15) drag_start grid 59.942 31.886
+\i (00:40:15) drag_stop 70.057 27.315
+\i (00:40:16) pick grid 67.599 29.829
+\t (00:40:16) last pick:  67.600 29.800
+\t (00:40:16) Moving J3 / C1X3_C1X3_PWR_SELECT / C1X3.
+\t (00:40:16) Moving L4 / INDUCTOR_SMD_L_0805_BEAD / SMD_L_0805.
+\t (00:40:16) Moving C24 / CAP NP_SMD_C_0805_100NF / SMD_C_0805.
+\t (00:40:16) Moving R37 / RESISTOR_SMD_R_0805_100R / SMD_R_0805.
+\t (00:40:16) Moving D2 / DIODE TVS_SOD123_5.1V / SOD123.
+\t (00:40:16) Moving R36 / RESISTOR_SMD_R_0805_2K / SMD_R_0805.
+\t (00:40:16) Pick new location for the element(s).
+\i (00:40:17) pick grid 66.399 29.372
+\t (00:40:17) last pick:  66.400 29.400
+\i (00:40:18) roam start
+\i (00:40:18) roam y 64
+\i (00:40:18) roam x -48
+\i (00:40:18) roam y 128
+\i (00:40:18) roam x -16
+\i (00:40:18) roam y 16
+\i (00:40:18) roam y 16
+\i (00:40:18) roam end
+\i (00:40:22) pick grid 55.600 12.228
+\t (00:40:22) last pick:  55.600 12.200
+\t (00:40:22) last pick:  57.790 14.000
+\t (00:40:22) Moving U4 / AMS1117-33_SOT-223_AMS1117-33 / SOT-223.
+\t (00:40:22) Pick new location for the element(s).
+\i (00:40:23) pick grid 56.285 14.914
+\t (00:40:23) last pick:  56.300 14.900
+\i (00:40:23) pick grid 62.971 14.457
+\t (00:40:23) last pick:  63.000 14.500
+\t (00:40:23) last pick:  64.500 13.600
+\t (00:40:23) Moving D3 / DIODE_DO-214AB_1N5822 / DO-214AB.
+\t (00:40:23) Pick new location for the element(s).
+\i (00:40:24) pick grid 62.228 14.514
+\t (00:40:24) last pick:  62.200 14.500
+\i (00:40:25) pick grid 67.771 16.971
+\t (00:40:25) last pick:  67.800 17.000
+\t (00:40:25) last pick:  67.000 17.900
+\t (00:40:25) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:40:25) Pick new location for the element(s).
+\i (00:40:26) pick grid 67.314 13.885
+\t (00:40:26) last pick:  67.300 13.900
+\i (00:40:27) pick grid 67.314 13.943
+\t (00:40:27) last pick:  67.300 13.900
+\t (00:40:27) last pick:  67.300 13.900
+\t (00:40:27) Moving F1 / FUSE_SMD_R_0805_500MA / SMD_R_0805.
+\t (00:40:27) Pick new location for the element(s).
+\i (00:40:42) prepopup 67.371 6.800
+\i (00:40:43) rotate 
+\t (00:40:43) Spin the element(s).
+\i (00:40:44) iangle -90.000
+\t (00:40:44) last angle:  0.000 Degrees
+\i (00:40:44) pick grid 67.714 7.257
+\t (00:40:44) last pick:  67.700 7.300
+\i (00:40:45) zoom out 1 
+\i (00:40:45) setwindow pcb
+\i (00:40:45) zoom out 78.628 24.685
+\t (00:40:45) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:40:45) trapsize 571
+\i (00:40:45) zoom out 1 
+\i (00:40:45) setwindow pcb
+\i (00:40:45) zoom out 100.343 29.143
+\t (00:40:45) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:40:45) trapsize 1143
+\i (00:40:46) zoom in 1 
+\i (00:40:46) setwindow pcb
+\i (00:40:46) zoom in 21.372 30.514
+\t (00:40:46) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:40:46) trapsize 571
+\i (00:40:46) zoom in 1 
+\i (00:40:46) setwindow pcb
+\i (00:40:46) zoom in 21.372 30.514
+\t (00:40:46) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:40:46) trapsize 286
+\i (00:40:48) zoom out 1 
+\i (00:40:48) setwindow pcb
+\i (00:40:48) zoom out 34.743 37.943
+\t (00:40:48) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:40:48) trapsize 571
+\i (00:40:53) prepopup 94.630 40.915
+\i (00:40:54) done 
+\i (00:40:54) generaledit 
+\i (00:40:55) zoom out 1 
+\i (00:40:55) setwindow pcb
+\i (00:40:55) zoom out 78.401 34.515
+\t (00:40:55) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:40:55) trapsize 1143
+\i (00:40:57) save 
+\i (00:40:59) fillin yes 
+\i (00:40:59) generaledit 
+\i (00:40:59) zoom in 1 
+\i (00:40:59) setwindow pcb
+\i (00:40:59) zoom in -3.086 9.029
+\t (00:40:59) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:41:00) trapsize 571
+\i (00:41:21) zoom out 1 
+\i (00:41:21) setwindow pcb
+\i (00:41:21) zoom out 41.371 31.429
+\t (00:41:21) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:41:21) trapsize 1143
+\i (00:41:24) exit 
+\t (00:41:24)     Journal end - Wed May 16 22:32:11 2018

@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001May-05-2018 at 10:23:33}
+{ Using PSTWRITER 17.2.0 d001May-16-2018 at 22:19:42}
 primitive 'CAP NP_SMD_C_0805_47UF';
   pin
     '1':
@@ -30,36 +30,6 @@ primitive 'CAP NP_SMD_C_0805_100NF';
     VALUE='100nF';
   end_body;
 end_primitive;
-primitive 'CAP_SMD_C_0805_10UF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP';
-    JEDEC_TYPE='SMD_C_0805';
-    VALUE='10uF';
-  end_body;
-end_primitive;
-primitive 'CAP_SMD_C_1206_1NF/2KV';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP';
-    JEDEC_TYPE='SMD_C_1206';
-    VALUE='1nF/2KV';
-  end_body;
-end_primitive;
 primitive 'CAP NP_SMD_C_0805_18PF';
   pin
     '1':
@@ -73,6 +43,21 @@ primitive 'CAP NP_SMD_C_0805_18PF';
     PART_NAME='CAP NP';
     JEDEC_TYPE='SMD_C_0805';
     VALUE='18pF';
+  end_body;
+end_primitive;
+primitive 'CAP NP_SMD_C_0805_22PF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='SMD_C_0805';
+    VALUE='22pF';
   end_body;
 end_primitive;
 primitive 'CAP NP_SMD_C_0805_10UF';
@@ -90,7 +75,7 @@ primitive 'CAP NP_SMD_C_0805_10UF';
     VALUE='10uF';
   end_body;
 end_primitive;
-primitive 'CAP NP_SMD_C_0805_22PF';
+primitive 'CAP_SMD_C_1206_1NF/2KV';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -100,9 +85,9 @@ primitive 'CAP NP_SMD_C_0805_22PF';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='SMD_C_0805';
-    VALUE='22pF';
+    PART_NAME='CAP';
+    JEDEC_TYPE='SMD_C_1206';
+    VALUE='1nF/2KV';
   end_body;
 end_primitive;
 primitive 'DIODE TVS_SOD123_5.1V';
@@ -150,93 +135,93 @@ primitive 'FUSE_SMD_R_0805_500MA';
     VALUE='500mA';
   end_body;
 end_primitive;
-primitive 'RJ45-T-568A_1_RJ45-T-568A-LED_E';
+primitive 'RJ45_HR911105A_RJ45_HR911105A_E';
   pin
-    'RXP':
+    'TXP':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    'RXM':
+    'TXM':
       PIN_NUMBER='(2)';
       PINUSE='UNSPEC';
-    'TXP':
+    'RXP':
       PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
-    '4':
+    'CTT':
       PIN_NUMBER='(4)';
       PINUSE='UNSPEC';
-    '5':
+    'CTR':
       PIN_NUMBER='(5)';
       PINUSE='UNSPEC';
-    'TXM':
+    'RXM':
       PIN_NUMBER='(6)';
       PINUSE='UNSPEC';
-    '7':
+    'NC':
       PIN_NUMBER='(7)';
       PINUSE='UNSPEC';
-    '8':
+    'CG':
       PIN_NUMBER='(8)';
       PINUSE='UNSPEC';
-    'LED1-':
+    'LED_G+':
       PIN_NUMBER='(9)';
       PINUSE='UNSPEC';
-    'LED1+':
+    'LED_G-':
       PIN_NUMBER='(10)';
       PINUSE='UNSPEC';
-    'LED2-':
+    'LED_Y-':
       PIN_NUMBER='(11)';
       PINUSE='UNSPEC';
-    'LED2+':
+    'LED_Y+':
       PIN_NUMBER='(12)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='RJ45-T-568A_1';
-    JEDEC_TYPE='RJ45-T-568A-LED';
+    PART_NAME='RJ45_HR911105A';
+    JEDEC_TYPE='RJ45_HR911105A';
     VALUE='ETH1';
   end_body;
 end_primitive;
-primitive 'RJ45-T-568A_1_RJ45-T-568A-LED_1';
+primitive 'RJ45_HR911105A_RJ45_HR911105A_1';
   pin
-    'RXP':
+    'TXP':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    'RXM':
+    'TXM':
       PIN_NUMBER='(2)';
       PINUSE='UNSPEC';
-    'TXP':
+    'RXP':
       PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
-    '4':
+    'CTT':
       PIN_NUMBER='(4)';
       PINUSE='UNSPEC';
-    '5':
+    'CTR':
       PIN_NUMBER='(5)';
       PINUSE='UNSPEC';
-    'TXM':
+    'RXM':
       PIN_NUMBER='(6)';
       PINUSE='UNSPEC';
-    '7':
+    'NC':
       PIN_NUMBER='(7)';
       PINUSE='UNSPEC';
-    '8':
+    'CG':
       PIN_NUMBER='(8)';
       PINUSE='UNSPEC';
-    'LED1-':
+    'LED_G+':
       PIN_NUMBER='(9)';
       PINUSE='UNSPEC';
-    'LED1+':
+    'LED_G-':
       PIN_NUMBER='(10)';
       PINUSE='UNSPEC';
-    'LED2-':
+    'LED_Y-':
       PIN_NUMBER='(11)';
       PINUSE='UNSPEC';
-    'LED2+':
+    'LED_Y+':
       PIN_NUMBER='(12)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='RJ45-T-568A_1';
-    JEDEC_TYPE='RJ45-T-568A-LED';
+    PART_NAME='RJ45_HR911105A';
+    JEDEC_TYPE='RJ45_HR911105A';
     VALUE='ETH2';
   end_body;
 end_primitive;
@@ -375,7 +360,7 @@ primitive 'C2X3_C2X3_SWD';
     VALUE='SWD';
   end_body;
 end_primitive;
-primitive 'C1X2_C1X2_PWR';
+primitive 'C1X2_C1X2_P381_PWR';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -386,7 +371,7 @@ primitive 'C1X2_C1X2_PWR';
   end_pin;
   body
     PART_NAME='C1X2';
-    JEDEC_TYPE='C1X2';
+    JEDEC_TYPE='C1X2_p381';
     VALUE='PWR';
   end_body;
 end_primitive;
@@ -729,7 +714,7 @@ primitive 'RESISTOR_SMD_R_0805_10K';
     VALUE='10K';
   end_body;
 end_primitive;
-primitive 'RESISTOR_SMD_R_0805_50R';
+primitive 'RESISTOR_SMD_R_0805_51R';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -741,7 +726,52 @@ primitive 'RESISTOR_SMD_R_0805_50R';
   body
     PART_NAME='RESISTOR';
     JEDEC_TYPE='SMD_R_0805';
-    VALUE='50R';
+    VALUE='51R';
+  end_body;
+end_primitive;
+primitive 'RESISTOR_SMD_R_0805_22R';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='RESISTOR';
+    JEDEC_TYPE='SMD_R_0805';
+    VALUE='22R';
+  end_body;
+end_primitive;
+primitive 'RESISTOR_SMD_R_0805_220R';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='RESISTOR';
+    JEDEC_TYPE='SMD_R_0805';
+    VALUE='220R';
+  end_body;
+end_primitive;
+primitive 'RESISTOR_SMD_R_0805_4.7K';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='RESISTOR';
+    JEDEC_TYPE='SMD_R_0805';
+    VALUE='4.7K';
   end_body;
 end_primitive;
 primitive 'RESISTOR_SMD_R_0805_1K';
@@ -757,21 +787,6 @@ primitive 'RESISTOR_SMD_R_0805_1K';
     PART_NAME='RESISTOR';
     JEDEC_TYPE='SMD_R_0805';
     VALUE='1K';
-  end_body;
-end_primitive;
-primitive 'RESISTOR_SMD_R_0805_75R';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='RESISTOR';
-    JEDEC_TYPE='SMD_R_0805';
-    VALUE='75R';
   end_body;
 end_primitive;
 primitive 'RESISTOR_SMD_R_0805_2K';
@@ -804,21 +819,6 @@ primitive 'RESISTOR_SMD_R_0805_150R';
     VALUE='150R';
   end_body;
 end_primitive;
-primitive 'RESISTOR_SMD_R_0805_3K3';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='RESISTOR';
-    JEDEC_TYPE='SMD_R_0805';
-    VALUE='3K3';
-  end_body;
-end_primitive;
 primitive 'RESISTOR_SMD_R_0805_100R';
   pin
     '1':
@@ -832,21 +832,6 @@ primitive 'RESISTOR_SMD_R_0805_100R';
     PART_NAME='RESISTOR';
     JEDEC_TYPE='SMD_R_0805';
     VALUE='100R';
-  end_body;
-end_primitive;
-primitive 'RESISTOR_SMD_R_0805_4.7K';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='RESISTOR';
-    JEDEC_TYPE='SMD_R_0805';
-    VALUE='4.7K';
   end_body;
 end_primitive;
 primitive 'RESISTOR_SMD_R_0805_1M';
@@ -864,7 +849,7 @@ primitive 'RESISTOR_SMD_R_0805_1M';
     VALUE='1M';
   end_body;
 end_primitive;
-primitive 'RESISTOR_SMD_R_0805_22R';
+primitive 'RESISTOR_SMD_R_0805_1.5K';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -876,7 +861,7 @@ primitive 'RESISTOR_SMD_R_0805_22R';
   body
     PART_NAME='RESISTOR';
     JEDEC_TYPE='SMD_R_0805';
-    VALUE='22R';
+    VALUE='1.5K';
   end_body;
 end_primitive;
 primitive 'RESISTOR_SMD_R_0805_11.8K/1%';
@@ -892,96 +877,6 @@ primitive 'RESISTOR_SMD_R_0805_11.8K/1%';
     PART_NAME='RESISTOR';
     JEDEC_TYPE='SMD_R_0805';
     VALUE='11.8K/1%';
-  end_body;
-end_primitive;
-primitive 'DIP_SWITCH4_SMD_SW4_RESERVED';
-  pin
-    '1ON':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2ON':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    '3ON':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    '4ON':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    '4OFF':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    '3OFF':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    '2OFF':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    '1OFF':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='DIP_Switch4';
-    JEDEC_TYPE='SMD_SW4';
-    VALUE='reserved';
-  end_body;
-end_primitive;
-primitive 'HR601680_1_ETH_TRANS_HR601680';
-  pin
-    'TD+':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'TC':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'TD-':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'NC4':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'NC5':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    'RD+':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    'RC':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    'RD-':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'RX-':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
-    'RCM':
-      PIN_NUMBER='(10)';
-      PINUSE='UNSPEC';
-    'RX+':
-      PIN_NUMBER='(11)';
-      PINUSE='UNSPEC';
-    'NC12':
-      PIN_NUMBER='(12)';
-      PINUSE='UNSPEC';
-    'NC13':
-      PIN_NUMBER='(13)';
-      PINUSE='UNSPEC';
-    'TX-':
-      PIN_NUMBER='(14)';
-      PINUSE='UNSPEC';
-    'TCM':
-      PIN_NUMBER='(15)';
-      PINUSE='UNSPEC';
-    'TX+':
-      PIN_NUMBER='(16)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='HR601680_1';
-    JEDEC_TYPE='ETH_TRANS';
-    VALUE='HR601680';
   end_body;
 end_primitive;
 primitive 'KSZ8863RLL_LQFP48_KSZ8863RLL';
@@ -1158,6 +1053,39 @@ primitive 'PS2801-4/SM_SOP16_PS2801-4/SM';
     VALUE='PS2801-4/SM';
   end_body;
 end_primitive;
+primitive 'GD25Q64C_SOIC8_208MIL_W25Q64';
+  pin
+    'CS#':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'SO':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'WP#':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'VSS':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'SI':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    'SCLK':
+      PIN_NUMBER='(6)';
+      PINUSE='UNSPEC';
+    'HOLD#':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    'VCC':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='GD25Q64C';
+    JEDEC_TYPE='SOIC8_208mil';
+    VALUE='W25Q64';
+  end_body;
+end_primitive;
 primitive 'AMS1117-33_SOT-223_AMS1117-33';
   pin
     'GND':
@@ -1179,34 +1107,46 @@ primitive 'AMS1117-33_SOT-223_AMS1117-33';
     VALUE='AMS1117-33';
   end_body;
 end_primitive;
-primitive 'CRYSTAL_CRYSTAL_2PIN_SMD_25M';
+primitive 'CRYSTAL-4PIN_1_SMD3225_CRYSTAL_';
   pin
     '1':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    '2':
+    'GND#2':
       PIN_NUMBER='(2)';
+      PINUSE='POWER';
+    '3':
+      PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
+    'GND#4':
+      PIN_NUMBER='(4)';
+      PINUSE='POWER';
   end_pin;
   body
-    PART_NAME='CRYSTAL';
-    JEDEC_TYPE='Crystal_2Pin_SMD';
+    PART_NAME='crystal-4pin_1';
+    JEDEC_TYPE='SMD3225_crystal';
     VALUE='25M';
   end_body;
 end_primitive;
-primitive 'CRYSTAL_CRYSTAL_2PIN_SMD_8M';
+primitive 'CRYSTAL-4PIN_1_SMD3225_CRYSTA_1';
   pin
     '1':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    '2':
+    'GND#2':
       PIN_NUMBER='(2)';
+      PINUSE='POWER';
+    '3':
+      PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
+    'GND#4':
+      PIN_NUMBER='(4)';
+      PINUSE='POWER';
   end_pin;
   body
-    PART_NAME='CRYSTAL';
-    JEDEC_TYPE='Crystal_2Pin_SMD';
-    VALUE='8M';
+    PART_NAME='crystal-4pin_1';
+    JEDEC_TYPE='SMD3225_crystal';
+    VALUE='16M';
   end_body;
 end_primitive;
 END.

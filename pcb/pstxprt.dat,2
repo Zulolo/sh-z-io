@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.2.0 d001May-04-2018 at 23:02:03 }
+{ Using PSTWRITER 17.2.0 d001May-05-2018 at 10:23:33 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='IO_TWO_ETH';
@@ -1284,6 +1284,16 @@ SECTION_NUMBER 1
  '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4547512@DISCRETE.RESISTOR.NORMAL(CHIPS)':
  C_PATH='@io_two_eth.schematic1(sch_1):ins4547512@discrete.\resistor.normal\(chips)',
  P_PATH='@io_two_eth.schematic1(sch_1):page3_ins4547512@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R65 'RESISTOR_SMD_R_0805_4.7K':;
+
+SECTION_NUMBER 1
+ '@IO_TWO_ETH.SCHEMATIC1(SCH_1):INS4580662@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@io_two_eth.schematic1(sch_1):ins4580662@discrete.\resistor.normal\(chips)',
+ P_PATH='@io_two_eth.schematic1(sch_1):page1_ins4580662@discrete.\resistor.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 

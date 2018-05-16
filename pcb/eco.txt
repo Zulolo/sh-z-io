@@ -2,21 +2,1112 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
-|  G:/Work/io/design/pcb/io_4di_4aic.brd                                       |
-|                                                    Sat May 05 10:23:40 2018  |
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-  GND_EARTH    net RENAMED (to net name listed on right)           GND_EARTH_1  
-               pins MOVED FROM this net (to net name listed on right)
-                                 C21.2            24.100  18.300
-                                                                    GND_EARTH_2
-                                 C22.2            24.100  21.000
-                                                                    GND_EARTH_2
+  1.8V         pins MOVED FROM this net (to net name listed on right)
+                                 C3.1             44.700  28.700
+                                                                       VDDA_1.8
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.32            30.200  36.250
+                                 U1.42            34.250  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  3.3V         pins MOVED FROM this net (to net name listed on right)
+                                 C11.1            32.600  11.500
+                                                                            GND
+                                 C16.1            32.600  32.100
+                                                                       N4551769
+                                 C28.1            37.600  77.000
+                                                                       N3795822
+                                 C29.1            62.600  82.600
+                                                                            GND
+                                 C30.1            61.200  63.900
+                                                                       N3804187
+                                 C31.1            43.800  72.400
+                                                                       N3795840
+                                 C46.1            46.100  59.000
+                                                                            GND
+                                 C47.1            47.000  56.600
+                                                                            GND
+                                 R3.2             60.400  43.700
+                                                                           RXM1
+                                 R5.2                           
+                                                                           RXP1
+                                 U1.2             38.800  34.750
+                                                                           RXP1
+                                 U1.7             38.800  37.250
+                                                                       VDDA_1.8
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.22            32.750  41.300
+                                 U1.40            33.250  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  5V           pins MOVED FROM this net (to net name listed on right)
+                                 C44.2            77.500  16.300
+                                                                    AI_C_0_CH_3
+                                 C45.2            47.100  61.400
+                                                                    AI_C_1_CH_4
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_0       pins MOVED FROM this net (to net name listed on right)
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   2  |
 |------------------------------------------------------------------------------|
-|       Nets changed          :       3                                        |
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 R36.2            89.800  30.000
+                                                                       N3789822
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_1       pins MOVED FROM this net (to net name listed on right)
+                                 R39.2            89.800  37.600
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_2       pins MOVED FROM this net (to net name listed on right)
+                                 R44.2            74.100  96.700
+                                                                            RST
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_3       pins MOVED FROM this net (to net name listed on right)
+                                 R47.2            89.800  52.800
+                                                                       ETH_MDIO
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_0_CH_3  pins MOVED FROM this net (to net name listed on right)
+                                 R37.1            85.000  33.800
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_1_CH_4  pins MOVED FROM this net (to net name listed on right)
+                                 R40.1            71.600  76.800
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_2_CH_5  pins MOVED FROM this net (to net name listed on right)
+                                 R45.1            85.000  49.000
+                                                                       N4547713
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_C_3_CH_6  pins MOVED FROM this net (to net name listed on right)
+                                 R48.1            51.100  63.500
+                                                                       N3796397
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  AI_PWR_OUT   pins MOVED FROM this net (to net name listed on right)
+                                 C24.2            86.500  33.800
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CMT1         pins MOVED FROM this net (to net name listed on right)
+                                 R18.1            23.300  44.600
+                                                                           3.3V
+                                 U1.10            38.800  38.750
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CMT2         pins MOVED FROM this net (to net name listed on right)
+                                 R27.1            23.300  23.600
+                                                                       N3761583
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   3  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  DI_IN_0      pins MOVED FROM this net (to net name listed on right)
+                                 U4.1             73.290  13.400
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DI_IN_1      pins MOVED FROM this net (to net name listed on right)
+                                 U4.3             68.710  13.400
+                                                                             5V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DI_PWR_OUT   pins MOVED FROM this net (to net name listed on right)
+                                 C23.2            86.000  59.300
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DI_TTL_0     pins MOVED FROM this net (to net name listed on right)
+                                 C38.2            69.300  65.200
+                                                                       DI_TTL_1
+                                 R34.2            87.400  47.100
+                                                                       N3789744
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DI_TTL_1     pins MOVED FROM this net (to net name listed on right)
+                                 C37.2            69.300  69.100
+                                                                       DI_TTL_2
+                                 R42.2            48.600  87.100
+                                                                       N3788396
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DI_TTL_2     pins MOVED FROM this net (to net name listed on right)
+                                 C40.2            69.300  73.000
+                                                                             5V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DI_TTL_3     pins MOVED FROM this net (to net name listed on right)
+                                 C39.2            69.300  74.900
+                                                                       DI_TTL_0
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH1_LED0    pins MOVED FROM this net (to net name listed on right)
+                                 R21.2            56.500  45.800
+                                                                      ETH2_LED0
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.44            35.250  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH1_LED1    pins MOVED FROM this net (to net name listed on right)
+                                 R17.2            57.800  41.800
+                                                                      ETH1_LED0
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.43            34.750  32.700
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   4  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  ETH2_LED0    pins MOVED FROM this net (to net name listed on right)
+                                 R30.2            53.900  45.800
+                                                                       DI_TTL_1
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.46            36.250  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH2_LED1    pins MOVED FROM this net (to net name listed on right)
+                                 R26.2            55.200  41.800
+                                                                       N3761335
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.45            35.750  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_CRS_DV   pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.25            30.200  39.750
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_MDC      pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.36            30.200  34.250
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_MDIO     pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.37            31.750  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_REF_CLK  pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.23            32.250  41.300
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_TXD0     pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.20            33.750  41.300
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_TXD1     pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.19            34.250  41.300
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  ETH_TX_EN    pins MOVED FROM this net (to net name listed on right)
+                                 U2.16            75.500  66.000
+                                                                           3.3V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  FLASH_CS     pins ADDED TO this new net
+                                 MCU1.77          57.100  83.150
+                                 U3.1             34.900  16.000
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  FLASH_MISO   pins ADDED TO this new net
+                                 MCU1.79          56.100  83.150
+                                 U3.2             34.900  17.270
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  FLASH_MOSI   pins ADDED TO this new net
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   5  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 MCU1.80          55.600  83.150
+                                 U3.5             28.090  19.810
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  FLASH_SCK    pins ADDED TO this new net
+                                 MCU1.78          56.600  83.150
+                                 U3.6             28.090  18.540
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND          pins MOVED FROM this net (to net name listed on right)
+                                 C9.2             44.900  33.300
+                                                                       N4558201
+                                 C11.2            34.500  11.500
+                                                                       N4554841
+                                 C14.1            42.400  24.200
+                                                                           3.3V
+                                 C15.1            42.400  17.900
+                                                                       N4551709
+                                 C17.1            21.400  39.200
+                                                                           3.3V
+                                 C18.2                          
+                                                                     DI_PWR_OUT
+                                 C19.2                          
+                                                                     AI_PWR_OUT
+                                 C21.1            21.400  18.300
+                                                                           3.3V
+                                 C23.1            84.100  59.300
+                                                                           3.3V
+                                 C24.1            86.500  31.900
+                                                                           3.3V
+                                 C29.2            62.600  80.700
+                                                                       N3788604
+                                 C32.1                          
+                                                                            RST
+                                 C33.2            39.900  72.200
+                                                                           VREF
+                                 C34.2            39.900  70.100
+                                                                           VDDA
+                                 C35.2            58.800  63.900
+                                                                       N3788651
+                                 C36.2            40.000  88.100
+                                                                       DI_TTL_3
+                                 C42.1            65.200   7.200
+                                                                           3.3V
+                                 C43.1            62.300   7.200
+                                                                           3.3V
+                                 C46.2            48.000  59.000
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   6  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                                                    AI_C_2_CH_5
+                                 C47.2            48.900  56.600
+                                                                    AI_C_3_CH_6
+                                 R14.1            57.500  21.800
+                                                                       N4555226
+                                 R15.1                          
+                                                                    ETH_REF_CLK
+                                 R35.2                          
+                                                                         AI_C_3
+                                 R41.1            85.500  75.800
+                                                                       N4538843
+                                 R43.2            33.500  76.600
+                                                                       N3795822
+                                 R46.1            61.500  66.000
+                                                                       N4547709
+                                 R49.1            56.600  63.900
+                                                                       N3796963
+                                 U2.10            75.500  73.620
+                                                                           3.3V
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.21            33.250  41.300
+                                 U1.31            30.200  36.750
+                                 U1.41            33.750  32.700
+                                 U3.4             34.900  19.810
+                                 Y1.4             56.000  14.300
+                                 Y2.4             27.300  75.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND_EARTH_1  pins MOVED FROM this net (to net name listed on right)
+                                 C17.2            23.300  39.200
+                                                                            GND
+                                 C20.2            23.300  41.900
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND_EARTH_2  pins MOVED FROM this net (to net name listed on right)
+                                 C21.2            23.300  18.300
+                                                                            GND
+                                 C22.2            23.300  21.000
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3761335     pins MOVED FROM this net (to net name listed on right)
+                                 R36.1            89.800  31.900
+                                                                    AI_C_3_CH_6
+                                 R37.2            85.000  31.900
+                                                                       N3789822
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   7  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 R38.2            71.600  73.000
+                                                                       DI_TTL_2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3761583     pins MOVED FROM this net (to net name listed on right)
+                                 R39.1            89.800  39.500
+                                                                       N4539052
+                                 R40.2            71.600  74.900
+                                                                       DI_TTL_3
+                                 R41.2            87.400  75.800
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3788604     pins MOVED FROM this net (to net name listed on right)
+                                 C32.2                          
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3788651     pins MOVED FROM this net (to net name listed on right)
+                                 C43.2            62.300   5.300
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3789744     pins MOVED FROM this net (to net name listed on right)
+                                 R44.1            74.100  94.800
+                                                                           3.3V
+                                 R45.2            85.000  47.100
+                                                                       ETH_TXD1
+                                 R46.2            63.400  66.000
+                                                                       ETH_TXD0
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3789822     pins MOVED FROM this net (to net name listed on right)
+                                 R47.1            89.800  54.700
+                                                                           3.3V
+                                 R48.2            53.000  63.500
+                                                                            GND
+                                 R49.2            56.600  62.000
+                                                                      ETH_TX_EN
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3795822     pins MOVED FROM this net (to net name listed on right)
+                                 C33.1            39.900  74.100
+                                                                            GND
+                                 Y2.2             29.000  77.900
+                                                                            GND
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 Y2.3             27.300  77.900
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3795840     pins MOVED FROM this net (to net name listed on right)
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   8  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 C35.1            58.800  62.000
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3797842     pins DELETED FROM this net (all pins deleted)
+                                 MCU1.66          59.350  76.900
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3797848     pins DELETED FROM this net (all pins deleted)
+                                 MCU1.65          59.350  76.400
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3797854     pins DELETED FROM this net (all pins deleted)
+                                 MCU1.64          59.350  75.900
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3797860     pins DELETED FROM this net (all pins deleted)
+                                 MCU1.63          59.350  75.400
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N3804187     pins MOVED FROM this net (to net name listed on right)
+                                 C34.1            39.900  68.200
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4537878     pins MOVED FROM this net (to net name listed on right)
+                                 R35.1                          
+                                                                       N3789822
+                                 U4.2             71.000  13.400
+                                                                           3.3V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4538644     pins MOVED FROM this net (to net name listed on right)
+                                 R43.1            33.500  74.700
+                                                                       N3795840
+                                 U4.4             71.000   7.200
+                                                                           3.3V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543265     pins MOVED FROM this net (to net name listed on right)
+                                 J1.4              3.460  41.800
+                                                                           3.3V
+                                 R16.2            14.700  38.800
+                                                                      ETH1_LED1
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543297     pins MOVED FROM this net (to net name listed on right)
+                                 J1.5              6.000  43.080
+                                                                           3.3V
+                                 R20.2            14.700  40.900
+                                                                      ETH2_LED1
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543355     pins MOVED FROM this net (to net name listed on right)
+                                 R22.2            14.700  43.000
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   9  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                                                       DI_TTL_0
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543361     pins MOVED FROM this net (to net name listed on right)
+                                 J1.8              3.460  46.880
+                                                                            GND
+                                 R24.2            14.700  45.100
+                                                                         AI_C_0
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543525     pins MOVED FROM this net (to net name listed on right)
+                                 R16.1            16.600  38.800
+                                                                       N4589863
+                                 R19.2            19.000  38.800
+                                                                       N4553149
+                                 R20.1            16.600  40.900
+                                                                       N4590672
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543546     pins MOVED FROM this net (to net name listed on right)
+                                 R22.1            16.600  43.000
+                                                                            GND
+                                 R23.2            19.000  43.000
+                                                                            GND
+                                 R24.1            16.600  45.100
+                                                                       N3761335
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4543570     pins MOVED FROM this net (to net name listed on right)
+                                 C20.1            21.400  41.900
+                                                                           3.3V
+                                 R18.2            21.400  44.600
+                                                                      ETH1_LED0
+                                 R19.1            19.000  40.700
+                                                                            GND
+                                 R23.1            19.000  44.900
+                                                                       N4537878
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544407     pins MOVED FROM this net (to net name listed on right)
+                                 R25.1            16.600  17.800
+                                                                    AI_C_0_CH_3
+                                 R28.2            19.000  17.800
+                                                                       N3761583
+                                 R29.1            16.600  19.900
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544437     pins MOVED FROM this net (to net name listed on right)
+                                 C22.1            21.400  21.000
+                                                                           3.3V
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  10  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 R27.2            21.400  23.600
+                                                                         AI_C_1
+                                 R28.1            19.000  19.700
+                                                                    AI_C_1_CH_4
+                                 R32.1            19.000  23.900
+                                                                       N3789744
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544509     pins MOVED FROM this net (to net name listed on right)
+                                 R31.1            16.600  22.000
+                                                                       N4538644
+                                 R32.2            19.000  22.000
+                                                                         AI_C_2
+                                 R33.1            16.600  24.100
+                                                                    AI_C_2_CH_5
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544578     pins MOVED FROM this net (to net name listed on right)
+                                 J2.4              3.460  20.800
+                                                                           3.3V
+                                 R25.2            14.700  17.800
+                                                                       N3761335
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544586     pins MOVED FROM this net (to net name listed on right)
+                                 J2.5              6.000  22.080
+                                                                           3.3V
+                                 R29.2            14.700  19.900
+                                                                       N3761583
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544592     pins MOVED FROM this net (to net name listed on right)
+                                 R31.2            14.700  22.000
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4544600     pins MOVED FROM this net (to net name listed on right)
+                                 J2.8              3.460  25.880
+                                                                            GND
+                                 R33.2            14.700  24.100
+                                                                       N3789744
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4545937     pins MOVED FROM this net (to net name listed on right)
+                                 R17.1            57.800  43.700
+                                                                       N4589372
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4545941     pins MOVED FROM this net (to net name listed on right)
+                                 J1.9             17.250  35.815
+                                                                           3.3V
+                                 R21.1            56.500  47.700
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  11  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                                                       N4590712
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4545945     pins MOVED FROM this net (to net name listed on right)
+                                 R26.1            55.200  43.700
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4545949     pins MOVED FROM this net (to net name listed on right)
+                                 J2.9             17.250  14.815
+                                                                           3.3V
+                                 R30.1            53.900  47.700
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4547766     pins MOVED FROM this net (to net name listed on right)
+                                 MCU1.24          43.850  69.900
+                                                                    ETH_REF_CLK
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4548481     pins MOVED FROM this net (to net name listed on right)
+                                 R9.2                           
+                                                                       ETH_RXD0
+                                 U2.6             82.000  72.350
+                                                                       N4539052
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4551709     pins MOVED FROM this net (to net name listed on right)
+                                 C18.1                          
+                                                                            GND
+                                 U2.14            75.500  68.540
+                                                                           3.3V
+                                 Y1.2             53.800  16.000
+                                                                            GND
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 Y1.3             53.800  14.300
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4551745     pins MOVED FROM this net (to net name listed on right)
+                                 C19.1                          
+                                                                            GND
+                                 U2.15            75.500  67.270
+                                                                       DI_TTL_0
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4551769     pins ADDED TO this new net
+                                 U1.15            36.250  41.300
+                                 Y1.1             56.000  16.000
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4552613     pins MOVED FROM this net (to net name listed on right)
+                                 R14.2            57.500  23.700
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  12  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                                                           TXP2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4553149     pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.24            31.750  41.300
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4554278     pins MOVED FROM this net (to net name listed on right)
+                                 R5.1                           
+                                                                       N4554520
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.35            30.200  34.750
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4554434     pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.39            32.750  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4554438     pins MOVED FROM this net (to net name listed on right)
+                                 R3.1             60.400  41.800
+                                                                       N4554520
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4554520     pins MOVED FROM this net (to net name listed on right)
+                                 C12.2            42.300  43.300
+                                                                       N4555040
+                                 R4.1             39.500  45.900
+                                                                       N4554278
+                                 R6.1             39.500  43.300
+                                                                       N4554841
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4554841     pins MOVED FROM this net (to net name listed on right)
+                                 C13.2            42.400  37.000
+                                                                       N4555226
+                                 R8.1             39.500  37.000
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4555040     pins MOVED FROM this net (to net name listed on right)
+                                 C14.2            42.400  22.300
+                                                                            GND
+                                 R11.1            39.500  22.300
+                                                                       N4585857
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4555226     pins MOVED FROM this net (to net name listed on right)
+                                 C15.2            42.400  16.000
+                                                                            GND
+                                 R12.1            39.500  18.500
+                                                                       N4555040
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  13  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  N4558201     pins MOVED FROM this net (to net name listed on right)
+                                 C10.2            50.400  41.800
+                                                                       N4554520
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.47            36.750  32.700
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4585606     pins ADDED TO this new net
+                                 R15.2                          
+                                 U1.26            30.200  39.250
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4585853     pins ADDED TO this new net
+                                 R9.1                           
+                                 U1.29            30.200  37.750
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4585857     pins ADDED TO this new net
+                                 U1.28            30.200  38.250
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4589372     pins ADDED TO this new net
+                                 J1.10            17.250  38.355
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4589863     pins ADDED TO this new net
+                                 J1.11            17.250  46.525
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4590672     pins ADDED TO this new net
+                                 J2.11            17.250  25.525
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N4590712     pins ADDED TO this new net
+                                 J2.10            17.250  17.355
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RST          pins MOVED FROM this net (to net name listed on right)
+                                 C36.1            41.900  88.100
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RX1M         pins MOVED FROM this net (to net name listed on right)
+                                 J1.2              3.460  39.260
+                                                                           RXM1
+                                 U1.9             38.800  38.250
+                                                                           RXP2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RX1P         pins MOVED FROM this net (to net name listed on right)
+                                 J1.1              6.000  38.000
+                                                                           RXP1
+                                 U1.11            38.800  39.250
+                                                                           TXM2
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  14  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  RX2M         pins MOVED FROM this net (to net name listed on right)
+                                 J2.2              3.460  18.260
+                                                                           RXM2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RX2P         pins MOVED FROM this net (to net name listed on right)
+                                 J2.1              6.000  17.000
+                                                                           RXP2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RXM1         pins MOVED FROM this net (to net name listed on right)
+                                 R4.2             37.600  45.900
+                                                                           3.3V
+                                 U1.8             38.800  37.750
+                                                                           RXM2
+                                 U2.1             82.000  66.000
+                                                                        DI_IN_0
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RXM2         pins MOVED FROM this net (to net name listed on right)
+                                 U2.8             82.000  74.890
+                                                                       N4538843
+                                 U3.8             28.090  16.000
+                                                                           3.3V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RXP1         pins MOVED FROM this net (to net name listed on right)
+                                 R6.2             37.600  43.300
+                                                                           TXM1
+                                 U1.6             38.800  36.750
+                                                                       N4548481
+                                 U2.2             82.000  67.270
+                                                                       N4537878
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  RXP2         pins MOVED FROM this net (to net name listed on right)
+                                 R11.2            37.600  22.300
+                                                                       ETH_RXD1
+                                 U2.9             75.500  74.890
+                                                                       DI_TTL_3
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TX1M         pins MOVED FROM this net (to net name listed on right)
+                                 J1.6              3.460  44.340
+                                                                           TXM1
+                                 U1.14            36.750  41.300
+                                                                       N4551709
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TX1P         pins MOVED FROM this net (to net name listed on right)
+                                 J1.3              6.000  40.540
+                                                                           TXP1
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  15  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 U1.16            35.750  41.300
+                                                                      ETH_TX_EN
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TX2M         pins MOVED FROM this net (to net name listed on right)
+                                 J2.6              3.460  23.340
+                                                                           TXM2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TX2P         pins MOVED FROM this net (to net name listed on right)
+                                 J2.3              6.000  19.540
+                                                                           TXP2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TXM1         pins MOVED FROM this net (to net name listed on right)
+                                 R7.2             37.600  39.500
+                                                                           TXP1
+                                 U2.3             82.000  68.540
+                                                                        DI_IN_1
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TXM2         pins MOVED FROM this net (to net name listed on right)
+                                 R12.2            37.600  18.500
+                                                                           RXP2
+                                 U2.11            75.500  72.350
+                                                                       DI_TTL_2
+                                 U3.3             34.900  18.540
+                                                                           3.3V
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TXP1         pins MOVED FROM this net (to net name listed on right)
+                                 R8.2             37.600  37.000
+                                                                       N4548481
+                                 U1.1             38.800  34.250
+                                                                           RXM1
+                                 U2.4             82.000  69.810
+                                                                       N4538644
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.4             38.800  35.750
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  TXP2         pins MOVED FROM this net (to net name listed on right)
+                                 R13.2            37.600  16.000
+                                                                           TXM2
+                                 U2.12            75.500  71.080
+                                                                           3.3V
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.12            38.800  39.750
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  16  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  VDDA         pins MOVED FROM this net (to net name listed on right)
+                                 C42.2            65.200   5.300
+                                                                            GND
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VDDA_1.8     pins MOVED FROM this net (to net name listed on right)
+                                 C6.1             46.800  31.100
+                                                                       VDDA_3.3
+                                 U2.7             82.000  73.620
+                                                                        DI_IN_3
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VDDA_3.3     pins MOVED FROM this net (to net name listed on right)
+                                 C7.1             65.700  36.200
+                                                                           3.3V
+                                 C9.1             46.800  33.300
+                                                                            GND
+                                 U2.5             82.000  71.080
+                                                                        DI_IN_2
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 U1.5             38.800  36.250
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VREF         pins MOVED FROM this net (to net name listed on right)
+                                 C41.2            75.000  16.300
+                                                                             5V
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  17  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| COMPONENT DEFINITION added to design                                         |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    device type                                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C1X2_C1X2_P381_PWR
+ CRYSTAL-4PIN_1_SMD3225_CRYSTAL_
+ CRYSTAL-4PIN_1_SMD3225_CRYSTA_1
+ GD25Q64C_SOIC8_208MIL_W25Q64
+ RESISTOR_SMD_R_0805_1.5K
+ RESISTOR_SMD_R_0805_220R
+ RESISTOR_SMD_R_0805_51R
+ RJ45_HR911105A_RJ45_HR911105A_1
+ RJ45_HR911105A_RJ45_HR911105A_E
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  18  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| COMPONENTS DELETED from design                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type      |   x   |   y                        |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C15                 CAP NP_SMD_C_0805_18PF  51.500  11.000
+ C16                 CAP NP_SMD_C_0805_18PF  60.600  11.000
+ C28                 CAP NP_SMD_C_0805_22PF  24.000  80.200
+ C29                 CAP NP_SMD_C_0805_100NF  45.600  87.100
+ C30                 CAP_SMD_C_1206_1NF/2KV  92.000  12.000
+ C31                 CAP NP_SMD_C_0805_22PF  24.000  71.200
+ C48                 CAP NP_SMD_C_0805_100NF  43.700  63.800
+ R4                  RESISTOR_SMD_R_0805_4.7K  65.700  34.300
+ R8                  RESISTOR_SMD_R_0805_11.8K/1%  46.100  32.200
+ R19                 RESISTOR_SMD_R_0805_1K  67.200  27.700
+ R22                 RESISTOR_SMD_R_0805_2K  71.600  63.300
+ R23                 RESISTOR_SMD_R_0805_150R  85.500  66.800
+ R26                 RESISTOR_SMD_R_0805_100R  87.400  33.800
+ R29                 RESISTOR_SMD_R_0805_100R  87.400  41.400
+ R30                 RESISTOR_SMD_R_0805_2K  71.600  67.200
+ R31                 RESISTOR_SMD_R_0805_150R  85.500  69.800
+ R37                 RESISTOR_SMD_R_0805_100R  87.400  56.600
+ R39                 RESISTOR_SMD_R_0805_150R  85.500  72.800
+ R40                 RESISTOR_SMD_R_0805_3K3  85.000  41.400
+ R44                 RESISTOR_SMD_R_0805_50R  89.800  47.100
+ R45                 RESISTOR_SMD_R_0805_22R  62.400  69.900
+ R48                 RESISTOR_SMD_R_0805_3K3  85.000  56.600
+ R60                 RESISTOR_SMD_R_0805_22R  40.900  61.000
+ R65                 RESISTOR_SMD_R_0805_4.7K  56.500  47.700
+ SW1                 DIP_SWITCH4_SMD_SW4_RESERVED  77.000  82.500
+ U1                  KSZ8863RLL_LQFP48_KSZ8863RLL  58.000  32.000
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  19  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| COMPONENTS ADDED to design                                                   |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type                                           |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C4                  CAP NP_SMD_C_0805_100NF 
+ C18                 CAP NP_SMD_C_0805_100NF 
+ C19                 CAP NP_SMD_C_0805_100NF 
+ C32                 CAP NP_SMD_C_0805_100NF 
+ R5                  RESISTOR_SMD_R_0805_51R 
+ R9                  RESISTOR_SMD_R_0805_22R 
+ R15                 RESISTOR_SMD_R_0805_22R 
+ R35                 RESISTOR_SMD_R_0805_51R 
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  20  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| COMPONENTS CHANGED from one device type to another in design                 |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C11                 CAP NP_SMD_C_0805_100NF  32.600  11.500 CAP_SMD_C_0805_10UF
+ C15                 CAP NP_SMD_C_0805_18PF  42.400  17.900 CAP NP_SMD_C_0805_100NF
+ C16                 CAP NP_SMD_C_0805_18PF  32.600  32.100 CAP_SMD_C_0805_10UF
+ C17                 CAP NP_SMD_C_0805_100NF  21.400  39.200 CAP_SMD_C_1206_1NF/2KV
+ C20                 CAP NP_SMD_C_0805_100NF  21.400  41.900 CAP_SMD_C_1206_1NF/2KV
+ C21                 CAP NP_SMD_C_0805_100NF  21.400  18.300 CAP_SMD_C_1206_1NF/2KV
+ C22                 CAP NP_SMD_C_0805_100NF  21.400  21.000 CAP_SMD_C_1206_1NF/2KV
+ C28                 CAP NP_SMD_C_0805_22PF  37.600  77.000 CAP NP_SMD_C_0805_100NF
+ C30                 CAP_SMD_C_1206_1NF/2KV  61.200  63.900 CAP NP_SMD_C_0805_100NF
+ C31                 CAP NP_SMD_C_0805_22PF  43.800  72.400 CAP NP_SMD_C_0805_100NF
+ J1                  RJ45_HR911105A_RJ45_HR911105A_E   6.000  38.000 RJ45-T-568A_1_RJ45-T-568A-LED_E
+ J2                  RJ45_HR911105A_RJ45_HR911105A_1   6.000  17.000 RJ45-T-568A_1_RJ45-T-568A-LED_1
+ J9                  C1X2_C1X2_P381_PWR     80.000   2.000 C1X2_C1X2_PWR
+ R3                  RESISTOR_SMD_R_0805_51R  60.400  41.800 RESISTOR_SMD_R_0805_1K
+ R4                  RESISTOR_SMD_R_0805_4.7K  39.500  45.900 RESISTOR_SMD_R_0805_50R
+ R6                  RESISTOR_SMD_R_0805_51R  39.500  43.300 RESISTOR_SMD_R_0805_50R
+ R7                  RESISTOR_SMD_R_0805_51R  39.500  39.500 RESISTOR_SMD_R_0805_50R
+ R8                  RESISTOR_SMD_R_0805_11.8K/1%  39.500  37.000 RESISTOR_SMD_R_0805_50R
+ R10                 RESISTOR_SMD_R_0805_51R  39.500  24.900 RESISTOR_SMD_R_0805_50R
+ R11                 RESISTOR_SMD_R_0805_22R  39.500  22.300 RESISTOR_SMD_R_0805_50R
+ R12                 RESISTOR_SMD_R_0805_51R  39.500  18.500 RESISTOR_SMD_R_0805_50R
+ R13                 RESISTOR_SMD_R_0805_51R  39.500  16.000 RESISTOR_SMD_R_0805_50R
+ R14                 RESISTOR_SMD_R_0805_51R  57.500  21.800 RESISTOR_SMD_R_0805_1K
+ R16                 RESISTOR_SMD_R_0805_220R  16.600  38.800 RESISTOR_SMD_R_0805_50R
+ R17                 RESISTOR_SMD_R_0805_220R  57.800  43.700 RESISTOR_SMD_R_0805_1K
+ R18                 RESISTOR_SMD_R_0805_4.7K  23.300  44.600 RESISTOR_SMD_R_0805_75R
+ R19                 RESISTOR_SMD_R_0805_1K  19.000  40.700 RESISTOR_SMD_R_0805_50R
+ R20                 RESISTOR_SMD_R_0805_220R  16.600  40.900 RESISTOR_SMD_R_0805_50R
+ R21                 RESISTOR_SMD_R_0805_220R  56.500  47.700 RESISTOR_SMD_R_0805_1K
+ R22                 RESISTOR_SMD_R_0805_2K  16.600  43.000 RESISTOR_SMD_R_0805_50R
+ R23                 RESISTOR_SMD_R_0805_150R  19.000  44.900 RESISTOR_SMD_R_0805_50R
+ R24                 RESISTOR_SMD_R_0805_51R  16.600  45.100 RESISTOR_SMD_R_0805_50R
+ R25                 RESISTOR_SMD_R_0805_2K  16.600  17.800 RESISTOR_SMD_R_0805_50R
+ R26                 RESISTOR_SMD_R_0805_100R  55.200  43.700 RESISTOR_SMD_R_0805_1K
+ R27                 RESISTOR_SMD_R_0805_51R  23.300  23.600 RESISTOR_SMD_R_0805_75R
+ R28                 RESISTOR_SMD_R_0805_2K  19.000  19.700 RESISTOR_SMD_R_0805_50R
+ R29                 RESISTOR_SMD_R_0805_100R  16.600  19.900 RESISTOR_SMD_R_0805_50R
+ R30                 RESISTOR_SMD_R_0805_2K  53.900  47.700 RESISTOR_SMD_R_0805_1K
+ R31                 RESISTOR_SMD_R_0805_150R  16.600  22.000 RESISTOR_SMD_R_0805_50R
+ R32                 RESISTOR_SMD_R_0805_51R  19.000  23.900 RESISTOR_SMD_R_0805_50R
+ R33                 RESISTOR_SMD_R_0805_2K  16.600  24.100 RESISTOR_SMD_R_0805_50R
+ R36                 RESISTOR_SMD_R_0805_2K  89.800  31.900 RESISTOR_SMD_R_0805_50R
+ R37                 RESISTOR_SMD_R_0805_100R  85.000  33.800 RESISTOR_SMD_R_0805_3K3
+ R39                 RESISTOR_SMD_R_0805_150R  89.800  39.500 RESISTOR_SMD_R_0805_50R
+ R45                 RESISTOR_SMD_R_0805_22R  85.000  49.000 RESISTOR_SMD_R_0805_3K3
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  21  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| COMPONENTS CHANGED from one device type to another in design                 |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ R47                 RESISTOR_SMD_R_0805_1.5K  89.800  54.700 RESISTOR_SMD_R_0805_50R
+ U1                  KSZ8863RLL_LQFP48_KSZ8863RLL  34.500  37.000 HR601680_1_ETH_TRANS_HR601680
+ U3                  GD25Q64C_SOIC8_208MIL_W25Q64  34.500  16.000 HR601680_1_ETH_TRANS_HR601680
+ Y1                  CRYSTAL-4PIN_1_SMD3225_CRYSTAL_  56.000  16.000 CRYSTAL_CRYSTAL_2PIN_SMD_25M
+ Y2                  CRYSTAL-4PIN_1_SMD3225_CRYSTA_1  29.000  75.700 CRYSTAL_CRYSTAL_2PIN_SMD_8M
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  22  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| SLOT PROPERTIES added to design                                              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   slot_id    |   x   |   y   |   property   |             value              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C4.2                           PRIM_FILE      .\pstchip.dat
+ C11.2           32.600  11.500 PRIM_FILE      .\pstchip.dat
+ C15.2           42.400  17.900 PRIM_FILE      .\pstchip.dat
+ C16.2           32.600  32.100 PRIM_FILE      .\pstchip.dat
+ C17.2           21.400  39.200 PRIM_FILE      .\pstchip.dat
+ C18.2                          PRIM_FILE      .\pstchip.dat
+ C19.2                          PRIM_FILE      .\pstchip.dat
+ C20.2           21.400  41.900 PRIM_FILE      .\pstchip.dat
+ C21.2           21.400  18.300 PRIM_FILE      .\pstchip.dat
+ C22.2           21.400  21.000 PRIM_FILE      .\pstchip.dat
+ C28.2           37.600  77.000 PRIM_FILE      .\pstchip.dat
+ C30.2           61.200  63.900 PRIM_FILE      .\pstchip.dat
+ C31.2           43.800  72.400 PRIM_FILE      .\pstchip.dat
+ C32.2                          PRIM_FILE      .\pstchip.dat
+ J1.1             6.000  38.000 PRIM_FILE      .\pstchip.dat
+ J2.1             6.000  17.000 PRIM_FILE      .\pstchip.dat
+ J9.2            80.000   2.000 PRIM_FILE      .\pstchip.dat
+ R3.2            60.400  41.800 PRIM_FILE      .\pstchip.dat
+ R4.2            39.500  45.900 PRIM_FILE      .\pstchip.dat
+ R5.2                           PRIM_FILE      .\pstchip.dat
+ R6.2            39.500  43.300 PRIM_FILE      .\pstchip.dat
+ R7.2            39.500  39.500 PRIM_FILE      .\pstchip.dat
+ R8.2            39.500  37.000 PRIM_FILE      .\pstchip.dat
+ R9.2                           PRIM_FILE      .\pstchip.dat
+ R10.2           39.500  24.900 PRIM_FILE      .\pstchip.dat
+ R11.2           39.500  22.300 PRIM_FILE      .\pstchip.dat
+ R12.2           39.500  18.500 PRIM_FILE      .\pstchip.dat
+ R13.2           39.500  16.000 PRIM_FILE      .\pstchip.dat
+ R14.2           57.500  21.800 PRIM_FILE      .\pstchip.dat
+ R15.2                          PRIM_FILE      .\pstchip.dat
+ R16.2           16.600  38.800 PRIM_FILE      .\pstchip.dat
+ R17.2           57.800  43.700 PRIM_FILE      .\pstchip.dat
+ R18.2           23.300  44.600 PRIM_FILE      .\pstchip.dat
+ R19.2           19.000  40.700 PRIM_FILE      .\pstchip.dat
+ R20.2           16.600  40.900 PRIM_FILE      .\pstchip.dat
+ R21.2           56.500  47.700 PRIM_FILE      .\pstchip.dat
+ R22.2           16.600  43.000 PRIM_FILE      .\pstchip.dat
+ R23.2           19.000  44.900 PRIM_FILE      .\pstchip.dat
+ R24.2           16.600  45.100 PRIM_FILE      .\pstchip.dat
+ R25.2           16.600  17.800 PRIM_FILE      .\pstchip.dat
+ R26.2           55.200  43.700 PRIM_FILE      .\pstchip.dat
+ R27.2           23.300  23.600 PRIM_FILE      .\pstchip.dat
+ R28.2           19.000  19.700 PRIM_FILE      .\pstchip.dat
+ R29.2           16.600  19.900 PRIM_FILE      .\pstchip.dat
+ R30.2           53.900  47.700 PRIM_FILE      .\pstchip.dat
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  23  |
+|------------------------------------------------------------------------------|
+|  G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd                              |
+|                                                    Wed May 16 22:20:10 2018  |
+|------------------------------------------------------------------------------|
+| SLOT PROPERTIES added to design                                              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   slot_id    |   x   |   y   |   property   |             value              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ R31.2           16.600  22.000 PRIM_FILE      .\pstchip.dat
+ R32.2           19.000  23.900 PRIM_FILE      .\pstchip.dat
+ R33.2           16.600  24.100 PRIM_FILE      .\pstchip.dat
+ R35.2                          PRIM_FILE      .\pstchip.dat
+ R36.2           89.800  31.900 PRIM_FILE      .\pstchip.dat
+ R37.2           85.000  33.800 PRIM_FILE      .\pstchip.dat
+ R39.2           89.800  39.500 PRIM_FILE      .\pstchip.dat
+ R45.2           85.000  49.000 PRIM_FILE      .\pstchip.dat
+ R47.2           89.800  54.700 PRIM_FILE      .\pstchip.dat
+ U1.15           34.500  37.000 PRIM_FILE      .\pstchip.dat
+ U3.3            34.500  16.000 PRIM_FILE      .\pstchip.dat
+ Y1.4            56.000  16.000 PRIM_FILE      .\pstchip.dat
+ Y2.4            29.000  75.700 PRIM_FILE      .\pstchip.dat
+|------------------------------------------------------------------------------|
+|       Nets changed          :     248                                        |
+|       Comp definitions added:       9                                        |
+|       Components added      :       8                                        |
+|       Components deleted    :      26                                        |
+|       Components changed    :      50                                        |
+|       Slot property added   :      58                                        |
 |                                                                              |
-|   Total ECO changes reported:       3                                        |
+|   Total ECO changes reported:     399                                        |
 |------------------------------------------------------------------------------|
