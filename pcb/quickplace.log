@@ -4,24 +4,17 @@
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
 (    Software Version : 17.2P028                                      )
-(    Date/Time        : Wed May 16 22:22:39 2018                      )
+(    Date/Time        : Thu May 17 22:52:51 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 State: Placing on layer TOP
 
-         Placed symbol:  R35 / RESISTOR_SMD_R_0805_51R / SMD_R_0805 at (2.076 102.911)
-         Placed symbol:  R5 / RESISTOR_SMD_R_0805_51R / SMD_R_0805 at (5.002 102.911)
-         Placed symbol:  C18 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (7.928 102.911)
-         Placed symbol:  C19 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (10.854 102.911)
-         Placed symbol:  C32 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (13.780 102.911)
-         Placed symbol:  C4 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (16.706 102.911)
-         Placed symbol:  R15 / RESISTOR_SMD_R_0805_22R / SMD_R_0805 at (19.632 102.911)
-         Placed symbol:  R9 / RESISTOR_SMD_R_0805_22R / SMD_R_0805 at (22.558 102.911)
+         Placed symbol:  R50 / RESISTOR_SMD_R_0805_22R / SMD_R_0805 at (46.676 72.911)
 
 
-Placed 8 of 8 applicable (8 total) symbols.
+Placed 1 of 1 applicable (1 total) symbols.
 
 -----------------------------------------------------------------------
 

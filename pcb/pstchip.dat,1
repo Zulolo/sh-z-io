@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001May-05-2018 at 09:28:06}
+{ Using PSTWRITER 17.2.0 d001May-05-2018 at 10:23:33}
 primitive 'CAP NP_SMD_C_0805_47UF';
   pin
     '1':
