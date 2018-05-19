@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
 (    Software Version : 17.2P019                                      )
-(    Date/Time        : Sat May 05 11:38:41 2018                      )
+(    Date/Time        : Sat May 19 21:54:32 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -57,30 +57,28 @@ Results from parameter file ...
   CIRCLE     0.60000                                  DARK 
   CIRCLE     0.80000                                  DARK 
   CIRCLE     1.00000                                  DARK 
-  CIRCLE     1.50000                                  DARK 
   CIRCLE     1.60000                                  DARK 
   CIRCLE     2.20000                                  DARK 
   CIRCLE     3.20000                                  DARK 
   SQUARE     0.80000                     0.000 NO     DARK 
   SQUARE     1.60000                     0.000 NO     DARK 
   SQUARE     2.20000                     0.000 NO     DARK 
-  RECTANGLE  0.35000     x 1.50000      90.000 NO     DARK 
-  RECTANGLE  0.80000     x 3.00000      90.000 NO     DARK 
+  RECTANGLE  0.35000     x 2.00000       0.000 NO     DARK 
   RECTANGLE  1.20000     x 0.25000       0.000 NO     DARK 
   RECTANGLE  1.20000     x 0.25000      90.000 NO     DARK 
   RECTANGLE  1.20000     x 0.30000       0.000 NO     DARK 
   RECTANGLE  1.20000     x 0.30000      90.000 NO     DARK 
   RECTANGLE  1.20000     x 1.60000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.80000       0.000 NO     DARK 
-  RECTANGLE  1.40000     x 0.80000      90.000 NO     DARK 
+  RECTANGLE  1.40000     x 1.20000       0.000 NO     DARK 
+  RECTANGLE  1.40000     x 1.20000      90.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000       0.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000      90.000 NO     DARK 
+  RECTANGLE  1.60000     x 0.50000       0.000 NO     DARK 
   RECTANGLE  1.80000     x 0.60000       0.000 NO     DARK 
-  RECTANGLE  1.80000     x 0.90000       0.000 NO     DARK 
-  RECTANGLE  1.80000     x 1.20000      90.000 NO     DARK 
+  RECTANGLE  1.80000     x 1.20000       0.000 NO     DARK 
   RECTANGLE  3.60000     x 1.80000       0.000 NO     DARK 
-  RECTANGLE  4.50000     x 1.50000       0.000 NO     DARK 
-  RECTANGLE  4.50000     x 1.50000      90.000 NO     DARK 
+  RECTANGLE  3.60000     x 1.80000      90.000 NO     DARK 
 
      TOP created.
 
@@ -114,16 +112,17 @@ Results from parameter file ...
   CIRCLE     0.60000                                  DARK 
   CIRCLE     0.80000                                  DARK 
   CIRCLE     1.00000                                  DARK 
-  CIRCLE     1.50000                                  DARK 
   CIRCLE     1.60000                                  DARK 
   CIRCLE     2.20000                                  DARK 
   CIRCLE     3.20000                                  DARK 
+  SQUARE     0.80000                     0.000 NO     DARK 
   SQUARE     1.60000                     0.000 NO     DARK 
   SQUARE     2.20000                     0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.80000       0.000 NO     DARK 
+  RECTANGLE  1.40000     x 0.80000      90.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000       0.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000      90.000 NO     DARK 
-  RECTANGLE  1.80000     x 0.90000      90.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.90000       0.000 NO     DARK 
 
      BOTTOM created.
 
@@ -277,23 +276,22 @@ Results from parameter file ...
   SQUARE     1.00000                     0.000 NO     DARK 
   SQUARE     1.70000                     0.000 NO     DARK 
   SQUARE     2.40000                     0.000 NO     DARK 
-  RECTANGLE  0.40000     x 1.60000      90.000 NO     DARK 
-  RECTANGLE  0.90000     x 3.20000      90.000 NO     DARK 
+  RECTANGLE  0.40000     x 2.20000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.30000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.30000      90.000 NO     DARK 
   RECTANGLE  1.40000     x 0.40000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.40000      90.000 NO     DARK 
   RECTANGLE  1.40000     x 1.80000       0.000 NO     DARK 
   RECTANGLE  1.60000     x 1.00000       0.000 NO     DARK 
-  RECTANGLE  1.60000     x 1.00000      90.000 NO     DARK 
+  RECTANGLE  1.60000     x 1.40000       0.000 NO     DARK 
+  RECTANGLE  1.60000     x 1.40000      90.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000       0.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000      90.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.70000       0.000 NO     DARK 
   RECTANGLE  1.90000     x 0.70000       0.000 NO     DARK 
-  RECTANGLE  2.00000     x 1.10000       0.000 NO     DARK 
-  RECTANGLE  2.00000     x 1.40000      90.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.40000       0.000 NO     DARK 
   RECTANGLE  3.80000     x 2.00000       0.000 NO     DARK 
-  RECTANGLE  4.70000     x 1.70000       0.000 NO     DARK 
-  RECTANGLE  4.70000     x 1.70000      90.000 NO     DARK 
+  RECTANGLE  3.80000     x 2.00000      90.000 NO     DARK 
 
      SOLDERMASK_TOP created.
 
@@ -323,12 +321,14 @@ Results from parameter file ...
   CIRCLE     1.20000                                  DARK 
   CIRCLE     1.70000                                  DARK 
   CIRCLE     2.40000                                  DARK 
+  SQUARE     1.00000                     0.000 NO     DARK 
   SQUARE     1.70000                     0.000 NO     DARK 
   SQUARE     2.40000                     0.000 NO     DARK 
   RECTANGLE  1.60000     x 1.00000       0.000 NO     DARK 
+  RECTANGLE  1.60000     x 1.00000      90.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000       0.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000      90.000 NO     DARK 
-  RECTANGLE  2.00000     x 1.10000      90.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.10000       0.000 NO     DARK 
 
      SOLDERMASK_BOTTOM created.
 

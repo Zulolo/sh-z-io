@@ -61,7 +61,8 @@
       (Path "Design Resources" "G:\Work\io\design\sch\io_two_eth.dsn"
          "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Path "Outputs"))
+      (Path "Outputs")
+      (Select "Design Resources" "G:\Work\io\design\sch\io_two_eth.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -72,7 +73,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 279 1836 44 743")
-        (Scroll "-104 42")
+        (Scroll "-104 95")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -82,7 +83,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 78 1613 78 755")
-        (Scroll "-93 3")
+        (Scroll "-93 103")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -92,7 +93,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 234 1475 234 911")
-        (Scroll "528 0")
+        (Scroll "528 216")
         (Zoom "268")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
