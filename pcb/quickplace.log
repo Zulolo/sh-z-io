@@ -4,25 +4,17 @@
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
 (    Software Version : 17.2P028                                      )
-(    Date/Time        : Thu May 17 22:52:51 2018                      )
+(    Date/Time        : Sat May 19 17:46:49 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 State: Placing on layer TOP
 
-         Placed symbol:  R50 / RESISTOR_SMD_R_0805_22R / SMD_R_0805 at (46.676 72.911)
+         Placed symbol:  C48 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (2.076 72.411)
 
 
 Placed 1 of 1 applicable (1 total) symbols.
-
------------------------------------------------------------------------
-
-State: Placing on layer TOP
-
-
-
-Placed 0 of 0 applicable (0 total) symbols.
 
 -----------------------------------------------------------------------
 

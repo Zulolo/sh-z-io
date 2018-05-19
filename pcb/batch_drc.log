@@ -3,8 +3,8 @@
 (    DRC Update                                                       )
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
-(    Software Version : 17.2P019                                      )
-(    Date/Time        : Thu May 17 21:42:35 2018                      )
+(    Software Version : 17.2P028                                      )
+(    Date/Time        : Sat May 19 18:02:30 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -20,7 +20,7 @@
  ========= check standalone text              0:00:00
  ========= check standalone rectangles        0:00:00
 
- ..... Total number of DRC errors  3
+ ..... Total number of DRC errors  0
 
  ..... DRC update completed, total CPU time   0:00:00
  *************************************************************************
