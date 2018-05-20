@@ -273,7 +273,7 @@ HAL_StatusTypeDef HAL_ETH_Init(ETH_HandleTypeDef *heth)
   /* Write to ETHERNET MAC MIIAR: Configure the ETHERNET CSR Clock Range */
   (heth->Instance)->MACMIIAR = (uint32_t)tmpreg1;
   
-   HAL_Delay(PHY_RESET_DELAY);
+  HAL_Delay(PHY_RESET_DELAY);
   (heth->Init).DuplexMode = ETH_MODE_FULLDUPLEX; 
   (heth->Init).Speed = ETH_SPEED_100M;
   
@@ -434,7 +434,7 @@ HAL_StatusTypeDef HAL_ETH_Init(ETH_HandleTypeDef *heth)
 //    /* Delay to assure PHY configuration */
 //    HAL_Delay(PHY_CONFIG_DELAY);
 //  }
-  
+//  
   /* Config MAC and DMA */
   ETH_MACDMAConfig(heth, err);
   

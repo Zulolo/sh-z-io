@@ -3,13 +3,34 @@
 #include "cmsis_os.h"
 #include "di_monitor.h"
 
-#define DI_SAMPLE_INTERVAL			20
+#define DI_SAMPLE_INTERVAL			10
 #define DI_SAMPLE_FILTER_TIME		(DI_SAMPLE_INTERVAL*5)
 
 extern osMutexId DI_DataAccessHandle;
+extern EventGroupHandle_t xDiEventGroup;
 static uint32_t unDI_Value; 
-static GPIO_TypeDef* DI_Ports[SH_Z_002_DI_NUM] = {DI_0_GPIO_Port, DI_1_GPIO_Port, DI_2_GPIO_Port, DI_3_GPIO_Port};
-static uint16_t DI_Pins[SH_Z_002_DI_NUM] = {DI_0_Pin, DI_1_Pin, DI_2_Pin, DI_3_Pin};
+// limitation can only use pins in same port, e.g. GPIOD 
+// Also the pins should be continuously
+static const GPIO_TypeDef* DI_Port = GPIOD;
+static const uint16_t DI_Pins[SH_Z_002_DI_NUM] = {DI_0_Pin, DI_1_Pin, DI_2_Pin, DI_3_Pin};
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	BaseType_t xHigherPriorityTaskWoken, xResult;
+	if ((DI_0_Pin == GPIO_Pin) || (DI_1_Pin == GPIO_Pin) || 
+		(DI_2_Pin == GPIO_Pin) || (DI_3_Pin == GPIO_Pin)) {
+		/* xHigherPriorityTaskWoken must be initialised to pdFALSE. */
+		xHigherPriorityTaskWoken = pdFALSE;
+
+		/* Set bit 0 and bit 4 in xEventGroup. */
+		xResult = xEventGroupSetBitsFromISR(xDiEventGroup, GPIO_Pin, &xHigherPriorityTaskWoken );
+
+		/* Was the message posted successfully? */
+		if( xResult != pdFAIL ) {
+			portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+		}	  
+	}
+}
 
 static uint32_t get_DI_values(void) {
 	uint8_t unIndex;
@@ -18,9 +39,9 @@ static uint32_t get_DI_values(void) {
 	assert_param(IS_DI_PIN_NUM(SH_Z_002_DI_NUM));
 	
 	for (unIndex = 0; unIndex < SH_Z_002_DI_NUM; unIndex++) {
-		(GPIO_PIN_SET == HAL_GPIO_ReadPin(DI_Ports[unIndex], DI_Pins[unIndex])) ? 
-			(SET_BIT(unDI_ValueTemp, ((0x01U) << unIndex))) : 
-			(CLEAR_BIT(unDI_ValueTemp, ((0x01U) << unIndex)));
+		(GPIO_PIN_SET == HAL_GPIO_ReadPin(DI_Port, DI_Pins[unIndex])) ? 
+			(SET_BIT(unDI_ValueTemp, DI_Pins[unIndex])) : 
+			(CLEAR_BIT(unDI_ValueTemp, DI_Pins[unIndex]));
 	}
 	return unDI_ValueTemp;
 }
@@ -28,34 +49,41 @@ static uint32_t get_DI_values(void) {
 uint32_t DI_get_DI_values(void) {
 	uint32_t unTemp;
 	osMutexWait(DI_DataAccessHandle, osWaitForever);
-	unTemp = unDI_Value;
+	unTemp = unDI_Value >> 8;
 	osMutexRelease(DI_DataAccessHandle);
 	return unTemp;
 }
 
 void start_di_monitor(void const * argument) {
 	uint8_t unIndex;
-	static uint32_t unDI_ValueTemp, unBitMask;
+	EventBits_t uxBits;
+	static BaseType_t bSomeThingHappened;
+	static uint32_t unDI_ValueTemp;
 	static uint16_t unDI_FilterTimer[SH_Z_002_DI_NUM];
 	while (1) {
-		unDI_ValueTemp = get_DI_values();
-		osMutexWait(DI_DataAccessHandle, osWaitForever);
-		for (unIndex = 0; unIndex < SH_Z_002_DI_NUM; unIndex++) {
-			unBitMask = ((0x01U) << unIndex);
-			if (READ_BIT(unDI_ValueTemp, unBitMask) != READ_BIT(unDI_Value, unBitMask)) {
-				unDI_FilterTimer[unIndex] += DI_SAMPLE_INTERVAL;
-			} else {
-				unDI_FilterTimer[unIndex] = 0;
+		uxBits = xEventGroupWaitBits(xDiEventGroup, DI_0_Pin | DI_1_Pin | DI_2_Pin | DI_3_Pin, 
+										pdTRUE, pdFALSE, portMAX_DELAY );
+		bSomeThingHappened = pdTRUE;
+		while (pdTRUE == bSomeThingHappened) {
+			unDI_ValueTemp = get_DI_values();
+			bSomeThingHappened = pdFALSE;
+			osMutexWait(DI_DataAccessHandle, osWaitForever);
+			for (unIndex = 0; unIndex < SH_Z_002_DI_NUM; unIndex++) {
+				if (READ_BIT(unDI_ValueTemp, DI_Pins[unIndex]) != READ_BIT(unDI_Value, DI_Pins[unIndex])) {
+					unDI_FilterTimer[unIndex] += DI_SAMPLE_INTERVAL;
+					bSomeThingHappened = pdTRUE;
+				} else {
+					unDI_FilterTimer[unIndex] = 0;
+				}
 			}
+			for (unIndex = 0; unIndex < SH_Z_002_DI_NUM; unIndex++) {
+				if (unDI_FilterTimer[unIndex] > DI_SAMPLE_FILTER_TIME) {
+					(READ_BIT(unDI_ValueTemp, DI_Pins[unIndex]) == DI_Pins[unIndex]) ? (SET_BIT(unDI_Value, DI_Pins[unIndex])) : (CLEAR_BIT(unDI_Value, DI_Pins[unIndex]));
+				}
+			}		
+			osMutexRelease(DI_DataAccessHandle);		
+			osDelay(DI_SAMPLE_INTERVAL);
 		}
-		for (unIndex = 0; unIndex < SH_Z_002_DI_NUM; unIndex++) {
-			if (unDI_FilterTimer[unIndex] > DI_SAMPLE_FILTER_TIME) {
-				unBitMask = ((0x01U) << unIndex);
-				(READ_BIT(unDI_ValueTemp, unBitMask) == unBitMask) ? (SET_BIT(unDI_Value, unBitMask)) : (CLEAR_BIT(unDI_Value, unBitMask));
-			}
-		}		
-		osMutexRelease(DI_DataAccessHandle);		
-		osDelay(DI_SAMPLE_INTERVAL);
 	}
 }
 

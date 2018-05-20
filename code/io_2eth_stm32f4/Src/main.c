@@ -68,12 +68,13 @@ osThreadId defaultTaskHandle;
 osThreadId modbus_tcpHandle;
 osThreadId ai_monitorHandle;
 osThreadId di_monitorHandle;
+osTimerId GARP_TimerHandle;
 osMutexId AI_DataAccessHandle;
 osMutexId DI_DataAccessHandle;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+EventGroupHandle_t xDiEventGroup;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,6 +88,7 @@ void StartDefaultTask(void const * argument);
 extern void start_modbus_tcp_server(void const * argument);
 extern void start_ai_monitor(void const * argument);
 extern void start_di_monitor(void const * argument);
+extern void send_GARP(void const * argument);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -145,11 +147,20 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
+  xDiEventGroup = xEventGroupCreate();
+  if( xDiEventGroup == NULL ) {
+    printf("event group create failed.\n");
+  }
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
+
+  /* Create the timer(s) */
+  /* definition and creation of GARP_Timer */
+  osTimerDef(GARP_Timer, send_GARP);
+  GARP_TimerHandle = osTimerCreate(osTimer(GARP_Timer), osTimerPeriodic, NULL);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
@@ -408,15 +419,9 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : DI_0_Pin DI_1_Pin DI_2_Pin DI_3_Pin */
   GPIO_InitStruct.Pin = DI_0_Pin|DI_1_Pin|DI_2_Pin|DI_3_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : MODE_SEL_0_Pin MODE_SEL_1_Pin MODE_SEL_2_Pin MODE_SEL_3_Pin */
-  GPIO_InitStruct.Pin = MODE_SEL_0_Pin|MODE_SEL_1_Pin|MODE_SEL_2_Pin|MODE_SEL_3_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RELAY_0_Pin RELAY_1_Pin RELAY_2_Pin RELAY_3_Pin */
   GPIO_InitStruct.Pin = RELAY_0_Pin|RELAY_1_Pin|RELAY_2_Pin|RELAY_3_Pin;
@@ -424,6 +429,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 12, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 12, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
