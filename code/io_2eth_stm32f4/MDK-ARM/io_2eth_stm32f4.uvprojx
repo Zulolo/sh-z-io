@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,LWIP_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                ../Middlewares/Third_Party/LwIP/src/include;                ../Middlewares/Third_Party/LwIP/system;                ../Drivers/STM32F4xx_HAL_Driver/Inc;                ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;                ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                ../Middlewares/Third_Party/FreeRTOS/Source/include;                ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                ../Middlewares/Third_Party/LwIP/src/include/lwip;                ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;                ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;                ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;                ../Middlewares/Third_Party/LwIP/src/include/netif;                ../Middlewares/Third_Party/LwIP/src/include/posix;                ../Middlewares/Third_Party/LwIP/src/include/posix/sys;                ../Middlewares/Third_Party/LwIP/system/arch;                ../Drivers/CMSIS/Include;                ..\Middlewares\Third_Party\modbus\include;                ..\Middlewares\Third_Party\modbus\port;                ..\Middlewares\Third_Party\modbus\tcp</IncludePath>
+              <IncludePath>../Inc;                   ../Middlewares/Third_Party/LwIP/src/include;                   ../Middlewares/Third_Party/LwIP/system;                   ../Drivers/STM32F4xx_HAL_Driver/Inc;                   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                   ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                   ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;                   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                   ../Middlewares/Third_Party/FreeRTOS/Source/include;                   ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                   ../Middlewares/Third_Party/LwIP/src/include/lwip;                   ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;                   ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;                   ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;                   ../Middlewares/Third_Party/LwIP/src/include/netif;                   ../Middlewares/Third_Party/LwIP/src/include/posix;                   ../Middlewares/Third_Party/LwIP/src/include/posix/sys;                   ../Middlewares/Third_Party/LwIP/system/arch;                   ../Drivers/CMSIS/Include;                   ..\Middlewares\Third_Party\modbus\include;                   ..\Middlewares\Third_Party\modbus\port;                   ..\Middlewares\Third_Party\modbus\tcp;  ../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -460,6 +460,16 @@
               <FileName>sh_z_init.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\sh_z_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>upnp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\upnp.c</FilePath>
+            </File>
+            <File>
+              <FileName>webserver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\webserver.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -920,6 +930,16 @@
               <FileName>utils.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/LwIP/src/netif/ppp/utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>fs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/LwIP/src/apps/httpd/fs.c</FilePath>
+            </File>
+            <File>
+              <FileName>httpd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/LwIP/src/apps/httpd/httpd.c</FilePath>
             </File>
           </Files>
         </Group>

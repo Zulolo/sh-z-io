@@ -11,7 +11,7 @@ extern EventGroupHandle_t xDiEventGroup;
 static uint32_t unDI_Value; 
 // limitation can only use pins in same port, e.g. GPIOD 
 // Also the pins should be continuously
-static const GPIO_TypeDef* DI_Port = GPIOD;
+static GPIO_TypeDef* DI_Port = GPIOD;
 static const uint16_t DI_Pins[SH_Z_002_DI_NUM] = {DI_0_Pin, DI_1_Pin, DI_2_Pin, DI_3_Pin};
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)

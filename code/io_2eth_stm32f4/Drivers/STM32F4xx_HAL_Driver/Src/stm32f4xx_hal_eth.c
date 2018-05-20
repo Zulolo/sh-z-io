@@ -276,7 +276,6 @@ HAL_StatusTypeDef HAL_ETH_Init(ETH_HandleTypeDef *heth)
    HAL_Delay(PHY_RESET_DELAY);
   (heth->Init).DuplexMode = ETH_MODE_FULLDUPLEX; 
   (heth->Init).Speed = ETH_SPEED_100M;
-  
 //  /*-------------------- PHY initialization and configuration ----------------*/
 //  /* Put the PHY in reset mode */
 //  if((HAL_ETH_WritePHYRegister(heth, PHY_BCR, PHY_RESET)) != HAL_OK)
