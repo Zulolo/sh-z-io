@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>STM32F407VETx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.2.12.0</PackID>
+          <PackID>Keil.STM32F4xx_DFP.2.13.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000-0x2001FFFF) IRAM2(0x10000000-0x1000FFFF) IROM(0x8000000-0x807FFFF) CLOCK(25000000) FPU2 CPUTYPE("Cortex-M4")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -324,7 +324,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>0</uGnu>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,LWIP_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                   ../Middlewares/Third_Party/LwIP/src/include;                   ../Middlewares/Third_Party/LwIP/system;                   ../Drivers/STM32F4xx_HAL_Driver/Inc;                   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                   ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                   ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;                   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                   ../Middlewares/Third_Party/FreeRTOS/Source/include;                   ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                   ../Middlewares/Third_Party/LwIP/src/include/lwip;                   ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;                   ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;                   ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;                   ../Middlewares/Third_Party/LwIP/src/include/netif;                   ../Middlewares/Third_Party/LwIP/src/include/posix;                   ../Middlewares/Third_Party/LwIP/src/include/posix/sys;                   ../Middlewares/Third_Party/LwIP/system/arch;                   ../Drivers/CMSIS/Include;                   ..\Middlewares\Third_Party\modbus\include;                   ..\Middlewares\Third_Party\modbus\port;                   ..\Middlewares\Third_Party\modbus\tcp;  ../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
+              <IncludePath>../Inc;../Middlewares/Third_Party/LwIP/src/include;../Middlewares/Third_Party/LwIP/system;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Middlewares/Third_Party/LwIP/src/include/netif/ppp;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/LwIP/src/include/lwip;../Middlewares/Third_Party/LwIP/src/include/lwip/apps;../Middlewares/Third_Party/LwIP/src/include/lwip/priv;../Middlewares/Third_Party/LwIP/src/include/lwip/prot;../Middlewares/Third_Party/LwIP/src/include/netif;../Middlewares/Third_Party/LwIP/src/include/posix;../Middlewares/Third_Party/LwIP/src/include/posix/sys;../Middlewares/Third_Party/LwIP/system/arch;../Drivers/CMSIS/Include;..\Middlewares\Third_Party\modbus\include;..\Middlewares\Third_Party\modbus\port;..\Middlewares\Third_Party\modbus\tcp;../Middlewares/Third_Party/LwIP/src/apps/httpd;..\Src\flash\Inc;..\Middlewares\Third_Party\spiffs</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1050,6 +1050,36 @@
               <FileName>mbutils.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Third_Party\modbus\functions\mbutils.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/SPIFFS</GroupName>
+          <Files>
+            <File>
+              <FileName>spiffs_cache.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\spiffs\spiffs_cache.c</FilePath>
+            </File>
+            <File>
+              <FileName>spiffs_check.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\spiffs\spiffs_check.c</FilePath>
+            </File>
+            <File>
+              <FileName>spiffs_gc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\spiffs\spiffs_gc.c</FilePath>
+            </File>
+            <File>
+              <FileName>spiffs_hydrogen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\spiffs\spiffs_hydrogen.c</FilePath>
+            </File>
+            <File>
+              <FileName>spiffs_nucleus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\spiffs\spiffs_nucleus.c</FilePath>
             </File>
           </Files>
         </Group>
