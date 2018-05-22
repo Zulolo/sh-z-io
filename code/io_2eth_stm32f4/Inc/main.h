@@ -79,6 +79,8 @@
 #define DI_3_Pin GPIO_PIN_11
 #define DI_3_GPIO_Port GPIOD
 #define DI_3_EXTI_IRQn EXTI15_10_IRQn
+#define SPI_FLASH_CS_Pin GPIO_PIN_15
+#define SPI_FLASH_CS_GPIO_Port GPIOA
 #define RELAY_0_Pin GPIO_PIN_0
 #define RELAY_0_GPIO_Port GPIOD
 #define RELAY_1_Pin GPIO_PIN_1
@@ -96,7 +98,7 @@
 /* #define USE_FULL_ASSERT    1U */
 
 /* USER CODE BEGIN Private defines */
-
+#define SPI_FLASH_CHIP_DMA_TX_RX		(0x01U)
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

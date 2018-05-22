@@ -53,7 +53,8 @@
 #include "lwip.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "spi_flash.h"
+#include "spiffs.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -73,10 +74,17 @@ osThreadId di_monitorHandle;
 osTimerId GARP_TimerHandle;
 osMutexId AI_DataAccessHandle;
 osMutexId DI_DataAccessHandle;
+osMutexId SpiffsMutexHandle;
+osMutexId SpiFlashChipMutexHandle;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 EventGroupHandle_t xDiEventGroup;
+EventGroupHandle_t xComEventGroup;
+spiffs SPI_FFS_fs;
+uint8_t FS_Work_Buf[256 * 2];
+uint8_t FS_FDS[32 * 4];
+uint8_t FS_Cache_Buf[(256 + 32) * 4];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,7 +106,27 @@ extern void send_GARP(void const * argument);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+static int32_t _spiffs_erase(uint32_t addr, uint32_t len)
+{
+    uint32_t i = 0;
+    uint32_t erase_count = (len + SPIFFS_CFG_PHYS_ERASE_SZ(ignore) - 1) / SPIFFS_CFG_PHYS_ERASE_SZ(ignore);
+    for (i = 0; i < erase_count; i++) {
+        spi_flash_erase_block(addr + i * SPIFFS_CFG_PHYS_ERASE_SZ(ignore));
+    }
+    return 0;
+}
 
+static int32_t _spiffs_read(uint32_t addr, uint32_t size, uint8_t *dst)
+{
+    spi_flash_read(addr, size, dst);
+    return 0;
+}
+
+static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
+{
+    spi_flash_write(addr, size, dst);
+    return 0;
+}
 /* USER CODE END 0 */
 
 /**
@@ -109,7 +137,8 @@ extern void send_GARP(void const * argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	spiffs_config cfg;
+	int32_t res;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -135,7 +164,24 @@ int main(void)
   MX_TIM7_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
-
+	cfg.hal_erase_f = _spiffs_erase;
+	cfg.hal_read_f = _spiffs_read;
+	cfg.hal_write_f = _spiffs_write;
+	if ((res = SPIFFS_mount(&SPI_FFS_fs, &cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
+		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
+        printf("formatting spiffs...\n");
+        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
+            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+        }
+        printf("ok\n");
+        printf("mounting\n");
+        res = SPIFFS_mount(&SPI_FFS_fs, &cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
+    }
+    if (res != SPIFFS_OK){
+        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+    } else {
+        printf("SPIFFS mounted\n");
+    }
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
@@ -147,12 +193,25 @@ int main(void)
   osMutexDef(DI_DataAccess);
   DI_DataAccessHandle = osMutexCreate(osMutex(DI_DataAccess));
 
+  /* definition and creation of SpiffsMutex */
+  osMutexDef(SpiffsMutex);
+  SpiffsMutexHandle = osMutexCreate(osMutex(SpiffsMutex));
+
+  /* definition and creation of SpiFlashChipMutex */
+  osMutexDef(SpiFlashChipMutex);
+  SpiFlashChipMutexHandle = osMutexCreate(osMutex(SpiFlashChipMutex));
+
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   xDiEventGroup = xEventGroupCreate();
   if( xDiEventGroup == NULL ) {
-    printf("event group create failed.\n");
+    printf("DI event group create failed.\n");
   }
+  xComEventGroup = xEventGroupCreate();
+  if( xComEventGroup == NULL ) {
+    printf("Communication event group create failed.\n");
+  }  
+  
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
@@ -345,8 +404,8 @@ static void MX_SPI3_Init(void)
   hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi3.Init.NSS = SPI_NSS_HARD_INPUT;
-  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
+  hspi3.Init.NSS = SPI_NSS_SOFT;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
   hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -424,6 +483,9 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, RELAY_0_Pin|RELAY_1_Pin|RELAY_2_Pin|RELAY_3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : DI_0_Pin DI_1_Pin DI_2_Pin DI_3_Pin */
@@ -431,6 +493,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SPI_FLASH_CS_Pin */
+  GPIO_InitStruct.Pin = SPI_FLASH_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SPI_FLASH_CS_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RELAY_0_Pin RELAY_1_Pin RELAY_2_Pin RELAY_3_Pin */
   GPIO_InitStruct.Pin = RELAY_0_Pin|RELAY_1_Pin|RELAY_2_Pin|RELAY_3_Pin;
