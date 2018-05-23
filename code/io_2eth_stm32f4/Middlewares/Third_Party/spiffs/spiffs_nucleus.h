@@ -398,6 +398,7 @@
   ((u8_t *)(&((c)->cpages[(ix) * SPIFFS_CACHE_PAGE_SIZE(fs)])) + sizeof(spiffs_cache_page))
 
 // cache page struct
+#pragma anon_unions
 typedef struct {
   // cache flags
   u8_t flags;

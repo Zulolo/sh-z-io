@@ -57,13 +57,13 @@ uint32_t DI_get_DI_values(void) {
 
 void start_di_monitor(void const * argument) {
 	uint8_t unIndex;
-	EventBits_t uxBits;
+//	EventBits_t uxBits;
 	static BaseType_t bSomeThingHappened;
 	static uint32_t unDI_ValueTemp;
 	static uint16_t unDI_FilterTimer[SH_Z_002_DI_NUM];
 	while (1) {
-		uxBits = xEventGroupWaitBits(xDiEventGroup, DI_0_Pin | DI_1_Pin | DI_2_Pin | DI_3_Pin, 
-										pdTRUE, pdFALSE, portMAX_DELAY );
+		xEventGroupWaitBits(xDiEventGroup, DI_0_Pin | DI_1_Pin | DI_2_Pin | DI_3_Pin, 
+										pdTRUE, pdFALSE, osWaitForever );
 		bSomeThingHappened = pdTRUE;
 		while (pdTRUE == bSomeThingHappened) {
 			unDI_ValueTemp = get_DI_values();
