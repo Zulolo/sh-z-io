@@ -486,6 +486,11 @@
               <FileType>1</FileType>
               <FilePath>../Src/net_sockets.c</FilePath>
             </File>
+            <File>
+              <FileName>fw_flash_upgrade.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\fw_flash_upgrade.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1455,6 +1460,16 @@
               <FileName>asn1write.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/mbedTLS/library/asn1write.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Bootloader</GroupName>
+          <Files>
+            <File>
+              <FileName>bootloader.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bootloader\MDK-ARM\bootloader\bootloader.lib</FilePath>
             </File>
           </Files>
         </Group>
