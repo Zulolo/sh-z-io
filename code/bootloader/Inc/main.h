@@ -57,7 +57,8 @@
 /* #define USE_FULL_ASSERT    1U */
 
 /* USER CODE BEGIN Private defines */
-#define APPLICATION_ADDRESS   (uint32_t)0x08008000 
+#define APPLICATION_ADDRESS_01   (uint32_t)0x08008000
+#define APPLICATION_ADDRESS_02   (uint32_t)0x08040000 
 typedef  void (*pFunction)(void);
 /* USER CODE END Private defines */
 

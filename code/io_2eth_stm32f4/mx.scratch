@@ -11,8 +11,6 @@
 <filestoremove>
     <file>
     <name>..\Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s</name>
-    <name>..\Middlewares\Third_Party\LwIP\src\netif\ppp\ecp.c</name>
-    <name>..\Middlewares\Third_Party\LwIP\src\netif\ppp\ecp.c</name>
     </file>
 </filestoremove>
 

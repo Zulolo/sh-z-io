@@ -76,6 +76,7 @@ osMutexId AI_DataAccessHandle;
 osMutexId DI_DataAccessHandle;
 osMutexId SpiffsMutexHandle;
 osMutexId SpiFlashChipMutexHandle;
+osMutexId WebServerFileMutexHandle;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
@@ -200,6 +201,10 @@ int main(void)
   /* definition and creation of SpiFlashChipMutex */
   osMutexDef(SpiFlashChipMutex);
   SpiFlashChipMutexHandle = osMutexCreate(osMutex(SpiFlashChipMutex));
+
+  /* definition and creation of WebServerFileMutex */
+  osMutexDef(WebServerFileMutex);
+  WebServerFileMutexHandle = osMutexCreate(osMutex(WebServerFileMutex));
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */

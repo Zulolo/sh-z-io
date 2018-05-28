@@ -95,13 +95,23 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-	if (((*(__IO uint32_t*)APPLICATION_ADDRESS) & 0x2FFE0000 ) == 0x20000000) { 
+	if (((*(__IO uint32_t*)APPLICATION_ADDRESS_01) & 0x2FFE0000 ) == 0x20000000) { 
 		/* Jump to user application */
-		JumpAddress = *(__IO uint32_t*) (APPLICATION_ADDRESS + 4);
+		JumpAddress = *(__IO uint32_t*) (APPLICATION_ADDRESS_01 + 4);
 		Jump_To_Application = (pFunction) JumpAddress;
 		/* Initialize user application's Stack Pointer */
-		__set_MSP(*(__IO uint32_t*) APPLICATION_ADDRESS);
-		SCB->VTOR = APPLICATION_ADDRESS;
+		__set_MSP(*(__IO uint32_t*) APPLICATION_ADDRESS_01);
+		SCB->VTOR = APPLICATION_ADDRESS_01;
+		Jump_To_Application();
+	}
+	
+	if (((*(__IO uint32_t*)APPLICATION_ADDRESS_02) & 0x2FFE0000 ) == 0x20000000) { 
+		/* Jump to user application */
+		JumpAddress = *(__IO uint32_t*) (APPLICATION_ADDRESS_02 + 4);
+		Jump_To_Application = (pFunction) JumpAddress;
+		/* Initialize user application's Stack Pointer */
+		__set_MSP(*(__IO uint32_t*) APPLICATION_ADDRESS_02);
+		SCB->VTOR = APPLICATION_ADDRESS_02;
 		Jump_To_Application();
 	}
   /* USER CODE END 2 */

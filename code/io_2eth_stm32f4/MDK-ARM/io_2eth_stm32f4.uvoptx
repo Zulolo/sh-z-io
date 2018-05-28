@@ -714,7 +714,7 @@
 
   <Group>
     <GroupName>Middlewares/LwIP</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -2779,26 +2779,6 @@
       <bDave2>0</bDave2>
       <PathWithFileName>../Middlewares/Third_Party/mbedTLS/library/asn1write.c</PathWithFileName>
       <FilenameWithoutPath>asn1write.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-  </Group>
-
-  <Group>
-    <GroupName>Bootloader</GroupName>
-    <tvExp>0</tvExp>
-    <tvExpOptDlg>0</tvExpOptDlg>
-    <cbSel>0</cbSel>
-    <RteFlg>0</RteFlg>
-    <File>
-      <GroupNumber>11</GroupNumber>
-      <FileNumber>208</FileNumber>
-      <FileType>4</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\..\bootloader\MDK-ARM\bootloader\bootloader.lib</PathWithFileName>
-      <FilenameWithoutPath>bootloader.lib</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

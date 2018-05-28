@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,LWIP_DEBUG,MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Middlewares/Third_Party/LwIP/src/include; ../Middlewares/Third_Party/LwIP/system; ../Drivers/STM32F4xx_HAL_Driver/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy; ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F; ../Middlewares/Third_Party/LwIP/src/include/netif/ppp; ../Drivers/CMSIS/Device/ST/STM32F4xx/Include; ../Middlewares/Third_Party/FreeRTOS/Source/include; ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS; ../Middlewares/Third_Party/LwIP/src/include/lwip; ../Middlewares/Third_Party/LwIP/src/include/lwip/apps; ../Middlewares/Third_Party/LwIP/src/include/lwip/priv; ../Middlewares/Third_Party/LwIP/src/include/lwip/prot; ../Middlewares/Third_Party/LwIP/src/include/netif; ../Middlewares/Third_Party/LwIP/src/include/posix; ../Middlewares/Third_Party/LwIP/src/include/posix/sys; ../Middlewares/Third_Party/LwIP/system/arch; ../Drivers/CMSIS/Include; ..\Middlewares\Third_Party\modbus\include; ..\Middlewares\Third_Party\modbus\port; ..\Middlewares\Third_Party\modbus\tcp; ../Middlewares/Third_Party/LwIP/src/apps/httpd; ..\Src\flash\Inc; ..\Middlewares\Third_Party\spiffs; ..\Middlewares\Third_Party\cjson;../Middlewares/Third_Party/mbedTLS/include;../Middlewares/Third_Party/mbedTLS/include/mbedtls</IncludePath>
+              <IncludePath>../Inc;    ../Middlewares/Third_Party/LwIP/src/include;    ../Middlewares/Third_Party/LwIP/system;    ../Drivers/STM32F4xx_HAL_Driver/Inc;    ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;    ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;    ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;    ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;    ../Middlewares/Third_Party/FreeRTOS/Source/include;    ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;    ../Middlewares/Third_Party/LwIP/src/include/lwip;    ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;    ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;    ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;    ../Middlewares/Third_Party/LwIP/src/include/netif;    ../Middlewares/Third_Party/LwIP/src/include/posix;    ../Middlewares/Third_Party/LwIP/src/include/posix/sys;    ../Middlewares/Third_Party/LwIP/system/arch;    ../Drivers/CMSIS/Include;    ..\Middlewares\Third_Party\modbus\include;    ..\Middlewares\Third_Party\modbus\port;    ..\Middlewares\Third_Party\modbus\tcp;    ..\Src\flash\Inc;    ..\Middlewares\Third_Party\spiffs;    ..\Middlewares\Third_Party\cjson;   ../Middlewares/Third_Party/mbedTLS/include;   ../Middlewares/Third_Party/mbedTLS/include/mbedtls; ../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -359,16 +359,16 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>1</umfTarg>
+            <umfTarg>0</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
             <RepFail>1</RepFail>
             <useFile>0</useFile>
-            <TextAddressRange>0x08000000</TextAddressRange>
+            <TextAddressRange>0x08008000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
+            <ScatterFile>io_2eth_stm32f4\io_2eth_stm32f4.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -1460,16 +1460,6 @@
               <FileName>asn1write.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/mbedTLS/library/asn1write.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Bootloader</GroupName>
-          <Files>
-            <File>
-              <FileName>bootloader.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\..\bootloader\MDK-ARM\bootloader\bootloader.lib</FilePath>
             </File>
           </Files>
         </Group>
