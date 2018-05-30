@@ -339,6 +339,9 @@
                                             <file>
                                                     <name>../Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.c</name>
                                             </file>
+                                            <file>
+                                                    <name>../Middlewares/Third_Party/LwIP/src/apps/tftp/tftp_server.c</name>
+                                            </file>
                 </group>
                     <group>
                             <name>mbedTLS</name>

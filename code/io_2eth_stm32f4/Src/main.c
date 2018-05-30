@@ -55,6 +55,8 @@
 /* USER CODE BEGIN Includes */
 #include "spi_flash.h"
 #include "spiffs.h"
+#include "lwip/apps/tftp_server.h"
+#include "httpd.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -86,6 +88,9 @@ spiffs SPI_FFS_fs;
 uint8_t FS_Work_Buf[256 * 2];
 uint8_t FS_FDS[32 * 4];
 uint8_t FS_Cache_Buf[(256 + 32) * 4];
+
+extern struct tftp_context TFTP_Ctx;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -138,7 +143,7 @@ static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	spiffs_config cfg;
+	spiffs_config spiffs_cfg;
 	int32_t res;
   /* USER CODE END 1 */
 
@@ -165,28 +170,29 @@ int main(void)
   MX_TIM7_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
-	cfg.hal_erase_f = _spiffs_erase;
-	cfg.hal_read_f = _spiffs_read;
-	cfg.hal_write_f = _spiffs_write;
-	if ((res = SPIFFS_mount(&SPI_FFS_fs, &cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
-		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
-        printf("formatting spiffs...\n");
-        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
-            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-        }
-        printf("ok\n");
-        printf("mounting\n");
-        res = SPIFFS_mount(&SPI_FFS_fs, &cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
-    }
-    if (res != SPIFFS_OK){
-        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-    } else {
-        printf("SPIFFS mounted\n");
-    }
+//	spiffs_cfg.hal_erase_f = _spiffs_erase;
+//	spiffs_cfg.hal_read_f = _spiffs_read;
+//	spiffs_cfg.hal_write_f = _spiffs_write;
+//	if ((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
+//		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
+//        printf("formatting spiffs...\n");
+//        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
+//            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+//        }
+//        printf("ok\n");
+//        printf("mounting\n");
+//        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
+//    }
+//    if (res != SPIFFS_OK){
+//        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+//    } else {
+//        printf("SPIFFS mounted\n");
+//    }
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
   /* definition and creation of AI_DataAccess */
+  printf("11111.\n");
   osMutexDef(AI_DataAccess);
   AI_DataAccessHandle = osMutexCreate(osMutex(AI_DataAccess));
 
@@ -225,6 +231,7 @@ int main(void)
 
   /* Create the timer(s) */
   /* definition and creation of GARP_Timer */
+  printf("22222.\n");
   osTimerDef(GARP_Timer, send_GARP);
   GARP_TimerHandle = osTimerCreate(osTimer(GARP_Timer), osTimerPeriodic, NULL);
 
@@ -234,21 +241,22 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
+  printf("3333.\n");
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
-
+printf("4444.\n");
   /* definition and creation of modbus_tcp */
   osThreadDef(modbus_tcp, start_modbus_tcp_server, osPriorityIdle, 0, 256);
   modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
-
+printf("5555.\n");
   /* definition and creation of ai_monitor */
   osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 128);
   ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
-
+printf("6666.\n");
   /* definition and creation of di_monitor */
   osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 128);
   di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
-
+printf("7777.\n");
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -265,6 +273,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  printf("33333.\n");
+  tftp_init(&TFTP_Ctx);
+  httpd_init();
   while (1)
   {
 
