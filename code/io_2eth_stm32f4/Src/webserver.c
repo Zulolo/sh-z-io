@@ -94,3 +94,17 @@ int tftp_file_write(void* handle, struct pbuf* p) {
 }
 
 const struct tftp_context TFTP_Ctx = {.open = tftp_file_open, .close = tftp_file_close, .read = tftp_file_read, .write = tftp_file_write};
+
+void start_webserver(void const * argument) {
+	httpd_init();
+	while(1) {
+		osDelay(500);
+	}
+}
+
+void start_tftp(void const * argument) {
+	tftp_init(&TFTP_Ctx);
+	while(1) {
+		osDelay(500);
+	}
+}

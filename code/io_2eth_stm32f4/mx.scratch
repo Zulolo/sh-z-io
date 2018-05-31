@@ -45,7 +45,6 @@
 	   			<include>..\\Inc</include>
     </Aincludes>
     <Cdefines>
-        <define>MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;</define>
     </Cdefines>
     <definestoremove>
         <Adefines>
@@ -53,6 +52,7 @@
         </Adefines>
         <Cdefines>
             <define>USE_FULL_LL_DRIVER</define>
+            <define>MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;</define>
         </Cdefines>         
     </definestoremove>
     
@@ -60,7 +60,6 @@
 	   <include>..\Inc</include>
 	   <include>..\Middlewares\Third_Party\LwIP\src\include</include>
 	   <include>..\Middlewares\Third_Party\LwIP\system</include>
-	   <include>..\Middlewares\Third_Party\mbedTLS\include</include>
 	   <include>..\Drivers\STM32F4xx_HAL_Driver\Inc</include>
 	   <include>..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy</include>
 	   <include>..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F</include>
@@ -77,7 +76,6 @@
 	   <include>..\Middlewares\Third_Party\LwIP\src\include\posix</include>
 	   <include>..\Middlewares\Third_Party\LwIP\src\include\posix\sys</include>
 	   <include>..\Middlewares\Third_Party\LwIP\system\arch</include>
-	   <include>..\Middlewares\Third_Party\mbedTLS\include\mbedtls</include>
 	   <include>..\Drivers\CMSIS\Include</include>
 
     </Cincludes>
@@ -200,6 +198,9 @@
                                             </file>
                                             <file>
                                                     <name>../Middlewares/Third_Party/LwIP/src/netif/lowpan6.c</name>
+                                            </file>
+                                            <file>
+                                                    <name>../Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.c</name>
                                             </file>
                                             <file>
                                                     <name>../Middlewares/Third_Party/LwIP/src/apps/httpd/httpd.c</name>
@@ -343,219 +344,6 @@
                                                     <name>../Middlewares/Third_Party/LwIP/src/apps/tftp/tftp_server.c</name>
                                             </file>
                 </group>
-                    <group>
-                            <name>mbedTLS</name>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/aes.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/aesni.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/arc4.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/asn1parse.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/asn1write.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/base64.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/bignum.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/blowfish.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/camellia.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ccm.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/certs.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/cipher.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/cipher_wrap.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/cmac.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ctr_drbg.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/debug.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/des.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/dhm.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ecdh.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ecdsa.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ecjpake.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ecp.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ecp_curves.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/entropy.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/entropy_poll.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/error.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/gcm.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/havege.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/hmac_drbg.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/md.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/md2.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/md4.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/md5.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/md_wrap.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/memory_buffer_alloc.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/oid.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/padlock.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pem.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pk.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pkcs11.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pkcs12.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pkcs5.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pkparse.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pkwrite.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/pk_wrap.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/platform.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ripemd160.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/rsa.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/sha1.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/sha256.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/sha512.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_cache.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_ciphersuites.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_cli.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_cookie.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_srv.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_ticket.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/ssl_tls.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/threading.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/timing.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/version.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/version_features.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509write_crt.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509write_csr.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509_create.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509_crl.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509_crt.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/x509_csr.c</name>
-                                            </file>
-                                            <file>
-                                                    <name>../Middlewares/Third_Party/mbedTLS/library/xtea.c</name>
-                                            </file>
-                </group>
       </group> 
 	   <group>
 	    <name>Drivers</name> 
@@ -641,14 +429,6 @@
 
                                 <file>
                                  <name>..\Src\ethernetif.c</name>
-                                </file>
-
-                                <file>
-                                 <name>..\Src\mbedtls.c</name>
-                                </file>
-
-                                <file>
-                                 <name>..\Src\net_sockets.c</name>
                                 </file>
 
                                 <file>

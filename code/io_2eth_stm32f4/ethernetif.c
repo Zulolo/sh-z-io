@@ -306,10 +306,10 @@ static void low_level_init(struct netif *netif)
 //  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
 //  regvalue |= (PHY_ISFR_INT4);
 
-  /* Enable Interrupt on change of link status */ 
+//  /* Enable Interrupt on change of link status */ 
 //  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR , regvalue );
-  
-  /* Read Register Configuration */
+//  
+//  /* Read Register Configuration */
 //  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR , &regvalue);
 
 /* USER CODE BEGIN PHY_POST_CONFIG */ 

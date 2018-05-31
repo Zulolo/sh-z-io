@@ -434,7 +434,7 @@ HAL_StatusTypeDef HAL_ETH_Init(ETH_HandleTypeDef *heth)
 //    /* Delay to assure PHY configuration */
 //    HAL_Delay(PHY_CONFIG_DELAY);
 //  }
-//  
+  
   /* Config MAC and DMA */
   ETH_MACDMAConfig(heth, err);
   

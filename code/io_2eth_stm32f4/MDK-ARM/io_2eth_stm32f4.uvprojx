@@ -62,21 +62,21 @@
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>G:\Work\io\design\code\io_2eth_stm32f4\copy_files.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopU1X>0</nStopU1X>
+            <nStopU1X>12</nStopU1X>
             <nStopU2X>0</nStopU2X>
           </BeforeCompile>
           <BeforeMake>
-            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>G:\Work\io\design\code\io_2eth_stm32f4\copy_files.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopB1X>0</nStopB1X>
+            <nStopB1X>12</nStopB1X>
             <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
@@ -335,9 +335,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx,LWIP_DEBUG,MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,LWIP_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;     ../Middlewares/Third_Party/LwIP/src/include;     ../Middlewares/Third_Party/LwIP/system;     ../Drivers/STM32F4xx_HAL_Driver/Inc;     ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;     ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;     ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/LwIP/src/include/lwip;     ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;     ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;     ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;     ../Middlewares/Third_Party/LwIP/src/include/netif;     ../Middlewares/Third_Party/LwIP/src/include/posix;     ../Middlewares/Third_Party/LwIP/src/include/posix/sys;     ../Middlewares/Third_Party/LwIP/system/arch;     ../Drivers/CMSIS/Include;     ..\Middlewares\Third_Party\modbus\include;     ..\Middlewares\Third_Party\modbus\port;     ..\Middlewares\Third_Party\modbus\tcp;     ..\Src\flash\Inc;     ..\Middlewares\Third_Party\spiffs;     ..\Middlewares\Third_Party\cjson;    ../Middlewares/Third_Party/mbedTLS/include;    ../Middlewares/Third_Party/mbedTLS/include/mbedtls;  ../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
+              <IncludePath>../Inc;             ../Middlewares/Third_Party/LwIP/src/include;             ../Middlewares/Third_Party/LwIP/system;             ../Drivers/STM32F4xx_HAL_Driver/Inc;             ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;             ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;             ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;             ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;             ../Middlewares/Third_Party/FreeRTOS/Source/include;             ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;             ../Middlewares/Third_Party/LwIP/src/include/lwip;             ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;             ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;             ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;             ../Middlewares/Third_Party/LwIP/src/include/netif;             ../Middlewares/Third_Party/LwIP/src/include/posix;             ../Middlewares/Third_Party/LwIP/src/include/posix/sys;             ../Middlewares/Third_Party/LwIP/system/arch;             ../Drivers/CMSIS/Include;             ..\Middlewares\Third_Party\modbus\include;             ..\Middlewares\Third_Party\modbus\port;             ..\Middlewares\Third_Party\modbus\tcp;             ..\Src\flash\Inc;             ..\Middlewares\Third_Party\spiffs;             ..\Middlewares\Third_Party\cjson;../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -475,16 +475,6 @@
               <FileName>spi_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\spi_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>mbedtls.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/mbedtls.c</FilePath>
-            </File>
-            <File>
-              <FileName>net_sockets.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/net_sockets.c</FilePath>
             </File>
             <File>
               <FileName>fw_flash_upgrade.c</FileName>
@@ -947,6 +937,16 @@
               <FilePath>../Middlewares/Third_Party/LwIP/src/netif/ppp/utils.c</FilePath>
             </File>
             <File>
+              <FileName>tftp_server.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/LwIP/src/apps/tftp/tftp_server.c</FilePath>
+            </File>
+            <File>
+              <FileName>ecp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.c</FilePath>
+            </File>
+            <File>
               <FileName>fs.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/LwIP/src/apps/httpd/fs.c</FilePath>
@@ -955,11 +955,6 @@
               <FileName>httpd.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/LwIP/src/apps/httpd/httpd.c</FilePath>
-            </File>
-            <File>
-              <FileName>tftp_server.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/LwIP/src/apps/tftp/tftp_server.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1110,361 +1105,6 @@
               <FileName>cJSON.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Third_Party\cjson\cJSON.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/mbedTLS</GroupName>
-          <Files>
-            <File>
-              <FileName>md.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/md.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509_csr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509_csr.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_srv.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_srv.c</FilePath>
-            </File>
-            <File>
-              <FileName>ecdsa.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ecdsa.c</FilePath>
-            </File>
-            <File>
-              <FileName>aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/aes.c</FilePath>
-            </File>
-            <File>
-              <FileName>entropy_poll.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/entropy_poll.c</FilePath>
-            </File>
-            <File>
-              <FileName>version_features.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/version_features.c</FilePath>
-            </File>
-            <File>
-              <FileName>platform.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/platform.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509_create.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509_create.c</FilePath>
-            </File>
-            <File>
-              <FileName>certs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/certs.c</FilePath>
-            </File>
-            <File>
-              <FileName>pem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pem.c</FilePath>
-            </File>
-            <File>
-              <FileName>pkwrite.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pkwrite.c</FilePath>
-            </File>
-            <File>
-              <FileName>padlock.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/padlock.c</FilePath>
-            </File>
-            <File>
-              <FileName>bignum.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/bignum.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_cli.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_cli.c</FilePath>
-            </File>
-            <File>
-              <FileName>havege.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/havege.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509write_crt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509write_crt.c</FilePath>
-            </File>
-            <File>
-              <FileName>ecdh.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ecdh.c</FilePath>
-            </File>
-            <File>
-              <FileName>md_wrap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/md_wrap.c</FilePath>
-            </File>
-            <File>
-              <FileName>pkcs12.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pkcs12.c</FilePath>
-            </File>
-            <File>
-              <FileName>base64.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/base64.c</FilePath>
-            </File>
-            <File>
-              <FileName>rsa.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/rsa.c</FilePath>
-            </File>
-            <File>
-              <FileName>md5.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/md5.c</FilePath>
-            </File>
-            <File>
-              <FileName>sha1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/sha1.c</FilePath>
-            </File>
-            <File>
-              <FileName>pk.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pk.c</FilePath>
-            </File>
-            <File>
-              <FileName>des.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/des.c</FilePath>
-            </File>
-            <File>
-              <FileName>ecjpake.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ecjpake.c</FilePath>
-            </File>
-            <File>
-              <FileName>arc4.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/arc4.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_tls.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_tls.c</FilePath>
-            </File>
-            <File>
-              <FileName>error.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/error.c</FilePath>
-            </File>
-            <File>
-              <FileName>asn1parse.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/asn1parse.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509write_csr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509write_csr.c</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/sha256.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509.c</FilePath>
-            </File>
-            <File>
-              <FileName>pkcs5.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pkcs5.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_ciphersuites.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_ciphersuites.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509_crl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509_crl.c</FilePath>
-            </File>
-            <File>
-              <FileName>ecp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ecp.c</FilePath>
-            </File>
-            <File>
-              <FileName>oid.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/oid.c</FilePath>
-            </File>
-            <File>
-              <FileName>ecp_curves.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ecp_curves.c</FilePath>
-            </File>
-            <File>
-              <FileName>memory_buffer_alloc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/memory_buffer_alloc.c</FilePath>
-            </File>
-            <File>
-              <FileName>md2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/md2.c</FilePath>
-            </File>
-            <File>
-              <FileName>gcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/gcm.c</FilePath>
-            </File>
-            <File>
-              <FileName>x509_crt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/x509_crt.c</FilePath>
-            </File>
-            <File>
-              <FileName>dhm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/dhm.c</FilePath>
-            </File>
-            <File>
-              <FileName>xtea.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/xtea.c</FilePath>
-            </File>
-            <File>
-              <FileName>md4.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/md4.c</FilePath>
-            </File>
-            <File>
-              <FileName>aesni.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/aesni.c</FilePath>
-            </File>
-            <File>
-              <FileName>ctr_drbg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ctr_drbg.c</FilePath>
-            </File>
-            <File>
-              <FileName>version.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/version.c</FilePath>
-            </File>
-            <File>
-              <FileName>blowfish.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/blowfish.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_cache.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_cache.c</FilePath>
-            </File>
-            <File>
-              <FileName>cipher_wrap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/cipher_wrap.c</FilePath>
-            </File>
-            <File>
-              <FileName>pk_wrap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pk_wrap.c</FilePath>
-            </File>
-            <File>
-              <FileName>cipher.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/cipher.c</FilePath>
-            </File>
-            <File>
-              <FileName>sha512.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/sha512.c</FilePath>
-            </File>
-            <File>
-              <FileName>timing.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/timing.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_ticket.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_ticket.c</FilePath>
-            </File>
-            <File>
-              <FileName>cmac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/cmac.c</FilePath>
-            </File>
-            <File>
-              <FileName>entropy.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/entropy.c</FilePath>
-            </File>
-            <File>
-              <FileName>ssl_cookie.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ssl_cookie.c</FilePath>
-            </File>
-            <File>
-              <FileName>camellia.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/camellia.c</FilePath>
-            </File>
-            <File>
-              <FileName>debug.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/debug.c</FilePath>
-            </File>
-            <File>
-              <FileName>hmac_drbg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/hmac_drbg.c</FilePath>
-            </File>
-            <File>
-              <FileName>pkcs11.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pkcs11.c</FilePath>
-            </File>
-            <File>
-              <FileName>ripemd160.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ripemd160.c</FilePath>
-            </File>
-            <File>
-              <FileName>ccm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/ccm.c</FilePath>
-            </File>
-            <File>
-              <FileName>threading.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/threading.c</FilePath>
-            </File>
-            <File>
-              <FileName>pkparse.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/pkparse.c</FilePath>
-            </File>
-            <File>
-              <FileName>asn1write.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/mbedTLS/library/asn1write.c</FilePath>
             </File>
           </Files>
         </Group>
