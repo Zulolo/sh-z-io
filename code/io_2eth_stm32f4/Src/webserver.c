@@ -10,6 +10,8 @@
 extern spiffs SPI_FFS_fs;
 extern osMutexId WebServerFileMutexHandle;
 
+extern void http_server_socket_thread(void *arg);
+
 static spiffs_file gFileDesc;
 
 int fs_open_custom(struct fs_file *file, const char *name) {
@@ -32,7 +34,7 @@ int fs_open_custom(struct fs_file *file, const char *name) {
 	file->index = 0;
 	file->len = 100;
 	printf("webserver_file_open\n");
-	return 1;
+	return 0;
 }
 
 void fs_close_custom(struct fs_file *file) {
@@ -96,10 +98,9 @@ int tftp_file_write(void* handle, struct pbuf* p) {
 const struct tftp_context TFTP_Ctx = {.open = tftp_file_open, .close = tftp_file_close, .read = tftp_file_read, .write = tftp_file_write};
 
 void start_webserver(void const * argument) {
-	httpd_init();
-	while(1) {
-		osDelay(500);
-	}
+	
+//	httpd_init();
+	http_server_socket_thread(NULL);
 }
 
 void start_tftp(void const * argument) {
