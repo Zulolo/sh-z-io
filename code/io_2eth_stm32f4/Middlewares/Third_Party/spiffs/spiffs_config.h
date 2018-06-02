@@ -21,6 +21,7 @@
 #endif
 // ----------- >8 ------------
 
+extern osMutexId SpiffsMutexHandle;
 // compile time switches
 
 // Set generic spiffs debug output call.
@@ -195,11 +196,11 @@
 
 // define this to enter a mutex if you're running on a multithreaded system
 #ifndef SPIFFS_LOCK
-#define SPIFFS_LOCK(fs)					osMutexWait((fs), osWaitForever)
+#define SPIFFS_LOCK(fs)					osMutexWait(SpiffsMutexHandle, osWaitForever)
 #endif
 // define this to exit a mutex if you're running on a multithreaded system
 #ifndef SPIFFS_UNLOCK
-#define SPIFFS_UNLOCK(fs)				osMutexRelease((fs))
+#define SPIFFS_UNLOCK(fs)				osMutexRelease(SpiffsMutexHandle)
 #endif
 
 // Enable if only one spiffs instance with constant configuration will exist

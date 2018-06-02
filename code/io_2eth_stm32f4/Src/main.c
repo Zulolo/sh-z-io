@@ -171,24 +171,7 @@ int main(void)
   MX_TIM7_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
-//	spiffs_cfg.hal_erase_f = _spiffs_erase;
-//	spiffs_cfg.hal_read_f = _spiffs_read;
-//	spiffs_cfg.hal_write_f = _spiffs_write;
-//	if ((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
-//		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
-//        printf("formatting spiffs...\n");
-//        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
-//            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-//        }
-//        printf("ok\n");
-//        printf("mounting\n");
-//        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
-//    }
-//    if (res != SPIFFS_OK){
-//        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-//    } else {
-//        printf("SPIFFS mounted\n");
-//    }
+
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
@@ -222,6 +205,25 @@ int main(void)
   if( xComEventGroup == NULL ) {
     printf("Communication event group create failed.\n");
   }  
+  
+  	spiffs_cfg.hal_erase_f = _spiffs_erase;
+	spiffs_cfg.hal_read_f = _spiffs_read;
+	spiffs_cfg.hal_write_f = _spiffs_write;
+	if ((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
+		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
+        printf("formatting spiffs...\n");
+        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
+            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+        }
+        printf("ok\n");
+        printf("mounting\n");
+        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
+    }
+    if (res != SPIFFS_OK){
+        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+    } else {
+        printf("SPIFFS mounted\n");
+    }
   
   /* USER CODE END RTOS_MUTEX */
 
@@ -316,7 +318,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLM = 8;
   RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7;
