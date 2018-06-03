@@ -113,9 +113,9 @@ extern void send_GARP(void const * argument);
 
 /* USER CODE BEGIN 0 */
 static void send_GARP(void const * argument) {
-	printf("send GARP timer enter\n");
+//	printf("send GARP timer enter\n");
 	etharp_gratuitous(&gnetif);
-	printf("send GARP timer leave\n");
+//	printf("send GARP timer leave\n");
 }
 
 static int32_t _spiffs_erase(uint32_t addr, uint32_t len)

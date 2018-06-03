@@ -15,44 +15,36 @@ extern void http_server_socket_thread(void *arg);
 static spiffs_file gFileDesc;
 
 int fs_open_custom(struct fs_file *file, const char *name) {
-//	spiffs_stat FileState;
-//	int res;
-//  
-//	osMutexWait(WebServerFileMutexHandle, osWaitForever);
-//	gFileDesc = SPIFFS_open(&SPI_FFS_fs, name, SPIFFS_RDONLY, 0);
-//	if (gFileDesc > 0) {	
-//		res = SPIFFS_fstat(&SPI_FFS_fs, gFileDesc, &FileState);
-//		if (res < 0 ) {
-//			return 0;
-//		}
-//		file->index = 0;
-//		file->len = FileState.size;
-//		return gFileDesc;
-//	} else {
-//		return 0;
-//	}	
-	file->index = 0;
-	file->len = 100;
-	printf("webserver_file_open\n");
-	return 0;
+	spiffs_stat FileState;
+	int res;
+  
+	osMutexWait(WebServerFileMutexHandle, osWaitForever);
+	gFileDesc = SPIFFS_open(&SPI_FFS_fs, name, SPIFFS_RDONLY, 0);
+	if (gFileDesc > 0) {	
+		res = SPIFFS_fstat(&SPI_FFS_fs, gFileDesc, &FileState);
+		if (res < 0 ) {
+			return 0;
+		}
+		file->index = 0;
+		file->len = FileState.size;
+		return gFileDesc;
+	} else {
+		return 0;
+	}	
 }
 
 void fs_close_custom(struct fs_file *file) {
-//	SPIFFS_close(&SPI_FFS_fs, gFileDesc);
-//	osMutexRelease(WebServerFileMutexHandle);
-	printf("webserver_file_close\n");
+	SPIFFS_close(&SPI_FFS_fs, gFileDesc);
+	osMutexRelease(WebServerFileMutexHandle);
 }
 
 int fs_read_custom(struct fs_file *file, char *buffer, int count) {
-//	int res;
-//	res = SPIFFS_read(&SPI_FFS_fs, gFileDesc, (u8_t *)buffer, count);
-//	if (res >= 0) {
-//		file->index += res;
-//	} 
-//	return res;
-	
-	file->index = 100;
-	return 100;
+	int res;
+	res = SPIFFS_read(&SPI_FFS_fs, gFileDesc, (u8_t *)buffer, count);
+	if (res >= 0) {
+		file->index += res;
+	} 
+	return res;
 }
 
 //void httpd_cgi_handler(const char* uri, int iNumParams, char **pcParam, char **pcValue) {
@@ -77,22 +69,33 @@ void httpd_post_finished(void *connection, char *response_uri, u16_t response_ur
 }
 
 void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
-	printf("tftp_file_open\n");
-	return (void*)5;
+	spiffs_file nFileHandle;
+	osMutexWait(WebServerFileMutexHandle, osWaitForever);
+	if (write) {
+		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_CREAT | SPIFFS_RDWR, 0);
+	} else {
+		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_RDONLY, 0);
+	}
+	if (nFileHandle < 0 ) {
+		return NULL;
+	} else {
+		return ((void*)((uint32_t)nFileHandle));
+	}	
 }
 
 void tftp_file_close(void* handle) {
-	printf("tftp_file_close\n");
+	SPIFFS_close(&SPI_FFS_fs, (spiffs_file)handle);
+	osMutexRelease(WebServerFileMutexHandle);
 }
 
 int tftp_file_read(void* handle, void* buf, int bytes) {
-	printf("tftp_file_read\n");
-	return 0;
+	int res;
+	res = SPIFFS_read(&SPI_FFS_fs, (spiffs_file)handle, (u8_t *)buf, bytes);
+	return res;
 }
 
 int tftp_file_write(void* handle, struct pbuf* p) {
-	printf("tftp_file_write\n");
-	return 0;
+	return SPIFFS_write(&SPI_FFS_fs, (spiffs_file)handle, p->payload, p->len);
 }
 
 const struct tftp_context TFTP_Ctx = {.open = tftp_file_open, .close = tftp_file_close, .read = tftp_file_read, .write = tftp_file_write};
