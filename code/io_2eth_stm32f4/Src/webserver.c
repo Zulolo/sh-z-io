@@ -3,7 +3,6 @@
 #include "lwip.h"
 #include "sh_z_002.h"
 #include "lwip/apps/fs.h"
-#include "lwip/apps/tftp_server.h"
 #include "httpd.h"
 #include "spiffs.h"
 
@@ -68,38 +67,6 @@ void httpd_post_finished(void *connection, char *response_uri, u16_t response_ur
 
 }
 
-void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
-	spiffs_file nFileHandle;
-	osMutexWait(WebServerFileMutexHandle, osWaitForever);
-	if (write) {
-		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_CREAT | SPIFFS_RDWR, 0);
-	} else {
-		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_RDONLY, 0);
-	}
-	if (nFileHandle < 0 ) {
-		return NULL;
-	} else {
-		return ((void*)((uint32_t)nFileHandle));
-	}	
-}
-
-void tftp_file_close(void* handle) {
-	SPIFFS_close(&SPI_FFS_fs, (spiffs_file)handle);
-	osMutexRelease(WebServerFileMutexHandle);
-}
-
-int tftp_file_read(void* handle, void* buf, int bytes) {
-	int res;
-	res = SPIFFS_read(&SPI_FFS_fs, (spiffs_file)handle, (u8_t *)buf, bytes);
-	return res;
-}
-
-int tftp_file_write(void* handle, struct pbuf* p) {
-	return SPIFFS_write(&SPI_FFS_fs, (spiffs_file)handle, p->payload, p->len);
-}
-
-const struct tftp_context TFTP_Ctx = {.open = tftp_file_open, .close = tftp_file_close, .read = tftp_file_read, .write = tftp_file_write};
-
 void start_webserver(void const * argument) {
 	
 //	httpd_init();
@@ -107,8 +74,8 @@ void start_webserver(void const * argument) {
 }
 
 void start_tftp(void const * argument) {
-	tftp_init(&TFTP_Ctx);
+	
 	while(1) {
-		osDelay(500);
+		osDelay(5000);
 	}
 }

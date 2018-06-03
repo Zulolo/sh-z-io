@@ -55,6 +55,7 @@
 /* USER CODE BEGIN Includes */
 #include "spi_flash.h"
 #include "spiffs.h"
+#include "lwip/apps/tftp_server.h"
 
 /* USER CODE END Includes */
 
@@ -63,6 +64,8 @@ ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
 
 SPI_HandleTypeDef hspi3;
+DMA_HandleTypeDef hdma_spi3_rx;
+DMA_HandleTypeDef hdma_spi3_tx;
 
 TIM_HandleTypeDef htim7;
 
@@ -139,6 +142,39 @@ static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
     spi_flash_write(addr, size, dst);
     return 0;
 }
+
+static void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
+	spiffs_file nFileHandle;
+	osMutexWait(WebServerFileMutexHandle, osWaitForever);
+	if (write) {
+		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_CREAT | SPIFFS_RDWR, 0);
+	} else {
+		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_RDONLY, 0);
+	}
+	if (nFileHandle <= 0 ) {
+		osMutexRelease(WebServerFileMutexHandle);
+		return NULL;
+	} else {
+		return ((void*)((uint32_t)nFileHandle));
+	}	
+}
+
+static void tftp_file_close(void* handle) {
+	SPIFFS_close(&SPI_FFS_fs, (spiffs_file)handle);
+	osMutexRelease(WebServerFileMutexHandle);
+}
+
+static int tftp_file_read(void* handle, void* buf, int bytes) {
+	int res;
+	res = SPIFFS_read(&SPI_FFS_fs, (spiffs_file)handle, (u8_t *)buf, bytes);
+	return res;
+}
+
+static int tftp_file_write(void* handle, struct pbuf* p) {
+	return SPIFFS_write(&SPI_FFS_fs, (spiffs_file)handle, p->payload, p->len);
+}
+
+const struct tftp_context TFTP_Ctx = {.open = tftp_file_open, .close = tftp_file_close, .read = tftp_file_read, .write = tftp_file_write};
 /* USER CODE END 0 */
 
 /**
@@ -149,8 +185,7 @@ static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	spiffs_config spiffs_cfg;
-	int32_t res;
+
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -210,25 +245,6 @@ int main(void)
   if( xComEventGroup == NULL ) {
     printf("Communication event group create failed.\n");
   }  
-  
-  	spiffs_cfg.hal_erase_f = _spiffs_erase;
-	spiffs_cfg.hal_read_f = _spiffs_read;
-	spiffs_cfg.hal_write_f = _spiffs_write;
-	if ((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
-		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
-        printf("formatting spiffs...\n");
-        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
-            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-        }
-        printf("ok\n");
-        printf("mounting\n");
-        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
-    }
-    if (res != SPIFFS_OK){
-        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-    } else {
-        printf("SPIFFS mounted\n");
-    }
   
   /* USER CODE END RTOS_MUTEX */
 
@@ -478,8 +494,15 @@ static void MX_DMA_Init(void)
 {
   /* DMA controller clock enable */
   __HAL_RCC_DMA2_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
@@ -551,6 +574,30 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
+//	spi_flash_erase_chip();
+	spiffs_config spiffs_cfg;
+	int32_t res;
+	
+  	spiffs_cfg.hal_erase_f = _spiffs_erase;
+	spiffs_cfg.hal_read_f = _spiffs_read;
+	spiffs_cfg.hal_write_f = _spiffs_write;
+	if ((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
+		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
+        printf("formatting spiffs...\n");
+        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
+            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+        }
+        printf("ok\n");
+        printf("mounting\n");
+        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
+    }
+    if (res != SPIFFS_OK){
+        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+    } else {
+        printf("SPIFFS mounted\n");
+    }
+
+	tftp_init(&TFTP_Ctx);	
   /* Infinite loop */
   for(;;)
   {

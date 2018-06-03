@@ -147,7 +147,7 @@ void spi_flash_erase_block(uint32_t addr) {
 	// write command to spi flash chip
 	write_SPI_flash_chip(WR_FLASH_WR_ENABLE, NULL, 0);
 	
-	write_SPI_flash_chip(WR_FLASH_BLOCK_ERASE, unBuf, 3);
+	write_SPI_flash_chip(WR_FLASH_BLOCK_ERASE, unBuf, sizeof(unBuf));
 	
 	// wait until spi flash chip is not BUSY
 	while (pdTRUE == IS_SPI_FLASH_CHIP_BUSY()) {
