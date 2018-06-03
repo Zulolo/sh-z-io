@@ -63,8 +63,6 @@ ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
 
 SPI_HandleTypeDef hspi3;
-DMA_HandleTypeDef hdma_spi3_tx;
-DMA_HandleTypeDef hdma_spi3_rx;
 
 TIM_HandleTypeDef htim7;
 
@@ -89,6 +87,7 @@ spiffs SPI_FFS_fs;
 uint8_t FS_Work_Buf[256 * 2];
 uint8_t FS_FDS[32 * 4];
 uint8_t FS_Cache_Buf[(256 + 32) * 4];
+extern struct netif gnetif;
 
 /* USER CODE END PV */
 
@@ -113,6 +112,12 @@ extern void send_GARP(void const * argument);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+static void send_GARP(void const * argument) {
+	printf("send GARP timer enter\n");
+	etharp_gratuitous(&gnetif);
+	printf("send GARP timer leave\n");
+}
+
 static int32_t _spiffs_erase(uint32_t addr, uint32_t len)
 {
     uint32_t i = 0;
@@ -238,6 +243,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+	osTimerStart(GARP_TimerHandle, 5000);
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */
@@ -472,15 +478,8 @@ static void MX_DMA_Init(void)
 {
   /* DMA controller clock enable */
   __HAL_RCC_DMA2_CLK_ENABLE();
-  __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
-  /* DMA1_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
-  /* DMA1_Stream5_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);

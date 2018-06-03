@@ -9,15 +9,10 @@
 #define PROG                    "FreeModbus"
 
 extern uint8_t cSN[SH_Z_SN_LEN];
-extern struct netif gnetif;
+
 extern __IO uint16_t unADCxConvertedValue[4];
-extern osTimerId GARP_TimerHandle;
 
 static uint32_t DI_ValuesBuf;
-
-void send_GARP(void const * argument) {
-	etharp_gratuitous(&gnetif);
-}
 
 static eMBErrorCode get_DI_value( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	DI_ValuesBuf = DI_get_DI_values();
@@ -165,8 +160,6 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 void start_modbus_tcp_server(void const * argument) {
 	eMBErrorCode    xStatus;
 	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, cSN, SH_Z_SN_LEN);
-
-	osTimerStart(GARP_TimerHandle, 5000);
 	
 	if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR ) {
 		printf( "%s: can't initialize modbus stack!\r\n", PROG );

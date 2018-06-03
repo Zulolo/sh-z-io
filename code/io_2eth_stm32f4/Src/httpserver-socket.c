@@ -177,12 +177,14 @@ void http_server_serve(int conn)
   int buflen = 1500;
   int ret;
   struct fs_file file;
-  unsigned char recv_buffer[1500];
+  static unsigned char recv_buffer[1500];
 				
   /* Read in the request */
   ret = read(conn, recv_buffer, buflen); 
   if(ret < 0) return;
-
+//	write(conn, "sh-z-002 web server test", (size_t)sizeof("sh-z-002 web server test") + 1);
+//	close(conn);
+//	return;
   /* Check if request to get ST.gif */
   if (strncmp((char *)recv_buffer,"GET /index.html",15)==0)
   {
