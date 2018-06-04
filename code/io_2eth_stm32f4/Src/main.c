@@ -147,7 +147,8 @@ static void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
 	spiffs_file nFileHandle;
 	osMutexWait(WebServerFileMutexHandle, osWaitForever);
 	if (write) {
-		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_CREAT | SPIFFS_RDWR, 0);
+		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_CREAT | SPIFFS_TRUNC | SPIFFS_RDWR, 0);
+		printf("errno %d\n", SPIFFS_errno(&SPI_FFS_fs));
 	} else {
 		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_RDONLY, 0);
 	}
@@ -577,12 +578,14 @@ void StartDefaultTask(void const * argument)
 //	spi_flash_erase_chip();
 	spiffs_config spiffs_cfg;
 	int32_t res;
-	
+//	static uint8_t unManuID[3];
+//	spi_flash_read_manufacturer_ID(unManuID, sizeof(unManuID));
   	spiffs_cfg.hal_erase_f = _spiffs_erase;
 	spiffs_cfg.hal_read_f = _spiffs_read;
 	spiffs_cfg.hal_write_f = _spiffs_write;
-	if ((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK && 
-		SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS) {
+	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK) && 
+//	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), NULL, 0, NULL)) != SPIFFS_OK) &&
+		(SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS)) {
         printf("formatting spiffs...\n");
         if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
             printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
@@ -590,6 +593,7 @@ void StartDefaultTask(void const * argument)
         printf("ok\n");
         printf("mounting\n");
         res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
+//		res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), NULL, 0, NULL);
     }
     if (res != SPIFFS_OK){
         printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));

@@ -14,6 +14,7 @@ typedef enum{
 	RD_FLASH_REG_STATUS_01 = 0x05,
 	RD_FLASH_REG_STATUS_02 = 0x35,
 	RD_FLASH_REG_STATUS_03 = 0x15,
+//	RD_FLASH_REG_MANUF_DEV_ID = 0x9F,
 	WR_FLASH_CHIP_ERASE = 0xC7,
 	WR_FLASH_BLOCK_ERASE = 0xD8
 }SPI_FlashChipCMD_TypeDef;
@@ -101,7 +102,7 @@ static void read_SPI_flash_chip(uint8_t unCMD, uint8_t* pRD_Data, uint32_t unDat
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_SET);
 }
 
-static void read_SPI_flash_data(uint8_t unAddr, uint8_t* pRD_Data, uint32_t unDataLen) {
+static void read_SPI_flash_data(uint32_t unAddr, uint8_t* pRD_Data, uint32_t unDataLen) {
 //	EventBits_t uxBits;
 	uint8_t unBuf[3];
 	
@@ -211,4 +212,7 @@ void spi_flash_write(uint32_t addr, uint32_t size, uint8_t *dst) {
 	osMutexRelease(SpiFlashChipMutexHandle);	
 }
 
+//void spi_flash_read_manufacturer_ID(uint8_t* pRD_Data, uint32_t unDataLen) {
+//	read_SPI_flash_chip(RD_FLASH_REG_MANUF_DEV_ID, pRD_Data, unDataLen);
+//}
 
