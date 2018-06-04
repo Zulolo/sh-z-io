@@ -11,35 +11,35 @@ extern osMutexId WebServerFileMutexHandle;
 
 extern void http_server_socket_thread(void *arg);
 
-static spiffs_file gFileDesc;
-
 int fs_open_custom(struct fs_file *file, const char *name) {
 	spiffs_stat FileState;
 	int res;
+	spiffs_file tFileDesc;
   
 	osMutexWait(WebServerFileMutexHandle, osWaitForever);
-	gFileDesc = SPIFFS_open(&SPI_FFS_fs, name, SPIFFS_RDONLY, 0);
-	if (gFileDesc > 0) {	
-		res = SPIFFS_fstat(&SPI_FFS_fs, gFileDesc, &FileState);
+	tFileDesc = SPIFFS_open(&SPI_FFS_fs, name, SPIFFS_RDONLY, 0);
+	if (tFileDesc >= 0) {	
+		res = SPIFFS_fstat(&SPI_FFS_fs, tFileDesc, &FileState);
 		if (res < 0 ) {
 			return 0;
 		}
 		file->index = 0;
 		file->len = FileState.size;
-		return gFileDesc;
+		file->pextension = (void *)tFileDesc;
+		return 1;
 	} else {
 		return 0;
 	}	
 }
 
 void fs_close_custom(struct fs_file *file) {
-	SPIFFS_close(&SPI_FFS_fs, gFileDesc);
+	SPIFFS_close(&SPI_FFS_fs, (spiffs_file)(file->pextension));
 	osMutexRelease(WebServerFileMutexHandle);
 }
 
 int fs_read_custom(struct fs_file *file, char *buffer, int count) {
 	int res;
-	res = SPIFFS_read(&SPI_FFS_fs, gFileDesc, (u8_t *)buffer, count);
+	res = SPIFFS_read(&SPI_FFS_fs, (spiffs_file)(file->pextension), (u8_t *)buffer, count);
 	if (res >= 0) {
 		file->index += res;
 	} 

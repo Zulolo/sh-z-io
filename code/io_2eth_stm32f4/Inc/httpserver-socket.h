@@ -52,7 +52,7 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void http_server_socket_init(void);
-void DynWebPage(int conn);
+void dyn_web_page_list_files(int conn);
 
 #endif /* __HTTPSERVER_SOCKET_H__ */
 
