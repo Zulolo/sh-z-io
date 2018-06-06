@@ -10,6 +10,8 @@
 extern osMutexId DI_DataAccessHandle;
 extern EventGroupHandle_t xDiEventGroup;
 static uint32_t unDI_Value; 
+static DI_ConfTypeDef tDI_Conf[SH_Z_002_DI_NUM];
+static uint32_t unDI_CNT_FreqValue[SH_Z_002_DI_NUM];
 // limitation can only use pins in same port, e.g. GPIOD 
 // Also the pins should be continuously
 static GPIO_TypeDef* DI_Port = GPIOD;
@@ -79,7 +81,23 @@ void start_di_monitor(void const * argument) {
 			}
 			for (unIndex = 0; unIndex < SH_Z_002_DI_NUM; unIndex++) {
 				if (unDI_FilterTimer[unIndex] > DI_SAMPLE_FILTER_TIME) {
-					(READ_BIT(unDI_ValueTemp, DI_Pins[unIndex]) == DI_Pins[unIndex]) ? (SET_BIT(unDI_Value, DI_Pins[unIndex])) : (CLEAR_BIT(unDI_Value, DI_Pins[unIndex]));
+					if (READ_BIT(unDI_ValueTemp, DI_Pins[unIndex]) == DI_Pins[unIndex]) {
+						(SET_BIT(unDI_Value, DI_Pins[unIndex]));
+						if (1 == tDI_Conf[unIndex].bLatchSet) {
+							tDI_Conf[unIndex].bLatchStatus = 1;
+						}
+					} else {
+						(CLEAR_BIT(unDI_Value, DI_Pins[unIndex]));
+						if (1 == tDI_Conf[unIndex].bEnableCNT) {
+							unDI_CNT_FreqValue[unIndex]++;
+							if (0 == unDI_CNT_FreqValue[unIndex]) {
+								tDI_Conf[unIndex].bClearOverflow = 1;
+							}
+						}
+						if (0 == tDI_Conf[unIndex].bLatchSet) {
+							tDI_Conf[unIndex].bLatchStatus = 1;
+						}
+					}
 				}
 			}		
 			osMutexRelease(DI_DataAccessHandle);		
