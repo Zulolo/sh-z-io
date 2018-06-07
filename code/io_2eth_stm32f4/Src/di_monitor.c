@@ -7,10 +7,15 @@
 #define DI_SAMPLE_INTERVAL			10
 #define DI_SAMPLE_FILTER_TIME		(DI_SAMPLE_INTERVAL*5)
 
+
 extern osMutexId DI_DataAccessHandle;
 extern EventGroupHandle_t xDiEventGroup;
 static uint32_t unDI_Value; 
-static DI_ConfTypeDef tDI_Conf[SH_Z_002_DI_NUM];
+static uint32_t DI_EnableCNT;
+static uint32_t DI_CNT_Overflow;
+static uint32_t DI_LatchSet;
+static uint32_t DI_LatchStatus;
+//static DI_ConfTypeDef tDI_Conf[SH_Z_002_DI_NUM];
 static uint32_t unDI_CNT_FreqValue[SH_Z_002_DI_NUM];
 // limitation can only use pins in same port, e.g. GPIOD 
 // Also the pins should be continuously
@@ -52,9 +57,77 @@ static uint32_t get_DI_values(void) {
 uint32_t DI_get_DI_values(void) {
 	uint32_t unTemp;
 	osMutexWait(DI_DataAccessHandle, osWaitForever);
-	unTemp = unDI_Value >> 8;
+	unTemp = unDI_Value >> SH_Z_002_DI_PIN_OFFSET;
 	osMutexRelease(DI_DataAccessHandle);
 	return unTemp;
+}
+
+void DI_get_DI_cnt_freq(uint32_t* pTarget, uint8_t unDI_Num) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	memcpy(pTarget, unDI_CNT_FreqValue, sizeof(uint32_t) * unDI_Num);
+	osMutexRelease(DI_DataAccessHandle);
+}
+
+uint32_t DI_get_DI_enable_CNT(void) {
+	uint32_t unTemp;
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	unTemp = DI_EnableCNT >> SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);
+	return unTemp;
+}
+
+uint32_t DI_get_DI_CNT_overflow(void) {
+	uint32_t unTemp;
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	unTemp = DI_CNT_Overflow >> SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);
+	return unTemp;
+}
+
+uint32_t DI_get_DI_latch_set(void) {
+	uint32_t unTemp;
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	unTemp = DI_LatchSet >> SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);
+	return unTemp;
+}
+
+uint32_t DI_get_DI_latch_status(void) {
+	uint32_t unTemp;
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	unTemp = DI_LatchStatus >> SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);
+	return unTemp;
+}
+
+void DI_set_DI_enable_CNT(uint32_t unValue) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	DI_EnableCNT = unValue << SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);
+}
+
+void DI_clear_DI_CNT(uint8_t unDI_Index) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	unDI_CNT_FreqValue[unDI_Index] = 0;
+	osMutexRelease(DI_DataAccessHandle);
+}
+
+void DI_clear_DI_latch(uint8_t unDI_Index) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	CLEAR_BIT(DI_LatchStatus, DI_Pins[unDI_Index]);
+	osMutexRelease(DI_DataAccessHandle);
+}
+
+void DI_clear_DI_CNT_oveflow(uint8_t unDI_Index) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	CLEAR_BIT(DI_CNT_Overflow, DI_Pins[unDI_Index]);
+	osMutexRelease(DI_DataAccessHandle);
+}
+
+void DI_set_DI_latch_set(uint32_t unValue) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	DI_LatchSet = unValue << SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);
 }
 
 void start_di_monitor(void const * argument) {
@@ -83,19 +156,19 @@ void start_di_monitor(void const * argument) {
 				if (unDI_FilterTimer[unIndex] > DI_SAMPLE_FILTER_TIME) {
 					if (READ_BIT(unDI_ValueTemp, DI_Pins[unIndex]) == DI_Pins[unIndex]) {
 						(SET_BIT(unDI_Value, DI_Pins[unIndex]));
-						if (1 == tDI_Conf[unIndex].bLatchSet) {
-							tDI_Conf[unIndex].bLatchStatus = 1;
+						if (READ_BIT(DI_LatchSet, DI_Pins[unIndex])) {
+							SET_BIT(DI_LatchStatus, DI_Pins[unIndex]);
 						}
 					} else {
 						(CLEAR_BIT(unDI_Value, DI_Pins[unIndex]));
-						if (1 == tDI_Conf[unIndex].bEnableCNT) {
+						if (READ_BIT(DI_EnableCNT, DI_Pins[unIndex])) {
 							unDI_CNT_FreqValue[unIndex]++;
 							if (0 == unDI_CNT_FreqValue[unIndex]) {
-								tDI_Conf[unIndex].bClearOverflow = 1;
+								SET_BIT(DI_CNT_Overflow, DI_Pins[unIndex]);
 							}
 						}
-						if (0 == tDI_Conf[unIndex].bLatchSet) {
-							tDI_Conf[unIndex].bLatchStatus = 1;
+						if (0 == READ_BIT(DI_LatchSet, DI_Pins[unIndex])) {
+							SET_BIT(DI_LatchStatus, DI_Pins[unIndex]);
 						}
 					}
 				}

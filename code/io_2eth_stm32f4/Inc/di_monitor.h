@@ -10,15 +10,24 @@
 #define SH_Z_002_DI_BYTE_NUM		GET_DI_BYTE_NUM(SH_Z_002_DI_NUM)
 #define IS_DI_PIN_NUM(NUM)          (((NUM) <= 32 ))
 
-typedef struct {
-	uint8_t bEnableCNT : 1;
-	uint8_t bClearCNT : 1;
-	uint8_t bClearOverflow : 1;
-	uint8_t bLatchStatus : 1;
-	uint8_t bLatchSet : 1;	// 1 means latch on rising edge, 0 on falling
-	uint8_t NA : 3;
-}DI_ConfTypeDef;
+//typedef struct {
+//	uint8_t bEnableCNT : 1;
+//	uint8_t bClearCNT : 1;
+//	uint8_t bClearOverflow : 1;
+//	uint8_t bLatchStatus : 1;
+//	uint8_t bLatchSet : 1;	// 1 means latch on rising edge, 0 on falling
+//	uint8_t NA : 3;
+//}DI_ConfTypeDef;
 
 uint32_t DI_get_DI_values(void);
-int DI_get_DI_conf(DI_ConfTypeDef * tDI_ConfBuf, uint32_t unBitOffset, uint32_t unBitNum);
+void DI_get_DI_cnt_freq(uint32_t* pTarget, uint8_t unDI_Num);
+uint32_t DI_get_DI_enable_CNT(void);
+uint32_t DI_get_DI_CNT_overflow(void);
+uint32_t DI_get_DI_latch_set(void);
+uint32_t DI_get_DI_latch_status(void);
+void DI_set_DI_enable_CNT(uint32_t unValue);
+void DI_clear_DI_CNT(uint8_t unDI_Index);
+void DI_clear_DI_latch(uint8_t unDI_Index);
+void DI_clear_DI_CNT_oveflow(uint8_t unDI_Index);
+void DI_set_DI_latch_set(uint32_t unValue);
 #endif

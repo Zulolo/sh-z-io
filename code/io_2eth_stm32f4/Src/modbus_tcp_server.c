@@ -7,9 +7,9 @@
 #include "di_monitor.h"
 #include "ai_monitor.h"
 
-#define PROG                    "FreeModbus"
+#define PROG                    	"FreeModbus"
 
-#define MB_DI_CONF_ADDR			101
+#define MB_REG_DI_CNT_OVF_ADDR		97
 
 extern uint8_t cSN[SH_Z_SN_LEN];
 
@@ -17,7 +17,12 @@ static uint16_t unADCxConvertedValueBuf[SH_Z_002_AI_NUM];
 
 static uint32_t unDI_CNT_FreqValueBuf[SH_Z_002_DI_NUM];
 static uint32_t DI_ValuesBuf;
-static DI_ConfTypeDef tDI_ConfBuf[SH_Z_002_DI_NUM];
+static uint32_t DI_EnableCNT_Buf;
+static uint32_t DI_ClearCNT_Buf;
+static uint32_t DI_CNT_Overflow_Buf;
+static uint32_t DI_LatchSet_Buf;
+static uint32_t DI_LatchStatus_Buf;
+//static DI_ConfTypeDef tDI_ConfBuf[SH_Z_002_DI_NUM];
 
 static eMBErrorCode get_DI_value_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
 	DI_ValuesBuf = DI_get_DI_values();
@@ -29,26 +34,92 @@ static eMBErrorCode get_AI_value_buf( UCHAR * pucRegBuffer, USHORT usAddress, US
 	return 	MB_ENOERR;
 }
 
-static eMBErrorCode get_DI_conf_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
-	DI_get_DI_conf(tDI_ConfBuf, usAddress - MB_DI_CONF_ADDR, usNCoils);
-	return 	MB_ENOERR;
-}
 
 static eMBErrorCode get_DI_cnt_freq_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
-
+	DI_get_DI_cnt_freq(unDI_CNT_FreqValueBuf, SH_Z_002_DI_NUM);
 	return 	MB_ENOERR;
 }
 
-static eMBErrorCode set_DI_conf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
-	
+static eMBErrorCode get_DI_enable_CNT_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	DI_EnableCNT_Buf = DI_get_DI_enable_CNT();
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode set_DI_enable_CNT( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	DI_set_DI_enable_CNT(DI_EnableCNT_Buf);
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode clear_DI_CNT( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	uint8_t unDI_Index;
+	for (unDI_Index = 0; unDI_Index < SH_Z_002_DI_NUM; unDI_Index++) {
+		if (READ_BIT(DI_ClearCNT_Buf, 0x01 << unDI_Index)) 
+			DI_clear_DI_CNT(unDI_Index);{
+		}
+	}
+	DI_ClearCNT_Buf = 0;
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode get_DI_latch_set_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	DI_LatchSet_Buf = DI_get_DI_latch_set();
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode set_DI_latch_set_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	DI_set_DI_latch_set(DI_LatchSet_Buf);
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode clear_DI_latch( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	uint8_t unDI_Index;
+	for (unDI_Index = 0; unDI_Index < SH_Z_002_DI_NUM; unDI_Index++) {
+		if (READ_BIT(DI_LatchStatus_Buf, 0x01 << unDI_Index)) 
+			DI_clear_DI_latch(unDI_Index);{
+		}
+	}
+	DI_LatchStatus_Buf = 0;
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode get_DI_latch_status_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	DI_LatchStatus_Buf = DI_get_DI_latch_status();
+	return 	MB_ENOERR;
+}
+
+static eMBErrorCode get_DI_CNT_overflow_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
+	if ((usAddress < MB_REG_DI_CNT_OVF_ADDR) || ((usAddress + usNCoils) > (MB_REG_DI_CNT_OVF_ADDR + SH_Z_002_DI_NUM))) {
+		return MB_ENOREG;
+	} else {
+		DI_CNT_Overflow_Buf = DI_get_DI_CNT_overflow();
+		return 	MB_ENOERR;		
+	}
+}
+
+static eMBErrorCode clear_DI_CNT_overflow( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
+	uint8_t unDI_Index;
+	if ((usAddress < MB_REG_DI_CNT_OVF_ADDR) || ((usAddress + usNCoils) > (MB_REG_DI_CNT_OVF_ADDR + SH_Z_002_DI_NUM))) {
+		return MB_ENOREG;
+	} else {
+		for (unDI_Index = (usAddress - MB_REG_DI_CNT_OVF_ADDR); unDI_Index < (usAddress + usNCoils); unDI_Index++) {
+			if (READ_BIT(DI_LatchStatus_Buf, 0x01 << unDI_Index)) 
+				DI_clear_DI_CNT_oveflow(unDI_Index);{
+			}
+		}
+	}
 	return 	MB_ENOERR;
 }
 
 const MB_RegAccessTypeDef SH_Z_X_MB_REG[] = {
 	{1, sizeof(DI_ValuesBuf), &DI_ValuesBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_value_buf, NULL, NULL, NULL},	
-	{MB_DI_CONF_ADDR, sizeof(tDI_ConfBuf), tDI_ConfBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_conf_buf, NULL, NULL, set_DI_conf},	
+	{33, sizeof(DI_EnableCNT_Buf), &DI_EnableCNT_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_enable_CNT_buf, NULL, NULL, set_DI_enable_CNT},	
+	{65, sizeof(DI_ClearCNT_Buf), &DI_ClearCNT_Buf, MB_TCP_SVR_FUNC_WR_COLIS_BIT, NULL, NULL, NULL, clear_DI_CNT},
+	{MB_REG_DI_CNT_OVF_ADDR, sizeof(DI_CNT_Overflow_Buf), &DI_CNT_Overflow_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_CNT_overflow_buf, clear_DI_CNT_overflow, NULL, NULL},
+	{129, sizeof(DI_LatchSet_Buf), &DI_LatchSet_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_latch_set_buf, NULL, NULL, set_DI_latch_set_buf},
+	{161, sizeof(DI_LatchStatus_Buf), &DI_LatchStatus_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_latch_status_buf, NULL, NULL, clear_DI_latch},
 	{40001, sizeof(unDI_CNT_FreqValueBuf), unDI_CNT_FreqValueBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_cnt_freq_buf, NULL, NULL, NULL},
 	{40101, sizeof(unADCxConvertedValueBuf), unADCxConvertedValueBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_AI_value_buf, NULL, NULL, NULL},
+	{40501, sizeof(DI_ValuesBuf), &DI_ValuesBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_value_buf, NULL, NULL, NULL},
 	{0, 0, NULL, 0, NULL, NULL, NULL, NULL}
 };
 
@@ -161,7 +232,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 					return eErrCode;
 				}
 			}
-			return	MB_ENOREG;
+			return	MB_ENOERR;
 		}
 	} else {
 		return	MB_EINVAL;
