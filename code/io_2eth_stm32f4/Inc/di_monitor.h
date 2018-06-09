@@ -9,6 +9,7 @@
 										((x) / BITS_NUM_PER_BYTE + 1))
 #define SH_Z_002_DI_BYTE_NUM		GET_DI_BYTE_NUM(SH_Z_002_DI_NUM)
 #define IS_DI_PIN_NUM(NUM)          (((NUM) <= 32 ))
+//#define SPIFFS_READY_EVENT_BIT		0x00010000
 
 //typedef struct {
 //	uint8_t bEnableCNT : 1;
@@ -30,4 +31,6 @@ void DI_clear_DI_CNT(uint8_t unDI_Index);
 void DI_clear_DI_latch(uint8_t unDI_Index);
 void DI_clear_DI_CNT_oveflow(uint8_t unDI_Index);
 void DI_set_DI_latch_set(uint32_t unValue);
+
+void start_di_monitor(void const * argument);
 #endif

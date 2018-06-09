@@ -3,13 +3,24 @@
 #include <string.h>
 #include "cmsis_os.h"
 #include "di_monitor.h"
+#include "spiffs.h"
+#include "cJSON.h"
 
-#define DI_SAMPLE_INTERVAL			10
-#define DI_SAMPLE_FILTER_TIME		(DI_SAMPLE_INTERVAL*5)
-
+#define DI_SAMPLE_INTERVAL				10
+#define DI_SAMPLE_FILTER_TIME			(DI_SAMPLE_INTERVAL*5)
+#define DI_CONF_FILE_NAME				"di_conf"
+#define DI_CONF_LATCH_SET_JSON_TAG		"unLatchSet"
+#define DI_CONF_CNT_ENABLE_JSON_TAG		"unCNT_Enable"
 
 extern osMutexId DI_DataAccessHandle;
 extern EventGroupHandle_t xDiEventGroup;
+extern spiffs SPI_FFS_fs;
+
+typedef struct {
+	uint32_t unLatchSet;
+	uint32_t unCNT_Enable;
+}DI_ConfTypeDef;
+
 static uint32_t unDI_Value; 
 static uint32_t DI_EnableCNT;
 static uint32_t DI_CNT_Overflow;
@@ -21,6 +32,7 @@ static uint32_t unDI_CNT_FreqValue[SH_Z_002_DI_NUM];
 // Also the pins should be continuously
 static GPIO_TypeDef* DI_Port = GPIOD;
 static const uint16_t DI_Pins[SH_Z_002_DI_NUM] = {DI_0_Pin, DI_1_Pin, DI_2_Pin, DI_3_Pin};
+static int di_save_conf(void);
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -104,6 +116,7 @@ void DI_set_DI_enable_CNT(uint32_t unValue) {
 	osMutexWait(DI_DataAccessHandle, osWaitForever);
 	DI_EnableCNT = unValue << SH_Z_002_DI_PIN_OFFSET;
 	osMutexRelease(DI_DataAccessHandle);
+	di_save_conf();
 }
 
 void DI_clear_DI_CNT(uint8_t unDI_Index) {
@@ -128,14 +141,159 @@ void DI_set_DI_latch_set(uint32_t unValue) {
 	osMutexWait(DI_DataAccessHandle, osWaitForever);
 	DI_LatchSet = unValue << SH_Z_002_DI_PIN_OFFSET;
 	osMutexRelease(DI_DataAccessHandle);
+	di_save_conf();
 }
 
+static int di_conf_wr_conf_file(spiffs_file tFileDesc) {
+	DI_ConfTypeDef tDI_Conf;
+    char* pJsonString = NULL;
+    cJSON* pLatchSet = NULL;
+	cJSON* pCNT_Enable = NULL;
+	
+	cJSON* pDI_ConfJsonWriter = cJSON_CreateObject();
+	if (pDI_ConfJsonWriter == NULL){
+		printf("failed to create json root object.\n");
+		return (-1);
+	}
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+    pLatchSet = cJSON_CreateNumber(DI_LatchSet);
+	osMutexRelease(DI_DataAccessHandle);
+    if (pLatchSet == NULL){
+		cJSON_Delete(pDI_ConfJsonWriter);
+		printf("failed to create json latch set object.\n");
+		return (-1);
+    }	
+	cJSON_AddItemToObject(pDI_ConfJsonWriter, DI_CONF_LATCH_SET_JSON_TAG, pLatchSet);
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+    pCNT_Enable = cJSON_CreateNumber(DI_EnableCNT);
+	osMutexRelease(DI_DataAccessHandle);
+    if (pCNT_Enable == NULL){
+		cJSON_Delete(pDI_ConfJsonWriter);
+		printf("failed to create json CNT enable object.\n");
+		return (-1);
+    }	
+	cJSON_AddItemToObject(pDI_ConfJsonWriter, DI_CONF_CNT_ENABLE_JSON_TAG, pCNT_Enable);	
+	
+	pJsonString = cJSON_Print(pDI_ConfJsonWriter);
+    if (pJsonString == NULL){
+		cJSON_Delete(pDI_ConfJsonWriter);
+		printf("failed to digest json object.\n");
+		return (-1);
+    }
+	
+	if (SPIFFS_write(&SPI_FFS_fs, tFileDesc, pJsonString, strlen(pJsonString)) < 0 ) {
+		cJSON_Delete(pDI_ConfJsonWriter);
+		free(pJsonString);
+		printf("failed to write digested json string to file.\n");
+		return (-1);		
+	}
+	
+	cJSON_Delete(pDI_ConfJsonWriter);
+	free(pJsonString);
+	return (0);
+}
+
+static int di_conf_load(spiffs_file tFileDesc) {
+	DI_ConfTypeDef tDI_Conf;
+    cJSON* pLatchSet = NULL;
+	cJSON* pCNT_Enable = NULL;
+    cJSON* pDI_ConfJson;
+	char cConfString[256];
+	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
+	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
+		printf("%d char was read from conf file.\n", nReadNum);
+		return (-1);		
+	}
+
+	pDI_ConfJson = cJSON_Parse(cConfString);
+    if (pDI_ConfJson == NULL) {
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL){
+            printf("Error before: %s\n", error_ptr);
+        }
+        return (-1);
+    }
+
+    pLatchSet = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DI_CONF_LATCH_SET_JSON_TAG);
+    if (cJSON_IsNumber(pLatchSet)){
+		osMutexWait(DI_DataAccessHandle, osWaitForever);
+        DI_LatchSet = (uint32_t)(pLatchSet->valuedouble);
+		osMutexRelease(DI_DataAccessHandle);
+    }	
+	
+    pCNT_Enable = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DI_CONF_CNT_ENABLE_JSON_TAG);
+    if (cJSON_IsNumber(pCNT_Enable)){
+		osMutexWait(DI_DataAccessHandle, osWaitForever);
+        DI_EnableCNT = (uint32_t)(pCNT_Enable->valuedouble);
+		osMutexRelease(DI_DataAccessHandle);
+    }
+	cJSON_Delete(pDI_ConfJson);
+	return 0;
+}
+
+static int di_save_conf(void) {
+	spiffs_file tFileDesc;
+	tFileDesc = SPIFFS_open(&SPI_FFS_fs, DI_CONF_FILE_NAME, SPIFFS_RDWR | SPIFFS_CREAT, 0);
+	if (tFileDesc < 0) {
+		printf("failed to open di configuration file.\n");
+		return (-1);
+	} else {
+		if (di_conf_wr_conf_file(tFileDesc) < 0) {
+			printf("failed to write default di configuration value to file.\n");
+			SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+			return (-1);
+		} else {
+			SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+			return (0);				
+		}
+	}
+}
+static int di_conf_initialize(void) {
+	spiffs_file tFileDesc;
+	tFileDesc = SPIFFS_open(&SPI_FFS_fs, DI_CONF_FILE_NAME, SPIFFS_RDONLY, 0);
+	if (tFileDesc < 0) {
+		// file not exist
+		tFileDesc = SPIFFS_open(&SPI_FFS_fs, DI_CONF_FILE_NAME, SPIFFS_RDWR | SPIFFS_CREAT, 0);
+		if (tFileDesc < 0) {
+			printf("failed to create di configuration file.\n");
+			return (-1);
+		} else {
+			if (di_conf_wr_conf_file(tFileDesc) < 0) {
+				printf("failed to write default di configuration value to file.\n");
+				SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+				return (-1);
+			} else {
+				SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+				return (0);				
+			}
+		}
+	} else {
+		// file exist, not first time run
+		if (di_conf_load(tFileDesc) < 0) {
+			printf("failed to load di configuration from file.\n");
+			SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+			return (-1);			
+		} else {
+			SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+			return (0);	
+		}
+	}
+
+		
+}	
 void start_di_monitor(void const * argument) {
 	uint8_t unIndex;
-//	EventBits_t uxBits;
+	
 	static BaseType_t bSomeThingHappened;
 	static uint32_t unDI_ValueTemp;
 	static uint16_t unDI_FilterTimer[SH_Z_002_DI_NUM];
+	
+	// wait until fs ready, to read configuration file
+//	xEventGroupWaitBits(xDiEventGroup, SPIFFS_READY_EVENT_BIT, pdTRUE, pdFALSE, osWaitForever );
+	while(SPI_FFS_fs.mounted != 1) {
+		osDelay(100);
+	}
+	di_conf_initialize();
 	while (1) {
 		xEventGroupWaitBits(xDiEventGroup, DI_0_Pin | DI_1_Pin | DI_2_Pin | DI_3_Pin, 
 										pdTRUE, pdFALSE, osWaitForever );

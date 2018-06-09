@@ -56,6 +56,7 @@
 #include "spi_flash.h"
 #include "spiffs.h"
 #include "lwip/apps/tftp_server.h"
+#include "di_monitor.h"
 
 /* USER CODE END Includes */
 
@@ -104,7 +105,6 @@ static void MX_SPI3_Init(void);
 void StartDefaultTask(void const * argument);
 extern void start_modbus_tcp_server(void const * argument);
 extern void start_ai_monitor(void const * argument);
-extern void start_di_monitor(void const * argument);
 extern void start_webserver(void const * argument);
 extern void start_tftp(void const * argument);
 extern void send_GARP(void const * argument);
@@ -575,7 +575,6 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
-//	spi_flash_erase_chip();
 	spiffs_config spiffs_cfg;
 	int32_t res;
 //	static uint8_t unManuID[3];
@@ -584,7 +583,6 @@ void StartDefaultTask(void const * argument)
 	spiffs_cfg.hal_read_f = _spiffs_read;
 	spiffs_cfg.hal_write_f = _spiffs_write;
 	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK) && 
-//	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), NULL, 0, NULL)) != SPIFFS_OK) &&
 		(SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS)) {
         printf("formatting spiffs...\n");
         if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
@@ -593,11 +591,11 @@ void StartDefaultTask(void const * argument)
         printf("ok\n");
         printf("mounting\n");
         res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
-//		res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), NULL, 0, NULL);
     }
     if (res != SPIFFS_OK){
         printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
     } else {
+//		xEventGroupSetBits(xDiEventGroup, SPIFFS_READY_EVENT_BIT);
         printf("SPIFFS mounted\n");
     }
 
@@ -605,7 +603,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(5000);
   }
   /* USER CODE END 5 */ 
 }
