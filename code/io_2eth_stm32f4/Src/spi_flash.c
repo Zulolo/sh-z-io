@@ -1,11 +1,17 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 #include "cmsis_os.h"
+#include "spiffs.h"
 
 #define SPI_FLASH_CHIP_BUSY_BIT				(0x01U)	
 extern SPI_HandleTypeDef hspi3;
 extern osMutexId SpiFlashChipMutexHandle;
 extern EventGroupHandle_t xComEventGroup;;
+
+spiffs SPI_FFS_fs;
+uint8_t FS_Work_Buf[256 * 2];
+uint8_t FS_FDS[32 * 4];
+uint8_t FS_Cache_Buf[(256 + 32) * 4];
 
 typedef enum{
 	WR_FLASH_PAGE_PROGRAM = 0x02,
@@ -212,6 +218,53 @@ void spi_flash_write(uint32_t addr, uint32_t size, uint8_t *dst) {
 	osMutexRelease(SpiFlashChipMutexHandle);	
 }
 
+static int32_t _spiffs_erase(uint32_t addr, uint32_t len)
+{
+    uint32_t i = 0;
+    uint32_t erase_count = (len + SPIFFS_CFG_PHYS_ERASE_SZ(ignore) - 1) / SPIFFS_CFG_PHYS_ERASE_SZ(ignore);
+    for (i = 0; i < erase_count; i++) {
+        spi_flash_erase_block(addr + i * SPIFFS_CFG_PHYS_ERASE_SZ(ignore));
+    }
+    return 0;
+}
+
+static int32_t _spiffs_read(uint32_t addr, uint32_t size, uint8_t *dst)
+{
+    spi_flash_read(addr, size, dst);
+    return 0;
+}
+
+static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
+{
+    spi_flash_write(addr, size, dst);
+    return 0;
+}
+
+void spiffs_init(void) {
+	spiffs_config spiffs_cfg;
+	int32_t res;
+//	static uint8_t unManuID[3];
+//	spi_flash_read_manufacturer_ID(unManuID, sizeof(unManuID));
+  	spiffs_cfg.hal_erase_f = _spiffs_erase;
+	spiffs_cfg.hal_read_f = _spiffs_read;
+	spiffs_cfg.hal_write_f = _spiffs_write;
+	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK) && 
+		(SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS)) {
+        printf("formatting spiffs...\n");
+        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
+            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+        }
+        printf("ok\n");
+        printf("mounting\n");
+        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
+    }
+    if (res != SPIFFS_OK){
+        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
+    } else {
+//		xEventGroupSetBits(xDiEventGroup, SPIFFS_READY_EVENT_BIT);
+        printf("SPIFFS mounted\n");
+    }	
+}
 //void spi_flash_read_manufacturer_ID(uint8_t* pRD_Data, uint32_t unDataLen) {
 //	read_SPI_flash_chip(RD_FLASH_REG_MANUF_DEV_ID, pRD_Data, unDataLen);
 //}

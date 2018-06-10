@@ -6,14 +6,17 @@
 #include "mb_tcp_server.h"
 #include "di_monitor.h"
 #include "ai_monitor.h"
+#include "fs_handling.h"
 
 #define PROG                    	"FreeModbus"
-
-#define MB_REG_DI_CNT_OVF_ADDR		97
-
+	
 extern uint8_t cSN[SH_Z_SN_LEN];
 
+/**********************  AI part  *************************/
 static uint16_t unADCxConvertedValueBuf[SH_Z_002_AI_NUM];
+
+/**********************  DI part  *************************/
+#define MB_REG_DI_CNT_OVF_ADDR			97
 
 static uint32_t unDI_CNT_FreqValueBuf[SH_Z_002_DI_NUM];
 static uint32_t DI_ValuesBuf;
@@ -22,6 +25,12 @@ static uint32_t DI_ClearCNT_Buf;
 static uint32_t DI_CNT_Overflow_Buf;
 static uint32_t DI_LatchSet_Buf;
 static uint32_t DI_LatchStatus_Buf;
+
+/**********************  FS part  *************************/
+#define FS_ERASE_ALL_FILES_PWD			0x1A0CA544			//'D'
+#define FS_FORMAT_PWD					0x1A0CA546			//'F'
+static uint32_t FS_EraseAllFilesPwd;
+static uint32_t FS_FormatPwd;
 //static DI_ConfTypeDef tDI_ConfBuf[SH_Z_002_DI_NUM];
 
 static eMBErrorCode get_DI_value_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
@@ -110,6 +119,38 @@ static eMBErrorCode clear_DI_CNT_overflow( UCHAR * pucRegBuffer, USHORT usAddres
 	return 	MB_ENOERR;
 }
 
+static eMBErrorCode erase_all_spiffs_files( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
+	BaseType_t xReturned;
+	TaskHandle_t xHandle = NULL;
+	
+	if (FS_ERASE_ALL_FILES_PWD == FS_EraseAllFilesPwd) {
+		xReturned = xTaskCreate(start_erase_all_files_task, "FILES_ERASE", 128, NULL, tskIDLE_PRIORITY, &xHandle );
+		if( xReturned != pdPASS ){
+			return MB_ENORES;
+		} else {
+			return MB_ENOERR;
+		}
+	} else {		
+		return MB_EINVAL;
+	}
+}
+
+static eMBErrorCode format_spiffs_flash( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
+	BaseType_t xReturned;
+	TaskHandle_t xHandle = NULL;
+	
+	if (FS_FORMAT_PWD == FS_FormatPwd) {
+		xReturned = xTaskCreate(start_format_fs_task, "FS_FORMAT", 128, NULL, tskIDLE_PRIORITY, &xHandle );
+		if( xReturned != pdPASS ){
+			return MB_ENORES;
+		} else {
+			return MB_ENOERR;
+		}
+	} else {		
+		return MB_EINVAL;
+	}
+}
+
 const MB_RegAccessTypeDef SH_Z_X_MB_REG[] = {
 	{1, sizeof(DI_ValuesBuf), &DI_ValuesBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_value_buf, NULL, NULL, NULL},	
 	{33, sizeof(DI_EnableCNT_Buf), &DI_EnableCNT_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_enable_CNT_buf, NULL, NULL, set_DI_enable_CNT},	
@@ -120,6 +161,8 @@ const MB_RegAccessTypeDef SH_Z_X_MB_REG[] = {
 	{40001, sizeof(unDI_CNT_FreqValueBuf), unDI_CNT_FreqValueBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_cnt_freq_buf, NULL, NULL, NULL},
 	{40101, sizeof(unADCxConvertedValueBuf), unADCxConvertedValueBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_AI_value_buf, NULL, NULL, NULL},
 	{40501, sizeof(DI_ValuesBuf), &DI_ValuesBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_value_buf, NULL, NULL, NULL},
+	{50001, sizeof(FS_EraseAllFilesPwd), &FS_EraseAllFilesPwd , MB_TCP_SVR_FUNC_WR_HOLDING_BIT, NULL, NULL, NULL, erase_all_spiffs_files},
+	{50003, sizeof(FS_FormatPwd), &FS_FormatPwd , MB_TCP_SVR_FUNC_WR_HOLDING_BIT, NULL, NULL, NULL, format_spiffs_flash},
 	{0, 0, NULL, 0, NULL, NULL, NULL, NULL}
 };
 

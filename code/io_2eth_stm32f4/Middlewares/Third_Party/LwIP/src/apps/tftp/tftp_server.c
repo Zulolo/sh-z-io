@@ -236,6 +236,8 @@ recv(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16
         break;
       }
       
+	  memset(filename, 0, sizeof(filename));
+	  memset(mode, 0, sizeof(mode));
       sys_timeout(TFTP_TIMER_MSECS, tftp_tmr, NULL);
 
       /* find \0 in pbuf -> end of filename string */

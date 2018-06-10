@@ -55,6 +55,7 @@
 /* USER CODE BEGIN Includes */
 #include "spi_flash.h"
 #include "spiffs.h"
+//#include "cJSON.h"
 #include "lwip/apps/tftp_server.h"
 #include "di_monitor.h"
 
@@ -87,12 +88,9 @@ osMutexId WebServerFileMutexHandle;
 /* Private variables ---------------------------------------------------------*/
 EventGroupHandle_t xDiEventGroup;
 EventGroupHandle_t xComEventGroup;
-spiffs SPI_FFS_fs;
-uint8_t FS_Work_Buf[256 * 2];
-uint8_t FS_FDS[32 * 4];
-uint8_t FS_Cache_Buf[(256 + 32) * 4];
-extern struct netif gnetif;
 
+extern struct netif gnetif;
+extern spiffs SPI_FFS_fs;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,6 +103,7 @@ static void MX_SPI3_Init(void);
 void StartDefaultTask(void const * argument);
 extern void start_modbus_tcp_server(void const * argument);
 extern void start_ai_monitor(void const * argument);
+extern void start_di_monitor(void const * argument);
 extern void start_webserver(void const * argument);
 extern void start_tftp(void const * argument);
 extern void send_GARP(void const * argument);
@@ -119,28 +118,6 @@ static void send_GARP(void const * argument) {
 //	printf("send GARP timer enter\n");
 	etharp_gratuitous(&gnetif);
 //	printf("send GARP timer leave\n");
-}
-
-static int32_t _spiffs_erase(uint32_t addr, uint32_t len)
-{
-    uint32_t i = 0;
-    uint32_t erase_count = (len + SPIFFS_CFG_PHYS_ERASE_SZ(ignore) - 1) / SPIFFS_CFG_PHYS_ERASE_SZ(ignore);
-    for (i = 0; i < erase_count; i++) {
-        spi_flash_erase_block(addr + i * SPIFFS_CFG_PHYS_ERASE_SZ(ignore));
-    }
-    return 0;
-}
-
-static int32_t _spiffs_read(uint32_t addr, uint32_t size, uint8_t *dst)
-{
-    spi_flash_read(addr, size, dst);
-    return 0;
-}
-
-static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
-{
-    spi_flash_write(addr, size, dst);
-    return 0;
 }
 
 static void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
@@ -261,11 +238,12 @@ int main(void)
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
 	osTimerStart(GARP_TimerHandle, 5000);
+
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 256);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of modbus_tcp */
@@ -273,11 +251,11 @@ int main(void)
   modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
 
   /* definition and creation of ai_monitor */
-  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 128);
+  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 256);
   ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
 
   /* definition and creation of di_monitor */
-  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 128);
+  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 256);
   di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
 
   /* definition and creation of webserver */
@@ -285,7 +263,7 @@ int main(void)
   webserverHandle = osThreadCreate(osThread(webserver), NULL);
 
   /* definition and creation of file_recv */
-  osThreadDef(file_recv, start_tftp, osPriorityIdle, 0, 128);
+  osThreadDef(file_recv, start_tftp, osPriorityIdle, 0, 256);
   file_recvHandle = osThreadCreate(osThread(file_recv), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -575,30 +553,7 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
-	spiffs_config spiffs_cfg;
-	int32_t res;
-//	static uint8_t unManuID[3];
-//	spi_flash_read_manufacturer_ID(unManuID, sizeof(unManuID));
-  	spiffs_cfg.hal_erase_f = _spiffs_erase;
-	spiffs_cfg.hal_read_f = _spiffs_read;
-	spiffs_cfg.hal_write_f = _spiffs_write;
-	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK) && 
-		(SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS)) {
-        printf("formatting spiffs...\n");
-        if (SPIFFS_format(&SPI_FFS_fs) != SPIFFS_OK) {
-            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-        }
-        printf("ok\n");
-        printf("mounting\n");
-        res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL);
-    }
-    if (res != SPIFFS_OK){
-        printf("SPIFFS mount failed: %d\n", SPIFFS_errno(&SPI_FFS_fs));
-    } else {
-//		xEventGroupSetBits(xDiEventGroup, SPIFFS_READY_EVENT_BIT);
-        printf("SPIFFS mounted\n");
-    }
-
+	spiffs_init();
 	tftp_init(&TFTP_Ctx);	
   /* Infinite loop */
   for(;;)

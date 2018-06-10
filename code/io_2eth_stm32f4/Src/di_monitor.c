@@ -16,10 +16,10 @@ extern osMutexId DI_DataAccessHandle;
 extern EventGroupHandle_t xDiEventGroup;
 extern spiffs SPI_FFS_fs;
 
-typedef struct {
-	uint32_t unLatchSet;
-	uint32_t unCNT_Enable;
-}DI_ConfTypeDef;
+//typedef struct {
+//	uint32_t unLatchSet;
+//	uint32_t unCNT_Enable;
+//}DI_ConfTypeDef;
 
 static uint32_t unDI_Value; 
 static uint32_t DI_EnableCNT;
@@ -145,7 +145,6 @@ void DI_set_DI_latch_set(uint32_t unValue) {
 }
 
 static int di_conf_wr_conf_file(spiffs_file tFileDesc) {
-	DI_ConfTypeDef tDI_Conf;
     char* pJsonString = NULL;
     cJSON* pLatchSet = NULL;
 	cJSON* pCNT_Enable = NULL;
@@ -194,7 +193,6 @@ static int di_conf_wr_conf_file(spiffs_file tFileDesc) {
 }
 
 static int di_conf_load(spiffs_file tFileDesc) {
-	DI_ConfTypeDef tDI_Conf;
     cJSON* pLatchSet = NULL;
 	cJSON* pCNT_Enable = NULL;
     cJSON* pDI_ConfJson;
@@ -252,38 +250,23 @@ static int di_conf_initialize(void) {
 	spiffs_file tFileDesc;
 	tFileDesc = SPIFFS_open(&SPI_FFS_fs, DI_CONF_FILE_NAME, SPIFFS_RDONLY, 0);
 	if (tFileDesc < 0) {
-		// file not exist
-		tFileDesc = SPIFFS_open(&SPI_FFS_fs, DI_CONF_FILE_NAME, SPIFFS_RDWR | SPIFFS_CREAT, 0);
-		if (tFileDesc < 0) {
-			printf("failed to create di configuration file.\n");
-			return (-1);
-		} else {
-			if (di_conf_wr_conf_file(tFileDesc) < 0) {
-				printf("failed to write default di configuration value to file.\n");
-				SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-				return (-1);
-			} else {
-				SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-				return (0);				
-			}
-		}
+		// file not exist, save default configuration
+		return di_save_conf();
 	} else {
 		// file exist, not first time run
 		if (di_conf_load(tFileDesc) < 0) {
 			printf("failed to load di configuration from file.\n");
 			SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-			return (-1);			
+			return di_save_conf();			
 		} else {
 			SPIFFS_close(&SPI_FFS_fs, tFileDesc);
 			return (0);	
 		}
-	}
-
-		
+	}	
 }	
 void start_di_monitor(void const * argument) {
 	uint8_t unIndex;
-	
+	uint8_t* pTestBuf;
 	static BaseType_t bSomeThingHappened;
 	static uint32_t unDI_ValueTemp;
 	static uint16_t unDI_FilterTimer[SH_Z_002_DI_NUM];
@@ -292,6 +275,10 @@ void start_di_monitor(void const * argument) {
 //	xEventGroupWaitBits(xDiEventGroup, SPIFFS_READY_EVENT_BIT, pdTRUE, pdFALSE, osWaitForever );
 	while(SPI_FFS_fs.mounted != 1) {
 		osDelay(100);
+	}
+	pTestBuf = (unsigned char*)malloc(256);
+	if (pTestBuf) {
+		free(pTestBuf);
 	}
 	di_conf_initialize();
 	while (1) {
