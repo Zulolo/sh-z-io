@@ -112,7 +112,7 @@ static eMBErrorCode clear_DI_CNT_overflow( UCHAR * pucRegBuffer, USHORT usAddres
 		return MB_ENOREG;
 	} else {
 		for (unDI_Index = (usAddress - MB_REG_DI_CNT_OVF_ADDR); unDI_Index < (usAddress + usNCoils); unDI_Index++) {
-			if (READ_BIT(DI_LatchStatus_Buf, 0x01 << unDI_Index)) 
+			if (READ_BIT(DI_CNT_Overflow_Buf, 0x01 << unDI_Index)) 
 				DI_clear_DI_CNT_oveflow(unDI_Index);{
 			}
 		}
