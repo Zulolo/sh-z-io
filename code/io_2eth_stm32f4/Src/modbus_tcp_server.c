@@ -81,13 +81,14 @@ static eMBErrorCode set_DI_latch_set_buf( UCHAR * pucRegBuffer, USHORT usAddress
 }
 
 static eMBErrorCode clear_DI_latch( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
-	uint8_t unDI_Index;
-	for (unDI_Index = 0; unDI_Index < SH_Z_002_DI_NUM; unDI_Index++) {
-		if (READ_BIT(DI_LatchStatus_Buf, 0x01 << unDI_Index)) 
-			DI_clear_DI_latch(unDI_Index);{
-		}
-	}
-	DI_LatchStatus_Buf = 0;
+//	uint8_t unDI_Index;
+//	for (unDI_Index = 0; unDI_Index < SH_Z_002_DI_NUM; unDI_Index++) {
+//		if (READ_BIT(DI_LatchStatus_Buf, 0x01 << unDI_Index)) 
+//			DI_clear_DI_latch(unDI_Index);{
+//		}
+//	}
+//	DI_LatchStatus_Buf = 0;
+	DI_set_DI_latch_status(DI_LatchStatus_Buf);
 	return 	MB_ENOERR;
 }
 
@@ -157,7 +158,7 @@ const MB_RegAccessTypeDef SH_Z_X_MB_REG[] = {
 	{65, sizeof(DI_ClearCNT_Buf), &DI_ClearCNT_Buf, MB_TCP_SVR_FUNC_WR_COLIS_BIT, NULL, NULL, NULL, clear_DI_CNT},
 	{MB_REG_DI_CNT_OVF_ADDR, sizeof(DI_CNT_Overflow_Buf), &DI_CNT_Overflow_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_CNT_overflow_buf, clear_DI_CNT_overflow, NULL, NULL},
 	{129, sizeof(DI_LatchSet_Buf), &DI_LatchSet_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_latch_set_buf, NULL, NULL, set_DI_latch_set_buf},
-	{161, sizeof(DI_LatchStatus_Buf), &DI_LatchStatus_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT, get_DI_latch_status_buf, NULL, NULL, clear_DI_latch},
+	{161, sizeof(DI_LatchStatus_Buf), &DI_LatchStatus_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_latch_status_buf, NULL, NULL, clear_DI_latch},
 	{40001, sizeof(unDI_CNT_FreqValueBuf), unDI_CNT_FreqValueBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_cnt_freq_buf, NULL, NULL, NULL},
 	{40101, sizeof(unADCxConvertedValueBuf), unADCxConvertedValueBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_AI_value_buf, NULL, NULL, NULL},
 	{40501, sizeof(DI_ValuesBuf), &DI_ValuesBuf , MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_value_buf, NULL, NULL, NULL},
@@ -208,7 +209,7 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
 	
 	if (pRegAccess != NULL) {
 		if (pRegAccess->preReadF != NULL ) {
-			eErrCode = pRegAccess->preReadF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNRegs * 2);
+			eErrCode = pRegAccess->preReadF(pucRegBuffer, usAddress, usNRegs * 2);
 			if (MB_ENOERR != eErrCode ) {
 				return eErrCode;
 			}
@@ -216,7 +217,7 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
 		memcpy(pucRegBuffer, (uint8_t *)(pRegAccess->pRegValue) + usAddress - pRegAccess->unRegAddr, usNRegs * 2);
 		
 		if (pRegAccess->postReadF != NULL ) {
-			eErrCode = pRegAccess->postReadF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNRegs * 2);
+			eErrCode = pRegAccess->postReadF(pucRegBuffer, usAddress, usNRegs * 2);
 			if (MB_ENOERR != eErrCode ) {
 				return eErrCode;
 			}
@@ -239,7 +240,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 		}
 		if (MB_REG_READ == eMode) {
 			if (pRegAccess->preReadF != NULL ) {
-				eErrCode = pRegAccess->preReadF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNCoils);
+				eErrCode = pRegAccess->preReadF(pucRegBuffer, usAddress, usNCoils);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
@@ -248,7 +249,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 			memcpy(pucRegBuffer, (uint8_t *)(pRegAccess->pRegValue), GET_DI_BYTE_NUM(usNCoils));
 			
 			if (pRegAccess->postReadF != NULL ) {
-				eErrCode = pRegAccess->postReadF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNCoils);
+				eErrCode = pRegAccess->postReadF(pucRegBuffer, usAddress, usNCoils);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
@@ -256,7 +257,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 			return MB_ENOERR;
 		} else {
 			if (pRegAccess->preWriteF != NULL ) {
-				eErrCode = pRegAccess->preWriteF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNCoils);
+				eErrCode = pRegAccess->preWriteF(pucRegBuffer, usAddress, usNCoils);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
@@ -270,7 +271,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 			}
 			
 			if (pRegAccess->postWriteF != NULL ) {
-				eErrCode = pRegAccess->postWriteF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNCoils);
+				eErrCode = pRegAccess->postWriteF(pucRegBuffer, usAddress, usNCoils);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
@@ -290,7 +291,7 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 	if (pRegAccess != NULL) {
 		if (MB_REG_READ == eMode) {
 			if (pRegAccess->preReadF != NULL ) {
-				eErrCode = pRegAccess->preReadF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNRegs * 2);
+				eErrCode = pRegAccess->preReadF(pucRegBuffer, usAddress, usNRegs * 2);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
@@ -298,14 +299,14 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 			memcpy(pucRegBuffer, (uint8_t *)(pRegAccess->pRegValue) + usAddress - pRegAccess->unRegAddr, usNRegs * 2);
 			
 			if (pRegAccess->postReadF != NULL ) {
-				eErrCode = pRegAccess->postReadF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNRegs * 2);
+				eErrCode = pRegAccess->postReadF(pucRegBuffer, usAddress, usNRegs * 2);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
 			}					
 		} else {
 			if (pRegAccess->preWriteF != NULL ) {
-				eErrCode = pRegAccess->preWriteF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNRegs * 2);
+				eErrCode = pRegAccess->preWriteF(pucRegBuffer, usAddress, usNRegs * 2);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}
@@ -313,7 +314,7 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 			memcpy((uint8_t *)(pRegAccess->pRegValue) + usAddress - pRegAccess->unRegAddr, pucRegBuffer, usNRegs * 2);
 			
 			if (pRegAccess->postWriteF != NULL ) {
-				eErrCode = pRegAccess->postWriteF(pucRegBuffer, usAddress - pRegAccess->unRegAddr, usNRegs * 2);
+				eErrCode = pRegAccess->postWriteF(pucRegBuffer, usAddress, usNRegs * 2);
 				if (MB_ENOERR != eErrCode ) {
 					return eErrCode;
 				}

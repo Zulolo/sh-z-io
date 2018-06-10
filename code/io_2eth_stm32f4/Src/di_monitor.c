@@ -112,6 +112,12 @@ uint32_t DI_get_DI_latch_status(void) {
 	return unTemp;
 }
 
+void DI_set_DI_latch_status(uint32_t unValue) {
+	osMutexWait(DI_DataAccessHandle, osWaitForever);
+	DI_LatchStatus = unValue << SH_Z_002_DI_PIN_OFFSET;
+	osMutexRelease(DI_DataAccessHandle);	
+}
+
 void DI_set_DI_enable_CNT(uint32_t unValue) {
 	osMutexWait(DI_DataAccessHandle, osWaitForever);
 	DI_EnableCNT = unValue << SH_Z_002_DI_PIN_OFFSET;

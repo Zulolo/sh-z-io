@@ -31,6 +31,7 @@ void DI_clear_DI_CNT(uint8_t unDI_Index);
 void DI_clear_DI_latch(uint8_t unDI_Index);
 void DI_clear_DI_CNT_oveflow(uint8_t unDI_Index);
 void DI_set_DI_latch_set(uint32_t unValue);
+void DI_set_DI_latch_status(uint32_t unValue);
 
 void start_di_monitor(void const * argument);
 #endif
