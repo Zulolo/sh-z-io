@@ -49,6 +49,9 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define SPI_FLASH_CS_Pin GPIO_PIN_15
+#define SPI_FLASH_CS_GPIO_Port GPIOA
+
 /* ########################## Assert Selection ############################## */
 /**
   * @brief Uncomment the line below to expanse the "assert_param" macro in the 

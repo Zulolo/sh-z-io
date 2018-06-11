@@ -188,31 +188,34 @@ void http_server_socket_thread(void *arg)
   */
 void dyn_web_page_list_files(int conn)
 {
-  uint32_t total, used;
-  int32_t res;
-  spiffs_DIR d;
-  struct spiffs_dirent e;
-  struct spiffs_dirent *pe = &e;
-	
-  memset(PAGE_BODY, 0,512);
+	uint32_t total, used;
+	int32_t res;
+	spiffs_DIR d;
+	struct spiffs_dirent e;
+	struct spiffs_dirent *pe = &e;
 
-  strcat((char *) PAGE_BODY, "<pre><br>Files in flash" );
-  strcat((char *) PAGE_BODY, "<br>---------------------------------------------<br>"); 
-    
-  /* The list of tasks and their status */
-  res = SPIFFS_info(&SPI_FFS_fs, &total, &used);
-  sprintf(PAGE_BODY + strlen(PAGE_BODY), "Used: %u bytes in total: %u bytes", used, total);
-  strcat((char *) PAGE_BODY, "<br>"); 
-  SPIFFS_opendir(&SPI_FFS_fs, "/", &d);
-  while ((pe = SPIFFS_readdir(&d, pe))) {
-    sprintf(PAGE_BODY + strlen(PAGE_BODY), "%s [%04x] size:%i<br>", pe->name, pe->obj_id, pe->size);
-  }
-  SPIFFS_closedir(&d);
-  strcat((char *) PAGE_BODY, "<br><br>---------------------------------------------"); 
-  
-  /* Send the dynamically generated page */
-  write(conn, PAGE_START, strlen((char*)PAGE_START));
-  write(conn, PAGE_BODY, strlen(PAGE_BODY));
+	memset(PAGE_BODY, 0,512);
+
+	strcat((char *) PAGE_BODY, "<pre><br>Files in flash" );
+	strcat((char *) PAGE_BODY, "<br>---------------------------------------------<br>"); 
+
+	/* The list of tasks and their status */
+	res = SPIFFS_info(&SPI_FFS_fs, &total, &used);
+	if (res >= 0) {
+		sprintf(PAGE_BODY + strlen(PAGE_BODY), "Used: %u bytes in total: %u bytes", used, total);	
+	}
+
+	strcat((char *) PAGE_BODY, "<br>"); 
+	SPIFFS_opendir(&SPI_FFS_fs, "/", &d);
+	while ((pe = SPIFFS_readdir(&d, pe))) {
+	sprintf(PAGE_BODY + strlen(PAGE_BODY), "%s [%04x] size:%i<br>", pe->name, pe->obj_id, pe->size);
+	}
+	SPIFFS_closedir(&d);
+	strcat((char *) PAGE_BODY, "<br><br>---------------------------------------------"); 
+
+	/* Send the dynamically generated page */
+	write(conn, PAGE_START, strlen((char*)PAGE_START));
+	write(conn, PAGE_BODY, strlen(PAGE_BODY));
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

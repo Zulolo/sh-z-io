@@ -76,7 +76,6 @@ osThreadId modbus_tcpHandle;
 osThreadId ai_monitorHandle;
 osThreadId di_monitorHandle;
 osThreadId webserverHandle;
-osThreadId file_recvHandle;
 osTimerId GARP_TimerHandle;
 osMutexId AI_DataAccessHandle;
 osMutexId DI_DataAccessHandle;
@@ -105,7 +104,6 @@ extern void start_modbus_tcp_server(void const * argument);
 extern void start_ai_monitor(void const * argument);
 extern void start_di_monitor(void const * argument);
 extern void start_webserver(void const * argument);
-extern void start_tftp(void const * argument);
 extern void send_GARP(void const * argument);
 
 /* USER CODE BEGIN PFP */
@@ -261,10 +259,6 @@ int main(void)
   /* definition and creation of webserver */
   osThreadDef(webserver, start_webserver, osPriorityIdle, 0, 256);
   webserverHandle = osThreadCreate(osThread(webserver), NULL);
-
-  /* definition and creation of file_recv */
-  osThreadDef(file_recv, start_tftp, osPriorityIdle, 0, 256);
-  file_recvHandle = osThreadCreate(osThread(file_recv), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

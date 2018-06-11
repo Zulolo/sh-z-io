@@ -226,7 +226,7 @@ void HAL_ETH_RxCpltCallback(ETH_HandleTypeDef *heth)
  */
 static void low_level_init(struct netif *netif)
 { 
-  uint32_t regvalue = 0;
+//  uint32_t regvalue = 0;
   HAL_StatusTypeDef hal_eth_init_status;
   
 /* Init ETH */

@@ -73,9 +73,9 @@ void start_webserver(void const * argument) {
 	http_server_socket_thread(NULL);
 }
 
-void start_tftp(void const * argument) {
-	
-	while(1) {
-		osDelay(5000);
-	}
-}
+//void start_tftp(void const * argument) {
+//	
+//	while(1) {
+//		osDelay(5000);
+//	}
+//}
