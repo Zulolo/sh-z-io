@@ -60,6 +60,8 @@
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
+CRC_HandleTypeDef hcrc;
+
 SPI_HandleTypeDef hspi3;
 DMA_HandleTypeDef hdma_spi3_rx;
 DMA_HandleTypeDef hdma_spi3_tx;
@@ -81,6 +83,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_SPI3_Init(void);
+static void MX_CRC_Init(void);
 void StartDefaultTask(void const * argument);
 extern void send_GARP(void const * argument);
 
@@ -159,6 +162,7 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_SPI3_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -284,6 +288,18 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 15, 0);
 }
 
+/* CRC init function */
+static void MX_CRC_Init(void)
+{
+
+  hcrc.Instance = CRC;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
 /* SPI3 init function */
 static void MX_SPI3_Init(void)
 {
@@ -367,26 +383,33 @@ void StartDefaultTask(void const * argument)
 
   /* USER CODE BEGIN 5 */
 	char cFileName[64];
-	int res;
+	fw_status tFwStatus;
 	memset(cFileName, 0 , sizeof(cFileName));
 	spiffs_init();
-	res = FWU_check_upgrade_file(cFileName, sizeof(cFileName));
-	if ( 0 == res ) {
-		// Already latest image in internal flash
-		FWU_run_app();
-	} else if (res > 0) {
-		// found some new image in fs
-		FWU_upgrade(cFileName);
-		FWU_run_app();
-	} else {
-		// no image in fs or FW in internal flash is newer (can be in developing phase)
-		if (FWU_app_valid()) {
-			FWU_backup_fw();
-			FWU_run_app();
-		} else {
+	tFwStatus = FWU_check_upgrade_file(cFileName, sizeof(cFileName));
+	switch(tFwStatus) {
+		case NO_FW_INTERNAL_NO_FW_FS:
 			tftp_init(&TFTP_Ctx);
-		}
-	}		
+		break;
+			
+		case VALID_FW_INTERNAL_NO_FW_FS:
+			FWU_backup_fw();
+			FWU_run_app();			
+		break;
+		
+		case FW_FS_NEWER:
+			FWU_upgrade(cFileName);
+			FWU_run_app();
+		break;
+		
+		case FW_INTERNAL_FS_MATCH_LATEST:
+			FWU_run_app();
+		break;
+		
+		default:
+			
+		break;
+	}
 		
   /* Infinite loop */
 	for(;;)

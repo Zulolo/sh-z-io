@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;  ../Middlewares/Third_Party/LwIP/src/include;  ../Middlewares/Third_Party/LwIP/system;  ../Drivers/STM32F4xx_HAL_Driver/Inc;  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;  ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;  ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;  ../Middlewares/Third_Party/FreeRTOS/Source/include;  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;  ../Middlewares/Third_Party/LwIP/src/include/lwip;  ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;  ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;  ../Middlewares/Third_Party/LwIP/src/include/netif;  ../Middlewares/Third_Party/LwIP/src/include/posix;  ../Middlewares/Third_Party/LwIP/src/include/posix/sys;  ../Middlewares/Third_Party/LwIP/system/arch;  ../Drivers/CMSIS/Include;  ..\..\io_2eth_stm32f4\Middlewares\Third_Party\spiffs</IncludePath>
+              <IncludePath>../Inc;   ../Middlewares/Third_Party/LwIP/src/include;   ../Middlewares/Third_Party/LwIP/system;   ../Drivers/STM32F4xx_HAL_Driver/Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;   ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;   ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;   ../Middlewares/Third_Party/FreeRTOS/Source/include;   ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;   ../Middlewares/Third_Party/LwIP/src/include/lwip;   ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;   ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;   ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;   ../Middlewares/Third_Party/LwIP/src/include/netif;   ../Middlewares/Third_Party/LwIP/src/include/posix;   ../Middlewares/Third_Party/LwIP/src/include/posix/sys;   ../Middlewares/Third_Party/LwIP/system/arch;   ../Drivers/CMSIS/Include;   ..\..\io_2eth_stm32f4\Middlewares\Third_Party\spiffs</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -427,6 +427,11 @@
               <FilePath>..\Src\spi_flash.c</FilePath>
             </File>
             <File>
+              <FileName>fw_upgrade.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fw_upgrade.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -461,11 +466,6 @@
               <FileType>1</FileType>
               <FilePath>../Src/stm32f4xx_hal_timebase_TIM.c</FilePath>
             </File>
-            <File>
-              <FileName>fw_upgrade.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\fw_upgrade.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -475,6 +475,11 @@
               <FileName>stm32f4xx_hal_eth.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_spi.c</FileName>
