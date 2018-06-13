@@ -389,20 +389,24 @@ void StartDefaultTask(void const * argument)
 	tFwStatus = FWU_check_upgrade_file(cFileName, sizeof(cFileName));
 	switch(tFwStatus) {
 		case NO_FW_INTERNAL_NO_FW_FS:
+			printf("No FW was found neither in internal flash nor external FS.\n");
 			tftp_init(&TFTP_Ctx);
 		break;
 			
 		case VALID_FW_INTERNAL_NO_FW_FS:
+			printf("FW was found in internal flash but not in external FS.\n");
 			FWU_backup_fw();
 			FWU_run_app();			
 		break;
 		
 		case FW_FS_NEWER:
+			printf("FW found in internal flash need to be upgraded.\n");
 			FWU_upgrade(cFileName);
 			FWU_run_app();
 		break;
 		
 		case FW_INTERNAL_FS_MATCH_LATEST:
+			printf("FW found in internal flash is already latest.\n");
 			FWU_run_app();
 		break;
 		

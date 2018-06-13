@@ -226,7 +226,7 @@ void HAL_ETH_RxCpltCallback(ETH_HandleTypeDef *heth)
  */
 static void low_level_init(struct netif *netif)
 { 
-  uint32_t regvalue = 0;
+//  uint32_t regvalue = 0;
   HAL_StatusTypeDef hal_eth_init_status;
   
 /* Init ETH */
@@ -303,14 +303,14 @@ static void low_level_init(struct netif *netif)
   
 
   /* Read Register Configuration */
-  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
-  regvalue |= (PHY_ISFR_INT4);
+//  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
+//  regvalue |= (PHY_ISFR_INT4);
 
-  /* Enable Interrupt on change of link status */ 
-  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR , regvalue );
-  
-  /* Read Register Configuration */
-  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR , &regvalue);
+//  /* Enable Interrupt on change of link status */ 
+//  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR , regvalue );
+//  
+//  /* Read Register Configuration */
+//  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR , &regvalue);
 
 /* USER CODE BEGIN PHY_POST_CONFIG */ 
     

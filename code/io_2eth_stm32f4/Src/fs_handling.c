@@ -30,7 +30,7 @@ void FS_remove_all_files(void) {
 	int res;
 
 	SPIFFS_opendir(&SPI_FFS_fs, "/", &d);
-	while ((pe = SPIFFS_readdir(&d, pe))) {
+	while ((pe = SPIFFS_readdir(&d, pe)) != NULL) {
 		res = SPIFFS_remove(&SPI_FFS_fs, (char *)(pe->name));
 		if (res < 0) {
 			printf("remove file %s failed.\n", pe->name);

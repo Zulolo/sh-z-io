@@ -207,8 +207,8 @@ void dyn_web_page_list_files(int conn)
 
 	strcat((char *) PAGE_BODY, "<br>"); 
 	SPIFFS_opendir(&SPI_FFS_fs, "/", &d);
-	while ((pe = SPIFFS_readdir(&d, pe))) {
-	sprintf(PAGE_BODY + strlen(PAGE_BODY), "%s [%04x] size:%i<br>", pe->name, pe->obj_id, pe->size);
+	while ((pe = SPIFFS_readdir(&d, pe)) != NULL) {
+		sprintf(PAGE_BODY + strlen(PAGE_BODY), "%s [%04x] size:%i<br>", pe->name, pe->obj_id, pe->size);
 	}
 	SPIFFS_closedir(&d);
 	strcat((char *) PAGE_BODY, "<br><br>---------------------------------------------"); 

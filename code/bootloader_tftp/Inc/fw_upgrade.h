@@ -9,8 +9,9 @@ typedef enum {
 } fw_status;
 
 void FWU_run_app(void);
+void FWU_backup_fw(void);
 fw_status FWU_check_upgrade_file(char* pFileName, unsigned char unBufLen);
-void FWU_upgrade(char* pFileName);
+int FWU_upgrade(char* pFileName);
 
 #endif
 
