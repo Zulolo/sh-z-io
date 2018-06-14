@@ -6,12 +6,12 @@
 #include "mb_tcp_server.h"
 #include "di_monitor.h"
 #include "ai_monitor.h"
+#include "spiffs.h"
 #include "fs_handling.h"
 
 #define PROG                    	"FreeModbus"
-	
-extern uint8_t cSN[SH_Z_SN_LEN];
-
+extern spiffs SPI_FFS_fs;
+extern char SH_Z_002_SN[SH_Z_SN_LEN + 1];
 /**********************  AI part  *************************/
 static uint16_t unADCxConvertedValueBuf[SH_Z_002_AI_NUM];
 
@@ -332,8 +332,12 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 }			   
 							   
 void start_modbus_tcp_server(void const * argument) {
+	static char cReportSlaveID[SH_Z_SN_LEN + 2 + 1];
 	eMBErrorCode    xStatus;
-	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, cSN, SH_Z_SN_LEN);
+
+	snprintf(cReportSlaveID, sizeof(cReportSlaveID), "%02X%s", SH_Z_002_VERSION, SH_Z_002_SN);
+	cReportSlaveID[sizeof(cReportSlaveID) - 1] = '\0';
+	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, (uint8_t *)cReportSlaveID, strlen(cReportSlaveID));
 	
 	if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR ) {
 		printf( "%s: can't initialize modbus stack!\r\n", PROG );

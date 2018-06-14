@@ -80,10 +80,10 @@
             <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <RunUserProg1>1</RunUserProg1>
+            <RunUserProg2>1</RunUserProg2>
+            <UserProg1Name>D:\Keil_v5\ARM\ARMCC\bin\fromelf.exe --bin --output=io_2eth_stm32f4\io_2eth_stm32f4.bin io_2eth_stm32f4\io_2eth_stm32f4.axf</UserProg1Name>
+            <UserProg2Name>D:\Python27\python.exe ..\add_header_bin.py</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -420,11 +420,6 @@
               <FileName>porttcp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Third_Party\modbus\port\porttcp.c</FilePath>
-            </File>
-            <File>
-              <FileName>sh_z_init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\sh_z_init.c</FilePath>
             </File>
             <File>
               <FileName>upnp.c</FileName>
