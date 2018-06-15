@@ -158,7 +158,22 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>INTERNAL_FW_LENGTH_IN_HEAD</ItemText>
+          <ItemText>pe-&gt;name</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>nVersionInFileName</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>tFW_Header</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>unCalculatedCRC</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

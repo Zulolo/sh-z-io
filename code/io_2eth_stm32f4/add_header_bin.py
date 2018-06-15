@@ -11,12 +11,9 @@ crcvalue = 0
 
 def int_to_bytes(value, length):
     result = []
-
     for i in range(0, length):
         result.append(value >> (i * 8) & 0xff)
-
-    result.reverse()
-
+#    result.reverse()
     return result
 
 print(os.getcwd())
@@ -46,7 +43,7 @@ fw_length = os.stat('.\io_2eth_stm32f4\io_2eth_stm32f4.bin').st_size
 fw_length /= 4;
 print(fw_length)
 
-# create new file
+# create new file temp for calculate crc
 # new_file_name = 'G:\Work\io\design\code\io_2eth_stm32f4\MDK-ARM\io_2eth_stm32f4\\fw_002_v' + format(fw_version, 'x') + '.bin'
 new_file_name = '.\io_2eth_stm32f4\\fw_002_v' + format(fw_version, 'x') + '.bin'
 print(new_file_name)

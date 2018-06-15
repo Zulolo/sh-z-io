@@ -247,6 +247,7 @@ void spiffs_init(void) {
 	int32_t res;
 //	static uint8_t unManuID[3];
 //	spi_flash_read_manufacturer_ID(unManuID, sizeof(unManuID));
+//	spi_flash_erase_chip();
   	spiffs_cfg.hal_erase_f = _spiffs_erase;
 	spiffs_cfg.hal_read_f = _spiffs_read;
 	spiffs_cfg.hal_write_f = _spiffs_write;

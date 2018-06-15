@@ -34,6 +34,22 @@ extern CRC_HandleTypeDef hcrc;
 //fw_slaveid_vHEX.bin
 // e.g. fw_002_v0100.bin  (explanation: 002 is the slave ID for SH-Z-002, 0100 is 0x0100, measn version 01.00)
 
+static uint32_t crc32(uint32_t crc, unsigned char *buf, size_t len)
+{
+    crc = ~crc;
+    while (len--) {
+        crc ^= *buf++;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+    }
+    return ~crc;
+}
 
 void FWU_run_app(void) {
 	pFunction Jump_To_Application;
@@ -124,8 +140,10 @@ static int find_latest_fw_image_in_fs(char* pFileName, unsigned char unBufLen) {
 				if (fd >= 0) {
 					if (SPIFFS_read(&SPI_FFS_fs, fd, (u8_t *)(&tFW_Header), sizeof(tFW_Header)) > 0) {
 						// check file crc
-						unCalculatedCRC = HAL_CRC_Calculate(&hcrc, (uint32_t *)(&(tFW_Header.unSlaveID)), sizeof(tFW_Header) - sizeof(tFW_Header.unCRC));
+						//unCalculatedCRC = crc32(0xFFFFFFFF, (uint8_t *)(&(tFW_Header.unSlaveID)), sizeof(tFW_Header) - sizeof(tFW_Header.unCRC));
+						unCalculatedCRC = HAL_CRC_Calculate(&hcrc, (uint32_t *)(&(tFW_Header.unSlaveID)), (sizeof(tFW_Header) - sizeof(tFW_Header.unCRC))/sizeof(uint32_t));
 						while ((nReadCNT = SPIFFS_read(&SPI_FFS_fs, fd, (u8_t *)unBuf, sizeof(unBuf))) > 0 ) {
+							//unCalculatedCRC = crc32(unCalculatedCRC, (u8_t *)unBuf, nReadCNT);
 							unCalculatedCRC = HAL_CRC_Accumulate(&hcrc, unBuf, nReadCNT/sizeof(uint32_t));
 						}						
 						SPIFFS_close(&SPI_FFS_fs, fd);
