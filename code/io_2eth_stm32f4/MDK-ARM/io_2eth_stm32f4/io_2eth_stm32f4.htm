@@ -3,11 +3,11 @@
 <title>Static Call Graph - [io_2eth_stm32f4\io_2eth_stm32f4.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image io_2eth_stm32f4\io_2eth_stm32f4.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Jun 15 23:04:10 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Jun 16 18:50:04 2018
 <BR><P>
-<H3>Maximum Stack Usage =       1112 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =       1136 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-start_di_monitor &rArr; di_conf_initialize &rArr; di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+start_di_monitor &rArr; di_conf_initialize &rArr; di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 <P>
 <H3>
 Functions with no stack information
@@ -916,7 +916,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_save_conf
+<BR>[Called By]<UL><LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_write
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_read
+<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
+<LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_close
+<LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_save_conf
 <LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_wr_conf_file
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_load
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_initialize
@@ -929,11 +933,19 @@ Global Symbols
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftp_file_open
 <LI><a href="#[303]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;load_sh_z_002_info
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_default_sh_z_002_info
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_unmount
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_remove
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
 <LI><a href="#[2d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_close
 <LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_bind
 <LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_accept
+<LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_readdir
+<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_opendir
+<LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_info
+<LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_closedir
+<LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_mount
 <LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_init
+<LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_fstat
 <LI><a href="#[26e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pbuf_alloc
 <LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_joingroup_netif
 <LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
@@ -1057,6 +1069,18 @@ Global Symbols
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftp_tmr
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 <LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close_handle
+<LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_erase_block
+<LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cb_object_event
+<LI><a href="#[3d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_free
+<LI><a href="#[3c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_update_ix_map
+<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_truncate
+<LI><a href="#[3d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_read
+<LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_open_by_page
+<LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_modify
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_create
+<LI><a href="#[3d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_append
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_scan
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_free_obj_id
 </UL>
 
 <P><STRONG><a name="[127]"></a>__2sprintf</STRONG> (Thumb, 38 bytes, Stack size 32 bytes, __2sprintf.o(.text))
@@ -1203,8 +1227,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 132 + Unknown Stack Size
 <LI>Call Chain = __aeabi_assert &rArr; __assert_puts &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; stdout_putchar
 </UL>
-<BR>[Calls]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__assert_puts
-<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
+<BR>[Calls]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__assert_puts
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xMBTCPPortSendResponse
 <LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvvMBTCPLogFrame
@@ -1302,6 +1326,7 @@ Global Symbols
 <LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;low_level_init
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[411]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_seg_copy
+<LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cb_object_event
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
 <LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;realloc
 </UL>
@@ -1432,10 +1457,10 @@ Global Symbols
 <P><STRONG><a name="[107]"></a>_init_alloc</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, init_alloc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = _init_alloc &rArr; __rt_SIGRTMEM &rArr; __rt_SIGRTMEM_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
+<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
 <LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_heap_2
 </UL>
@@ -1866,9 +1891,9 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 <LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_istty
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_flen
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_deferredlazyseek
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_writebuf
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_seterr
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_deferredlazyseek
 </UL>
 
 <P><STRONG><a name="[2c4]"></a>__flsbuf_byte</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, flsbuf.o(.text))
@@ -1944,8 +1969,8 @@ Global Symbols
 <P><STRONG><a name="[165]"></a>__rt_SIGRTRED</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, defsig_rtred_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __rt_SIGRTRED &rArr; __rt_SIGRTRED_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTRED_inner
-<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
+<BR>[Calls]<UL><LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTRED_inner
 </UL>
 <BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_initio
 </UL>
@@ -2004,9 +2029,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_writebuf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_deferredlazyseek
-<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
+<BR>[Called By]<UL><LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_do_fflush
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_deferredlazyseek
 </UL>
 
 <P><STRONG><a name="[174]"></a>_deferredlazyseek</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stdio.o(.text), UNUSED)
@@ -2020,9 +2045,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTRED_inner
-<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
+<BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
 <LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGABRT_inner
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTRED_inner
 </UL>
 
 <P><STRONG><a name="[180]"></a>__rt_SIGRTRED_inner</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, defsig_rtred_inner.o(.text))
@@ -2248,8 +2273,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[19c]"></a>DI_set_DI_enable_CNT</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, di_monitor.o(i.DI_set_DI_enable_CNT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 824 + Unknown Stack Size
-<LI>Call Chain = DI_set_DI_enable_CNT &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 848 + Unknown Stack Size
+<LI>Call Chain = DI_set_DI_enable_CNT &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -2259,8 +2284,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[19e]"></a>DI_set_DI_latch_set</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, di_monitor.o(i.DI_set_DI_latch_set))
-<BR><BR>[Stack]<UL><LI>Max Depth = 824 + Unknown Stack Size
-<LI>Call Chain = DI_set_DI_latch_set &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 848 + Unknown Stack Size
+<LI>Call Chain = DI_set_DI_latch_set &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -2324,8 +2349,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
 <P><STRONG><a name="[1aa]"></a>FS_remove_all_files</STRONG> (Thumb, 62 bytes, Stack size 72 bytes, fs_handling.o(i.FS_remove_all_files))
-<BR><BR>[Stack]<UL><LI>Max Depth = 768 + Unknown Stack Size
-<LI>Call Chain = FS_remove_all_files &rArr; SPIFFS_remove &rArr; spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 792 + Unknown Stack Size
+<LI>Call Chain = FS_remove_all_files &rArr; SPIFFS_remove &rArr; spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_remove
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_readdir
@@ -2859,14 +2884,15 @@ Global Symbols
 <P><STRONG><a name="[19]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.NMI_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[1fb]"></a>SPIFFS_close</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, spiffs_hydrogen.o(i.SPIFFS_close))
-<BR><BR>[Stack]<UL><LI>Max Depth = 768 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[1fb]"></a>SPIFFS_close</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, spiffs_hydrogen.o(i.SPIFFS_close))
+<BR><BR>[Stack]<UL><LI>Max Depth = 792 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_return
 <LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fflush_cache
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_save_conf
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_initialize
@@ -2877,8 +2903,13 @@ Global Symbols
 <LI><a href="#[2c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fs_close_custom
 </UL>
 
-<P><STRONG><a name="[1ae]"></a>SPIFFS_closedir</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, spiffs_hydrogen.o(i.SPIFFS_closedir))
-<BR><BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
+<P><STRONG><a name="[1ae]"></a>SPIFFS_closedir</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, spiffs_hydrogen.o(i.SPIFFS_closedir))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_closedir &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
 <LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dyn_web_page_list_files
 </UL>
 
@@ -2888,7 +2919,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1fe]"></a>SPIFFS_format</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, spiffs_hydrogen.o(i.SPIFFS_format))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = SPIFFS_format &rArr; osMutexWait &rArr; xQueueGenericReceive &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_format &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -2898,30 +2930,34 @@ Global Symbols
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_format_fs_task
 </UL>
 
-<P><STRONG><a name="[200]"></a>SPIFFS_fstat</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, spiffs_hydrogen.o(i.SPIFFS_fstat))
-<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[200]"></a>SPIFFS_fstat</STRONG> (Thumb, 126 bytes, Stack size 24 bytes, spiffs_hydrogen.o(i.SPIFFS_fstat))
+<BR><BR>[Stack]<UL><LI>Max Depth = 800 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_get
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_stat_pix
 <LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fflush_cache
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fs_open_custom
 </UL>
 
-<P><STRONG><a name="[203]"></a>SPIFFS_info</STRONG> (Thumb, 112 bytes, Stack size 40 bytes, spiffs_hydrogen.o(i.SPIFFS_info))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = SPIFFS_info &rArr; osMutexWait &rArr; xQueueGenericReceive &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<P><STRONG><a name="[203]"></a>SPIFFS_info</STRONG> (Thumb, 120 bytes, Stack size 40 bytes, spiffs_hydrogen.o(i.SPIFFS_info))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_info &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dyn_web_page_list_files
 </UL>
 
-<P><STRONG><a name="[204]"></a>SPIFFS_mount</STRONG> (Thumb, 272 bytes, Stack size 56 bytes, spiffs_hydrogen.o(i.SPIFFS_mount))
-<BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = SPIFFS_mount &rArr; spiffs_obj_lu_scan &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[204]"></a>SPIFFS_mount</STRONG> (Thumb, 368 bytes, Stack size 80 bytes, spiffs_hydrogen.o(i.SPIFFS_mount))
+<BR><BR>[Stack]<UL><LI>Max Depth = 336 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_mount &rArr; spiffs_obj_lu_scan &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -2929,13 +2965,14 @@ Global Symbols
 <LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_scan
 <LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_init
 </UL>
 
-<P><STRONG><a name="[207]"></a>SPIFFS_open</STRONG> (Thumb, 490 bytes, Stack size 48 bytes, spiffs_hydrogen.o(i.SPIFFS_open))
-<BR><BR>[Stack]<UL><LI>Max Depth = 728 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_open &rArr; spiffs_object_create &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[207]"></a>SPIFFS_open</STRONG> (Thumb, 502 bytes, Stack size 48 bytes, spiffs_hydrogen.o(i.SPIFFS_open))
+<BR><BR>[Stack]<UL><LI>Max Depth = 752 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_open &rArr; spiffs_object_create &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -2947,6 +2984,7 @@ Global Symbols
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_return
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_find_new
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_save_conf
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_initialize
@@ -2957,18 +2995,22 @@ Global Symbols
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fs_open_custom
 </UL>
 
-<P><STRONG><a name="[1ab]"></a>SPIFFS_opendir</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, spiffs_hydrogen.o(i.SPIFFS_opendir))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPIFFS_opendir
+<P><STRONG><a name="[1ab]"></a>SPIFFS_opendir</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, spiffs_hydrogen.o(i.SPIFFS_opendir))
+<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_opendir &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
 <LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dyn_web_page_list_files
 </UL>
 
-<P><STRONG><a name="[20f]"></a>SPIFFS_read</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, spiffs_hydrogen.o(i.SPIFFS_read))
-<BR><BR>[Stack]<UL><LI>Max Depth = 808 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[20f]"></a>SPIFFS_read</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, spiffs_hydrogen.o(i.SPIFFS_read))
+<BR><BR>[Stack]<UL><LI>Max Depth = 832 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_hydro_read
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_load
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftp_file_read
@@ -2976,20 +3018,22 @@ Global Symbols
 <LI><a href="#[2cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_serve
 </UL>
 
-<P><STRONG><a name="[1ad]"></a>SPIFFS_readdir</STRONG> (Thumb, 118 bytes, Stack size 56 bytes, spiffs_hydrogen.o(i.SPIFFS_readdir))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = SPIFFS_readdir &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[1ad]"></a>SPIFFS_readdir</STRONG> (Thumb, 126 bytes, Stack size 56 bytes, spiffs_hydrogen.o(i.SPIFFS_readdir))
+<BR><BR>[Stack]<UL><LI>Max Depth = 248 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_readdir &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_entry_visitor
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
 <LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dyn_web_page_list_files
 </UL>
 
-<P><STRONG><a name="[1ac]"></a>SPIFFS_remove</STRONG> (Thumb, 246 bytes, Stack size 32 bytes, spiffs_hydrogen.o(i.SPIFFS_remove))
-<BR><BR>[Stack]<UL><LI>Max Depth = 696 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_remove &rArr; spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[1ac]"></a>SPIFFS_remove</STRONG> (Thumb, 256 bytes, Stack size 32 bytes, spiffs_hydrogen.o(i.SPIFFS_remove))
+<BR><BR>[Stack]<UL><LI>Max Depth = 720 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_remove &rArr; spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -2999,25 +3043,27 @@ Global Symbols
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_return
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_find_new
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
 </UL>
 
-<P><STRONG><a name="[212]"></a>SPIFFS_unmount</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, spiffs_hydrogen.o(i.SPIFFS_unmount))
-<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_unmount &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[212]"></a>SPIFFS_unmount</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, spiffs_hydrogen.o(i.SPIFFS_unmount))
+<BR><BR>[Stack]<UL><LI>Max Depth = 800 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_unmount &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_return
 <LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fflush_cache
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_format_fs_task
 </UL>
 
-<P><STRONG><a name="[213]"></a>SPIFFS_write</STRONG> (Thumb, 754 bytes, Stack size 48 bytes, spiffs_hydrogen.o(i.SPIFFS_write))
-<BR><BR>[Stack]<UL><LI>Max Depth = 768 + Unknown Stack Size
-<LI>Call Chain = SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[213]"></a>SPIFFS_write</STRONG> (Thumb, 766 bytes, Stack size 48 bytes, spiffs_hydrogen.o(i.SPIFFS_write))
+<BR><BR>[Stack]<UL><LI>Max Depth = 792 + Unknown Stack Size
+<LI>Call Chain = SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -3027,6 +3073,7 @@ Global Symbols
 <LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fd_get
 <LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_hydro_write
 <LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;di_conf_wr_conf_file
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftp_file_write
@@ -3034,8 +3081,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d2]"></a>StartDefaultTask</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, main.o(i.StartDefaultTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1096 + Unknown Stack Size
-<LI>Call Chain = StartDefaultTask &rArr; sh_z_002_info_init &rArr; load_sh_z_002_info &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1120 + Unknown Stack Size
+<LI>Call Chain = StartDefaultTask &rArr; sh_z_002_info_init &rArr; load_sh_z_002_info &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sh_z_002_info_init
@@ -3772,8 +3819,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2c7]"></a>fs_close</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, fs.o(i.fs_close))
-<BR><BR>[Stack]<UL><LI>Max Depth = 784 + Unknown Stack Size
-<LI>Call Chain = fs_close &rArr; fs_close_custom &rArr; SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 808 + Unknown Stack Size
+<LI>Call Chain = fs_close &rArr; fs_close_custom &rArr; SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fs_close_custom
 </UL>
@@ -3781,8 +3828,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2c8]"></a>fs_close_custom</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, webserver.o(i.fs_close_custom))
-<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
-<LI>Call Chain = fs_close_custom &rArr; SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 800 + Unknown Stack Size
+<LI>Call Chain = fs_close_custom &rArr; SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_close
@@ -3791,8 +3838,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2c9]"></a>fs_open</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, fs.o(i.fs_open))
-<BR><BR>[Stack]<UL><LI>Max Depth = 856 + Unknown Stack Size
-<LI>Call Chain = fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 880 + Unknown Stack Size
+<LI>Call Chain = fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fs_open_custom
 <LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
@@ -3801,8 +3848,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2ca]"></a>fs_open_custom</STRONG> (Thumb, 78 bytes, Stack size 64 bytes, webserver.o(i.fs_open_custom))
-<BR><BR>[Stack]<UL><LI>Max Depth = 840 + Unknown Stack Size
-<LI>Call Chain = fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 864 + Unknown Stack Size
+<LI>Call Chain = fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
@@ -3812,8 +3859,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2cf]"></a>http_server_serve</STRONG> (Thumb, 248 bytes, Stack size 64 bytes, httpserver-socket.o(i.http_server_serve))
-<BR><BR>[Stack]<UL><LI>Max Depth = 920 + Unknown Stack Size
-<LI>Call Chain = http_server_serve &rArr; fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 944 + Unknown Stack Size
+<LI>Call Chain = http_server_serve &rArr; fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -3833,8 +3880,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2d3]"></a>http_server_socket_thread</STRONG> (Thumb, 94 bytes, Stack size 56 bytes, httpserver-socket.o(i.http_server_socket_thread))
-<BR><BR>[Stack]<UL><LI>Max Depth = 976 + Unknown Stack Size
-<LI>Call Chain = http_server_socket_thread &rArr; http_server_serve &rArr; fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1000 + Unknown Stack Size
+<LI>Call Chain = http_server_socket_thread &rArr; http_server_serve &rArr; fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_socket
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_listen
@@ -5526,11 +5573,14 @@ Global Symbols
 <LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_fflush_cache
 </UL>
 
-<P><STRONG><a name="[3c2]"></a>spiffs_cb_object_event</STRONG> (Thumb, 364 bytes, Stack size 64 bytes, spiffs_nucleus.o(i.spiffs_cb_object_event))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = spiffs_cb_object_event &rArr; spiffs_cache_fd_release &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[3c2]"></a>spiffs_cb_object_event</STRONG> (Thumb, 492 bytes, Stack size 96 bytes, spiffs_nucleus.o(i.spiffs_cb_object_event))
+<BR><BR>[Stack]<UL><LI>Max Depth = 304 + Unknown Stack Size
+<LI>Call Chain = spiffs_cb_object_event &rArr; spiffs_update_ix_map &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cache_fd_release
 <LI><a href="#[3c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_update_ix_map
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_update_index_hdr
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_clean
@@ -5540,10 +5590,12 @@ Global Symbols
 <LI><a href="#[3d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_append
 </UL>
 
-<P><STRONG><a name="[1ff]"></a>spiffs_erase_block</STRONG> (Thumb, 180 bytes, Stack size 40 bytes, spiffs_nucleus.o(i.spiffs_erase_block))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = spiffs_erase_block &rArr; spiffs_phys_wr &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[1ff]"></a>spiffs_erase_block</STRONG> (Thumb, 192 bytes, Stack size 40 bytes, spiffs_nucleus.o(i.spiffs_erase_block))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
+<LI>Call Chain = spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_wr
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_format
 <LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_erase_block
@@ -5578,8 +5630,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3c6]"></a>spiffs_gc_check</STRONG> (Thumb, 324 bytes, Stack size 48 bytes, spiffs_gc.o(i.spiffs_gc_check))
-<BR><BR>[Stack]<UL><LI>Max Depth = 568 + Unknown Stack Size
-<LI>Call Chain = spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 592 + Unknown Stack Size
+<LI>Call Chain = spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_find_candidate
 <LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_erase_page_stats
@@ -5593,7 +5645,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3c8]"></a>spiffs_gc_clean</STRONG> (Thumb, 1324 bytes, Stack size 104 bytes, spiffs_gc.o(i.spiffs_gc_clean))
-<BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 544 + Unknown Stack Size
+<LI>Call Chain = spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_move
 <LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_update_index_hdr
@@ -5625,7 +5678,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3d0]"></a>spiffs_gc_quick</STRONG> (Thumb, 260 bytes, Stack size 64 bytes, spiffs_gc.o(i.spiffs_gc_quick))
-<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; spiffs_phys_wr &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 272 + Unknown Stack Size
+<LI>Call Chain = spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_erase_block
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_rd
@@ -5634,7 +5688,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[21f]"></a>spiffs_init</STRONG> (Thumb, 166 bytes, Stack size 40 bytes, spi_flash.o(i.spiffs_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 376 + Unknown Stack Size
 <LI>Call Chain = spiffs_init &rArr; SPIFFS_mount &rArr; spiffs_obj_lu_scan &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_mount
@@ -5659,22 +5713,26 @@ Global Symbols
 <LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_free_obj_id
 </UL>
 
-<P><STRONG><a name="[3d5]"></a>spiffs_obj_lu_find_free</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, spiffs_nucleus.o(i.spiffs_obj_lu_find_free))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[3d5]"></a>spiffs_obj_lu_find_free</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, spiffs_nucleus.o(i.spiffs_obj_lu_find_free))
+<BR><BR>[Stack]<UL><LI>Max Depth = 312 + Unknown Stack Size
+<LI>Call Chain = spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_quick
 <LI><a href="#[3d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_id
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_move
 <LI><a href="#[3d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_allocate_data
 <LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_create
 </UL>
 
-<P><STRONG><a name="[20b]"></a>spiffs_obj_lu_find_free_obj_id</STRONG> (Thumb, 450 bytes, Stack size 72 bytes, spiffs_nucleus.o(i.spiffs_obj_lu_find_free_obj_id))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = spiffs_obj_lu_find_free_obj_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[20b]"></a>spiffs_obj_lu_find_free_obj_id</STRONG> (Thumb, 534 bytes, Stack size 80 bytes, spiffs_nucleus.o(i.spiffs_obj_lu_find_free_obj_id))
+<BR><BR>[Stack]<UL><LI>Max Depth = 272 + Unknown Stack Size
+<LI>Call Chain = spiffs_obj_lu_find_free_obj_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_entry_visitor
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 </UL>
@@ -5699,19 +5757,21 @@ Global Symbols
 <LI><a href="#[3d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_append
 </UL>
 
-<P><STRONG><a name="[206]"></a>spiffs_obj_lu_scan</STRONG> (Thumb, 368 bytes, Stack size 64 bytes, spiffs_nucleus.o(i.spiffs_obj_lu_scan))
-<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = spiffs_obj_lu_scan &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[206]"></a>spiffs_obj_lu_scan</STRONG> (Thumb, 378 bytes, Stack size 64 bytes, spiffs_nucleus.o(i.spiffs_obj_lu_scan))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
+<LI>Call Chain = spiffs_obj_lu_scan &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_erase_block
 <LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_entry_visitor
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_rd
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_mount
 </UL>
 
-<P><STRONG><a name="[3d3]"></a>spiffs_object_append</STRONG> (Thumb, 1984 bytes, Stack size 112 bytes, spiffs_nucleus.o(i.spiffs_object_append))
-<BR><BR>[Stack]<UL><LI>Max Depth = 680 + Unknown Stack Size
-<LI>Call Chain = spiffs_object_append &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[3d3]"></a>spiffs_object_append</STRONG> (Thumb, 3050 bytes, Stack size 112 bytes, spiffs_nucleus.o(i.spiffs_object_append))
+<BR><BR>[Stack]<UL><LI>Max Depth = 704 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_append &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_update_index_hdr
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cb_object_event
@@ -5723,19 +5783,21 @@ Global Symbols
 <LI><a href="#[3d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_index_check
 <LI><a href="#[3d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_data_check
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_hydro_write
 </UL>
 
-<P><STRONG><a name="[20c]"></a>spiffs_object_create</STRONG> (Thumb, 290 bytes, Stack size 112 bytes, spiffs_nucleus.o(i.spiffs_object_create))
-<BR><BR>[Stack]<UL><LI>Max Depth = 680 + Unknown Stack Size
-<LI>Call Chain = spiffs_object_create &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[20c]"></a>spiffs_object_create</STRONG> (Thumb, 312 bytes, Stack size 112 bytes, spiffs_nucleus.o(i.spiffs_object_create))
+<BR><BR>[Stack]<UL><LI>Max Depth = 704 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_create &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cb_object_event
 <LI><a href="#[3c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_gc_check
 <LI><a href="#[3d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_free
 <LI><a href="#[3c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_wr
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 </UL>
@@ -5749,9 +5811,9 @@ Global Symbols
 <LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_remove
 </UL>
 
-<P><STRONG><a name="[3d2]"></a>spiffs_object_modify</STRONG> (Thumb, 1282 bytes, Stack size 112 bytes, spiffs_nucleus.o(i.spiffs_object_modify))
-<BR><BR>[Stack]<UL><LI>Max Depth = 680 + Unknown Stack Size
-<LI>Call Chain = spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[3d2]"></a>spiffs_object_modify</STRONG> (Thumb, 1674 bytes, Stack size 112 bytes, spiffs_nucleus.o(i.spiffs_object_modify))
+<BR><BR>[Stack]<UL><LI>Max Depth = 704 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_move
 <LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_update_index_hdr
@@ -5765,32 +5827,37 @@ Global Symbols
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_rd
 <LI><a href="#[3d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_index_check
 <LI><a href="#[3d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_data_check
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_hydro_write
 </UL>
 
-<P><STRONG><a name="[20d]"></a>spiffs_object_open_by_page</STRONG> (Thumb, 244 bytes, Stack size 96 bytes, spiffs_nucleus.o(i.spiffs_object_open_by_page))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = spiffs_object_open_by_page &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[20d]"></a>spiffs_object_open_by_page</STRONG> (Thumb, 256 bytes, Stack size 96 bytes, spiffs_nucleus.o(i.spiffs_object_open_by_page))
+<BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_open_by_page &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_rd
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 <LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_remove
 </UL>
 
-<P><STRONG><a name="[3d1]"></a>spiffs_object_read</STRONG> (Thumb, 584 bytes, Stack size 88 bytes, spiffs_nucleus.o(i.spiffs_object_read))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = spiffs_object_read &rArr; spiffs_obj_lu_find_id_and_span &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[3d1]"></a>spiffs_object_read</STRONG> (Thumb, 638 bytes, Stack size 88 bytes, spiffs_nucleus.o(i.spiffs_object_read))
+<BR><BR>[Stack]<UL><LI>Max Depth = 352 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_read &rArr; spiffs_obj_lu_find_id_and_span &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_id_and_span
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_rd
 <LI><a href="#[3d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_data_check
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_hydro_read
 </UL>
 
-<P><STRONG><a name="[20e]"></a>spiffs_object_truncate</STRONG> (Thumb, 1422 bytes, Stack size 96 bytes, spiffs_nucleus.o(i.spiffs_object_truncate))
-<BR><BR>[Stack]<UL><LI>Max Depth = 664 + Unknown Stack Size
-<LI>Call Chain = spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<P><STRONG><a name="[20e]"></a>spiffs_object_truncate</STRONG> (Thumb, 2014 bytes, Stack size 96 bytes, spiffs_nucleus.o(i.spiffs_object_truncate))
+<BR><BR>[Stack]<UL><LI>Max Depth = 688 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_move
 <LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_update_index_hdr
@@ -5805,13 +5872,15 @@ Global Symbols
 <LI><a href="#[3d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_index_check
 <LI><a href="#[3d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_data_check
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 <LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_remove
 </UL>
 
 <P><STRONG><a name="[3cf]"></a>spiffs_object_update_index_hdr</STRONG> (Thumb, 292 bytes, Stack size 56 bytes, spiffs_nucleus.o(i.spiffs_object_update_index_hdr))
-<BR><BR>[Stack]<UL><LI>Max Depth = 416<LI>Call Chain = spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 440 + Unknown Stack Size
+<LI>Call Chain = spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_move
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cb_object_event
@@ -5825,7 +5894,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3d8]"></a>spiffs_page_allocate_data</STRONG> (Thumb, 324 bytes, Stack size 72 bytes, spiffs_nucleus.o(i.spiffs_page_allocate_data))
-<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = spiffs_page_allocate_data &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
+<LI>Call Chain = spiffs_page_allocate_data &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_obj_lu_find_free
 <LI><a href="#[3c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_wr
@@ -5847,7 +5917,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3cc]"></a>spiffs_page_move</STRONG> (Thumb, 332 bytes, Stack size 72 bytes, spiffs_nucleus.o(i.spiffs_page_move))
-<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
+<LI>Call Chain = spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_phys_cpy
 <LI><a href="#[3cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_page_delete
@@ -5932,8 +6003,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[d5]"></a>start_di_monitor</STRONG> (Thumb, 382 bytes, Stack size 8 bytes, di_monitor.o(i.start_di_monitor))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1112 + Unknown Stack Size
-<LI>Call Chain = start_di_monitor &rArr; di_conf_initialize &rArr; di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1136 + Unknown Stack Size
+<LI>Call Chain = start_di_monitor &rArr; di_conf_initialize &rArr; di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xEventGroupWaitBits
 <LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
@@ -5947,8 +6018,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[93]"></a>start_erase_all_files_task</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, fs_handling.o(i.start_erase_all_files_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
-<LI>Call Chain = start_erase_all_files_task &rArr; FS_remove_all_files &rArr; SPIFFS_remove &rArr; spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 800 + Unknown Stack Size
+<LI>Call Chain = start_erase_all_files_task &rArr; FS_remove_all_files &rArr; SPIFFS_remove &rArr; spiffs_object_truncate &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FS_remove_all_files
@@ -5956,8 +6027,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> modbus_tcp_server.o(i.erase_all_spiffs_files)
 </UL>
 <P><STRONG><a name="[96]"></a>start_format_fs_task</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, fs_handling.o(i.start_format_fs_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 784 + Unknown Stack Size
-<LI>Call Chain = start_format_fs_task &rArr; SPIFFS_unmount &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 808 + Unknown Stack Size
+<LI>Call Chain = start_format_fs_task &rArr; SPIFFS_unmount &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_unmount
@@ -5983,8 +6054,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[d6]"></a>start_webserver</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, webserver.o(i.start_webserver))
-<BR><BR>[Stack]<UL><LI>Max Depth = 984 + Unknown Stack Size
-<LI>Call Chain = start_webserver &rArr; http_server_socket_thread &rArr; http_server_serve &rArr; fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1008 + Unknown Stack Size
+<LI>Call Chain = start_webserver &rArr; http_server_socket_thread &rArr; http_server_serve &rArr; fs_open &rArr; fs_open_custom &rArr; SPIFFS_fstat &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_socket_thread
 </UL>
@@ -7966,8 +8037,8 @@ Global Symbols
 Local Symbols
 </H3>
 <P><STRONG><a name="[28e]"></a>di_conf_initialize</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, di_monitor.o(i.di_conf_initialize))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1104 + Unknown Stack Size
-<LI>Call Chain = di_conf_initialize &rArr; di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1128 + Unknown Stack Size
+<LI>Call Chain = di_conf_initialize &rArr; di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_close
@@ -7979,8 +8050,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[28f]"></a>di_conf_load</STRONG> (Thumb, 226 bytes, Stack size 288 bytes, di_monitor.o(i.di_conf_load))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1096 + Unknown Stack Size
-<LI>Call Chain = di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1120 + Unknown Stack Size
+<LI>Call Chain = di_conf_load &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -7997,8 +8068,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[293]"></a>di_conf_wr_conf_file</STRONG> (Thumb, 288 bytes, Stack size 40 bytes, di_monitor.o(i.di_conf_wr_conf_file))
-<BR><BR>[Stack]<UL><LI>Max Depth = 808 + Unknown Stack Size
-<LI>Call Chain = di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 832 + Unknown Stack Size
+<LI>Call Chain = di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -8017,8 +8088,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[19d]"></a>di_save_conf</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, di_monitor.o(i.di_save_conf))
-<BR><BR>[Stack]<UL><LI>Max Depth = 816 + Unknown Stack Size
-<LI>Call Chain = di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 840 + Unknown Stack Size
+<LI>Call Chain = di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_close
@@ -8136,16 +8207,16 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[c1]"></a>set_DI_enable_CNT</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, modbus_tcp_server.o(i.set_DI_enable_CNT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 840 + Unknown Stack Size
-<LI>Call Chain = set_DI_enable_CNT &rArr; DI_set_DI_enable_CNT &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 864 + Unknown Stack Size
+<LI>Call Chain = set_DI_enable_CNT &rArr; DI_set_DI_enable_CNT &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DI_set_DI_enable_CNT
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> modbus_tcp_server.o(.constdata)
 </UL>
 <P><STRONG><a name="[c6]"></a>set_DI_latch_set_buf</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, modbus_tcp_server.o(i.set_DI_latch_set_buf))
-<BR><BR>[Stack]<UL><LI>Max Depth = 840 + Unknown Stack Size
-<LI>Call Chain = set_DI_latch_set_buf &rArr; DI_set_DI_latch_set &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 864 + Unknown Stack Size
+<LI>Call Chain = set_DI_latch_set_buf &rArr; DI_set_DI_latch_set &rArr; di_save_conf &rArr; di_conf_wr_conf_file &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DI_set_DI_latch_set
 </UL>
@@ -8320,8 +8391,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[260]"></a>create_default_sh_z_002_info</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, main.o(i.create_default_sh_z_002_info))
-<BR><BR>[Stack]<UL><LI>Max Depth = 792 + Unknown Stack Size
-<LI>Call Chain = create_default_sh_z_002_info &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 816 + Unknown Stack Size
+<LI>Call Chain = create_default_sh_z_002_info &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Print
 <LI><a href="#[252]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Delete
@@ -8339,8 +8410,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[303]"></a>load_sh_z_002_info</STRONG> (Thumb, 134 bytes, Stack size 280 bytes, main.o(i.load_sh_z_002_info))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1088 + Unknown Stack Size
-<LI>Call Chain = load_sh_z_002_info &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1112 + Unknown Stack Size
+<LI>Call Chain = load_sh_z_002_info &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetObjectItemCaseSensitive
@@ -8363,8 +8434,8 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[220]"></a>sh_z_002_info_init</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, main.o(i.sh_z_002_info_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1096 + Unknown Stack Size
-<LI>Call Chain = sh_z_002_info_init &rArr; load_sh_z_002_info &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 1120 + Unknown Stack Size
+<LI>Call Chain = sh_z_002_info_init &rArr; load_sh_z_002_info &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_open
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_close
@@ -8375,8 +8446,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[ce]"></a>tftp_file_close</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, main.o(i.tftp_file_close))
-<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
-<LI>Call Chain = tftp_file_close &rArr; SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 800 + Unknown Stack Size
+<LI>Call Chain = tftp_file_close &rArr; SPIFFS_close &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_close
@@ -8384,8 +8455,8 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[cd]"></a>tftp_file_open</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, main.o(i.tftp_file_open))
-<BR><BR>[Stack]<UL><LI>Max Depth = 752 + Unknown Stack Size
-<LI>Call Chain = tftp_file_open &rArr; SPIFFS_open &rArr; spiffs_object_create &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
+<LI>Call Chain = tftp_file_open &rArr; SPIFFS_open &rArr; spiffs_object_create &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -8396,16 +8467,16 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[cf]"></a>tftp_file_read</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, main.o(i.tftp_file_read))
-<BR><BR>[Stack]<UL><LI>Max Depth = 832 + Unknown Stack Size
-<LI>Call Chain = tftp_file_read &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 856 + Unknown Stack Size
+<LI>Call Chain = tftp_file_read &rArr; SPIFFS_read &rArr; spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_read
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[d0]"></a>tftp_file_write</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, main.o(i.tftp_file_write))
-<BR><BR>[Stack]<UL><LI>Max Depth = 784 + Unknown Stack Size
-<LI>Call Chain = tftp_file_write &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 808 + Unknown Stack Size
+<LI>Call Chain = tftp_file_write &rArr; SPIFFS_write &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIFFS_write
 </UL>
@@ -10314,7 +10385,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3ca]"></a>spiffs_gc_erase_block</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, spiffs_gc.o(i.spiffs_gc_erase_block))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; spiffs_phys_wr &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 208 + Unknown Stack Size
+<LI>Call Chain = spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_erase_block
 <LI><a href="#[3bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cache_drop_page
@@ -10324,8 +10396,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1fc]"></a>spiffs_fflush_cache</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, spiffs_hydrogen.o(i.spiffs_fflush_cache))
-<BR><BR>[Stack]<UL><LI>Max Depth = 752 + Unknown Stack Size
-<LI>Call Chain = spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
+<LI>Call Chain = spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cache_page_get_by_fd
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cache_fd_release
@@ -10339,8 +10411,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[210]"></a>spiffs_hydro_read</STRONG> (Thumb, 328 bytes, Stack size 32 bytes, spiffs_hydrogen.o(i.spiffs_hydro_read))
-<BR><BR>[Stack]<UL><LI>Max Depth = 784 + Unknown Stack Size
-<LI>Call Chain = spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 808 + Unknown Stack Size
+<LI>Call Chain = spiffs_hydro_read &rArr; spiffs_fflush_cache &rArr; spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -10352,8 +10424,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[215]"></a>spiffs_hydro_write</STRONG> (Thumb, 132 bytes, Stack size 40 bytes, spiffs_hydrogen.o(i.spiffs_hydro_write))
-<BR><BR>[Stack]<UL><LI>Max Depth = 720 + Unknown Stack Size
-<LI>Call Chain = spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_obj_lu_find_id &rArr; spiffs_obj_lu_find_entry_visitor &rArr; spiffs_phys_rd &rArr; spiffs_cache_page_remove_oldest &rArr; spiffs_cache_page_free
+<BR><BR>[Stack]<UL><LI>Max Depth = 744 + Unknown Stack Size
+<LI>Call Chain = spiffs_hydro_write &rArr; spiffs_object_modify &rArr; spiffs_gc_check &rArr; spiffs_gc_clean &rArr; spiffs_object_update_index_hdr &rArr; spiffs_page_move &rArr; spiffs_obj_lu_find_free &rArr; spiffs_gc_quick &rArr; spiffs_gc_erase_block &rArr; spiffs_erase_block &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_modify
 <LI><a href="#[3d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_append
@@ -10442,8 +10514,11 @@ Local Symbols
 <LI><a href="#[3d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_object_append
 </UL>
 
-<P><STRONG><a name="[3c3]"></a>spiffs_update_ix_map</STRONG> (Thumb, 238 bytes, Stack size 36 bytes, spiffs_nucleus.o(i.spiffs_update_ix_map))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = spiffs_update_ix_map
+<P><STRONG><a name="[3c3]"></a>spiffs_update_ix_map</STRONG> (Thumb, 264 bytes, Stack size 64 bytes, spiffs_nucleus.o(i.spiffs_update_ix_map))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208 + Unknown Stack Size
+<LI>Call Chain = spiffs_update_ix_map &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spiffs_cb_object_event
 </UL>

@@ -7,7 +7,6 @@ buffersize = 65536
 fw_version = 0
 slave_id = 2
 fw_length = 0
-crcvalue = 0
 
 def int_to_bytes(value, length):
     result = []
@@ -17,15 +16,6 @@ def int_to_bytes(value, length):
     return result
 
 print(os.getcwd())
-# get CRC
-# with open('G:\Work\io\design\code\io_2eth_stm32f4\MDK-ARM\io_2eth_stm32f4\io_2eth_stm32f4.bin', 'rb') as afile:
-with open('.\io_2eth_stm32f4\io_2eth_stm32f4.bin', 'rb') as afile:
-    buffr = afile.read(buffersize)   
-    while len(buffr) > 0:
-        crcvalue = zlib.crc32(buffr, crcvalue)
-        buffr = afile.read(buffersize)
-
-print(format(crcvalue & 0xFFFFFFFF, '08x'))
 
 # get fw version from header file
 # with open('G:\Work\io\design\code\io_2eth_stm32f4\Inc\sh_z_002.h', 'rb') as afile:
@@ -43,7 +33,20 @@ fw_length = os.stat('.\io_2eth_stm32f4\io_2eth_stm32f4.bin').st_size
 fw_length /= 4;
 print(fw_length)
 
-# create new file temp for calculate crc
+# get CRC
+# with open('G:\Work\io\design\code\io_2eth_stm32f4\MDK-ARM\io_2eth_stm32f4\io_2eth_stm32f4.bin', 'rb') as afile:
+crcvalue = 0xFFFFFFFF
+crcvalue = zlib.crc32(buffer(bytearray(int_to_bytes(slave_id, 4))), crcvalue)
+crcvalue = zlib.crc32(buffer(bytearray(int_to_bytes(fw_version, 4))), crcvalue)
+crcvalue = zlib.crc32(buffer(bytearray(int_to_bytes(fw_length, 4))), crcvalue)
+with open('.\io_2eth_stm32f4\io_2eth_stm32f4.bin', 'rb') as afile:
+    buffr = afile.read(buffersize)   
+    while len(buffr) > 0:
+        crcvalue = zlib.crc32(buffr, crcvalue)
+        buffr = afile.read(buffersize)
+
+print(format(crcvalue & 0xFFFFFFFF, '08x'))
+
 # new_file_name = 'G:\Work\io\design\code\io_2eth_stm32f4\MDK-ARM\io_2eth_stm32f4\\fw_002_v' + format(fw_version, 'x') + '.bin'
 new_file_name = '.\io_2eth_stm32f4\\fw_002_v' + format(fw_version, 'x') + '.bin'
 print(new_file_name)
