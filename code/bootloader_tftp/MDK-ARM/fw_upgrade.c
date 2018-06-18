@@ -106,7 +106,7 @@ static uint32_t crc32(uint32_t crc, const void *buf, size_t size) {
 //    return ~crc;
 //}
 
-void FWU_run_app(void) {
+int FWU_run_app(void) {
 	pFunction Jump_To_Application;
 	uint32_t JumpAddress;
 	if (((*(__IO uint32_t*)APPLICATION_ENTRY_ADDRESS) & 0x2FFE0000 ) == 0x20000000) { 
@@ -119,7 +119,11 @@ void FWU_run_app(void) {
 		__set_MSP(*(__IO uint32_t*) APPLICATION_ENTRY_ADDRESS);
 		SCB->VTOR = APPLICATION_ENTRY_ADDRESS;
 		Jump_To_Application();
-	}	
+		// will never be here
+		return 0;
+	} else {
+		return (-1);
+	}		
 }
 
 // all fw image in FS lower than nLatestVersion wil be removed

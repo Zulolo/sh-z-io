@@ -104,7 +104,7 @@ extern void start_modbus_tcp_server(void const * argument);
 extern void start_ai_monitor(void const * argument);
 extern void start_di_monitor(void const * argument);
 extern void start_webserver(void const * argument);
-extern void send_GARP(void const * argument);
+void send_GARP(void const * argument);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -112,11 +112,11 @@ extern void send_GARP(void const * argument);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-static void send_GARP(void const * argument) {
-//	printf("send GARP timer enter\n");
-	etharp_gratuitous(&gnetif);
-//	printf("send GARP timer leave\n");
-}
+//static void send_GARP(void const * argument) {
+////	printf("send GARP timer enter\n");
+//	etharp_gratuitous(&gnetif);
+////	printf("send GARP timer leave\n");
+//}
 
 static void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
 	spiffs_file nFileHandle;
@@ -556,8 +556,8 @@ static void MX_TIM7_Init(void)
 static void MX_DMA_Init(void) 
 {
   /* DMA controller clock enable */
-  __HAL_RCC_DMA2_CLK_ENABLE();
   __HAL_RCC_DMA1_CLK_ENABLE();
+  __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
   /* DMA1_Stream0_IRQn interrupt configuration */
@@ -646,6 +646,14 @@ void StartDefaultTask(void const * argument)
     osDelay(5000);
   }
   /* USER CODE END 5 */ 
+}
+
+/* send_GARP function */
+void send_GARP(void const * argument)
+{
+  /* USER CODE BEGIN send_GARP */
+  etharp_gratuitous(&gnetif);
+  /* USER CODE END send_GARP */
 }
 
 /**

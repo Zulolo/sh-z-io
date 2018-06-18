@@ -89,7 +89,7 @@ extern void send_GARP(void const * argument);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
+static void MX_BKP_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -164,7 +164,7 @@ int main(void)
   MX_SPI3_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-
+	MX_BKP_Init();
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
@@ -372,7 +372,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+static void MX_BKP_Init(void) {
+	__HAL_RCC_RTC_ENABLE();
+	__HAL_RCC_BKPSRAM_CLK_ENABLE();
+	HAL_PWR_EnableBkUpAccess();
+}
 /* USER CODE END 4 */
 
 /* StartDefaultTask function */
@@ -386,6 +390,12 @@ void StartDefaultTask(void const * argument)
 	fw_status tFwStatus;
 	memset(cFileName, 0 , sizeof(cFileName));
 	spiffs_init();
+	if (*((__IO uint32_t *) BKPSRAM_BASE) != BOOTLOADER_FLAG) {
+		FWU_run_app();
+		// will never be here if there is FW in flash
+		// if not, enter bootloader below
+	}
+	
 	tFwStatus = FWU_check_upgrade_file(cFileName, sizeof(cFileName));
 	switch(tFwStatus) {
 		case NO_FW_INTERNAL_NO_FW_FS:

@@ -202,7 +202,7 @@ static int di_conf_load(spiffs_file tFileDesc) {
     cJSON* pLatchSet = NULL;
 	cJSON* pCNT_Enable = NULL;
     cJSON* pDI_ConfJson;
-	char cConfString[256];
+	char cConfString[512];
 	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
 	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
 		printf("%d char was read from conf file.\n", nReadNum);
@@ -252,6 +252,7 @@ static int di_save_conf(void) {
 		}
 	}
 }
+
 static int di_conf_initialize(void) {
 	spiffs_file tFileDesc;
 	tFileDesc = SPIFFS_open(&SPI_FFS_fs, DI_CONF_FILE_NAME, SPIFFS_RDONLY, 0);
@@ -269,10 +270,11 @@ static int di_conf_initialize(void) {
 			return (0);	
 		}
 	}	
-}	
+}
+
 void start_di_monitor(void const * argument) {
 	uint8_t unIndex;
-	uint8_t* pTestBuf;
+//	uint8_t* pTestBuf;
 	static BaseType_t bSomeThingHappened;
 	static uint32_t unDI_ValueTemp;
 	static uint16_t unDI_FilterTimer[SH_Z_002_DI_NUM];
@@ -281,10 +283,6 @@ void start_di_monitor(void const * argument) {
 //	xEventGroupWaitBits(xDiEventGroup, SPIFFS_READY_EVENT_BIT, pdTRUE, pdFALSE, osWaitForever );
 	while(SPI_FFS_fs.mounted != 1) {
 		osDelay(100);
-	}
-	pTestBuf = (unsigned char*)malloc(256);
-	if (pTestBuf) {
-		free(pTestBuf);
 	}
 	di_conf_initialize();
 	while (1) {
