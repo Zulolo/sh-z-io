@@ -32,6 +32,76 @@ void AI_get_AI_values(uint16_t* pAI_Values) {
 	osMutexRelease(AI_DataAccessHandle);
 }
 
+void AI_get_AI_current(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(pAI_Current, (void *)nCurrentValue, sizeof(nCurrentValue));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_get_AI_current_high_thrld(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(pAI_Current, (void *)nCurrentHighThreshold, sizeof(nCurrentHighThreshold));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_get_AI_current_low_thrld(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(pAI_Current, (void *)nCurrentLowThreshold, sizeof(nCurrentLowThreshold));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_get_AI_current_hstrcl_max(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(pAI_Current, (void *)nCurrentHstrclMax, sizeof(nCurrentHstrclMax));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_get_AI_current_hstrcl_min(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(pAI_Current, (void *)nCurrentHstrclMin, sizeof(nCurrentHstrclMin));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_set_AI_current_high_thrld(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(nCurrentHighThreshold, (void *)pAI_Current, sizeof(nCurrentHighThreshold));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_set_AI_current_low_thrld(int32_t* pAI_Current) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	memcpy(nCurrentLowThreshold, (void *)pAI_Current, sizeof(nCurrentLowThreshold));
+	osMutexRelease(AI_DataAccessHandle);
+}
+
+void AI_set_AI_low_alarm(uint32_t unValue) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	bAI_LowAlarm = unValue;
+	osMutexRelease(AI_DataAccessHandle);	
+}
+
+void AI_set_AI_high_alarm(uint32_t unValue) {
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	bAI_HighAlarm = unValue;
+	osMutexRelease(AI_DataAccessHandle);	
+}
+
+uint32_t AI_get_AI_low_alarm(void) {
+	uint32_t unTemp;
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	unTemp = bAI_LowAlarm;
+	osMutexRelease(AI_DataAccessHandle);
+	return unTemp;
+}
+
+uint32_t AI_get_AI_high_alarm(void) {
+	uint32_t unTemp;
+	osMutexWait(AI_DataAccessHandle, osWaitForever);
+	unTemp = bAI_HighAlarm;
+	osMutexRelease(AI_DataAccessHandle);
+	return unTemp;
+}
+
 static int ai_conf_wr_conf_file(spiffs_file tFileDesc) {
 	uint8_t index;
     char* pJsonString = NULL;
