@@ -67,13 +67,13 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 0 267 0 1011"))
+        (Placement "44 0 1 -1 -1 -8 -31 0 267 0 1011"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 279 1836 44 743")
-        (Scroll "-104 95")
+        (Scroll "-104 25")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -83,7 +83,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 78 1613 78 755")
-        (Scroll "-93 103")
+        (Scroll "-93 3")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -93,8 +93,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 234 1475 234 911")
-        (Scroll "528 216")
-        (Zoom "268")
+        (Scroll "0 0")
+        (Zoom "124")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
       (Schematic "SCHEMATIC1")
