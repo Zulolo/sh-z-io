@@ -180,11 +180,10 @@ static int ai_conf_load(spiffs_file tFileDesc) {
 	cJSON* pLowThreshold = NULL;
     cJSON* pHstrclMax = NULL;
 	cJSON* pHstrclMin = NULL;
-	cJSON *pIndex = NULL;
-//	cJSON *pArrayMemberValue = NULL;
-	cJSON* pAIChannels = NULL;
-	cJSON *pArrayMember = NULL;
+	cJSON* pIndex = NULL;
+	cJSON* pArrayMember = NULL;
     cJSON* pAI_ConfJson;
+	uint8_t index;
 	char cConfString[512];
 	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
 	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
@@ -200,19 +199,14 @@ static int ai_conf_load(spiffs_file tFileDesc) {
         }
         return (-1);
     }
-
-    pAIChannels = cJSON_GetObjectItemCaseSensitive(pAI_ConfJson, AI_CONF_CHANNEL_JSON_TAG);
-    if (NULL == pAIChannels) {
-		cJSON_Delete(pAI_ConfJson);
-		printf("Get ai channels object in JSON error.\n");
-		return (-1);
-	}
-    cJSON_ArrayForEach(pArrayMember, pAIChannels){
+	for (index = 0 ; index < cJSON_GetArraySize(pAI_ConfJson) ; index++) {
+		pArrayMember = cJSON_GetArrayItem(pAI_ConfJson, index);
         pHighThreshold = cJSON_GetObjectItemCaseSensitive(pArrayMember, AI_CONF_HIGH_THLD_JSON_TAG);
         pLowThreshold = cJSON_GetObjectItemCaseSensitive(pArrayMember, AI_CONF_LOW_THLD_JSON_TAG);
         pHstrclMax = cJSON_GetObjectItemCaseSensitive(pArrayMember, AI_CONF_HSTRCL_MAX_JSON_TAG);
         pHstrclMin = cJSON_GetObjectItemCaseSensitive(pArrayMember, AI_CONF_HSTRCL_MIN_JSON_TAG);
 		pIndex = cJSON_GetObjectItemCaseSensitive(pArrayMember, AI_CONF_CHN_INDEX_JSON_TAG);
+		
         if (!cJSON_IsNumber(pHighThreshold) || !cJSON_IsNumber(pLowThreshold) || !cJSON_IsNumber(pHstrclMax) ||
 			 !cJSON_IsNumber(pHstrclMin) || !cJSON_IsNumber(pIndex)) {
 			cJSON_Delete(pAI_ConfJson);
@@ -224,11 +218,12 @@ static int ai_conf_load(spiffs_file tFileDesc) {
 			printf("AI channel index error.\n");
 			return (-1);
         }
+		
 		nCurrentHighThreshold[pIndex->valueint] = pHighThreshold->valueint;
 		nCurrentLowThreshold[pIndex->valueint] = pLowThreshold->valueint;
 		nCurrentHstrclMax[pIndex->valueint] = pHstrclMax->valueint;
 		nCurrentHstrclMin[pIndex->valueint] = pHstrclMin->valueint;
-    }
+	}
 	
 	cJSON_Delete(pAI_ConfJson);
 	return 0;

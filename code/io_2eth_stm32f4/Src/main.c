@@ -339,11 +339,11 @@ int main(void)
   modbus_tcpHandle = osThreadCreate(osThread(modbus_tcp), NULL);
 
   /* definition and creation of ai_monitor */
-  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 256);
+  osThreadDef(ai_monitor, start_ai_monitor, osPriorityIdle, 0, 512);
   ai_monitorHandle = osThreadCreate(osThread(ai_monitor), NULL);
 
   /* definition and creation of di_monitor */
-  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 256);
+  osThreadDef(di_monitor, start_di_monitor, osPriorityIdle, 0, 512);
   di_monitorHandle = osThreadCreate(osThread(di_monitor), NULL);
 
   /* definition and creation of webserver */
