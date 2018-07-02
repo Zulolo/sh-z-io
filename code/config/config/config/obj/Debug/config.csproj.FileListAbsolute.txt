@@ -1,0 +1,9 @@
+G:\Work\io\design\code\config\config\config\bin\Debug\config.exe.config
+G:\Work\io\design\code\config\config\config\bin\Debug\config.exe
+G:\Work\io\design\code\config\config\config\bin\Debug\config.pdb
+G:\Work\io\design\code\config\config\config\obj\Debug\config.csprojResolveAssemblyReference.cache
+G:\Work\io\design\code\config\config\config\obj\Debug\config.exe
+G:\Work\io\design\code\config\config\config\obj\Debug\config.pdb
+G:\Work\io\design\code\config\config\config\obj\Debug\config.MainForm.resources
+G:\Work\io\design\code\config\config\config\obj\Debug\config.csproj.GenerateResource.Cache
+G:\Work\io\design\code\config\config\config\bin\Debug\EasyModbus.dll
