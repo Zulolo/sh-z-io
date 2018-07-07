@@ -22,7 +22,7 @@ namespace config
 //		private IPAddress device_ip;
 //		private int device_port;
 		private ModbusClient modebus_client;
-		
+		private int device_in_data_grid_index;
 //		public IPAddress ip
 //		{
 //			set {
@@ -57,6 +57,7 @@ namespace config
 			}
 			int[] buf = modebus_client.ReadInputRegisters(SH_Z_002_DEV_INFO_REG_ADDR, SH_Z_002_DEV_INFO_REG_LENTH);
 			if (buf != null) {
+				
 				return true;
 			} else {
 				return false;

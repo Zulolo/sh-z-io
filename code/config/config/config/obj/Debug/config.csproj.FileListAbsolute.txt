@@ -7,3 +7,7 @@ G:\Work\io\design\code\config\config\config\obj\Debug\config.pdb
 G:\Work\io\design\code\config\config\config\obj\Debug\config.MainForm.resources
 G:\Work\io\design\code\config\config\config\obj\Debug\config.csproj.GenerateResource.Cache
 G:\Work\io\design\code\config\config\config\bin\Debug\EasyModbus.dll
+G:\Work\io\design\code\config\config\config\bin\Debug\PacketDotNet.dll
+G:\Work\io\design\code\config\config\config\bin\Debug\SharpPcap.dll
+G:\Work\io\design\code\config\config\config\bin\Debug\PacketDotNet.xml
+G:\Work\io\design\code\config\config\config\bin\Debug\SharpPcap.xml
