@@ -9,12 +9,15 @@
 using System;
 using SharpPcap;
 using SharpPcap.LibPcap;
+using SharpPcap.AirPcap;
+using SharpPcap.WinPcap;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Collections.ObjectModel;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace config
 {
@@ -29,6 +32,7 @@ namespace config
         static public Hashtable threads = new Hashtable();
         static public int scanDelay = 1200000; // 1.2 sec
         static public int maxRange = 64; // Default to 0-64 range
+        private LibPcapLiveDevice network_if;
 
         public static LibPcapLiveDeviceList getDeviceList()
         {
@@ -132,11 +136,11 @@ namespace config
                 ip += i;
                 string results = scanHost(ip);
 
-                if (results != "fail")
-                    form.updateList(ip, results);
+//                if (results != "fail")
+//                    form.updateList(ip, results);
 
-                if (i % (maxRange / 10) == 0)
-                    form.updateProgress();
+//                if (i % (maxRange / 10) == 0)
+//                    form.updateProgress();
             }
 
             MessageBox.Show("Scan finished!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -175,6 +179,49 @@ namespace config
 
             LibPcapLiveDevice device = devices[0];
             return device;
+        }
+        
+        public List<IPAddress> start_scan(int scan_time)
+        {
+        	var arp_devices = new List<IPAddress>();
+        
+        	return arp_devices;
+        }
+        
+        public bool ready_to_scan()
+        {
+        	if ((network_if != null) && (network_if.Started == false))
+        	{
+        		return true;
+        	} else {
+        		return false;
+        	}
+        }
+        
+        public arp_scan(ICaptureDevice network_device)
+        {
+        	if (network_device is AirPcapDevice)
+            {
+                // NOTE: AirPcap devices cannot disable local capture
+                network_if = network_device as AirPcapDevice;
+//                airPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp, readTimeoutMilliseconds);
+            }
+            else if(network_device is WinPcapDevice)
+            {
+                network_if = network_device as WinPcapDevice;
+//                winPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp | SharpPcap.WinPcap.OpenFlags.NoCaptureLocal, readTimeoutMilliseconds);
+            }
+            else if (network_device is LibPcapLiveDevice)
+            {
+                network_if = network_device as LibPcapLiveDevice;
+//                livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
+            }
+            else
+            {
+            	network_if = null;
+                throw new ArgumentException("This device is not a winpcap device!", network_device.ToString());
+            }
+
         }
 	}
 }

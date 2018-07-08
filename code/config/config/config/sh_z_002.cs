@@ -21,8 +21,8 @@ namespace config
 		private const int SH_Z_002_DEV_INFO_REG_LENTH = 8;
 //		private IPAddress device_ip;
 //		private int device_port;
-		private ModbusClient modebus_client;
-		private int device_in_data_grid_index;
+//		private ModbusClient modebus_client;
+//		private int device_in_data_grid_index;
 //		public IPAddress ip
 //		{
 //			set {
@@ -47,11 +47,12 @@ namespace config
 //			}
 //		}
 		
-		public bool check_validation()
+		static public bool is_sh_z_002(string ipAddress, int port)
 		{
-			if (modebus_client.Connected == false) {
-				modebus_client.Connect();	
-			}
+			var modebus_client = new ModbusClient(ipAddress, port);
+//			if (modebus_client.Connected == false) {
+//				modebus_client.Connect();	
+//			}
 			if (modebus_client.Available(2000) == false) {
 				return false;
 			}
@@ -68,7 +69,7 @@ namespace config
 		{
 //			this.ip = IPAddress.Parse(ipAddress);
 //			this.device_port = port;
-			modebus_client = new ModbusClient(ipAddress, port);
+//			modebus_client = new ModbusClient(ipAddress, port);
 		}
 	}
 }

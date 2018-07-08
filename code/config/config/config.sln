@@ -4,6 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # SharpDevelop 5.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "config", "config\config.csproj", "{B7E2ED66-7A6C-4622-A748-ECC2037E010F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_sharpPcap", "test_sharpPcap\test_sharpPcap.csproj", "{1F8D7C5C-32E7-4798-87AC-D1760BBB872E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +16,9 @@ Global
 		{B7E2ED66-7A6C-4622-A748-ECC2037E010F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E2ED66-7A6C-4622-A748-ECC2037E010F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E2ED66-7A6C-4622-A748-ECC2037E010F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8D7C5C-32E7-4798-87AC-D1760BBB872E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8D7C5C-32E7-4798-87AC-D1760BBB872E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8D7C5C-32E7-4798-87AC-D1760BBB872E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8D7C5C-32E7-4798-87AC-D1760BBB872E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

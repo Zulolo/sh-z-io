@@ -1,0 +1,10 @@
+G:\Work\io\design\code\config\config\test_sharpPcap\obj\Debug\test_sharpPcap.csprojResolveAssemblyReference.cache
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\test_sharpPcap.exe.config
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\test_sharpPcap.exe
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\test_sharpPcap.pdb
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\PacketDotNet.dll
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\SharpPcap.dll
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\PacketDotNet.xml
+G:\Work\io\design\code\config\config\test_sharpPcap\bin\Debug\SharpPcap.xml
+G:\Work\io\design\code\config\config\test_sharpPcap\obj\Debug\test_sharpPcap.exe
+G:\Work\io\design\code\config\config\test_sharpPcap\obj\Debug\test_sharpPcap.pdb
