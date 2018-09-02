@@ -57,12 +57,12 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" "G:\Work\io\design\sch\io_two_eth.dsn")
-      (Path "Design Resources" "G:\Work\io\design\sch\io_two_eth.dsn"
+      (Path "Design Resources" "g:\work\io\design\sch\io_two_eth.dsn")
+      (Path "Design Resources" "g:\work\io\design\sch\io_two_eth.dsn"
          "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Path "Outputs")
-      (Select "Design Resources" "G:\Work\io\design\sch\io_two_eth.dsn"))
+      (Path "Design Resources" "Library" "g:\cadence\schematic_lib\core.olb")
+      (Path "Outputs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -73,7 +73,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 279 1836 44 743")
-        (Scroll "-104 25")
+        (Scroll "-104 0")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -82,8 +82,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 78 1613 78 755")
-        (Scroll "-93 3")
+        (Placement "44 2 3 -1 -1 -8 -31 78 1613 78 755")
+        (Scroll "-254 -9")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -94,12 +94,23 @@
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 234 1475 234 911")
         (Scroll "0 0")
-        (Zoom "124")
+        (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
       (Schematic "SCHEMATIC1")
       (Page "ETH")))
   (PartMRUSelector
+    (SM712
+      (FullPartName "SM712.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
+    (GND_SIGNAL
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (B2403S
+      (FullPartName "B2403S.Normal")
+      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
+      (DeviceIndex "0"))
     (crystal-4pin
       (FullPartName "crystal-4pin.Normal")
       (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
@@ -184,11 +195,7 @@
     (PS2801-4/SM
       (FullPartName "PS2801-4/SM.Normal")
       (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
-      (DeviceIndex "3"))
-    (KSZ8863RLL
-      (FullPartName "KSZ8863RLL.Normal")
-      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
-      (DeviceIndex "0")))
-  (MPSSessionName "Zulolo")
+      (DeviceIndex "3")))
+  (MPSSessionName "dodol")
   (LastUsedLibraryBrowseDirectory "D:\Cadence\SPB_17.2\tools\capture\library")
   (ISPCBBASICLICENSE "false"))

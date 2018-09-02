@@ -1,31 +1,59 @@
-\t (00:00:03) allegro 17.2 P028 Windows SPB 64-bit Edition
-\t (00:00:03)     Journal start - Sun May 20 16:46:02 2018
-\t (00:00:03)         Host=ZULOLO-PC User=Zulolo Pid=748 CPUs=8
-\t (00:00:03) CmdLine= D:\Cadence\SPB_17.2\tools\bin\allegro.exe
-\t (00:00:03) 
-   (00:00:03) Loading axlcore.cxt 
-\t (00:00:05) Opening existing design...
-\d (00:00:05) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
-\t (00:00:05) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:05) trapsize 1568
-\i (00:00:05) trapsize 1603
-\t (00:00:05) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:05) trapsize 1603
-\i (00:00:05) generaledit 
-\i (00:00:06) zoom in 1 
-\i (00:00:06) setwindow pcb
-\i (00:00:06) zoom in 48.302 46.058
-\t (00:00:06) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
-\i (00:00:06) trapsize 802
-\i (00:00:06) zoom in 1 
-\i (00:00:06) setwindow pcb
-\i (00:00:06) zoom in 48.302 45.737
-\t (00:00:06) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
-\i (00:00:06) trapsize 401
-\i (00:00:06) zoom in 1 
-\i (00:00:06) setwindow pcb
-\i (00:00:06) zoom in 48.303 45.737
-\t (00:00:06) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
-\i (00:00:06) trapsize 200
-\i (00:00:17) exit 
-\t (00:00:17)     Journal end - Sun May 20 16:46:16 2018
+\t (00:00:27) allegro 17.2 S007 Windows SPB 64-bit Edition
+\t (00:00:27)     Journal start - Sun Aug 05 16:15:54 2018
+\t (00:00:27)         Host=ZULOLO-PC User=dodol Pid=71728 CPUs=8
+\t (00:00:27) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:00:27) 
+\d (00:00:27) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
+\i (00:00:27) etchedit 
+\i (00:00:29) artwork 
+\i (00:00:32) setwindow form.film_control
+\i (00:00:32) FORM film_control filmtree  TOP 
+\i (00:00:33) FORM film_control filmtree  SOLDERMASK_TOP 
+\i (00:00:34) FORM film_control filmtree  SOLDERMASK_BOTTOM 
+\i (00:00:37) FORM film_control filmtree  BOTTOM 
+\i (00:00:52) FORM film_control filmtree popup Copy BOTTOM 
+\i (00:01:25) FORM film_control cancel  
+\i (00:01:25) setwindow pcb
+\i (00:01:25) etchedit 
+\i (00:01:28) artwork 
+\i (00:01:30) setwindow form.film_control
+\i (00:01:30) FORM film_control domain_setting  
+\i (00:01:34) setwindow form.film_domain
+\i (00:01:34) FORM film_domain film_domain cell 1,1 
+\i (00:01:47) FORM film_domain cancel  
+\i (00:01:51) setwindow form.film_control
+\i (00:01:51) FORM film_control filmtree 'MULTISEL YES' BOTTOM 
+\i (00:01:52) FORM film_control filmtree 'MULTISEL YES' DRILL 
+\i (00:01:52) FORM film_control filmtree  DRILL 
+\i (00:01:53) FORM film_control filmtree 'MULTISEL YES' OUTLINE 
+\i (00:01:53) FORM film_control filmtree  OUTLINE 
+\i (00:01:54) FORM film_control filmtree 'MULTISEL YES' SILKSCREEN_BOTTOM 
+\i (00:01:54) FORM film_control filmtree  SILKSCREEN_BOTTOM 
+\i (00:01:55) FORM film_control filmtree 'MULTISEL YES' SILKSCREEN_TOP 
+\i (00:01:55) FORM film_control filmtree  SILKSCREEN_TOP 
+\i (00:01:56) FORM film_control filmtree 'MULTISEL YES' SOLDERMASK_BOTTOM 
+\i (00:01:56) FORM film_control filmtree  SOLDERMASK_BOTTOM 
+\i (00:01:56) FORM film_control filmtree 'MULTISEL YES' SOLDERMASK_TOP 
+\i (00:01:56) FORM film_control filmtree  SOLDERMASK_TOP 
+\i (00:01:57) FORM film_control filmtree 'MULTISEL YES' TOP 
+\i (00:01:57) FORM film_control filmtree  TOP 
+\i (00:01:59) FORM film_control select_all  
+\i (00:02:04) FORM film_control cancel  
+\i (00:02:04) setwindow pcb
+\i (00:02:04) etchedit 
+\i (00:02:10) silkscreen param 
+\i (00:02:11) setwindow form.autosilk
+\i (00:02:11) FORM autosilk close  
+\i (00:02:11) setwindow pcb
+\i (00:02:11) etchedit 
+\i (00:02:14) artwork 
+\i (00:02:38) setwindow form.film_control
+\i (00:02:38) FORM film_control general_parameters  
+\i (00:02:43) FORM film_control film_control  
+\i (00:02:44) FORM film_control general_parameters  
+\i (00:03:04) FORM film_control film_control  
+\i (00:04:23) FORM film_control cancel  
+\i (00:04:23) setwindow pcb
+\i (00:04:23) etchedit 
+\i (00:05:31) exit 
+\t (00:05:31)     Journal end - Sun Aug 05 16:20:58 2018
