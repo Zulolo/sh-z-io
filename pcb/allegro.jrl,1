@@ -1,59 +1,14 @@
-\t (00:00:27) allegro 17.2 S007 Windows SPB 64-bit Edition
-\t (00:00:27)     Journal start - Sun Aug 05 16:15:54 2018
-\t (00:00:27)         Host=ZULOLO-PC User=dodol Pid=71728 CPUs=8
-\t (00:00:27) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
-\t (00:00:27) 
-\d (00:00:27) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
-\i (00:00:27) etchedit 
-\i (00:00:29) artwork 
-\i (00:00:32) setwindow form.film_control
-\i (00:00:32) FORM film_control filmtree  TOP 
-\i (00:00:33) FORM film_control filmtree  SOLDERMASK_TOP 
-\i (00:00:34) FORM film_control filmtree  SOLDERMASK_BOTTOM 
-\i (00:00:37) FORM film_control filmtree  BOTTOM 
-\i (00:00:52) FORM film_control filmtree popup Copy BOTTOM 
-\i (00:01:25) FORM film_control cancel  
-\i (00:01:25) setwindow pcb
-\i (00:01:25) etchedit 
-\i (00:01:28) artwork 
-\i (00:01:30) setwindow form.film_control
-\i (00:01:30) FORM film_control domain_setting  
-\i (00:01:34) setwindow form.film_domain
-\i (00:01:34) FORM film_domain film_domain cell 1,1 
-\i (00:01:47) FORM film_domain cancel  
-\i (00:01:51) setwindow form.film_control
-\i (00:01:51) FORM film_control filmtree 'MULTISEL YES' BOTTOM 
-\i (00:01:52) FORM film_control filmtree 'MULTISEL YES' DRILL 
-\i (00:01:52) FORM film_control filmtree  DRILL 
-\i (00:01:53) FORM film_control filmtree 'MULTISEL YES' OUTLINE 
-\i (00:01:53) FORM film_control filmtree  OUTLINE 
-\i (00:01:54) FORM film_control filmtree 'MULTISEL YES' SILKSCREEN_BOTTOM 
-\i (00:01:54) FORM film_control filmtree  SILKSCREEN_BOTTOM 
-\i (00:01:55) FORM film_control filmtree 'MULTISEL YES' SILKSCREEN_TOP 
-\i (00:01:55) FORM film_control filmtree  SILKSCREEN_TOP 
-\i (00:01:56) FORM film_control filmtree 'MULTISEL YES' SOLDERMASK_BOTTOM 
-\i (00:01:56) FORM film_control filmtree  SOLDERMASK_BOTTOM 
-\i (00:01:56) FORM film_control filmtree 'MULTISEL YES' SOLDERMASK_TOP 
-\i (00:01:56) FORM film_control filmtree  SOLDERMASK_TOP 
-\i (00:01:57) FORM film_control filmtree 'MULTISEL YES' TOP 
-\i (00:01:57) FORM film_control filmtree  TOP 
-\i (00:01:59) FORM film_control select_all  
-\i (00:02:04) FORM film_control cancel  
-\i (00:02:04) setwindow pcb
-\i (00:02:04) etchedit 
-\i (00:02:10) silkscreen param 
-\i (00:02:11) setwindow form.autosilk
-\i (00:02:11) FORM autosilk close  
-\i (00:02:11) setwindow pcb
-\i (00:02:11) etchedit 
-\i (00:02:14) artwork 
-\i (00:02:38) setwindow form.film_control
-\i (00:02:38) FORM film_control general_parameters  
-\i (00:02:43) FORM film_control film_control  
-\i (00:02:44) FORM film_control general_parameters  
-\i (00:03:04) FORM film_control film_control  
-\i (00:04:23) FORM film_control cancel  
-\i (00:04:23) setwindow pcb
-\i (00:04:23) etchedit 
-\i (00:05:31) exit 
-\t (00:05:31)     Journal end - Sun Aug 05 16:20:58 2018
+\t (00:00:22) allegro 17.2 S007 Windows SPB 64-bit Edition
+\t (00:00:22)     Journal start - Sun Aug 05 16:25:25 2018
+\t (00:00:22)         Host=ZULOLO-PC User=dodol Pid=73064 CPUs=8
+\t (00:00:22) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:00:22) 
+\d (00:00:22) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor.brd
+\i (00:00:22) etchedit 
+\i (00:00:25) artwork 
+\i (00:12:39) setwindow form.film_control
+\i (00:12:39) FORM film_control cancel  
+\i (00:12:39) setwindow pcb
+\i (00:12:39) etchedit 
+\i (00:28:40) exit 
+\t (00:28:40)     Journal end - Sun Aug 05 16:53:44 2018

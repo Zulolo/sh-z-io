@@ -61,13 +61,13 @@
       (Path "Design Resources" "g:\work\io\design\sch\io_two_eth.dsn"
          "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Path "Design Resources" "Library" "g:\cadence\schematic_lib\core.olb")
-      (Path "Outputs"))
+      (Path "Outputs")
+      (Select "Design Resources" "g:\work\io\design\sch\io_two_eth.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 0 267 0 1011"))
+        (Placement "44 2 3 -1 -1 -8 -31 0 267 0 1011"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
@@ -82,8 +82,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 78 1613 78 755")
-        (Scroll "-254 -9")
+        (Placement "44 0 1 -1 -1 -8 -31 78 1613 78 755")
+        (Scroll "-93 0")
         (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
@@ -100,6 +100,14 @@
       (Schematic "SCHEMATIC1")
       (Page "ETH")))
   (PartMRUSelector
+    ("DIODE BI-DIR TRIG"
+      (FullPartName "DIODE BI-DIR TRIG.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("DIODE TAZ"
+      (FullPartName "DIODE TAZ.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
     (SM712
       (FullPartName "SM712.Normal")
       (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
@@ -187,15 +195,7 @@
       (DeviceIndex "0"))
     (OFFPAGELEFT-L
       (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
-      (DeviceIndex "0"))
-    (STM32F407VET
-      (FullPartName "STM32F407VET.Normal")
-      (LibraryName "G:\CADENCE\SCHEMATIC_LIB\CORE.OLB")
-      (DeviceIndex "0"))
-    (PS2801-4/SM
-      (FullPartName "PS2801-4/SM.Normal")
-      (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
-      (DeviceIndex "3")))
+      (DeviceIndex "0")))
   (MPSSessionName "dodol")
   (LastUsedLibraryBrowseDirectory "D:\Cadence\SPB_17.2\tools\capture\library")
   (ISPCBBASICLICENSE "false"))

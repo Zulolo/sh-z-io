@@ -3,18 +3,24 @@
 (    QUICKPLACE LOG                                                   )
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
-(    Software Version : 17.2P028                                      )
-(    Date/Time        : Sat May 19 17:46:49 2018                      )
+(    Software Version : 17.2S007                                      )
+(    Date/Time        : Mon Sep 03 22:19:05 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 State: Placing on layer TOP
 
-         Placed symbol:  C48 / CAP NP_SMD_C_0805_100NF / SMD_C_0805 at (2.076 72.411)
+         Placed symbol:  D4 / SM712_SOT23_D_PESD5V0L2BT / SOT23_D at (0.900 93.250)
+         Placed symbol:  D5 / SM712_SOT23_D_NUP2105LT1G / SOT23_D at (4.300 93.250)
+         Placed symbol:  D6 / SM712_SOT23_D_NUP2105LT1G / SOT23_D at (7.700 93.250)
+         Placed symbol:  J10 / C1X3_C1X3_AI_PWR_SELECT / C1X3 at (11.700 98.730)
+         Placed symbol:  D7 / DIODE_SMAF_1N5822 / SMAF at (15.300 97.400)
+         Placed symbol:  F2 / FUSE_SMD_R_1206_500MA / SMD_R_1206 at (19.476 95.900)
+         Placed symbol:  D8 / DIODE BI-DIR TRIG_DO-214AC_SMAJ / DO-214AC at (22.976 97.400)
 
 
-Placed 1 of 1 applicable (1 total) symbols.
+Placed 7 of 7 applicable (7 total) symbols.
 
 -----------------------------------------------------------------------
 

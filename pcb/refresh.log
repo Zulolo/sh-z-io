@@ -1,9 +1,9 @@
-Sat May 19 11:27:31 2018				Page     1
+Mon Sep 03 22:14:17 2018				Page     1
 
 
  
 Update Symbols/Modules Logfile
-	Sat May 19 11:27:31 2018
+	Mon Sep 03 22:14:17 2018
 
 ------ Module Refresh Messages ------
 
@@ -18,13 +18,13 @@ SUMMARY:    Updated 0 out of 0 modules
 (    Refresh Symbol                                                   )
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
-(    Software Version : 17.2P019                                      )
-(    Date/Time        : Sat May 19 11:27:32 2018                      )
+(    Software Version : 17.2S007                                      )
+(    Date/Time        : Mon Sep 03 22:14:17 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
-Sat May 19 11:27:32 2018				Page     1
+Mon Sep 03 22:14:17 2018				Page     1
 
 
 ------ Symbol Refresh Directives ------
@@ -45,53 +45,52 @@ Reset custom drill data                = 'NO'
 
 
 ------ Library Paths ------
-PSMPATH =  . 
+PSMPATH =  G:/Cadence/Package_Symbol/ 
+           G:/Cadence/PADs/ 
+           G:/Cadence/Shape/ 
+           . 
            symbols 
            .. 
            ../symbols 
-           D:/Cadence/SPB_17.2/share/local/pcb/symbols 
-           D:/Cadence/SPB_17.2/share/pcb/pcb_lib/symbols 
-           D:/Cadence/SPB_17.2/share/pcb/allegrolib/symbols 
-           G:/Cadence/Package_Symbol/ 
-           G:/Cadence/PADs/ 
-           G:/CADENCE/Shape/ 
+           C:/Cadence/SPB_17.2/share/local/pcb/symbols 
+           C:/Cadence/SPB_17.2/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_17.2/share/pcb/allegrolib/symbols 
 
 PADPATH =  . 
            symbols 
            .. 
            ../symbols 
-           D:/Cadence/SPB_17.2/share/local/pcb/padstacks 
-           D:/Cadence/SPB_17.2/share/pcb/pcb_lib/symbols 
-           D:/Cadence/SPB_17.2/share/pcb/allegrolib/symbols 
+           C:/Cadence/SPB_17.2/share/local/pcb/padstacks 
+           C:/Cadence/SPB_17.2/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_17.2/share/pcb/allegrolib/symbols 
            G:/Cadence/PADs/ 
-           G:/Cadence/Package_Symbol/ 
 
 
 ------ Symbol Refresh Messages ------
 
-'SMD_L_0805'  symbol refreshed successfully.
-'SMD_R_0805'  symbol refreshed successfully.
-'DO-214AB'  symbol refreshed successfully.
-'SOD123'  symbol refreshed successfully.
-'SMD_C_1206'  symbol refreshed successfully.
-'SMD_C_0805'  symbol refreshed successfully.
-'C1X3'  symbol refreshed successfully.
-'SOT-223'  symbol refreshed successfully.
-'C2X3'  symbol refreshed successfully.
-'C1X6'  symbol refreshed successfully.
-'MICROUSB_2FIX'  symbol refreshed successfully.
-'C1X8_P381'  symbol refreshed successfully.
-'SOP16'  symbol refreshed successfully.
-'LQFP48'  symbol refreshed successfully.
-'LQFP100'  symbol refreshed successfully.
-'SMD3225_CRYSTAL'  symbol refreshed successfully.
-'SOIC8_208MIL'  symbol refreshed successfully.
-'C1X2_P381'  symbol refreshed successfully.
+'SOT23_D'  symbol refreshed successfully.
+'SMD_L_1210'  symbol refreshed successfully.
+'B2403S'  symbol refreshed successfully.
 'RJ45_HR911105A'  symbol refreshed successfully.
-'AB00'  symbol refreshed successfully.
-'HOLE_CIR_16_FLASH'  symbol refreshed successfully.
-'SQR_16_FLASH'  symbol refreshed successfully.
+'C1X2_P381'  symbol refreshed successfully.
+'SOIC8_208MIL'  symbol refreshed successfully.
+'SMD3225_CRYSTAL'  symbol refreshed successfully.
+'LQFP100'  symbol refreshed successfully.
+'LQFP48'  symbol refreshed successfully.
+'SOP16'  symbol refreshed successfully.
+'C1X8_P381'  symbol refreshed successfully.
+'C1X6'  symbol refreshed successfully.
+'C2X3'  symbol refreshed successfully.
+'C1X3'  symbol refreshed successfully.
+'SMD_C_0805'  symbol refreshed successfully.
+'SMD_C_1206'  symbol refreshed successfully.
+'SMD_R_0805'  symbol refreshed successfully.
+'SMD_L_0805'  symbol refreshed successfully.
+'HOLE_SQR_13_FLASH'  symbol refreshed successfully.
 'HOLE_CIR_13_FLASH'  symbol refreshed successfully.
+'SQR_16_FLASH'  symbol refreshed successfully.
+'HOLE_CIR_16_FLASH'  symbol refreshed successfully.
+'AB00'  symbol refreshed successfully.
 
 
 ----- Symbol Update Summary ----
