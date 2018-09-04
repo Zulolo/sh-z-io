@@ -1,4 +1,4 @@
-{ Using PSTWRITER 17.2.0 d001Sep-03-2018 at 22:10:46 }
+{ Using PSTWRITER 17.2.0 d001Sep-04-2018 at 22:31:56 }
 
 #1 WARNING(ORCAP-36038): "No_connect" property on Pin "J1.8" ignored for J1: SCHEMATIC1, ETH (1.80, 4.00). Connecting pin to net "GND".
 #2 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.8" ignored for J2: SCHEMATIC1, ETH (1.80, 5.30). Connecting pin to net "GND".

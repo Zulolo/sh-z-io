@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001May-19-2018 at 17:46:34}
+{ Using PSTWRITER 17.2.0 d001Sep-03-2018 at 22:10:47}
 primitive 'CAP NP_SMD_C_0805_47UF';
   pin
     '1':
@@ -45,7 +45,7 @@ primitive 'CAP NP_SMD_C_0805_18PF';
     VALUE='18pF';
   end_body;
 end_primitive;
-primitive 'CAP NP_SMD_C_0805_22PF';
+primitive 'CAP NP_SMD_C_1206_10UF/50V';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -56,8 +56,8 @@ primitive 'CAP NP_SMD_C_0805_22PF';
   end_pin;
   body
     PART_NAME='CAP NP';
-    JEDEC_TYPE='SMD_C_0805';
-    VALUE='22pF';
+    JEDEC_TYPE='SMD_C_1206';
+    VALUE='10uF/50V';
   end_body;
 end_primitive;
 primitive 'CAP NP_SMD_C_0805_10UF';
@@ -75,7 +75,7 @@ primitive 'CAP NP_SMD_C_0805_10UF';
     VALUE='10uF';
   end_body;
 end_primitive;
-primitive 'CAP_SMD_C_1206_1NF/2KV';
+primitive 'CAP NP_SMD_C_0805_100NF/50V';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -85,27 +85,48 @@ primitive 'CAP_SMD_C_1206_1NF/2KV';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='CAP';
-    JEDEC_TYPE='SMD_C_1206';
-    VALUE='1nF/2KV';
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='SMD_C_0805';
+    VALUE='100nF/50V';
   end_body;
 end_primitive;
-primitive 'DIODE TVS_SOD123_5.1V';
+primitive 'SM712_SOT23_D_PESD5V0L2BT';
   pin
-    'ANODE':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'CATHODE':
+    'IO#1':
       PIN_NUMBER='(1)';
+      PINUSE='POWER';
+    'IO#2':
+      PIN_NUMBER='(2)';
+      PINUSE='POWER';
+    'GND':
+      PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='DIODE TVS';
-    JEDEC_TYPE='SOD123';
-    VALUE='5.1V';
+    PART_NAME='SM712';
+    JEDEC_TYPE='SOT23_D';
+    VALUE='PESD5V0L2BT';
   end_body;
 end_primitive;
-primitive 'DIODE_DO-214AB_1N5822';
+primitive 'SM712_SOT23_D_NUP2105LT1G';
+  pin
+    'IO#1':
+      PIN_NUMBER='(1)';
+      PINUSE='POWER';
+    'IO#2':
+      PIN_NUMBER='(2)';
+      PINUSE='POWER';
+    'GND':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='SM712';
+    JEDEC_TYPE='SOT23_D';
+    VALUE='NUP2105LT1G';
+  end_body;
+end_primitive;
+primitive 'DIODE_SMAF_1N5822';
   pin
     'A':
       PIN_NUMBER='(2)';
@@ -116,11 +137,26 @@ primitive 'DIODE_DO-214AB_1N5822';
   end_pin;
   body
     PART_NAME='DIODE';
-    JEDEC_TYPE='DO-214AB';
+    JEDEC_TYPE='SMAF';
     VALUE='1N5822';
   end_body;
 end_primitive;
-primitive 'FUSE_SMD_R_0805_500MA';
+primitive 'DIODE BI-DIR TRIG_DO-214AC_SMAJ';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='DIODE BI-DIR TRIG';
+    JEDEC_TYPE='DO-214AC';
+    VALUE='SMAJ24CA';
+  end_body;
+end_primitive;
+primitive 'FUSE_SMD_R_1206_500MA';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -131,7 +167,7 @@ primitive 'FUSE_SMD_R_0805_500MA';
   end_pin;
   body
     PART_NAME='FUSE';
-    JEDEC_TYPE='SMD_R_0805';
+    JEDEC_TYPE='SMD_R_1206';
     VALUE='500mA';
   end_body;
 end_primitive;
@@ -180,6 +216,24 @@ primitive 'RJ45_HR911105A_RJ45_HR911105A_E';
     VALUE='ETH1';
   end_body;
 end_primitive;
+primitive 'C1X3_C1X3_AI_PWR_SELECT';
+  pin
+    'A':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'B':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'C':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='C1X3';
+    JEDEC_TYPE='C1X3';
+    VALUE='AI_PWR_Select';
+  end_body;
+end_primitive;
 primitive 'RJ45_HR911105A_RJ45_HR911105A_1';
   pin
     'TXP':
@@ -225,24 +279,6 @@ primitive 'RJ45_HR911105A_RJ45_HR911105A_1';
     VALUE='ETH2';
   end_body;
 end_primitive;
-primitive 'C1X3_C1X3_PWR_SELECT';
-  pin
-    'A':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'B':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'C':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='C1X3';
-    JEDEC_TYPE='C1X3';
-    VALUE='PWR_Select';
-  end_body;
-end_primitive;
 primitive 'C1X8GEN_C1X8_P381_4~20MA';
   pin
     '1':
@@ -276,34 +312,37 @@ primitive 'C1X8GEN_C1X8_P381_4~20MA';
     VALUE='4~20mA';
   end_body;
 end_primitive;
-primitive 'MICROUSB_SOCKET_MICROUSB_2FIX_U';
+primitive 'C1X8GEN_C1X8_P381_DI';
   pin
-    '5V':
+    '1':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    'D-':
+    '2':
       PIN_NUMBER='(2)';
       PINUSE='UNSPEC';
-    'D+':
+    '3':
       PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
-    'ID':
+    '4':
       PIN_NUMBER='(4)';
       PINUSE='UNSPEC';
-    'GND':
+    '5':
       PIN_NUMBER='(5)';
       PINUSE='UNSPEC';
-    'G1':
+    '6':
       PIN_NUMBER='(6)';
       PINUSE='UNSPEC';
-    'G2':
+    '7':
       PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    '8':
+      PIN_NUMBER='(8)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='MicroUSB_Socket';
-    JEDEC_TYPE='microUSB_2fix';
-    VALUE='USB_Socket';
+    PART_NAME='C1X8Gen';
+    JEDEC_TYPE='C1X8_p381';
+    VALUE='DI';
   end_body;
 end_primitive;
 primitive 'C1X6GEN_C1X6_RELAY';
@@ -388,6 +427,36 @@ primitive 'INDUCTOR_SMD_L_0805_BEAD';
     PART_NAME='INDUCTOR';
     JEDEC_TYPE='SMD_L_0805';
     VALUE='bead';
+  end_body;
+end_primitive;
+primitive 'INDUCTOR_SMD_L_1210_6.8UH';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='INDUCTOR';
+    JEDEC_TYPE='SMD_L_1210';
+    VALUE='6.8uH';
+  end_body;
+end_primitive;
+primitive 'INDUCTOR_SMD_L_1210_NONE';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='INDUCTOR';
+    JEDEC_TYPE='SMD_L_1210';
+    VALUE='None';
   end_body;
 end_primitive;
 primitive 'STM32F407VET_LQFP100_STM32F407V';
@@ -804,21 +873,6 @@ primitive 'RESISTOR_SMD_R_0805_2K';
     VALUE='2K';
   end_body;
 end_primitive;
-primitive 'RESISTOR_SMD_R_0805_150R';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='RESISTOR';
-    JEDEC_TYPE='SMD_R_0805';
-    VALUE='150R';
-  end_body;
-end_primitive;
 primitive 'RESISTOR_SMD_R_0805_100R';
   pin
     '1':
@@ -832,21 +886,6 @@ primitive 'RESISTOR_SMD_R_0805_100R';
     PART_NAME='RESISTOR';
     JEDEC_TYPE='SMD_R_0805';
     VALUE='100R';
-  end_body;
-end_primitive;
-primitive 'RESISTOR_SMD_R_0805_1M';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='RESISTOR';
-    JEDEC_TYPE='SMD_R_0805';
-    VALUE='1M';
   end_body;
 end_primitive;
 primitive 'RESISTOR_SMD_R_0805_1.5K';
@@ -1086,25 +1125,25 @@ primitive 'GD25Q64C_SOIC8_208MIL_W25Q64';
     VALUE='W25Q64';
   end_body;
 end_primitive;
-primitive 'AMS1117-33_SOT-223_AMS1117-33';
+primitive 'B2403S_B2403S_B2403';
   pin
     'GND':
       PIN_NUMBER='(1)';
-      PINUSE='POWER';
-    'VOUT#2':
-      PIN_NUMBER='(2)';
-      PINUSE='POWER';
+      PINUSE='UNSPEC';
     'VIN':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '0V':
       PIN_NUMBER='(3)';
-      PINUSE='POWER';
-    'VOUT#4':
+      PINUSE='UNSPEC';
+    '+VO':
       PIN_NUMBER='(4)';
-      PINUSE='POWER';
+      PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='AMS1117-33';
-    JEDEC_TYPE='SOT-223';
-    VALUE='AMS1117-33';
+    PART_NAME='B2403S';
+    JEDEC_TYPE='B2403S';
+    VALUE='B2403';
   end_body;
 end_primitive;
 primitive 'CRYSTAL-4PIN_1_SMD3225_CRYSTAL_';
@@ -1126,27 +1165,6 @@ primitive 'CRYSTAL-4PIN_1_SMD3225_CRYSTAL_';
     PART_NAME='crystal-4pin_1';
     JEDEC_TYPE='SMD3225_crystal';
     VALUE='25M';
-  end_body;
-end_primitive;
-primitive 'CRYSTAL-4PIN_1_SMD3225_CRYSTA_1';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'GND#2':
-      PIN_NUMBER='(2)';
-      PINUSE='POWER';
-    '3':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'GND#4':
-      PIN_NUMBER='(4)';
-      PINUSE='POWER';
-  end_pin;
-  body
-    PART_NAME='crystal-4pin_1';
-    JEDEC_TYPE='SMD3225_crystal';
-    VALUE='16M';
   end_body;
 end_primitive;
 END.
