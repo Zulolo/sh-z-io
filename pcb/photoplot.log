@@ -2,9 +2,9 @@
 (                                                                     )
 (    ARTWORK LOG                                                      )
 (                                                                     )
-(    Drawing          : io_4di_4aic_dbdoctor.brd                      )
-(    Software Version : 17.2P019                                      )
-(    Date/Time        : Sat May 19 21:54:32 2018                      )
+(    Drawing          : io_4di_4aic_dbdoctor_2.brd                    )
+(    Software Version : 17.2S007                                      )
+(    Date/Time        : Wed Sep 05 22:07:17 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -52,33 +52,34 @@ Results from parameter file ...
   CIRCLE     0.20000                                  DARK 
   CIRCLE     0.25000                                  DARK 
   CIRCLE     0.30000                                  DARK 
-  CIRCLE     0.40000                                  DARK 
   CIRCLE     0.50000                                  DARK 
   CIRCLE     0.60000                                  DARK 
   CIRCLE     0.80000                                  DARK 
   CIRCLE     1.00000                                  DARK 
+  CIRCLE     1.30000                                  DARK 
   CIRCLE     1.60000                                  DARK 
+  CIRCLE     2.00000                                  DARK 
   CIRCLE     2.20000                                  DARK 
   CIRCLE     3.20000                                  DARK 
-  SQUARE     0.80000                     0.000 NO     DARK 
+  CIRCLE     4.00000                                  DARK 
+  SQUARE     1.30000                     0.000 NO     DARK 
   SQUARE     1.60000                     0.000 NO     DARK 
+  SQUARE     2.00000                     0.000 NO     DARK 
   SQUARE     2.20000                     0.000 NO     DARK 
-  RECTANGLE  0.35000     x 2.00000       0.000 NO     DARK 
   RECTANGLE  1.20000     x 0.25000       0.000 NO     DARK 
   RECTANGLE  1.20000     x 0.25000      90.000 NO     DARK 
   RECTANGLE  1.20000     x 0.30000       0.000 NO     DARK 
   RECTANGLE  1.20000     x 0.30000      90.000 NO     DARK 
-  RECTANGLE  1.20000     x 1.60000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.80000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 1.20000       0.000 NO     DARK 
-  RECTANGLE  1.40000     x 1.20000      90.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000       0.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000      90.000 NO     DARK 
   RECTANGLE  1.60000     x 0.50000       0.000 NO     DARK 
-  RECTANGLE  1.80000     x 0.60000       0.000 NO     DARK 
-  RECTANGLE  1.80000     x 1.20000       0.000 NO     DARK 
-  RECTANGLE  3.60000     x 1.80000       0.000 NO     DARK 
-  RECTANGLE  3.60000     x 1.80000      90.000 NO     DARK 
+  RECTANGLE  1.60000     x 0.60000       0.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.20000       0.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.80000       0.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.80000      90.000 NO     DARK 
 
      TOP created.
 
@@ -112,17 +113,22 @@ Results from parameter file ...
   CIRCLE     0.60000                                  DARK 
   CIRCLE     0.80000                                  DARK 
   CIRCLE     1.00000                                  DARK 
+  CIRCLE     1.30000                                  DARK 
   CIRCLE     1.60000                                  DARK 
+  CIRCLE     2.00000                                  DARK 
   CIRCLE     2.20000                                  DARK 
   CIRCLE     3.20000                                  DARK 
-  SQUARE     0.80000                     0.000 NO     DARK 
+  CIRCLE     4.00000                                  DARK 
+  SQUARE     1.30000                     0.000 NO     DARK 
   SQUARE     1.60000                     0.000 NO     DARK 
+  SQUARE     2.00000                     0.000 NO     DARK 
   SQUARE     2.20000                     0.000 NO     DARK 
-  RECTANGLE  1.40000     x 0.80000       0.000 NO     DARK 
+  RECTANGLE  0.60000     x 1.00000      90.000 NO     DARK 
   RECTANGLE  1.40000     x 0.80000      90.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000       0.000 NO     DARK 
   RECTANGLE  1.50000     x 0.90000      90.000 NO     DARK 
-  RECTANGLE  1.80000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  1.80000     x 0.90000      90.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.20000      90.000 NO     DARK 
 
      BOTTOM created.
 
@@ -143,7 +149,7 @@ Results from parameter file ...
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
 
-    WARNING: 0 width line found at (-6.700 113.900)
+    WARNING: 0 width line found at (-6.700 101.200)
            ... using undefined line width of 0.200
 
     WARNING: Multiple 0 width lines; all will be treated the same as the first.
@@ -271,27 +277,27 @@ Results from parameter file ...
   TYPE       SIZE/NAME                   ROT   MIRROR MODE 
   ---------------------------------------------------------
   CIRCLE     1.20000                                  DARK 
+  CIRCLE     1.50000                                  DARK 
   CIRCLE     1.70000                                  DARK 
+  CIRCLE     2.20000                                  DARK 
   CIRCLE     2.40000                                  DARK 
-  SQUARE     1.00000                     0.000 NO     DARK 
+  SQUARE     1.50000                     0.000 NO     DARK 
   SQUARE     1.70000                     0.000 NO     DARK 
+  SQUARE     2.20000                     0.000 NO     DARK 
   SQUARE     2.40000                     0.000 NO     DARK 
-  RECTANGLE  0.40000     x 2.20000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.30000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.30000      90.000 NO     DARK 
   RECTANGLE  1.40000     x 0.40000       0.000 NO     DARK 
   RECTANGLE  1.40000     x 0.40000      90.000 NO     DARK 
-  RECTANGLE  1.40000     x 1.80000       0.000 NO     DARK 
   RECTANGLE  1.60000     x 1.00000       0.000 NO     DARK 
   RECTANGLE  1.60000     x 1.40000       0.000 NO     DARK 
-  RECTANGLE  1.60000     x 1.40000      90.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000       0.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000      90.000 NO     DARK 
   RECTANGLE  1.80000     x 0.70000       0.000 NO     DARK 
-  RECTANGLE  1.90000     x 0.70000       0.000 NO     DARK 
-  RECTANGLE  2.00000     x 1.40000       0.000 NO     DARK 
-  RECTANGLE  3.80000     x 2.00000       0.000 NO     DARK 
-  RECTANGLE  3.80000     x 2.00000      90.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.10000       0.000 NO     DARK 
+  RECTANGLE  2.20000     x 1.40000       0.000 NO     DARK 
+  RECTANGLE  2.20000     x 2.00000       0.000 NO     DARK 
+  RECTANGLE  2.20000     x 2.00000      90.000 NO     DARK 
 
      SOLDERMASK_TOP created.
 
@@ -319,16 +325,20 @@ Results from parameter file ...
   TYPE       SIZE/NAME                   ROT   MIRROR MODE 
   ---------------------------------------------------------
   CIRCLE     1.20000                                  DARK 
+  CIRCLE     1.50000                                  DARK 
   CIRCLE     1.70000                                  DARK 
+  CIRCLE     2.20000                                  DARK 
   CIRCLE     2.40000                                  DARK 
-  SQUARE     1.00000                     0.000 NO     DARK 
+  SQUARE     1.50000                     0.000 NO     DARK 
   SQUARE     1.70000                     0.000 NO     DARK 
+  SQUARE     2.20000                     0.000 NO     DARK 
   SQUARE     2.40000                     0.000 NO     DARK 
-  RECTANGLE  1.60000     x 1.00000       0.000 NO     DARK 
+  RECTANGLE  0.70000     x 1.10000      90.000 NO     DARK 
   RECTANGLE  1.60000     x 1.00000      90.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000       0.000 NO     DARK 
   RECTANGLE  1.70000     x 1.00000      90.000 NO     DARK 
-  RECTANGLE  2.00000     x 1.10000       0.000 NO     DARK 
+  RECTANGLE  2.00000     x 1.10000      90.000 NO     DARK 
+  RECTANGLE  2.20000     x 1.40000      90.000 NO     DARK 
 
      SOLDERMASK_BOTTOM created.
 

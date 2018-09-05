@@ -3,8 +3,8 @@
 (    Auto Silkscreen Log File                                         )
 (                                                                     )
 (    Drawing          : io_4di_4aic_dbdoctor.brd                      )
-(    Software Version : 17.2P028                                      )
-(    Date/Time        : Sat May 19 18:17:22 2018                      )
+(    Software Version : 17.2S007                                      )
+(    Date/Time        : Wed Sep 05 21:07:23 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -30,47 +30,23 @@ Subclass Selections:
 
      ----- Top Silkscreen -----
 
-Text string 'C33' is not at a suitable location
-(location: 8.500, 47.000)
-Text string 'R11' is not at a suitable location
-(location: 36.400, 18.600)
 Text string 'R24' is not at a suitable location
-(location: 46.800, 22.200)
-Text string 'R34' is not at a suitable location
-(location: 49.800, 24.900)
+(location: 61.800, 35.200)
+Text string 'C27' is not at a suitable location
+(location: 47.000, 54.200)
+Text string '30' is not at a suitable location
+(location: 52.300, 32.650)
 
      ----- Bottom Silkscreen -----
 
-Text string 'C11' is not at a suitable location
-(location: 23.600, 32.000)
 Text string 'R14' is not at a suitable location
-(location: 21.900, 10.400)
-Text string 'R3' is not at a suitable location
-(location: 21.900, 32.200)
-Text string '5V' is not at a suitable location
-(location: 81.900, 3.400)
-Text string 'AI_0' is not at a suitable location
-(location: 99.200, 26.900)
-Text string 'PWR' is not at a suitable location
-(location: 95.500, 35.600)
-Text string 'DI_3' is not at a suitable location
-(location: 94.800, 91.100)
-Text string 'PWR' is not at a suitable location
-(location: 94.900, 87.100)
-Text string 'R0' is not at a suitable location
-(location: 57.100, 93.900)
-Text string 'R3' is not at a suitable location
-(location: 49.400, 93.900)
-Text string 'GND' is not at a suitable location
-(location: 75.900, 91.100)
-Text string 'SWDIO' is not at a suitable location
-(location: 66.700, 91.000)
-Text string 'SWO' is not at a suitable location
-(location: 66.700, 96.300)
-Text string '4DI & 4ACI' is not at a suitable location
-(location: 11.600, 85.000)
+(location: 22.900, 23.600)
+Text string 'C13' is not at a suitable location
+(location: 24.600, 24.800)
+Text string 'C11' is not at a suitable location
+(location: 24.600, 44.600)
 
-Total Failures: 18
+Total Failures: 6
 
 Log End
 

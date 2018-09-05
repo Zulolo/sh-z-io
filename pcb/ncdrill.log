@@ -2,9 +2,9 @@
 (                                                                     )
 (    NC DRILL Log                                                     )
 (                                                                     )
-(    Drawing          : io_4di_4aic_dbdoctor.brd                      )
-(    Software Version : 17.2P019                                      )
-(    Date/Time        : Sat May 19 21:54:10 2018                      )
+(    Drawing          : io_4di_4aic_dbdoctor_2.brd                    )
+(    Software Version : 17.2S007                                      )
+(    Date/Time        : Wed Sep 05 22:06:52 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -41,21 +41,22 @@
 
 
 
-     'io_4di_4aic_dbdoctor-1-2.drl' created for holes connecting TOP and BOTTOM
-     --------------------------------------------------------------------------
+     'io_4di_4aic_dbdoctor_2-1-2.drl' created for holes connecting TOP and BOTTOM
+     ----------------------------------------------------------------------------
 
            Num     Size      +/- Tolerance     Plating   Quantity
 
-            1.   0.3000    0.0000/  0.0000      PLATED        140
-            2.   0.5000    0.0000/  0.0000      PLATED          3
-            3.   0.8000    0.0000/  0.0000      PLATED         24
-            4.   1.0000    0.0000/  0.0000      PLATED         15
-            5.   1.6000    0.0000/  0.0000      PLATED         18
-            6.   0.6000    0.0000/  0.0000  NON_PLATED          2
-            7.   1.6000    0.0000/  0.0000  NON_PLATED          4
-            8.   3.2000    0.0000/  0.0000  NON_PLATED          4
+            1.   0.3000    0.0000/  0.0000      PLATED        155
+            2.   0.5000    0.0000/  0.0000      PLATED          2
+            3.   0.8000    0.0000/  0.0000      PLATED         28
+            4.   1.0000    0.0000/  0.0000      PLATED         18
+            5.   1.2000    0.0000/  0.0000      PLATED         16
+            6.   1.6000    0.0000/  0.0000      PLATED          2
+            7.   3.0000    0.0000/  0.0000      PLATED          4
+            8.   1.6000    0.0000/  0.0000  NON_PLATED          4
+            9.   3.2000    0.0000/  0.0000  NON_PLATED          4
 
-     ---- Total holes:                                        210
+     ---- Total holes:                                        233
 
-     ---- Total head travel:              8.45 feet (2.58 meters)
+     ---- Total head travel:              10.97 feet (3.34 meters)
 

@@ -1,8 +1,8 @@
 ;LEADER: 12 
 ;HEADER: 
 ;CODE  : ASCII 
-;FILE  : io_4di_4aic_dbdoctor-1-2.drl for  ... layers TOP and BOTTOM
-;DESIGN: io_4di_4aic_dbdoctor.brd
+;FILE  : io_4di_4aic_dbdoctor_2-1-2.drl for  ... layers TOP and BOTTOM
+;DESIGN: io_4di_4aic_dbdoctor_2.brd
 ;   Holesize 1. = 0.300000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 155
 ;   Holesize 2. = 0.500000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 2
 ;   Holesize 3. = 0.800000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 28
