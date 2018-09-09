@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
 using SharpPcap;
+using SharpPcap.LibPcap;
 
 namespace config
 {
