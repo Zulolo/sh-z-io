@@ -134,11 +134,6 @@ namespace config
                 ip += i;
                 string results = scanHost(ip);
 
-//                if (results != "fail")
-//                    form.updateList(ip, results);
-
-//                if (i % (maxRange / 10) == 0)
-//                    form.updateProgress();
             }
 
             MessageBox.Show("Scan finished!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -177,65 +172,7 @@ namespace config
 
             LibPcapLiveDevice device = devices[0];
             return device;
-        }
-        
-//        private static void handleArrivePackage(Object sender, CaptureEventArgs e)
-//        {
-//        	MessageBox.Show(e.Device.Name, e.Packet.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
-//
-//        }
-//        private static void handleArrivePackage(object sender, CaptureEventArgs e)
-//        {
-//            var packet = PacketDotNet.Packet.ParsePacket(e.Packet.LinkLayerType, e.Packet.Data);
-//            if(packet is PacketDotNet.EthernetPacket)
-//            {
-//                var eth = ((PacketDotNet.EthernetPacket)packet);
-//                Console.WriteLine("Original Eth packet: " + eth.ToString());
-//
-//                //Manipulate ethernet parameters
-//                eth.SourceHwAddress = PhysicalAddress.Parse("00-11-22-33-44-55");
-//                eth.DestinationHwAddress = PhysicalAddress.Parse("00-99-88-77-66-55");
-//
-//                var ip = (PacketDotNet.IPPacket)packet.Extract(typeof(PacketDotNet.IPPacket));
-//                if(ip != null)
-//                {
-//                    Console.WriteLine("Original IP packet: " + ip.ToString());
-//
-//                    //manipulate IP parameters
-//                    ip.SourceAddress = System.Net.IPAddress.Parse("1.2.3.4");
-//                    ip.DestinationAddress = System.Net.IPAddress.Parse("44.33.22.11");
-//                    ip.TimeToLive = 11;
-//
-//                    var tcp = (PacketDotNet.TcpPacket)packet.Extract(typeof(PacketDotNet.TcpPacket));
-//                    if (tcp != null)
-//                    {
-//                        Console.WriteLine("Original TCP packet: " + tcp.ToString());
-//
-//                        //manipulate TCP parameters
-//                        tcp.SourcePort = 9999;
-//                        tcp.DestinationPort = 8888;
-//                        tcp.Syn = !tcp.Syn;
-//                        tcp.Fin = !tcp.Fin;
-//                        tcp.Ack = !tcp.Ack;
-//                        tcp.WindowSize = 500;
-//                        tcp.AcknowledgmentNumber = 800;
-//                        tcp.SequenceNumber = 800;
-//                    }
-//
-//                    var udp = (PacketDotNet.UdpPacket)packet.Extract(typeof(PacketDotNet.UdpPacket));
-//                    if (udp != null)
-//                    {
-//                        Console.WriteLine("Original UDP packet: " + udp.ToString());
-//
-//                        //manipulate UDP parameters
-//                        udp.SourcePort = 9999;
-//                        udp.DestinationPort = 8888;
-//                    }
-//                }
-//
-//                Console.WriteLine("Manipulated Eth packet: " + eth.ToString());
-//            }
-//        }
+        }  
         
         public List<IPAddress> start_scan(int scan_time)
         {
@@ -243,28 +180,29 @@ namespace config
         	
         	network_dev.Open(DeviceMode.Promiscuous, 4000);
 			RawCapture raw_packet = null;
-			//Keep capture packets using PcapGetNextPacket()
-			while( (raw_packet = network_dev.GetNextPacket()) != null )
-			{
-				Packet packet = Packet.ParsePacket(raw_packet.LinkLayerType, raw_packet.Data);
-				var arp = (ARPPacket)packet.Extract(typeof(ARPPacket));
-			    if(arp != null)
-			    {
-			    	var from_hw_addr = arp.SenderHardwareAddress;
-			 		var from_ip_addr = arp.SenderProtocolAddress;
-			 		var dst_hw_addr = arp.TargetHardwareAddress;
-			 		var dst_ip_addr = arp.TargetProtocolAddress;
-			 					 		
-			 		MessageBox.Show("From HW: " + from_hw_addr.ToString() + "\r\n" + "From IP: " + from_ip_addr.ToString(), "ARP", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			    }
-    
-				
-//				if (packet.DataLink.Kind == DataLinkKind.Ethernet) {
-//					if (packet.Ethernet.EtherType == EthernetType.Arp) {
-//						MessageBox.Show(packet.ToString(), raw_packet.LinkLayerType.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
-//					}				
-//				}				
+			var scanStartTime = DateTime.Now;
+			while ((DateTime.Now - scanStartTime).TotalSeconds <= 5) {
+				if( (raw_packet = network_dev.GetNextPacket()) != null )
+				{
+					Packet packet = Packet.ParsePacket(raw_packet.LinkLayerType, raw_packet.Data);
+					var arp = (ARPPacket)packet.Extract(typeof(ARPPacket));
+				    if(arp != null)
+				    {
+				    	var from_hw_addr = arp.SenderHardwareAddress;
+				 		var from_ip_addr = arp.SenderProtocolAddress;
+				 		var dst_hw_addr = arp.TargetHardwareAddress;
+				 		var dst_ip_addr = arp.TargetProtocolAddress;
+				 		if ((0x02 == from_hw_addr.GetAddressBytes()[0]) && (0x01 == from_hw_addr.GetAddressBytes()[1]) && (0x71 == from_hw_addr.GetAddressBytes()[2])) {
+				 			if (!arp_devices.Contains(from_ip_addr)) {
+				 				arp_devices.Add(from_ip_addr);
+				 			}
+				 			
+//				 			MessageBox.Show("From HW: " + from_hw_addr.ToString() + "\r\n" + "From IP: " + from_ip_addr.ToString(), "ARP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				 		}
+				 	}				
+				}				
 			}
+
         	network_dev.Close();
         	
         	return arp_devices;

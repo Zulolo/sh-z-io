@@ -31,9 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EasyModbus">
-      <HintPath>..\..\EasyModbusTCP .NET Package V5.0\EasyModbusLibrary for .NET %28DLL%29\EasyModbus.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -56,6 +53,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WSMBT">
+      <HintPath>..\..\wsmbt\WSMBT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

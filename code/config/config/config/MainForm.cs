@@ -81,9 +81,8 @@ namespace config
 				if (arp_devices.Count > 0) 
 				{
 					foreach (var arp_dev in arp_devices) {
-						if (sh_z_002.is_sh_z_002(arp_dev.ToString(), 502))
-						{
-							sh_z_002_devices.Add(new sh_z_002(arp_dev.ToString(), 502));
+						if (sh_z_002.is_sh_z_002(arp_dev, 502)) {
+							sh_z_002_devices.Add(new sh_z_002(arp_dev, 502));
 						}
 					}
 				}
