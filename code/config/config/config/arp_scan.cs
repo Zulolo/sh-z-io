@@ -174,9 +174,10 @@ namespace config
             return device;
         }  
         
-        public List<IPAddress> start_scan(int scan_time)
+        public List<sh_z_002> start_scan(int scan_time)
         {
-        	var arp_devices = new List<IPAddress>();
+        	var arp_devices_ip = new List<IPAddress>();
+        	var arp_devices = new List<sh_z_002>();
         	
         	network_dev.Open(DeviceMode.Promiscuous, 4000);
 			RawCapture raw_packet = null;
@@ -193,10 +194,10 @@ namespace config
 				 		var dst_hw_addr = arp.TargetHardwareAddress;
 				 		var dst_ip_addr = arp.TargetProtocolAddress;
 				 		if ((0x02 == from_hw_addr.GetAddressBytes()[0]) && (0x01 == from_hw_addr.GetAddressBytes()[1]) && (0x71 == from_hw_addr.GetAddressBytes()[2])) {
-				 			if (!arp_devices.Contains(from_ip_addr)) {
-				 				arp_devices.Add(from_ip_addr);
-				 			}
-				 			
+				 			if (!arp_devices_ip.Contains(from_ip_addr)) {
+				 				arp_devices_ip.Add(from_ip_addr);
+				 				arp_devices.Add(new sh_z_002(from_ip_addr, 502, from_hw_addr));
+				 			}				 			
 //				 			MessageBox.Show("From HW: " + from_hw_addr.ToString() + "\r\n" + "From IP: " + from_ip_addr.ToString(), "ARP", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				 		}
 				 	}				

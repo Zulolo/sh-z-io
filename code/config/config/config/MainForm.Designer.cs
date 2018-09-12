@@ -17,7 +17,7 @@ namespace config
 		private System.Windows.Forms.Button start_scan;
 		private System.Windows.Forms.ProgressBar scan_progress;
 		private System.Windows.Forms.Label info_label;
-		private System.Windows.Forms.DataGrid scan_result;
+		private System.Windows.Forms.DataGridView scan_result;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -44,7 +44,7 @@ namespace config
 			this.start_scan = new System.Windows.Forms.Button();
 			this.scan_progress = new System.Windows.Forms.ProgressBar();
 			this.info_label = new System.Windows.Forms.Label();
-			this.scan_result = new System.Windows.Forms.DataGrid();
+			this.scan_result = new System.Windows.Forms.DataGridView();
 			((System.ComponentModel.ISupportInitialize)(this.scan_result)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -75,11 +75,10 @@ namespace config
 			// 
 			// scan_result
 			// 
-			this.scan_result.DataMember = "";
-			this.scan_result.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+			this.scan_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.scan_result.Location = new System.Drawing.Point(12, 41);
 			this.scan_result.Name = "scan_result";
-			this.scan_result.Size = new System.Drawing.Size(524, 264);
+			this.scan_result.Size = new System.Drawing.Size(523, 264);
 			this.scan_result.TabIndex = 3;
 			// 
 			// MainForm

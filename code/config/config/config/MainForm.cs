@@ -8,12 +8,10 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
 using SharpPcap;
-using SharpPcap.LibPcap;
 
 namespace config
 {
@@ -25,6 +23,7 @@ namespace config
 //		delegate void BollArgReturningVoidDelegate(bool enable); 
 //		private Thread scanThread = null; 
 		List<sh_z_002> sh_z_002_devices = new List<sh_z_002>();
+		private BindingSource sh_z_002_dev_list = new BindingSource();
 		
 		public MainForm()
 		{
@@ -38,6 +37,8 @@ namespace config
 			//
 			start_scan.Enabled = true;
 			scan_progress.Visible = false;
+//				scan_result.AutoGenerateColumn = false;  
+			scan_result.DataSource = sh_z_002_devices;	
 			info_label.Text = "Click scan to start";
 		}
 
@@ -52,6 +53,9 @@ namespace config
 			    MessageBox.Show(this, "No devices were found on this machine", "no network", MessageBoxButtons.OK, 
 				                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
 			} else {
+				sh_z_002_devices.Clear();
+				scan_result.DataSource = null;
+				scan_result.DataSource = sh_z_002_devices;	
 				var tasks = new List<Task>();
 				foreach(ICaptureDevice network_dev in network_devices) 
 				{
@@ -66,6 +70,8 @@ namespace config
 					Thread.Sleep(70);
 				}
 				Task.WaitAll(tasks.ToArray());
+				scan_result.DataSource = null;
+				scan_result.DataSource = sh_z_002_devices;	
 			}
 			start_scan.Enabled = true;
 			scan_progress.Visible = false;			
@@ -81,10 +87,12 @@ namespace config
 				if (arp_devices.Count > 0) 
 				{
 					foreach (var arp_dev in arp_devices) {
-						if (sh_z_002.is_sh_z_002(arp_dev, 502)) {
-							sh_z_002_devices.Add(new sh_z_002(arp_dev, 502));
+						if (arp_dev.is_sh_z_002()) {
+							sh_z_002_devices.Add(arp_dev);
+						
 						}
 					}
+
 				}
 			}
 //			this.enable_scan_button(true);
