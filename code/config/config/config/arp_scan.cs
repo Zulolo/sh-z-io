@@ -31,7 +31,15 @@ namespace config
         static public int scanDelay = 1200000; // 1.2 sec
         static public int maxRange = 64; // Default to 0-64 range
         private ICaptureDevice network_dev;
+        private List<sh_z_002> sh_z_002_list;
 
+        public List<sh_z_002> result
+		{
+			get {
+				return sh_z_002_list;
+			}
+		}
+        		
         public static LibPcapLiveDeviceList getDeviceList()
         {
             // Retrieve the device list
@@ -186,7 +194,8 @@ namespace config
 				if( (raw_packet = network_dev.GetNextPacket()) != null )
 				{
 					Packet packet = Packet.ParsePacket(raw_packet.LinkLayerType, raw_packet.Data);
-					var arp = (ARPPacket)packet.Extract(typeof(ARPPacket));
+					var arp = (ARPPacket)packet.Extract
+						(typeof(ARPPacket));
 				    if(arp != null)
 				    {
 				    	var from_hw_addr = arp.SenderHardwareAddress;
@@ -206,7 +215,16 @@ namespace config
 
         	network_dev.Close();
         	
-        	return arp_devices;
+    		if (arp_devices.Count > 0) 
+			{
+				foreach (var arp_dev in arp_devices) {
+					if (arp_dev.is_sh_z_002()) {
+						sh_z_002_list.Add(arp_dev);				
+					}
+				}
+
+			}
+        	return sh_z_002_list;
         }
         
         public bool ready_to_scan()
@@ -222,6 +240,7 @@ namespace config
         public arp_scan(ICaptureDevice network_device)
         {
         	network_dev = network_device;
+        	sh_z_002_list = new List<sh_z_002>();
         }
 	}
 }

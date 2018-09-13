@@ -21,43 +21,17 @@ namespace config
 	{
 		private const int SH_Z_002_DEV_INFO_REG_ADDR = 30000;
 		private const int SH_Z_002_DEV_INFO_REG_LENTH = 8;
-		private IPAddress device_ip;
-		private PhysicalAddress device_mac;
-		private int device_port;
-		private int device_in_data_grid_index;
-		public IPAddress IP
-		{
-			set {
-				device_ip = value;
-			}
-			get {
-				return device_ip;
-			}
-		}
-				
-		public int Port
-		{
-			set {
-				if (value > 1 && value < 65536) {
-					device_port = value;
-				} else {
-					device_port = 502;
-				}				
-			}
-			get {
-				return device_port;
-			}
-		}
+
+		[System.ComponentModel.DisplayName("MAC Address")]
+		public string device_mac { get; set; }
+		[System.ComponentModel.DisplayName("升级")]
+		public bool isSelected { get; set; }	
+		[System.ComponentModel.DisplayName("IP Address")]
+		public IPAddress device_ip { get; set; }
+		[System.ComponentModel.DisplayName("Port")]		
+		public int device_port { get; set; }
 		
-		public PhysicalAddress MAC
-		{
-			set {
-				device_mac = value;
-			}
-			get {
-				return device_mac;
-			}
-		}
+
 		
 		static public bool is_sh_z_002(IPAddress ipAddress, int port)
 		{
@@ -109,7 +83,7 @@ namespace config
 		{
 			this.device_ip = ipAddress;
 			this.device_port = port;
-			this.device_mac = physicalAddress;
+			this.device_mac = BitConverter.ToString(physicalAddress.GetAddressBytes()).Replace('-', ':');
 //			modebus_client = new ModbusClient(ipAddress, port);
 		}
 	}

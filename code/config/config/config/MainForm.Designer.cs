@@ -18,6 +18,9 @@ namespace config
 		private System.Windows.Forms.ProgressBar scan_progress;
 		private System.Windows.Forms.Label info_label;
 		private System.Windows.Forms.DataGridView scan_result;
+		private System.Windows.Forms.OpenFileDialog openUpdateFileDialog;
+		private System.Windows.Forms.Button openUpdate;
+		private System.Windows.Forms.Button startUpdate;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -45,6 +48,9 @@ namespace config
 			this.scan_progress = new System.Windows.Forms.ProgressBar();
 			this.info_label = new System.Windows.Forms.Label();
 			this.scan_result = new System.Windows.Forms.DataGridView();
+			this.openUpdateFileDialog = new System.Windows.Forms.OpenFileDialog();
+			this.openUpdate = new System.Windows.Forms.Button();
+			this.startUpdate = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.scan_result)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -81,11 +87,37 @@ namespace config
 			this.scan_result.Size = new System.Drawing.Size(523, 264);
 			this.scan_result.TabIndex = 3;
 			// 
+			// openUpdateFileDialog
+			// 
+			this.openUpdateFileDialog.FileName = "openFileDialog1";
+			// 
+			// openUpdate
+			// 
+			this.openUpdate.Location = new System.Drawing.Point(348, 12);
+			this.openUpdate.Name = "openUpdate";
+			this.openUpdate.Size = new System.Drawing.Size(75, 23);
+			this.openUpdate.TabIndex = 4;
+			this.openUpdate.Text = "Select file";
+			this.openUpdate.UseVisualStyleBackColor = true;
+			this.openUpdate.Click += new System.EventHandler(this.OpenUpdateClick);
+			// 
+			// startUpdate
+			// 
+			this.startUpdate.Location = new System.Drawing.Point(441, 12);
+			this.startUpdate.Name = "startUpdate";
+			this.startUpdate.Size = new System.Drawing.Size(75, 23);
+			this.startUpdate.TabIndex = 5;
+			this.startUpdate.Text = "Update";
+			this.startUpdate.UseVisualStyleBackColor = true;
+			this.startUpdate.Click += new System.EventHandler(this.StartUpdateClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(548, 331);
+			this.Controls.Add(this.startUpdate);
+			this.Controls.Add(this.openUpdate);
 			this.Controls.Add(this.scan_result);
 			this.Controls.Add(this.info_label);
 			this.Controls.Add(this.scan_progress);
