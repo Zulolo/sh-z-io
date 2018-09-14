@@ -27,6 +27,7 @@ namespace config
 		private BindingList<sh_z_002> sh_z_002_devices = new BindingList<sh_z_002>();
 		private List<arp_scan> arp_scan_list = new List<arp_scan>();
 		private BindingSource sh_z_002_dev_list = new BindingSource();
+		private Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
 		private string update_file_name = "";
 		
 		public MainForm()
@@ -83,8 +84,8 @@ namespace config
 					}
 				}
 				scan_result.DataSource = null;
-				scan_result.DataSource = sh_z_002_devices;	
-				AdjustColumnOrder();
+				scan_result.DataSource = sh_z_002_devices;
+				AdjustColumnOrder();						
 			}
 			start_scan.Enabled = true;
 			scan_progress.Visible = false;			
@@ -95,7 +96,24 @@ namespace config
 		    scan_result.Columns["isSelected"].DisplayIndex = 0;
 		    scan_result.Columns["isSelected"].Width = 40;
 		    scan_result.Columns["device_ip"].DisplayIndex = 1;
+		    scan_result.Columns["device_ip"].ReadOnly = true;
 		    scan_result.Columns["device_mac"].DisplayIndex = 2;
+		    scan_result.Columns["device_mac"].ReadOnly = true;
+		    if (!scan_result.Columns.Contains(Progress)) {
+		    	scan_result.Columns.Add(Progress);
+		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
+		    	var resources = new ComponentResourceManager(typeof(MainForm));
+				dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+	            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+	            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+	            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+	            Progress.DefaultCellStyle = dataGridViewCellStyle1;
+	            Progress.HeaderText = "进度 [%]";
+	            Progress.Name = "Progress";
+	            Progress.ProgressBarColor = System.Drawing.Color.Lime;
+	            Progress.DisplayIndex = 3;
+	            Progress.ReadOnly = true;		    	
+		    }
 		}
 		private void scan_sh_z_002(arp_scan my_arp_scan) 
 		{			
@@ -115,14 +133,23 @@ namespace config
 		}
 		void StartUpdateClick(object sender, EventArgs e)
 		{
-			if ((update_file_name != "") && File.Exists(update_file_name) && is_sh_z_002_fw(update_file_name)) {
-				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
-					if (sh_z_002_obj.isSelected) {
-						MessageBox.Show(sh_z_002_obj.device_ip.ToString(), "update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//			if ((update_file_name != "") && File.Exists(update_file_name) && is_sh_z_002_fw(update_file_name)) {
+//				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
+//					if (sh_z_002_obj.isSelected) {
+//						MessageBox.Show(sh_z_002_obj.device_ip.ToString(), "update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//					}
+//				}
+//			}
+					if (sh_z_002_devices.Count > 0) {
+						foreach (DataGridViewRow data_row in scan_result.Rows) {
+							for (int i = 1; i <= 100; i++) {
+								data_row.Cells["Progress"].Value = i;
+								scan_result.Refresh();
+								Thread.Sleep(100);
+							}
+						}
+						
 					}
-				}
-				
-			}
 		}
 
 		
