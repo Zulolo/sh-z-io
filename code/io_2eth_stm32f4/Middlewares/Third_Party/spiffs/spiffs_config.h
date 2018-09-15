@@ -214,7 +214,7 @@ extern osMutexId SpiffsMutexHandle;
 // Instead of giving parameters in config struct, singleton build must
 // give parameters in defines below.
 #ifndef SPIFFS_CFG_PHYS_SZ
-#define SPIFFS_CFG_PHYS_SZ(ignore)        (1024*1024*8)
+#define SPIFFS_CFG_PHYS_SZ(ignore)        (1024*1024*4)
 #endif
 #ifndef SPIFFS_CFG_PHYS_ERASE_SZ
 #define SPIFFS_CFG_PHYS_ERASE_SZ(ignore)  (65536)

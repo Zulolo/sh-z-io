@@ -81,7 +81,7 @@
 #define LWIP_DHCP 1
 /*----- Default Value for LWIP_ICMP: 1 ---*/
 #define LWIP_ICMP 0
-/*----- Default Value for LWIP_TCP: 1 ---*/
+/*----- Value in opt.h for LWIP_TCP: 1 -----*/
 #define LWIP_TCP 0
 /*----- Value in opt.h for MEM_ALIGNMENT: 1 -----*/
 #define MEM_ALIGNMENT 4
@@ -167,6 +167,6 @@
 #ifdef __cplusplus
 }
 #endif
-#endif /*__LWIPOPTS__H_H */
+#endif /*__LWIPOPTS__H__ */
 
 /************************* (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

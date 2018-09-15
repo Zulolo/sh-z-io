@@ -379,50 +379,37 @@ static void MX_BKP_Init(void) {
 }
 /* USER CODE END 4 */
 
-/* StartDefaultTask function */
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used 
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
   /* init code for LWIP */
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
-	char cFileName[64];
-	fw_status tFwStatus;
-	memset(cFileName, 0 , sizeof(cFileName));
+	int nIntFW_Ver, nExtFW_Ver;
 	spiffs_init();
-	if (*((__IO uint32_t *) BKPSRAM_BASE) != BOOTLOADER_FLAG) {
+	
+	nExtFW_Ver = FWU_get_fw_version_FS(UPDATE_FILE_NAME);
+	if (nExtFW_Ver > 0) {
+		printf("FW found in external flash, upgrad!\n");
+		FWU_upgrade(UPDATE_FILE_NAME);
+		SPIFFS_remove(&SPI_FFS_fs, UPDATE_FILE_NAME);
 		FWU_run_app();
-		// will never be here if there is FW in flash
-		// if not, enter bootloader below
+//	will never be here		
 	}
 	
-	tFwStatus = FWU_check_upgrade_file(cFileName, sizeof(cFileName));
-	switch(tFwStatus) {
-		case NO_FW_INTERNAL_NO_FW_FS:
-			printf("No FW was found neither in internal flash nor external FS.\n");
-			tftp_init(&TFTP_Ctx);
-		break;
-			
-		case VALID_FW_INTERNAL_NO_FW_FS:
-			printf("FW was found in internal flash but not in external FS.\n");
-			FWU_backup_fw();
-			FWU_run_app();			
-		break;
-		
-		case FW_FS_NEWER:
-			printf("FW found in internal flash need to be upgraded.\n");
-			FWU_upgrade(cFileName);
-			FWU_run_app();
-		break;
-		
-		case FW_INTERNAL_FS_MATCH_LATEST:
-			printf("FW found in internal flash is already latest.\n");
-			FWU_run_app();
-		break;
-		
-		default:
-			
-		break;
+	nIntFW_Ver = FWU_get_fw_version_internal();
+	if (nIntFW_Ver < 0) {
+		printf("No FW was found neither in internal flash nor external FS.\n");
+		tftp_init(&TFTP_Ctx);		
+	} else {
+		FWU_run_app();
 	}
 		
   /* Infinite loop */

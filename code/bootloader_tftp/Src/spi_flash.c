@@ -22,7 +22,7 @@ typedef enum{
 	RD_FLASH_REG_STATUS_01 = 0x05,
 	RD_FLASH_REG_STATUS_02 = 0x35,
 	RD_FLASH_REG_STATUS_03 = 0x15,
-//	RD_FLASH_REG_MANUF_DEV_ID = 0x9F,
+	RD_FLASH_REG_MANUF_DEV_ID = 0x9F,
 	WR_FLASH_CHIP_ERASE = 0xC7,
 	WR_FLASH_BLOCK_ERASE = 0xD8
 }SPI_FlashChipCMD_TypeDef;
@@ -242,15 +242,19 @@ static int32_t _spiffs_write(uint32_t addr, uint32_t size, uint8_t *dst)
     return 0;
 }
 
+//void spi_flash_read_manufacturer_ID(uint8_t* pRD_Data, uint32_t unDataLen) {
+//	read_SPI_flash_chip(RD_FLASH_REG_MANUF_DEV_ID, pRD_Data, unDataLen);
+//}
+
 void spiffs_init(void) {
 	spiffs_config spiffs_cfg;
 	int32_t res;
 //	static uint8_t unManuID[3];
 //	spi_flash_read_manufacturer_ID(unManuID, sizeof(unManuID));
 //	spi_flash_erase_chip();
-  	spiffs_cfg.hal_erase_f = _spiffs_erase;
-	spiffs_cfg.hal_read_f = _spiffs_read;
-	spiffs_cfg.hal_write_f = _spiffs_write;
+//  spiffs_cfg.hal_erase_f = _spiffs_erase;
+//	spiffs_cfg.hal_read_f = _spiffs_read;
+//	spiffs_cfg.hal_write_f = _spiffs_write;
 	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK) && 
 		(SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS)) {
         printf("formatting spiffs...\n");
@@ -268,7 +272,5 @@ void spiffs_init(void) {
         printf("SPIFFS mounted\n");
     }	
 }
-//void spi_flash_read_manufacturer_ID(uint8_t* pRD_Data, uint32_t unDataLen) {
-//	read_SPI_flash_chip(RD_FLASH_REG_MANUF_DEV_ID, pRD_Data, unDataLen);
-//}
+
 

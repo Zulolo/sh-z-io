@@ -6,13 +6,15 @@
 #include "fw_upgrade.h"
 
 // VTOR can not be 0x08020010, only allowed 0x08020000
-#define APPLICATION_ENTRY_ADDRESS				((uint32_t)0x08020000)		// start at sector 5, CRC include all other headers
+#define APPLICATION_ENTRY_ADDRESS					((uint32_t)0x08020000)		// start at sector 5, CRC include all other headers
 #define APPLICATION_SIZE_W_ADDRESS				((uint32_t)0x08080000 - 0x04)		// size in word, includeing only fw itself, no header
 #define APPLICATION_VERSION_ADDRESS				((APPLICATION_SIZE_W_ADDRESS) - 0x04)
 #define APPLICATION_SLAVE_ID_ADDRESS			((APPLICATION_VERSION_ADDRESS) - 0x04)
-#define APPLICATION_CRC_ADDRESS					((APPLICATION_SLAVE_ID_ADDRESS) - 0x04)
+#define APPLICATION_CRC_ADDRESS						((APPLICATION_SLAVE_ID_ADDRESS) - 0x04)
+#define APPLICATION_MAGIC_NUM_ADDRESS			((APPLICATION_CRC_ADDRESS) - 0x04)
 
 typedef struct {
+	uint32_t unMagicNum;
 	uint32_t unCRC;
 	uint32_t unSlaveID;
 	int32_t nVersion;
@@ -20,9 +22,10 @@ typedef struct {
 } fw_header;
 
 #define INTERNAL_IMAGE_CRC_IN_HEAD			(*((uint32_t *)APPLICATION_CRC_ADDRESS))
-#define INTERNAL_SLAVE_ID_IN_HEAD			(*((uint32_t *)APPLICATION_SLAVE_ID_ADDRESS))
+#define INTERNAL_SLAVE_ID_IN_HEAD				(*((uint32_t *)APPLICATION_SLAVE_ID_ADDRESS))
 #define INTERNAL_FW_LENGTH_W_IN_HEAD		(*((uint32_t *)APPLICATION_SIZE_W_ADDRESS))
 #define INTERNAL_FW_VERSION_IN_HEAD			(*((int32_t *)APPLICATION_VERSION_ADDRESS))
+#define INTERNAL_FW_MAGIC_NUM_IN_HEAD		(*((int32_t *)APPLICATION_MAGIC_NUM_ADDRESS))
 
 #define MAX_FW_LENGTH_IN_WORD				(128*3*1024/4)
 typedef void (*pFunction)(void);
@@ -89,23 +92,6 @@ static uint32_t crc32(uint32_t crc, const void *buf, size_t size) {
 	return ~crc;
 }
  
-//static uint32_t crc32(uint32_t crc, unsigned char *buf, size_t len)
-//{
-//    crc = ~crc;
-//    while (len--) {
-//        crc ^= *buf++;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//        crc = crc & 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
-//    }
-//    return ~crc;
-//}
-
 int FWU_run_app(void) {
 	pFunction Jump_To_Application;
 	uint32_t JumpAddress;
@@ -161,23 +147,53 @@ static void remove_fw_image_in_FS(int nLatestVersion) {
 	SPIFFS_closedir(&d);
 }
 
-static int get_fw_version_internal(void) {
-	static uint32_t unCRCValue;
-	// check CRC
+int FWU_get_fw_version_internal(void) {
 	if (INTERNAL_FW_LENGTH_W_IN_HEAD > MAX_FW_LENGTH_IN_WORD) {
 		return (-1);
 	}
-	unCRCValue = crc32(0xFFFFFFFF, (u8_t *)APPLICATION_SLAVE_ID_ADDRESS, sizeof(fw_header) - 4);	// header is at end of flash
-	unCRCValue = crc32(unCRCValue, (u8_t *)APPLICATION_ENTRY_ADDRESS, INTERNAL_FW_LENGTH_W_IN_HEAD * 4);	// include most of header
-	//unCRCValue = HAL_CRC_Calculate(&hcrc, (uint32_t *)APPLICATION_SLAVE_ID_ADDRESS, INTERNAL_FW_LENGTH_W_IN_HEAD - 1);
-	// if CRC OK, read and return version
-	if ((unCRCValue == INTERNAL_IMAGE_CRC_IN_HEAD) && (SH_Z_002_SLAVE_ID == INTERNAL_SLAVE_ID_IN_HEAD)) {
+	if ((SH_Z_002_MAGIC_NUM == INTERNAL_FW_MAGIC_NUM_IN_HEAD) && (SH_Z_002_SLAVE_ID == INTERNAL_SLAVE_ID_IN_HEAD)) {
 		return INTERNAL_FW_VERSION_IN_HEAD;
 	} else {
 		return (-1);
 	}
 }
 
+int FWU_get_fw_version_FS(const char* pFileName) {
+	fw_header tFW_Header;
+	uint32_t unCalculatedCRC;
+	uint32_t unBuf[64];
+	int nReadCNT;	
+	spiffs_file fd = -1;
+	
+	fd = SPIFFS_open(&SPI_FFS_fs, pFileName, SPIFFS_RDONLY, 0);
+	if (fd >= 0) {
+		if (SPIFFS_read(&SPI_FFS_fs, fd, (u8_t *)(&tFW_Header), sizeof(tFW_Header)) > 0) {
+			if (SH_Z_002_MAGIC_NUM == tFW_Header.unMagicNum) {
+				// check file crc
+				unCalculatedCRC = crc32(0xFFFFFFFF, (uint8_t *)(&(tFW_Header.unSlaveID)), sizeof(tFW_Header) - sizeof(tFW_Header.unCRC) - sizeof(tFW_Header.unMagicNum));
+				while ((nReadCNT = SPIFFS_read(&SPI_FFS_fs, fd, (u8_t *)unBuf, sizeof(unBuf))) > 0 ) {
+					unCalculatedCRC = crc32(unCalculatedCRC, (u8_t *)unBuf, nReadCNT);
+				}						
+				SPIFFS_close(&SPI_FFS_fs, fd);
+				if ((unCalculatedCRC == tFW_Header.unCRC) && (tFW_Header.unSlaveID == SH_Z_002_SLAVE_ID)) {
+					// if CRC is not OK or image is not for this type of device, delete the file
+					return tFW_Header.nVersion;
+				}	else {
+					SPIFFS_remove(&SPI_FFS_fs, pFileName);
+					return (-1);
+				}					
+			} else {
+				SPIFFS_remove(&SPI_FFS_fs, pFileName);
+				return (-1);
+			}
+		} else {
+			SPIFFS_remove(&SPI_FFS_fs, pFileName);
+			return (-1);
+		}
+	} else {
+		return (-1);
+	}
+}
 // during traversal all the files in fs, error fw image will be removed
 // After execute this function, only the latest image will be reserved
 // return the latest version of image in FS, -1 means no image found.
@@ -246,7 +262,7 @@ static int find_latest_fw_image_in_fs(char* pFileName, unsigned char unBufLen) {
 // VALID_FW_INTERNAL_NO_FW_FS no image found in FS, but there is one running
 fw_status FWU_check_upgrade_file(char* pFileName, unsigned char unBufLen) {
 	int unFW_VersionInternal, unFW_VersionFS;
-	unFW_VersionInternal = get_fw_version_internal();
+	unFW_VersionInternal = FWU_get_fw_version_internal();
 	unFW_VersionFS = find_latest_fw_image_in_fs(pFileName, unBufLen);
 	if ((unFW_VersionInternal < 0) && (unFW_VersionFS < 0)) {
 		// neither fw was found in internal flash nor in FS
@@ -333,7 +349,7 @@ int FWU_upgrade(char* file_name) {
 	HAL_FLASH_Lock();
 	
 	// validate
-	return get_fw_version_internal();
+	return FWU_get_fw_version_internal();
 }
 
 void FWU_backup_fw(void){
