@@ -1,0 +1,5 @@
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClient\bin\Debug\TFTPClient.dll
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClient\bin\Debug\TFTPClient.pdb
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClient\obj\Debug\TFTPClient.csprojResolveAssemblyReference.cache
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClient\obj\Debug\TFTPClient.dll
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClient\obj\Debug\TFTPClient.pdb

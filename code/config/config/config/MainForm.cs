@@ -30,6 +30,33 @@ namespace config
 		private Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
 		private string update_file_name = "";
 		
+		private void AdjustColumnOrder()
+		{
+		    scan_result.Columns["device_port"].Visible = false;
+		    scan_result.Columns["progress"].Visible = false;
+		    scan_result.Columns["isSelected"].DisplayIndex = 0;
+		    scan_result.Columns["isSelected"].Width = 40;
+		    scan_result.Columns["device_ip"].DisplayIndex = 1;
+		    scan_result.Columns["device_ip"].ReadOnly = true;
+		    scan_result.Columns["device_mac"].DisplayIndex = 2;
+		    scan_result.Columns["device_mac"].ReadOnly = true;
+		    if (!scan_result.Columns.Contains(Progress)) {
+		    	scan_result.Columns.Add(Progress);
+		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
+		    	var resources = new ComponentResourceManager(typeof(MainForm));
+				dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+	            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+	            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+	            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+	            Progress.DefaultCellStyle = dataGridViewCellStyle1;
+	            Progress.HeaderText = "进度 [%]";
+	            Progress.Name = "dev_up_progress";
+	            Progress.ProgressBarColor = System.Drawing.Color.Lime;
+	            Progress.DisplayIndex = 3;
+	            Progress.ReadOnly = true;		    	
+		    }
+		}
+				
 		public MainForm()
 		{
 			//
@@ -90,31 +117,7 @@ namespace config
 			start_scan.Enabled = true;
 			scan_progress.Visible = false;			
 		}
-		private void AdjustColumnOrder()
-		{
-		    scan_result.Columns["device_port"].Visible = false;
-		    scan_result.Columns["isSelected"].DisplayIndex = 0;
-		    scan_result.Columns["isSelected"].Width = 40;
-		    scan_result.Columns["device_ip"].DisplayIndex = 1;
-		    scan_result.Columns["device_ip"].ReadOnly = true;
-		    scan_result.Columns["device_mac"].DisplayIndex = 2;
-		    scan_result.Columns["device_mac"].ReadOnly = true;
-		    if (!scan_result.Columns.Contains(Progress)) {
-		    	scan_result.Columns.Add(Progress);
-		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
-		    	var resources = new ComponentResourceManager(typeof(MainForm));
-				dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-	            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-	            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
-	            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-	            Progress.DefaultCellStyle = dataGridViewCellStyle1;
-	            Progress.HeaderText = "进度 [%]";
-	            Progress.Name = "Progress";
-	            Progress.ProgressBarColor = System.Drawing.Color.Lime;
-	            Progress.DisplayIndex = 3;
-	            Progress.ReadOnly = true;		    	
-		    }
-		}
+
 		private void scan_sh_z_002(arp_scan my_arp_scan) 
 		{			
 			if(my_arp_scan.ready_to_scan()) {
@@ -131,52 +134,63 @@ namespace config
 		      update_file_name = openUpdateFileDialog.FileName;  
 		   } 			
 		}
+//		void update_dev_up_progress(string mac_address, int percentage) 
+//		{
+//			if (InvokeRequired) {
+//		        BeginInvoke(new MethodInvoker(() => update_dev_up_progress(mac_address, percentage)));
+//		    } else {
+//				if (sh_z_002_devices.Count > 0) {
+//					foreach (DataGridViewRow data_row in scan_result.Rows) {
+//						data_row.Cells["Progress"].Value = percentage;
+//						scan_result.Refresh();
+//					}				
+//				}	
+//		    }				
+//		}
+		private void update_sh_z_002(sh_z_002 sh_z_002_dev) 
+		{			
+			if(sh_z_002_dev.ok_to_update()) {
+				sh_z_002_dev.update(update_file_name);	//, update_dev_up_progress);
+			}
+		}
 		void StartUpdateClick(object sender, EventArgs e)
 		{
-//			if ((update_file_name != "") && File.Exists(update_file_name) && is_sh_z_002_fw(update_file_name)) {
-//				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
-//					if (sh_z_002_obj.isSelected) {
-//						MessageBox.Show(sh_z_002_obj.device_ip.ToString(), "update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-//					}
-//				}
-//			}
-					if (sh_z_002_devices.Count > 0) {
-						foreach (DataGridViewRow data_row in scan_result.Rows) {
-							for (int i = 1; i <= 100; i++) {
-								data_row.Cells["Progress"].Value = i;
-								scan_result.Refresh();
-								Thread.Sleep(100);
+			if ((update_file_name != "") && File.Exists(update_file_name)) {	// && is_sh_z_002_fw(update_file_name)) {
+				var tasks = new List<Task>();
+				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
+					if (sh_z_002_obj.isSelected) {
+						tasks.Add(Task.Factory.StartNew(() => update_sh_z_002(sh_z_002_obj)));
+					}					
+				}
+				bool all_dev_up_done = false;
+				while (false == all_dev_up_done) {
+					all_dev_up_done = true;
+					foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
+						if (sh_z_002_obj.isSelected) {
+							if (sh_z_002_obj.progress < 100) {
+								all_dev_up_done = false;
+								foreach (DataGridViewRow data_row in scan_result.Rows) {
+									if (sh_z_002_obj.device_mac == data_row.Cells["device_mac"].Value) {
+										data_row.Cells["dev_up_progress"].Value = sh_z_002_obj.progress;
+										scan_result.Refresh();
+									}
+								}															
 							}
-						}
-						
+						}					
 					}
-		}
+					Thread.Sleep(100);
+				}	
+				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
+					if (sh_z_002_obj.isSelected) {
+						foreach (DataGridViewRow data_row in scan_result.Rows) {
+							data_row.Cells["dev_up_progress"].Value = sh_z_002_obj.progress;
+							scan_result.Refresh();
+						}															
+					}					
+				}				
+				Task.WaitAll(tasks.ToArray());
+			}
 
-		
-//		private void enable_scan_button(bool enable)  
-//        {  
-//            if (this.start_scan.InvokeRequired)  
-//            {     
-//                BollArgReturningVoidDelegate d = new BollArgReturningVoidDelegate(enable_scan_button);  
-//                this.Invoke(d, new object[] { enable });  
-//            }  
-//            else  
-//            {  
-//                this.start_scan.Enabled = enable;  
-//            }  
-//        } 
-//		
-//		private void visible_progress_bar(bool enable)  
-//        {  
-//            if (this.start_scan.InvokeRequired)  
-//            {     
-//                BollArgReturningVoidDelegate d = new BollArgReturningVoidDelegate(visible_progress_bar);  
-//                this.Invoke(d, new object[] { enable });  
-//            }  
-//            else  
-//            {  
-//                this.scan_progress.Visible = enable;  
-//            }  
-//        }
+		}
 	}
 }

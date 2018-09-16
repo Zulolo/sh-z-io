@@ -1,0 +1,9 @@
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\bin\Debug\TFTPClientApp.exe
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\bin\Debug\TFTPClientApp.pdb
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\bin\Debug\TFTPClient.dll
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\bin\Debug\TFTPClient.pdb
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\obj\Debug\TFTPClientApp.csprojResolveAssemblyReference.cache
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\obj\Debug\TFTPClientApp.TFTPFrm.resources
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\obj\Debug\TFTPClientApp.csproj.GenerateResource.Cache
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\obj\Debug\TFTPClientApp.exe
+G:\Work\io\design\code\config\CSharpTFTPClient1.5\TFTPClientApp\obj\Debug\TFTPClientApp.pdb

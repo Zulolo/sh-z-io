@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFTPClient", "TFTPClient\TFTPClient.csproj", "{B3D2F584-9650-4122-9777-EFC1F8EED81E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFTPClientApp", "TFTPClientApp\TFTPClientApp.csproj", "{2C90E5D7-1325-471D-9D02-1EB87B2E2A2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3D2F584-9650-4122-9777-EFC1F8EED81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D2F584-9650-4122-9777-EFC1F8EED81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D2F584-9650-4122-9777-EFC1F8EED81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D2F584-9650-4122-9777-EFC1F8EED81E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C90E5D7-1325-471D-9D02-1EB87B2E2A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C90E5D7-1325-471D-9D02-1EB87B2E2A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C90E5D7-1325-471D-9D02-1EB87B2E2A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C90E5D7-1325-471D-9D02-1EB87B2E2A2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+C# TFTP Client V1.5
+
+A simple TFTP client class written in C#
+
+
+

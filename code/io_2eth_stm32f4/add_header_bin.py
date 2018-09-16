@@ -7,6 +7,7 @@ buffersize = 65536
 fw_version = 0
 slave_id = 2
 fw_length = 0
+magic_number = 0x5AA55A4B
 
 def int_to_bytes(value, length):
     result = []
@@ -48,9 +49,10 @@ with open('.\io_2eth_stm32f4\io_2eth_stm32f4.bin', 'rb') as afile:
 print(format(crcvalue & 0xFFFFFFFF, '08x'))
 
 # new_file_name = 'G:\Work\io\design\code\io_2eth_stm32f4\MDK-ARM\io_2eth_stm32f4\\fw_002_v' + format(fw_version, 'x') + '.bin'
-new_file_name = '.\io_2eth_stm32f4\\fw_002_v' + format(fw_version, 'x') + '.bin'
+new_file_name = '.\io_2eth_stm32f4\sh_z_002_update.bin' 
 print(new_file_name)
 with open(new_file_name, 'w+b') as bfile:
+    bfile.write(bytearray(int_to_bytes(magic_number, 4)))
     bfile.write(bytearray(int_to_bytes(crcvalue, 4)))
     bfile.write(bytearray(int_to_bytes(slave_id, 4)))
     bfile.write(bytearray(int_to_bytes(fw_version, 4)))

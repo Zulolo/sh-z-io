@@ -1,7 +1,7 @@
 #ifndef FW_UPGRADE_H_
 #define FW_UPGRADE_H_
 
-#define BOOTLOADER_FLAG				0x5AA50524
+//#define BOOTLOADER_FLAG				0x5AA50524
 #define SH_Z_002_MAGIC_NUM		0x5AA55A4B
 #define UPDATE_FILE_NAME			"sh_z_002_update.bin"
 

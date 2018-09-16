@@ -12,3 +12,5 @@ G:\Work\io\design\code\config\config\config\bin\Debug\PacketDotNet.xml
 G:\Work\io\design\code\config\config\config\bin\Debug\SharpPcap.xml
 G:\Work\io\design\code\config\config\config\bin\Debug\WSMBT.dll
 G:\Work\io\design\code\config\config\config\bin\Debug\WSMBT.xml
+G:\Work\io\design\code\config\config\config\bin\Debug\TFTPClient.dll
+G:\Work\io\design\code\config\config\config\bin\Debug\TFTPClient.pdb

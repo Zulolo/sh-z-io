@@ -54,6 +54,9 @@
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="TFTPClient">
+      <HintPath>..\..\CSharpTFTPClient1.5\TFTPClient\obj\Debug\TFTPClient.dll</HintPath>
+    </Reference>
     <Reference Include="WSMBT">
       <HintPath>..\..\wsmbt\WSMBT.dll</HintPath>
     </Reference>
