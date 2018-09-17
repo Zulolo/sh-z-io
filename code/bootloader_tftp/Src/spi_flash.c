@@ -252,9 +252,9 @@ void spiffs_init(void) {
 //	static uint8_t unManuID[3];
 //	spi_flash_read_manufacturer_ID(unManuID, sizeof(unManuID));
 //	spi_flash_erase_chip();
-//  spiffs_cfg.hal_erase_f = _spiffs_erase;
-//	spiffs_cfg.hal_read_f = _spiffs_read;
-//	spiffs_cfg.hal_write_f = _spiffs_write;
+  spiffs_cfg.hal_erase_f = _spiffs_erase;
+	spiffs_cfg.hal_read_f = _spiffs_read;
+	spiffs_cfg.hal_write_f = _spiffs_write;
 	if (((res = SPIFFS_mount(&SPI_FFS_fs, &spiffs_cfg, FS_Work_Buf, FS_FDS, sizeof(FS_FDS), FS_Cache_Buf, sizeof(FS_Cache_Buf), NULL)) != SPIFFS_OK) && 
 		(SPIFFS_errno(&SPI_FFS_fs) == SPIFFS_ERR_NOT_A_FS)) {
         printf("formatting spiffs...\n");

@@ -85,7 +85,7 @@ static void MX_DMA_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_CRC_Init(void);
 void StartDefaultTask(void const * argument);
-extern void send_GARP(void const * argument);
+void send_GARP(void const * argument);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -93,11 +93,6 @@ static void MX_BKP_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-static void send_GARP(void const * argument) {
-//	printf("send GARP timer enter\n");
-	etharp_gratuitous(&gnetif);
-//	printf("send GARP timer leave\n");
-}
 
 static void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
 	spiffs_file nFileHandle;
@@ -195,6 +190,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+	osTimerStart(GARP_TimerHandle, 5000);
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */
@@ -377,6 +373,7 @@ static void MX_BKP_Init(void) {
 	__HAL_RCC_BKPSRAM_CLK_ENABLE();
 	HAL_PWR_EnableBkUpAccess();
 }
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -392,6 +389,7 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
+	
 	int nIntFW_Ver, nExtFW_Ver;
 	spiffs_init();
 	
@@ -418,6 +416,14 @@ void StartDefaultTask(void const * argument)
 		osDelay(1000);
 	}
   /* USER CODE END 5 */ 
+}
+
+/* send_GARP function */
+void send_GARP(void const * argument)
+{
+  /* USER CODE BEGIN send_GARP */
+  etharp_gratuitous(&gnetif);
+  /* USER CODE END send_GARP */
 }
 
 /**
