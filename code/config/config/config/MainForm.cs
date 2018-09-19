@@ -134,19 +134,7 @@ namespace config
 		      update_file_name = openUpdateFileDialog.FileName;  
 		   } 			
 		}
-//		void update_dev_up_progress(string mac_address, int percentage) 
-//		{
-//			if (InvokeRequired) {
-//		        BeginInvoke(new MethodInvoker(() => update_dev_up_progress(mac_address, percentage)));
-//		    } else {
-//				if (sh_z_002_devices.Count > 0) {
-//					foreach (DataGridViewRow data_row in scan_result.Rows) {
-//						data_row.Cells["Progress"].Value = percentage;
-//						scan_result.Refresh();
-//					}				
-//				}	
-//		    }				
-//		}
+
 		private void update_sh_z_002(sh_z_002 sh_z_002_dev) 
 		{			
 			if(sh_z_002_dev.ok_to_update()) {

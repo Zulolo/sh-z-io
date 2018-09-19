@@ -90,7 +90,7 @@ namespace config
     		if (arp_devices.Count > 0) 
 			{
 				foreach (var arp_dev in arp_devices) {
-					if (arp_dev.is_sh_z_002()) {
+					if (arp_dev.is_sh_z_002(arp_dev.device_mac)) {
 						sh_z_002_list.Add(arp_dev);				
 					}
 				}
