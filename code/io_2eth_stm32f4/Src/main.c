@@ -87,7 +87,7 @@ osMutexId WebServerFileMutexHandle;
 /* Private variables ---------------------------------------------------------*/
 EventGroupHandle_t xDiEventGroup;
 EventGroupHandle_t xComEventGroup;
-char SH_Z_002_SN[SH_Z_SN_LEN + 1];
+char SH_Z_002_SN[SH_Z_SN_LEN + 1] = "SHZ002.201809190";
 extern struct netif gnetif;
 extern spiffs SPI_FFS_fs;
 /* USER CODE END PV */

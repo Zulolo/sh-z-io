@@ -56,29 +56,27 @@ namespace config
         {
             if (BytesTotal != 0) {
         		this.progress = (int)((BytesTransferred * 100) / BytesTotal);
-//                Console.Write("{0}/{1} Bytes Transferred\r", BytesTransferred, BytesTotal);
         	} else {
         		this.progress = 100;
-//                Console.Write(".");
         	}
         }
 
         private void _session_TransferFailed(short ErrorCode, string ErrorMessage)
         {
 //            Console.WriteLine("Error {0}: {1}", ErrorCode, ErrorMessage);
+			MessageBox.Show("Transfer faile", "TFTP Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
             TransferFinishedEvent.Set();
         }
 
         private void _session_TransferFinished()
         {
-//			Console.WriteLine("\nTransfer Finished");
-//			MessageBox.Show("Transfer Complete", "TFTP Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show("Transfer Complete", "TFTP Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			TransferFinishedEvent.Set();
         }
 
         private void _session_Disconnected()
         {
-//            Console.WriteLine("Disconnected\n");
+			MessageBox.Show("Disconnected", "TFTP Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
             TransferFinishedEvent.Set();
         }    
         
@@ -103,36 +101,12 @@ namespace config
 			TransferFinishedEvent.WaitOne();			
         }
 		
-		static public bool is_sh_z_002(IPAddress ipAddress, int port)
-		{
-			Result mb_result;
-			byte byte_count;
-			byte[] device_info = new byte[256];
-			
-			return true;
-			var modebus_client = new WSMBTControl();
-			modebus_client.ResponseTimeout = 500;
-			modebus_client.ConnectTimeout = 500;
-			mb_result = modebus_client.Connect(ipAddress.ToString(), port);
-			if (Result.SUCCESS == mb_result) {
-				mb_result = modebus_client.ReportSlaveID(1, out byte_count, device_info);
-				if (Result.SUCCESS == mb_result) {
-					// check slave ID and maybe also sub slave ID	
-					MessageBox.Show(device_info.ToString(), "report slave ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					return true;
-				}
-			}
-		
-			return false;
-		}
-		
 		public bool is_sh_z_002()
 		{
 			Result mb_result;
 			byte byte_count;
 			byte[] device_info = new byte[256];
 			
-			return true;
 			var modebus_client = new WSMBTControl();
 			modebus_client.ResponseTimeout = 500;
 			modebus_client.ConnectTimeout = 500;
@@ -147,6 +121,16 @@ namespace config
 			}
 		
 			return false;
+		}
+		
+		public bool is_sh_z_002(string mac_address)
+		{
+			if (mac_address.StartsWith("02:80:E1:")) {
+				return true;		
+			} else {
+				return false;
+			}
+			
 		}
 		
 		public sh_z_002(IPAddress ipAddress, int port, PhysicalAddress physicalAddress)
