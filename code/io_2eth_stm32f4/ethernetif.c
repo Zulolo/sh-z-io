@@ -302,7 +302,7 @@ static void low_level_init(struct netif *netif)
 /* USER CODE END PHY_PRE_CONFIG */
   
 
-  /* Read Register Configuration */
+//  /* Read Register Configuration */
 //  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
 //  regvalue |= (PHY_ISFR_INT4);
 

@@ -74,7 +74,7 @@ namespace config
 				 		var from_ip_addr = arp.SenderProtocolAddress;
 				 		var dst_hw_addr = arp.TargetHardwareAddress;
 				 		var dst_ip_addr = arp.TargetProtocolAddress;
-				 		if ((0x02 == from_hw_addr.GetAddressBytes()[0]) && (0x01 == from_hw_addr.GetAddressBytes()[1]) && (0x71 == from_hw_addr.GetAddressBytes()[2])) {
+				 		if ((0x02 == from_hw_addr.GetAddressBytes()[0]) && (0x80 == from_hw_addr.GetAddressBytes()[1]) && (0xE1 == from_hw_addr.GetAddressBytes()[2])) {
 				 			if (!arp_devices_ip.Contains(from_ip_addr)) {
 				 				arp_devices_ip.Add(from_ip_addr);
 				 				arp_devices.Add(new sh_z_002(from_ip_addr, 502, from_hw_addr));

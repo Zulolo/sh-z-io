@@ -163,7 +163,18 @@ int FWU_get_fw_version_FS(const char* pFileName) {
 	uint32_t unCalculatedCRC;
 	uint32_t unBuf[64];
 	int nReadCNT;	
+	
+	spiffs_DIR d;
+	struct spiffs_dirent e;
+	struct spiffs_dirent *pe = &e;
+	
 	spiffs_file fd = -1;
+	
+	SPIFFS_opendir(&SPI_FFS_fs, "/", &d);
+	while ((pe = SPIFFS_readdir(&d, pe)) != NULL) {
+		printf("Search files in / -- %s \n", (char *)pe->name);
+	}
+	SPIFFS_closedir(&d);
 	
 	fd = SPIFFS_open(&SPI_FFS_fs, pFileName, SPIFFS_RDONLY, 0);
 	if (fd >= 0) {
@@ -191,6 +202,7 @@ int FWU_get_fw_version_FS(const char* pFileName) {
 			return (-1);
 		}
 	} else {
+		printf("errno %i\n", SPIFFS_errno(&SPI_FFS_fs));
 		return (-1);
 	}
 }
@@ -289,7 +301,7 @@ int FWU_upgrade(char* file_name) {
 	// read binary file from external flash 
 	// and write to internal flash
 	FLASH_EraseInitTypeDef EraseInitStruct;
-	fw_header tFW_Herdaer;
+	fw_header tFW_Header;
 	uint32_t SectorError = 0;
 	uint32_t unBuf[64];
 	int nReadCNT;	
@@ -325,12 +337,12 @@ int FWU_upgrade(char* file_name) {
 	//program
 	fd = SPIFFS_open(&SPI_FFS_fs, file_name, SPIFFS_RDONLY, 0);
 	if (fd >= 0) {
-		// program header to end of flash
-		unFlashAddress = APPLICATION_CRC_ADDRESS;
-		nReadCNT = SPIFFS_read(&SPI_FFS_fs, fd, (u8_t *)(&tFW_Herdaer), sizeof(tFW_Herdaer));
+		// program header to the end of flash
+		unFlashAddress = APPLICATION_MAGIC_NUM_ADDRESS;
+		nReadCNT = SPIFFS_read(&SPI_FFS_fs, fd, (u8_t *)(&tFW_Header), sizeof(tFW_Header));
 		for (unIndex = 0; unIndex < (nReadCNT/sizeof(uint32_t)); unIndex++) {
 			taskENTER_CRITICAL();
-			HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, unFlashAddress, *((uint32_t *)(&tFW_Herdaer) + unIndex));
+			HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, unFlashAddress, *((uint32_t *)(&tFW_Header) + unIndex));
 			taskEXIT_CRITICAL();
 			unFlashAddress += 4;
 		}

@@ -395,7 +395,7 @@ void StartDefaultTask(void const * argument)
 	
 	nExtFW_Ver = FWU_get_fw_version_FS(UPDATE_FILE_NAME);
 	if (nExtFW_Ver > 0) {
-		printf("FW found in external flash, upgrad!\n");
+		printf("FW found in external flash, upgrade!\n");
 		FWU_upgrade(UPDATE_FILE_NAME);
 		SPIFFS_remove(&SPI_FFS_fs, UPDATE_FILE_NAME);
 		FWU_run_app();
