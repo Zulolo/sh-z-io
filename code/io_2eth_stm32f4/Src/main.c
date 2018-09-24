@@ -55,9 +55,9 @@
 /* USER CODE BEGIN Includes */
 #include "spi_flash.h"
 #include "spiffs.h"
-#include "cJSON.h"
 #include "lwip/apps/tftp_server.h"
 #include "di_monitor.h"
+#include "utility.h"
 
 /* USER CODE END Includes */
 
@@ -87,9 +87,10 @@ osMutexId WebServerFileMutexHandle;
 /* Private variables ---------------------------------------------------------*/
 EventGroupHandle_t xDiEventGroup;
 EventGroupHandle_t xComEventGroup;
-char SH_Z_002_SN[SH_Z_SN_LEN + 1] = "SHZ002.201809190";
+
 extern struct netif gnetif;
 extern spiffs SPI_FFS_fs;
+extern const struct tftp_context TFTP_Ctx;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -118,128 +119,9 @@ void send_GARP(void const * argument);
 ////	printf("send GARP timer leave\n");
 //}
 
-static void* tftp_file_open(const char* fname, const char* mode, u8_t write) {
-	spiffs_file nFileHandle;
-	osMutexWait(WebServerFileMutexHandle, osWaitForever);
-	if (write) {
-		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_CREAT | SPIFFS_TRUNC | SPIFFS_RDWR, 0);
-		printf("errno %d\n", SPIFFS_errno(&SPI_FFS_fs));
-	} else {
-		nFileHandle = SPIFFS_open(&SPI_FFS_fs, fname, SPIFFS_RDONLY, 0);
-	}
-	if (nFileHandle <= 0 ) {
-		osMutexRelease(WebServerFileMutexHandle);
-		return NULL;
-	} else {
-		return ((void*)((uint32_t)nFileHandle));
-	}	
-}
 
-static void tftp_file_close(void* handle) {
-	SPIFFS_close(&SPI_FFS_fs, (spiffs_file)handle);
-	osMutexRelease(WebServerFileMutexHandle);
-}
 
-static int tftp_file_read(void* handle, void* buf, int bytes) {
-	int res;
-	res = SPIFFS_read(&SPI_FFS_fs, (spiffs_file)handle, (u8_t *)buf, bytes);
-	return res;
-}
 
-static int tftp_file_write(void* handle, struct pbuf* p) {
-	return SPIFFS_write(&SPI_FFS_fs, (spiffs_file)handle, p->payload, p->len);
-}
-
-const struct tftp_context TFTP_Ctx = {.open = tftp_file_open, .close = tftp_file_close, .read = tftp_file_read, .write = tftp_file_write};
-
-static int create_default_sh_z_002_info(void) {
-	spiffs_file tFileDesc;
-    char* pJsonString = NULL;
-    cJSON* pSN = NULL;
-	cJSON* pDI_ConfJsonWriter;
-	
-	tFileDesc = SPIFFS_open(&SPI_FFS_fs, SH_Z_002_INFO_FILE_NAME, SPIFFS_RDWR | SPIFFS_CREAT, 0);
-
-	pDI_ConfJsonWriter = cJSON_CreateObject();
-	if (pDI_ConfJsonWriter == NULL){
-		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-		printf("failed to create json root object.\n");
-		return (-1);
-	}
-
-    pSN = cJSON_CreateString("123456789ABCDEFG");
-    if (pSN == NULL){
-		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-		cJSON_Delete(pDI_ConfJsonWriter);
-		printf("failed to create json latch set object.\n");
-		return (-1);
-    }	
-	cJSON_AddItemToObject(pDI_ConfJsonWriter, DEVICE_SN_JSON_TAG, pSN);
-	
-	pJsonString = cJSON_Print(pDI_ConfJsonWriter);
-    if (pJsonString == NULL){
-		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-		cJSON_Delete(pDI_ConfJsonWriter);
-		printf("failed to digest json object.\n");
-		return (-1);
-    }
-	
-	if (SPIFFS_write(&SPI_FFS_fs, tFileDesc, pJsonString, strlen(pJsonString)) < 0 ) {
-		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-		cJSON_Delete(pDI_ConfJsonWriter);
-		free(pJsonString);
-		printf("failed to write digested json string to file.\n");
-		return (-1);		
-	}
-	SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-	cJSON_Delete(pDI_ConfJsonWriter);
-	free(pJsonString);
-	return (0);	
-}
-
-static int load_sh_z_002_info(spiffs_file tFileDesc) {
-    cJSON* pSN = NULL;
-    cJSON* pDI_ConfJson;
-	char cConfString[256];
-	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
-	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
-		printf("%d char was read from conf file.\n", nReadNum);
-		return (-1);		
-	}
-
-	pDI_ConfJson = cJSON_Parse(cConfString);
-    if (pDI_ConfJson == NULL) {
-        const char *error_ptr = cJSON_GetErrorPtr();
-        if (error_ptr != NULL){
-            printf("Error before: %s\n", error_ptr);
-        }
-        return (-1);
-    }
-
-    pSN = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DEVICE_SN_JSON_TAG);
-    if (cJSON_IsString(pSN)){
-		strncpy(SH_Z_002_SN, pSN->valuestring, sizeof(SH_Z_002_SN));
-		SH_Z_002_SN[SH_Z_SN_LEN] = '\0';
-    }	
-	
-	cJSON_Delete(pDI_ConfJson);
-	return 0;
-	
-}
-
-static void sh_z_002_info_init(void) {
-	spiffs_file tFileDesc;
-	
-	tFileDesc = SPIFFS_open(&SPI_FFS_fs, SH_Z_002_INFO_FILE_NAME, SPIFFS_RDONLY, 0);
-	if (tFileDesc < 0) {
-		// file not exist, save default configuration
-		create_default_sh_z_002_info();
-	} else {
-		// file exist, not first time run
-		load_sh_z_002_info(tFileDesc);
-		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
-	}	
-}
 
 /* USER CODE END 0 */
 
@@ -639,13 +521,16 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
+	printf("Main app default task start.\n");
+	spiffs_init();
+	UTL_sh_z_002_info_init();
+	UTL_sh_z_002_eth_conf_init();
+	
   /* init code for LWIP */
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
-	printf("Main app default task start.\n");
-	spiffs_init();
-	sh_z_002_info_init();
+
 	tftp_init(&TFTP_Ctx);	
   /* Infinite loop */
   for(;;)

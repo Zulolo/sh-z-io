@@ -34,12 +34,13 @@ namespace config
 		{
 		    scan_result.Columns["device_port"].Visible = false;
 		    scan_result.Columns["progress"].Visible = false;
+		    scan_result.Columns["device_status"].Visible = false;
 		    scan_result.Columns["isSelected"].DisplayIndex = 0;
 		    scan_result.Columns["isSelected"].Width = 40;
 		    scan_result.Columns["device_ip"].DisplayIndex = 1;
-		    scan_result.Columns["device_ip"].ReadOnly = true;
+//		    scan_result.Columns["device_ip"].ReadOnly = true;
 		    scan_result.Columns["device_mac"].DisplayIndex = 2;
-		    scan_result.Columns["device_mac"].ReadOnly = true;
+//		    scan_result.Columns["device_mac"].ReadOnly = true;
 		    if (!scan_result.Columns.Contains(Progress)) {
 		    	scan_result.Columns.Add(Progress);
 		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
@@ -80,6 +81,7 @@ namespace config
 			openUpdate.Enabled = false;
 			startUpdate.Enabled = false;
 			scan_result.Enabled = false;
+			set_device.Enabled = false;
 			scan_progress.Visible = true;
 			
 			CaptureDeviceList network_devices = CaptureDeviceList.Instance;
@@ -121,6 +123,7 @@ namespace config
 			openUpdate.Enabled = true;
 			startUpdate.Enabled = true;
 			scan_result.Enabled = true;
+			set_device.Enabled = true;
 			scan_progress.Visible = false;			
 		}
 
@@ -147,11 +150,20 @@ namespace config
 				sh_z_002_dev.update(update_file_name);	//, update_dev_up_progress);
 			}
 		}
+		
+		private void set_sh_z_002(sh_z_002 sh_z_002_dev) 
+		{			
+			if(sh_z_002_dev.ok_to_config()) {
+				sh_z_002_dev.config_device();	//, update_dev_up_progress);
+			}
+		}
+		
 		void StartUpdateClick(object sender, EventArgs e)
 		{
 			start_scan.Enabled = false;
 			openUpdate.Enabled = false;
 			startUpdate.Enabled = false;
+			set_device.Enabled = false;
 			scan_result.Enabled = false;
 			if ((update_file_name != "") && File.Exists(update_file_name)) {	// && is_sh_z_002_fw(update_file_name)) {
 				var tasks = new List<Task>();
@@ -191,7 +203,38 @@ namespace config
 			start_scan.Enabled = true;
 			openUpdate.Enabled = true;
 			startUpdate.Enabled = true;
+			set_device.Enabled = true;
 			scan_result.Enabled = true;
+		}
+		
+		void Set_deviceClick(object sender, EventArgs e)
+		{
+			start_scan.Enabled = false;
+			openUpdate.Enabled = false;
+			startUpdate.Enabled = false;
+			set_device.Enabled = false;
+			scan_result.Enabled = false;
+
+			var tasks = new List<Task>();
+			int non_main_app_count = 0;
+			foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
+				if (sh_z_002_obj.isSelected && (sh_z_002_obj.device_status == DeviceStatus.sh_z_002_main_app)) {
+					tasks.Add(Task.Factory.StartNew(() => set_sh_z_002(sh_z_002_obj)));
+				}
+				if (sh_z_002_obj.device_status != DeviceStatus.sh_z_002_main_app) {
+					non_main_app_count++;
+				}
+			}
+			if (non_main_app_count != 0) {
+				MessageBox.Show("有设备缺少主程序，请先进行升级！", "参数设置", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}			
+			Task.WaitAll(tasks.ToArray());
+
+			start_scan.Enabled = true;
+			openUpdate.Enabled = true;
+			startUpdate.Enabled = true;
+			set_device.Enabled = true;
+			scan_result.Enabled = true;				
 		}
 	}
 }

@@ -27,8 +27,8 @@ namespace testDriver
 //			modebus_client.timeout = 300;
 			modebus_client.connect("192.168.0.118", 502, false);
 			if (modebus_client.connected) {
-				modebus_client.ReadInputRegister(mb_id, 1, 40100, 4, ref device_info);
-//				modebus_client.ReportSlaveID(mb_id, 1, ref device_info);
+//				modebus_client.ReadInputRegister(mb_id, 1, 40100, 4, ref device_info);
+				modebus_client.ReportSlaveID(mb_id, 1, ref device_info);
 //				mb_id++;
 //				if (device_info != null) {
 //					// check slave ID and maybe also sub slave ID	

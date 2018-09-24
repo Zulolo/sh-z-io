@@ -21,6 +21,7 @@ namespace config
 		private System.Windows.Forms.OpenFileDialog openUpdateFileDialog;
 		private System.Windows.Forms.Button openUpdate;
 		private System.Windows.Forms.Button startUpdate;
+		private System.Windows.Forms.Button set_device;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -51,6 +52,7 @@ namespace config
 			this.openUpdateFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.openUpdate = new System.Windows.Forms.Button();
 			this.startUpdate = new System.Windows.Forms.Button();
+			this.set_device = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.scan_result)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -111,11 +113,22 @@ namespace config
 			this.startUpdate.UseVisualStyleBackColor = true;
 			this.startUpdate.Click += new System.EventHandler(this.StartUpdateClick);
 			// 
+			// set_device
+			// 
+			this.set_device.Location = new System.Drawing.Point(251, 12);
+			this.set_device.Name = "set_device";
+			this.set_device.Size = new System.Drawing.Size(75, 23);
+			this.set_device.TabIndex = 6;
+			this.set_device.Text = "Set";
+			this.set_device.UseVisualStyleBackColor = true;
+			this.set_device.Click += new System.EventHandler(this.Set_deviceClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(548, 331);
+			this.Controls.Add(this.set_device);
 			this.Controls.Add(this.startUpdate);
 			this.Controls.Add(this.openUpdate);
 			this.Controls.Add(this.scan_result);

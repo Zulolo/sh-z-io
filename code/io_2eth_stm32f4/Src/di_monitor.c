@@ -199,9 +199,9 @@ static int di_conf_wr_conf_file(spiffs_file tFileDesc) {
 }
 
 static int di_conf_load(spiffs_file tFileDesc) {
-    cJSON* pLatchSet = NULL;
+	cJSON* pLatchSet = NULL;
 	cJSON* pCNT_Enable = NULL;
-    cJSON* pDI_ConfJson;
+	cJSON* pDI_ConfJson;
 	char cConfString[512];
 	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
 	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
@@ -210,27 +210,27 @@ static int di_conf_load(spiffs_file tFileDesc) {
 	}
 
 	pDI_ConfJson = cJSON_Parse(cConfString);
-    if (pDI_ConfJson == NULL) {
-        const char *error_ptr = cJSON_GetErrorPtr();
-        if (error_ptr != NULL){
-            printf("Error before: %s\n", error_ptr);
-        }
-        return (-1);
-    }
+	if (pDI_ConfJson == NULL) {
+		const char *error_ptr = cJSON_GetErrorPtr();
+		if (error_ptr != NULL){
+			printf("Error before: %s\n", error_ptr);
+		}
+		return (-1);
+	}
 
-    pLatchSet = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DI_CONF_LATCH_SET_JSON_TAG);
-    if (cJSON_IsNumber(pLatchSet)){
+	pLatchSet = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DI_CONF_LATCH_SET_JSON_TAG);
+	if (cJSON_IsNumber(pLatchSet)){
 		osMutexWait(DI_DataAccessHandle, osWaitForever);
-        DI_LatchSet = (uint32_t)(pLatchSet->valuedouble);
+		DI_LatchSet = (uint32_t)(pLatchSet->valuedouble);
 		osMutexRelease(DI_DataAccessHandle);
-    }	
-	
-    pCNT_Enable = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DI_CONF_CNT_ENABLE_JSON_TAG);
-    if (cJSON_IsNumber(pCNT_Enable)){
+	}	
+
+	pCNT_Enable = cJSON_GetObjectItemCaseSensitive(pDI_ConfJson, DI_CONF_CNT_ENABLE_JSON_TAG);
+	if (cJSON_IsNumber(pCNT_Enable)){
 		osMutexWait(DI_DataAccessHandle, osWaitForever);
-        DI_EnableCNT = (uint32_t)(pCNT_Enable->valuedouble);
+		DI_EnableCNT = (uint32_t)(pCNT_Enable->valuedouble);
 		osMutexRelease(DI_DataAccessHandle);
-    }
+	}
 	cJSON_Delete(pDI_ConfJson);
 	return 0;
 }

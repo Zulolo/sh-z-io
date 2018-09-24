@@ -6,6 +6,8 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
+ 
+ 
 using System;
 using System.Threading;
 using System.Net;
@@ -20,7 +22,7 @@ namespace config
 	/// Description of sh_z_002.
 	/// </summary>
 	/// 
-	enum DeviceStatus {Unknow, sh_z_002, sh_z_002_boot, sh_z_002_main_app};
+	public enum DeviceStatus {Unknow, sh_z_002, sh_z_002_boot, sh_z_002_main_app};
 	
 	public class sh_z_002
 	{
@@ -30,6 +32,7 @@ namespace config
 		private object _sync = new object();
 		private static AutoResetEvent TransferFinishedEvent = new AutoResetEvent(false);
 		private ushort mb_id = 0;
+		private const byte SH_Z_002_SLAVE_ID = 2;
 		
 		[System.ComponentModel.DisplayName("MAC Address")]
 		public string device_mac { get; set; }
@@ -39,11 +42,11 @@ namespace config
 		public bool isStaticIP { get; set; }		
 		[System.ComponentModel.DisplayName("IP Address")]
 		public IPAddress device_ip { get; set; }
-		[System.ComponentModel.DisplayName("Port")]		
-		public int device_port { get; set; }
+	
+		public int device_port { get; set; }		
+		public DeviceStatus device_status { get; set; }
 		
 		private TFTPSession tftp_client = new TFTPSession();
-		private DeviceStatus device_status = DeviceStatus.Unknow;
 		
 		public int progress { 
 			get {lock (_sync) { return update_progress; }}
@@ -55,6 +58,11 @@ namespace config
         	return true;
         }
 
+        public bool ok_to_config()
+        {
+        	return true;
+        }
+        
         // Transfer delegate methods
         private void _session_Connected()
         {
@@ -108,6 +116,11 @@ namespace config
 			tftp_client.Put(tOptions);   
 //			TransferFinishedEvent.WaitOne();			
         }
+        
+        public void config_device()	//, Action<string, int> updatProgress)
+        {
+        			
+        }
 		
 		public bool is_sh_z_002()
 		{
@@ -117,15 +130,18 @@ namespace config
 			
 			var modebus_client = new ModbusTCP.Master();
 			modebus_client.timeout = 300;
-			modebus_client.connect(this.device_ip.ToString(), (ushort)this.device_port, true);
+			modebus_client.connect(this.device_ip.ToString(), (ushort)this.device_port, false);
 			if (modebus_client.connected) {
-				modebus_client.ReportSlaveID(mb_id, 1, ref device_info);
-				mb_id++;
+				modebus_client.ReportSlaveID(mb_id++, 1, ref device_info);
 				if (device_info != null) {
 					// check slave ID and maybe also sub slave ID	
-					MessageBox.Show(device_info.ToString(), "report slave ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					modebus_client.disconnect();
-					return true;
+					if (device_info[0] == SH_Z_002_SLAVE_ID) {
+						modebus_client.disconnect();
+						return true;
+					} else {
+						modebus_client.disconnect();
+						return false;
+					}
 				} 
 				modebus_client.disconnect();
 			}
@@ -154,6 +170,7 @@ namespace config
 			this.device_ip = ipAddress;
 			this.device_port = port;
 			this.device_mac = BitConverter.ToString(physicalAddress.GetAddressBytes()).Replace('-', ':');
+			device_status = DeviceStatus.Unknow;
 //			modebus_client = new ModbusClient(ipAddress, port);
 		}
 	}

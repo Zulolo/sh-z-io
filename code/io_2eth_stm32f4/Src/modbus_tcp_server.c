@@ -402,12 +402,13 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 }			   
 							   
 void start_modbus_tcp_server(void const * argument) {
-	static char cReportSlaveID[SH_Z_SN_LEN + 2 + 1];
+	static uint8_t cReportSlaveID[SH_Z_SN_LEN + 2];
 	eMBErrorCode    xStatus;
 
-	snprintf(cReportSlaveID, sizeof(cReportSlaveID), "%02X%s", SH_Z_002_VERSION, SH_Z_002_SN);
-	cReportSlaveID[sizeof(cReportSlaveID) - 1] = '\0';
-	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, (uint8_t *)cReportSlaveID, strlen(cReportSlaveID));
+	cReportSlaveID[0] = (SH_Z_002_VERSION >> 8) & 0xFF;
+	cReportSlaveID[1] = SH_Z_002_VERSION & 0xFF;
+	memcpy(cReportSlaveID + 2, SH_Z_002_SN, SH_Z_SN_LEN);
+	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, cReportSlaveID, sizeof(cReportSlaveID));
 	
 	if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR ) {
 		printf( "%s: can't initialize modbus stack!\r\n", PROG );
