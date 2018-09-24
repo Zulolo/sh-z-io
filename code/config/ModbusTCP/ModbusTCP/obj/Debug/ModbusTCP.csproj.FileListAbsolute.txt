@@ -1,0 +1,10 @@
+G:\Work\io\ref_code\modbusTCP\ModbusTCP\ModbusTCP\bin\Debug\ModbusTCP.dll
+G:\Work\io\ref_code\modbusTCP\ModbusTCP\ModbusTCP\bin\Debug\ModbusTCP.pdb
+G:\Work\io\ref_code\modbusTCP\ModbusTCP\ModbusTCP\obj\Debug\ModbusTCP.csprojResolveAssemblyReference.cache
+G:\Work\io\ref_code\modbusTCP\ModbusTCP\ModbusTCP\obj\Debug\ModbusTCP.dll
+G:\Work\io\ref_code\modbusTCP\ModbusTCP\ModbusTCP\obj\Debug\ModbusTCP.pdb
+G:\Work\io\design\code\config\ModbusTCP\ModbusTCP\bin\Debug\ModbusTCP.dll
+G:\Work\io\design\code\config\ModbusTCP\ModbusTCP\bin\Debug\ModbusTCP.pdb
+G:\Work\io\design\code\config\ModbusTCP\ModbusTCP\obj\Debug\ModbusTCP.csprojResolveAssemblyReference.cache
+G:\Work\io\design\code\config\ModbusTCP\ModbusTCP\obj\Debug\ModbusTCP.dll
+G:\Work\io\design\code\config\ModbusTCP\ModbusTCP\obj\Debug\ModbusTCP.pdb

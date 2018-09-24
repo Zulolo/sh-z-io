@@ -77,6 +77,9 @@ namespace config
 		void Start_scanClick(object sender, EventArgs e)
 		{
 			start_scan.Enabled = false;
+			openUpdate.Enabled = false;
+			startUpdate.Enabled = false;
+			scan_result.Enabled = false;
 			scan_progress.Visible = true;
 			
 			CaptureDeviceList network_devices = CaptureDeviceList.Instance;
@@ -115,6 +118,9 @@ namespace config
 				AdjustColumnOrder();						
 			}
 			start_scan.Enabled = true;
+			openUpdate.Enabled = true;
+			startUpdate.Enabled = true;
+			scan_result.Enabled = true;
 			scan_progress.Visible = false;			
 		}
 
@@ -143,6 +149,10 @@ namespace config
 		}
 		void StartUpdateClick(object sender, EventArgs e)
 		{
+			start_scan.Enabled = false;
+			openUpdate.Enabled = false;
+			startUpdate.Enabled = false;
+			scan_result.Enabled = false;
 			if ((update_file_name != "") && File.Exists(update_file_name)) {	// && is_sh_z_002_fw(update_file_name)) {
 				var tasks = new List<Task>();
 				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
@@ -178,7 +188,10 @@ namespace config
 				}				
 				Task.WaitAll(tasks.ToArray());
 			}
-
+			start_scan.Enabled = true;
+			openUpdate.Enabled = true;
+			startUpdate.Enabled = true;
+			scan_result.Enabled = true;
 		}
 	}
 }

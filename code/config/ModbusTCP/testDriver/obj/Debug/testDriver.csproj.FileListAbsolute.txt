@@ -1,0 +1,8 @@
+G:\Work\io\design\code\config\ModbusTCP\testDriver\obj\Debug\testDriver.csprojResolveAssemblyReference.cache
+G:\Work\io\design\code\config\ModbusTCP\testDriver\bin\Debug\testDriver.exe.config
+G:\Work\io\design\code\config\ModbusTCP\testDriver\bin\Debug\testDriver.exe
+G:\Work\io\design\code\config\ModbusTCP\testDriver\bin\Debug\testDriver.pdb
+G:\Work\io\design\code\config\ModbusTCP\testDriver\bin\Debug\ModbusTCP.dll
+G:\Work\io\design\code\config\ModbusTCP\testDriver\bin\Debug\ModbusTCP.pdb
+G:\Work\io\design\code\config\ModbusTCP\testDriver\obj\Debug\testDriver.exe
+G:\Work\io\design\code\config\ModbusTCP\testDriver\obj\Debug\testDriver.pdb
