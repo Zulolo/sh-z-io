@@ -10,14 +10,14 @@
 
 #define SH_Z_002_VERSION					((uint16_t)0x0100)
 
-#define SH_Z_002_INFO_FILE_NAME		"info.json"
-#define SH_Z_002_CONF_FILE_NAME		"conf.json"
+#define SH_Z_002_INFO_FILE_NAME				"info.json"
+#define SH_Z_002_ETH_CONF_FILE_NAME		"conf.json"
 
-#define CONF_STATIC_IP_JSON_TAG		"static_ip"
-#define CONF_IP_ADDR_JSON_TAG			"ip_addr"
-#define CONF_NETMASK_JSON_TAG			"netmask"
-#define CONF_GW_ADDR_JSON_TAG			"gw_addr"
-#define CONF_MAC_ADDR_JSON_TAG		"mac_addr"
+#define CONF_STATIC_IP_JSON_TAG				"static_ip"
+#define CONF_IP_ADDR_JSON_TAG					"ip_addr"
+#define CONF_NETMASK_JSON_TAG					"netmask"
+#define CONF_GW_ADDR_JSON_TAG					"gw_addr"
+#define CONF_MAC_ADDR_JSON_TAG				"mac_addr"
 
 typedef struct {
   unsigned short bStaticIP : 1;

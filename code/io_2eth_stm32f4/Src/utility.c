@@ -92,12 +92,85 @@ static int create_default_sh_z_002_info(void) {
 	return (0);	
 }
 
+int UTL_create_byte_array_json(cJSON* pJsonWriter, char* pNodeName, uint8_t* pByteArray, uint32_t uArrayLength) {
+	cJSON* pArray = NULL;
+	cJSON* pSubItem = NULL;
+  pArray = cJSON_AddArrayToObject(pJsonWriter, pNodeName);
+	if (pArray == NULL) {
+		return (-1);
+	}
+
+	for (int index = 0; index < uArrayLength; ++index) {
+		pSubItem = cJSON_CreateObject();
+		if (cJSON_AddNumberToObject(pSubItem, "index", index) == NULL) {
+			return (-1);
+		}
+
+		if(cJSON_AddNumberToObject(pSubItem, "value", pByteArray[index]) == NULL) {
+			return (-1);
+		}
+		cJSON_AddItemToArray(pArray, pSubItem);
+	}
+	return 0;
+}
+
 int UTL_save_eth_conf(ETH_Conf_t* pEthConf) {
 	spiffs_file tFileDesc;
   char* pJsonString = NULL;
-  cJSON* pSN = NULL;
-	cJSON* pDI_ConfJsonWriter;
-	return 0;
+	int nRslt;
+	cJSON* pEthConfJsonWriter;
+	
+	tFileDesc = SPIFFS_open(&SPI_FFS_fs, SH_Z_002_ETH_CONF_FILE_NAME, SPIFFS_RDWR | SPIFFS_CREAT, 0);
+	
+	pEthConfJsonWriter = cJSON_CreateObject();
+	if (pEthConfJsonWriter == NULL){
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		printf("failed to create json root object.\n");
+		return (-1);
+	}
+	
+	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_MAC_ADDR_JSON_TAG, 
+		tEthConf.uMAC_Addr, sizeof(tEthConf.uMAC_Addr)/sizeof(uint8_t));
+	
+	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_IP_ADDR_JSON_TAG, 
+		tEthConf.uIP_Addr, sizeof(tEthConf.uIP_Addr)/sizeof(uint8_t));
+		
+	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_NETMASK_JSON_TAG, 
+		tEthConf.uNetmask, sizeof(tEthConf.uNetmask)/sizeof(uint8_t));
+		
+	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_GW_ADDR_JSON_TAG, 
+		tEthConf.uGateway, sizeof(tEthConf.uGateway)/sizeof(uint8_t));
+	
+	if (cJSON_AddBoolToObject(pEthConfJsonWriter, CONF_STATIC_IP_JSON_TAG, tEthConf.bStaticIP) == NULL) {
+		nRslt = -1;
+	}
+	
+	if (nRslt < 0) {
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to create ETH conf json object.\n");
+		return (-1);		
+	}
+	
+	pJsonString = cJSON_Print(pEthConfJsonWriter);
+	if (pJsonString == NULL){
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to digest json object.\n");
+		return (-1);
+	}
+	
+	if (SPIFFS_write(&SPI_FFS_fs, tFileDesc, pJsonString, strlen(pJsonString)) < 0 ) {
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		free(pJsonString);
+		printf("failed to write digested json string to file.\n");
+		return (-1);		
+	}
+	SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+	cJSON_Delete(pEthConfJsonWriter);
+	free(pJsonString);
+	return (0);	
 }
 	
 int UTL_create_default_eth_conf(void) {
@@ -113,9 +186,7 @@ int UTL_create_default_eth_conf(void) {
 	tEthConf.uMAC_Addr[4] = 0x05;
 	tEthConf.uMAC_Addr[5] = 0x24;
 	
-	UTL_save_eth_conf(&tEthConf);
-	
-	return (0);	
+	return UTL_save_eth_conf(&tEthConf);
 }
 
 static int load_sh_z_002_info(spiffs_file tFileDesc) {
@@ -149,17 +220,32 @@ static int load_sh_z_002_info(spiffs_file tFileDesc) {
 	return 0;
 }
 
-static int load_sh_z_002_eth_conf(spiffs_file tFileDesc) {
-  cJSON* pMAC = NULL;
-	cJSON* pIP = NULL;
-	cJSON* pNetmask = NULL;
-	cJSON* pGateway = NULL;
-	cJSON* pStatic = NULL;
+int UTL_get_byte_from_array_json(cJSON* pArrayJson, uint8_t* pByteArray, uint32_t uArrayLength) {
 	cJSON* pSubItem = NULL;
 	cJSON* pIndex = NULL;
 	cJSON* pValue = NULL;
+	cJSON_ArrayForEach(pSubItem, pArrayJson){
+		pValue = cJSON_GetObjectItem(pSubItem, "value");
+		pIndex = cJSON_GetObjectItem(pSubItem, "index");
+		if ((pValue != NULL) && (pIndex != NULL)) {
+			if (pIndex->valueint < uArrayLength) {
+				pByteArray[pIndex->valueint] = pValue->valueint;
+			} else {
+				// TODO
+				return (-1);
+			}
+		} else {
+			// TODO
+			return (-1);
+		}
+	} 
+	return 0;
+}
+
+static int load_sh_z_002_eth_conf(spiffs_file tFileDesc) {
+	cJSON* pStatic = NULL;
   cJSON* pETH_ConfJson;
-	int i;
+
 	char cConfString[256];
 	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
 	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
@@ -185,65 +271,18 @@ static int load_sh_z_002_eth_conf(spiffs_file tFileDesc) {
 		// TODO
 	}
 	
-	pIP = cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_IP_ADDR_JSON_TAG);
-	cJSON_ArrayForEach(pSubItem, pIP){
-		pValue = cJSON_GetObjectItem(pSubItem, "value");
-		pIndex = cJSON_GetObjectItem(pSubItem, "index");
-		if ((pValue != NULL) && (pIndex != NULL)) {
-			if (pIndex->valueint < (sizeof(tEthConf.uIP_Addr)/sizeof(unsigned char))) {
-				tEthConf.uIP_Addr[pIndex->valueint] = pValue->valueint;
-			} else {
-				// TODO
-			}
-		} else {
-			// TODO
-		}
-	} 
+	UTL_get_byte_from_array_json(cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_IP_ADDR_JSON_TAG), 
+		tEthConf.uIP_Addr, sizeof(tEthConf.uIP_Addr)/sizeof(uint8_t));
 	
-	pNetmask = cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_NETMASK_JSON_TAG);
-	cJSON_ArrayForEach(pSubItem, pNetmask){
-		pValue = cJSON_GetObjectItem(pSubItem, "value");
-		pIndex = cJSON_GetObjectItem(pSubItem, "index");
-		if ((pValue != NULL) && (pIndex != NULL)) {
-			if (pIndex->valueint < (sizeof(tEthConf.uNetmask)/sizeof(unsigned char))) {
-				tEthConf.uNetmask[pIndex->valueint] = pValue->valueint;
-			} else {
-				// TODO
-			}
-		} else {
-			// TODO
-		}
-	} 
+	UTL_get_byte_from_array_json(cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_NETMASK_JSON_TAG), 
+		tEthConf.uNetmask, sizeof(tEthConf.uNetmask)/sizeof(uint8_t));
 	
-	pGateway = cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_GW_ADDR_JSON_TAG);
-	cJSON_ArrayForEach(pSubItem, pGateway){
-		pValue = cJSON_GetObjectItem(pSubItem, "value");
-		pIndex = cJSON_GetObjectItem(pSubItem, "index");
-		if ((pValue != NULL) && (pIndex != NULL)) {
-			if (pIndex->valueint < (sizeof(tEthConf.uGateway)/sizeof(unsigned char))) {
-				tEthConf.uGateway[pIndex->valueint] = pValue->valueint;
-			} else {
-				// TODO
-			}
-		} else {
-			// TODO
-		}
-	} 
+	UTL_get_byte_from_array_json(cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_GW_ADDR_JSON_TAG), 
+		tEthConf.uGateway, sizeof(tEthConf.uGateway)/sizeof(uint8_t));
 	
-	pMAC = cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_MAC_ADDR_JSON_TAG);
-	cJSON_ArrayForEach(pSubItem, pMAC){
-		pValue = cJSON_GetObjectItem(pSubItem, "value");
-		pIndex = cJSON_GetObjectItem(pSubItem, "index");
-		if ((pValue != NULL) && (pIndex != NULL)) {
-			if (pIndex->valueint < (sizeof(tEthConf.uMAC_Addr)/sizeof(unsigned char))) {
-				tEthConf.uMAC_Addr[pIndex->valueint] = pValue->valueint;
-			} else {
-				// TODO
-			}
-		} else {
-			// TODO
-		}
-	} 
+	UTL_get_byte_from_array_json(cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_MAC_ADDR_JSON_TAG), 
+		tEthConf.uMAC_Addr, sizeof(tEthConf.uMAC_Addr)/sizeof(uint8_t));
+
 	cJSON_Delete(pETH_ConfJson);
 	return 0;
 }
@@ -267,7 +306,7 @@ void UTL_sh_z_002_info_init(void) {
 void UTL_sh_z_002_eth_conf_init(void) {
 	spiffs_file tFileDesc;
 	
-	tFileDesc = SPIFFS_open(&SPI_FFS_fs, SH_Z_002_CONF_FILE_NAME, SPIFFS_RDONLY, 0);
+	tFileDesc = SPIFFS_open(&SPI_FFS_fs, SH_Z_002_ETH_CONF_FILE_NAME, SPIFFS_RDONLY, 0);
 	if (tFileDesc < 0) {
 		// file not exist, save default configuration
 		UTL_create_default_eth_conf();
