@@ -129,20 +129,43 @@ int UTL_save_eth_conf(ETH_Conf_t* pEthConf) {
 		return (-1);
 	}
 	
-	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_MAC_ADDR_JSON_TAG, 
-		tEthConf.uMAC_Addr, sizeof(tEthConf.uMAC_Addr)/sizeof(uint8_t));
+	if (UTL_create_byte_array_json(pEthConfJsonWriter, CONF_MAC_ADDR_JSON_TAG, 
+		tEthConf.uMAC_Addr, sizeof(tEthConf.uMAC_Addr)/sizeof(uint8_t)) < 0 ) {
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to create MAC json object.\n");
+		return (-1);			
+	}
 	
-	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_IP_ADDR_JSON_TAG, 
-		tEthConf.uIP_Addr, sizeof(tEthConf.uIP_Addr)/sizeof(uint8_t));
+	if (UTL_create_byte_array_json(pEthConfJsonWriter, CONF_IP_ADDR_JSON_TAG, 
+		tEthConf.uIP_Addr, sizeof(tEthConf.uIP_Addr)/sizeof(uint8_t)) < 0 ) {
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to create IP json object.\n");
+		return (-1);			
+	}
 		
-	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_NETMASK_JSON_TAG, 
-		tEthConf.uNetmask, sizeof(tEthConf.uNetmask)/sizeof(uint8_t));
+	if (UTL_create_byte_array_json(pEthConfJsonWriter, CONF_NETMASK_JSON_TAG, 
+		tEthConf.uNetmask, sizeof(tEthConf.uNetmask)/sizeof(uint8_t)) < 0 ) {
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to create netmask json object.\n");
+		return (-1);			
+	}
 		
-	nRslt = UTL_create_byte_array_json(pEthConfJsonWriter, CONF_GW_ADDR_JSON_TAG, 
-		tEthConf.uGateway, sizeof(tEthConf.uGateway)/sizeof(uint8_t));
+	if (UTL_create_byte_array_json(pEthConfJsonWriter, CONF_GW_ADDR_JSON_TAG, 
+		tEthConf.uGateway, sizeof(tEthConf.uGateway)/sizeof(uint8_t)) < 0 ) {
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to create gateway json object.\n");
+		return (-1);			
+	}
 	
 	if (cJSON_AddBoolToObject(pEthConfJsonWriter, CONF_STATIC_IP_JSON_TAG, tEthConf.bStaticIP) == NULL) {
-		nRslt = -1;
+		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
+		cJSON_Delete(pEthConfJsonWriter);
+		printf("failed to create static IP json object.\n");
+		return (-1);
 	}
 	
 	if (nRslt < 0) {
@@ -246,7 +269,8 @@ static int load_sh_z_002_eth_conf(spiffs_file tFileDesc) {
 	cJSON* pStatic = NULL;
   cJSON* pETH_ConfJson;
 
-	char cConfString[256];
+	char cConfString[1024];
+	memset(cConfString, 0, sizeof(cConfString));
 	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
 	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
 		printf("%d char was read from conf file.\n", nReadNum);
@@ -299,8 +323,6 @@ void UTL_sh_z_002_info_init(void) {
 		load_sh_z_002_info(tFileDesc);
 		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
 	}	
-	
-
 }
 
 void UTL_sh_z_002_eth_conf_init(void) {

@@ -119,10 +119,6 @@ void send_GARP(void const * argument);
 ////	printf("send GARP timer leave\n");
 //}
 
-
-
-
-
 /* USER CODE END 0 */
 
 /**
@@ -207,7 +203,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
-	osTimerStart(GARP_TimerHandle, 5000);
+	
 
   /* USER CODE END RTOS_TIMERS */
 

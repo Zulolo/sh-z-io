@@ -8,10 +8,17 @@
 #include "ai_monitor.h"
 #include "spiffs.h"
 #include "fs_handling.h"
+#include "utility.h"
 
 #define PROG                    	"FreeModbus"
 extern spiffs SPI_FFS_fs;
+extern EventGroupHandle_t xComEventGroup;
 extern char SH_Z_002_SN[SH_Z_SN_LEN + 1];
+
+/**********************  ETH part  *************************/
+extern ETH_Conf_t tEthConf;
+
+
 /**********************  AI part  *************************/
 static uint16_t unADCxConvertedValueBuf[SH_Z_002_AI_NUM];
 static int32_t nCurrentValueBuf[SH_Z_002_AI_NUM];	// with two digital. e.g. 8.54mA is 854 in register
@@ -42,22 +49,22 @@ static uint32_t FS_FormatPwd;
 
 static eMBErrorCode get_DI_value_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
 	bDI_ValuesBuf = DI_get_DI_values();
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_DI_cnt_freq_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	DI_get_DI_cnt_freq(unDI_CNT_FreqValueBuf, SH_Z_002_DI_NUM);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_DI_enable_CNT_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	bDI_EnableCNT_Buf = DI_get_DI_enable_CNT();
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode set_DI_enable_CNT( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	DI_set_DI_enable_CNT(bDI_EnableCNT_Buf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode clear_DI_CNT( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
@@ -68,17 +75,17 @@ static eMBErrorCode clear_DI_CNT( UCHAR * pucRegBuffer, USHORT usAddress, USHORT
 		}
 	}
 	bDI_ClearCNT_Buf = 0;
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_DI_latch_set_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	bDI_LatchSet_Buf = DI_get_DI_latch_set();
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode set_DI_latch_set_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	DI_set_DI_latch_set(bDI_LatchSet_Buf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode clear_DI_latch( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
@@ -90,12 +97,12 @@ static eMBErrorCode clear_DI_latch( UCHAR * pucRegBuffer, USHORT usAddress, USHO
 //	}
 //	bDI_LatchStatus_Buf = 0;
 	DI_set_DI_latch_status(bDI_LatchStatus_Buf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_DI_latch_status_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	bDI_LatchStatus_Buf = DI_get_DI_latch_status();
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_DI_CNT_overflow_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
@@ -103,7 +110,7 @@ static eMBErrorCode get_DI_CNT_overflow_buf( UCHAR * pucRegBuffer, USHORT usAddr
 		return MB_ENOREG;
 	} else {
 		bDI_CNT_Overflow_Buf = DI_get_DI_CNT_overflow();
-		return 	MB_ENOERR;		
+		return MB_ENOERR;		
 	}
 }
 
@@ -118,67 +125,72 @@ static eMBErrorCode clear_DI_CNT_overflow( UCHAR * pucRegBuffer, USHORT usAddres
 			}
 		}
 	}
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode clear_AI_low_alarm_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_set_AI_low_alarm(bAI_LowAlarmBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_low_alarm_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	bAI_LowAlarmBuf = AI_get_AI_low_alarm();
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode clear_AI_high_alarm_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_set_AI_high_alarm(bAI_HighAlarmBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_high_alarm_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	bAI_HighAlarmBuf = AI_get_AI_high_alarm();
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_ADC_value_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_get_AI_values(unADCxConvertedValueBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_current_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_get_AI_current(nCurrentValueBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_current_high_thrld_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_get_AI_current_high_thrld(nCurrentHighThresholdBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode set_AI_current_high_thrld_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_set_AI_current_high_thrld(nCurrentHighThresholdBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_current_low_thrld_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_get_AI_current_low_thrld(nCurrentLowThresholdBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode set_AI_current_low_thrld_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_set_AI_current_low_thrld(nCurrentLowThresholdBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_current_hstrcl_max_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_get_AI_current_hstrcl_max(nCurrentHstrclMaxBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
 }
 
 static eMBErrorCode get_AI_current_hstrcl_min_buf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
 	AI_get_AI_current_hstrcl_min(nCurrentHstrclMinBuf);
-	return 	MB_ENOERR;
+	return MB_ENOERR;
+}
+
+static eMBErrorCode save_eth_conf( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs ) {
+	UTL_save_eth_conf(&tEthConf);
+	return MB_ENOERR;
 }
 
 static eMBErrorCode erase_all_spiffs_files( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils ) {
@@ -222,6 +234,7 @@ const MB_RegAccessTypeDef SH_Z_X_MB_REG[] = {
 	{161, sizeof(bDI_LatchStatus_Buf), &bDI_LatchStatus_Buf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_DI_latch_status_buf, NULL, NULL, clear_DI_latch},
 	{501, sizeof(bAI_LowAlarmBuf), &bAI_LowAlarmBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_AI_low_alarm_buf, NULL, NULL, clear_AI_low_alarm_buf},
 	{533, sizeof(bAI_HighAlarmBuf), &bAI_HighAlarmBuf, MB_TCP_SVR_FUNC_RD_COLIS_BIT | MB_TCP_SVR_FUNC_WR_COLIS_BIT, get_AI_high_alarm_buf, NULL, NULL, clear_AI_high_alarm_buf},
+	{1001, sizeof(tEthConf), &tEthConf, MB_TCP_SVR_FUNC_RD_INPUT_BIT | MB_TCP_SVR_FUNC_WR_HOLDING_BIT, NULL, NULL, NULL, save_eth_conf},
 	{40001, sizeof(unDI_CNT_FreqValueBuf), unDI_CNT_FreqValueBuf, MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_DI_cnt_freq_buf, NULL, NULL, NULL},
 	{40101, sizeof(unADCxConvertedValueBuf), unADCxConvertedValueBuf, MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_AI_ADC_value_buf, NULL, NULL, NULL},
 	{40133, sizeof(nCurrentValueBuf), nCurrentValueBuf, MB_TCP_SVR_FUNC_RD_INPUT_BIT, get_AI_current_buf, NULL, NULL, NULL},
@@ -409,6 +422,8 @@ void start_modbus_tcp_server(void const * argument) {
 	cReportSlaveID[1] = SH_Z_002_VERSION & 0xFF;
 	memcpy(cReportSlaveID + 2, SH_Z_002_SN, SH_Z_SN_LEN);
 	eMBSetSlaveID(SH_Z_002_SLAVE_ID, TRUE, cReportSlaveID, sizeof(cReportSlaveID));
+	
+	xEventGroupWaitBits(xComEventGroup, EG_ETH_NETIF_UP_BIT, pdFALSE, pdFALSE, osWaitForever );
 	
 	if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR ) {
 		printf( "%s: can't initialize modbus stack!\r\n", PROG );

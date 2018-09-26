@@ -10,6 +10,10 @@
 
 #define SH_Z_002_VERSION					((uint16_t)0x0100)
 
+/* xComEventGroup bits */
+#define EG_EXT_FLASH_SPI_OCCUPY_BIT			(0x01 << 0)
+#define EG_ETH_NETIF_UP_BIT							(0x01 << 1)
+
 #define SH_Z_002_INFO_FILE_NAME				"info.json"
 #define SH_Z_002_ETH_CONF_FILE_NAME		"conf.json"
 

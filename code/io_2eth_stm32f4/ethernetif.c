@@ -60,7 +60,7 @@
 #include "cmsis_os.h"
 /* Within 'USER CODE' section, code will be kept by default at each generation */
 /* USER CODE BEGIN 0 */
-
+#include "sh_z_002.h" 
 /* USER CODE END 0 */
 
 /* Private define ------------------------------------------------------------*/
@@ -107,7 +107,7 @@ osSemaphoreId s_xSemaphore = NULL;
 ETH_HandleTypeDef heth;
 
 /* USER CODE BEGIN 3 */
-
+extern ETH_Conf_t tEthConf;
 /* USER CODE END 3 */
 
 /* Private functions ---------------------------------------------------------*/
@@ -231,17 +231,10 @@ static void low_level_init(struct netif *netif)
   
 /* Init ETH */
 
-   uint8_t MACAddr[6] ;
   heth.Instance = ETH;
   heth.Init.AutoNegotiation = ETH_AUTONEGOTIATION_ENABLE;
   heth.Init.PhyAddress = LAN8742A_PHY_ADDRESS;
-  MACAddr[0] = 0x02;
-  MACAddr[1] = 0x80;
-  MACAddr[2] = 0xE1;
-  MACAddr[3] = 0x83;
-  MACAddr[4] = 0x05;
-  MACAddr[5] = 0x24;
-  heth.Init.MACAddr = &MACAddr[0];
+  heth.Init.MACAddr = &tEthConf.uMAC_Addr[0];
   heth.Init.RxMode = ETH_RXINTERRUPT_MODE;
   heth.Init.ChecksumMode = ETH_CHECKSUM_BY_HARDWARE;
   heth.Init.MediaInterface = ETH_MEDIA_INTERFACE_RMII;

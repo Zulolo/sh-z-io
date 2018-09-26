@@ -7,6 +7,7 @@
 #include "spiffs.h"
 
 extern spiffs SPI_FFS_fs;
+extern EventGroupHandle_t xComEventGroup;
 extern osMutexId WebServerFileMutexHandle;
 
 extern void http_server_socket_thread(void *arg);
@@ -68,7 +69,7 @@ void httpd_post_finished(void *connection, char *response_uri, u16_t response_ur
 }
 
 void start_webserver(void const * argument) {
-	
+	xEventGroupWaitBits(xComEventGroup, EG_ETH_NETIF_UP_BIT, pdFALSE, pdFALSE, osWaitForever );
 //	httpd_init();
 	http_server_socket_thread(NULL);
 }
