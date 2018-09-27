@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,LWIP_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                              ../Middlewares/Third_Party/LwIP/src/include;                              ../Middlewares/Third_Party/LwIP/system;                              ../Drivers/STM32F4xx_HAL_Driver/Inc;                              ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                              ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                              ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;                              ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                              ../Middlewares/Third_Party/FreeRTOS/Source/include;                              ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                              ../Middlewares/Third_Party/LwIP/src/include/lwip;                              ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;                              ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;                              ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;                              ../Middlewares/Third_Party/LwIP/src/include/netif;                              ../Middlewares/Third_Party/LwIP/src/include/posix;                              ../Middlewares/Third_Party/LwIP/src/include/posix/sys;                              ../Middlewares/Third_Party/LwIP/system/arch;                              ../Drivers/CMSIS/Include;                              ..\Middlewares\Third_Party\modbus\include;                              ..\Middlewares\Third_Party\modbus\port;                              ..\Middlewares\Third_Party\modbus\tcp;                              ..\Src\flash\Inc;                              ..\Middlewares\Third_Party\spiffs;                              ..\Middlewares\Third_Party\cjson;                 ../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
+              <IncludePath>../Inc;                               ../Middlewares/Third_Party/LwIP/src/include;                               ../Middlewares/Third_Party/LwIP/system;                               ../Drivers/STM32F4xx_HAL_Driver/Inc;                               ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                               ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                               ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;                               ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                               ../Middlewares/Third_Party/FreeRTOS/Source/include;                               ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                               ../Middlewares/Third_Party/LwIP/src/include/lwip;                               ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;                               ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;                               ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;                               ../Middlewares/Third_Party/LwIP/src/include/netif;                               ../Middlewares/Third_Party/LwIP/src/include/posix;                               ../Middlewares/Third_Party/LwIP/src/include/posix/sys;                               ../Middlewares/Third_Party/LwIP/system/arch;                               ../Drivers/CMSIS/Include;                               ..\Middlewares\Third_Party\modbus\include;                               ..\Middlewares\Third_Party\modbus\port;                               ..\Middlewares\Third_Party\modbus\tcp;                               ..\Src\flash\Inc;                               ..\Middlewares\Third_Party\spiffs;                               ..\Middlewares\Third_Party\cjson;                  ../Middlewares/Third_Party/LwIP/src/apps/httpd</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -447,6 +447,11 @@
               <FilePath>..\Src\fs_handling.c</FilePath>
             </File>
             <File>
+              <FileName>utility.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\utility.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -480,11 +485,6 @@
               <FileName>stm32f4xx_hal_timebase_TIM.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32f4xx_hal_timebase_TIM.c</FilePath>
-            </File>
-            <File>
-              <FileName>utility.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\utility.c</FilePath>
             </File>
           </Files>
         </Group>

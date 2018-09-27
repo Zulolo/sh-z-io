@@ -268,13 +268,14 @@ int UTL_get_byte_from_array_json(cJSON* pArrayJson, uint8_t* pByteArray, uint32_
 static int load_sh_z_002_eth_conf(spiffs_file tFileDesc) {
 	cJSON* pStatic = NULL;
   cJSON* pETH_ConfJson;
-
 	char cConfString[1024];
+	int nTotalRead = 0;
 	memset(cConfString, 0, sizeof(cConfString));
-	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, sizeof(cConfString));
-	if ((nReadNum <= 0) || (sizeof(cConfString) == nReadNum )) {
-		printf("%d char was read from conf file.\n", nReadNum);
-		return (-1);		
+	int nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString, 256);
+	nTotalRead += nReadNum;
+	while ((nReadNum > 0) && (nTotalRead < sizeof(cConfString))) {
+		nReadNum = SPIFFS_read(&SPI_FFS_fs, tFileDesc, cConfString + nTotalRead, 256);		
+		nTotalRead += nReadNum;			
 	}
 
 	pETH_ConfJson = cJSON_Parse(cConfString);
@@ -288,9 +289,9 @@ static int load_sh_z_002_eth_conf(spiffs_file tFileDesc) {
 
 	pStatic = cJSON_GetObjectItemCaseSensitive(pETH_ConfJson, CONF_STATIC_IP_JSON_TAG);
 	if (cJSON_IsFalse(pStatic)){
-		tEthConf.bStaticIP = 1;
-	}	else if (cJSON_IsTrue(pStatic)) {
 		tEthConf.bStaticIP = 0;
+	}	else if (cJSON_IsTrue(pStatic)) {
+		tEthConf.bStaticIP = 1;
 	} else {
 		// TODO
 	}

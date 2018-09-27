@@ -107,8 +107,6 @@ void MX_LWIP_Init(void)
   {
     /* When the netif is fully configured this function must be called */
     netif_set_up(&gnetif);
-		osTimerStart(GARP_TimerHandle, 5000);
-		xEventGroupSetBits(xComEventGroup, EG_ETH_NETIF_UP_BIT );
   }
   else
   {

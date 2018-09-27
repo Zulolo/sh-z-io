@@ -32,7 +32,7 @@ static inline void __set_spi_flash_com_event_bit(void) {
 	/* xHigherPriorityTaskWoken must be initialised to pdFALSE. */
 	xHigherPriorityTaskWoken = pdFALSE;
 
-	xResult = xEventGroupSetBitsFromISR(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, &xHigherPriorityTaskWoken );
+	xResult = xEventGroupSetBitsFromISR(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, &xHigherPriorityTaskWoken );
 
 	/* Was the message posted successfully? */
 	if( xResult != pdFAIL ) {
@@ -63,11 +63,11 @@ static void write_SPI_flash_chip(uint8_t unCMD, uint8_t* pWR_Data, uint32_t unDa
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_RESET);
 	
 	HAL_SPI_Transmit_DMA(&hspi3, &unCMD, 1);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	if ((pWR_Data != NULL) && (unDataLen > 0) ){
 		HAL_SPI_Transmit_DMA(&hspi3, pWR_Data, unDataLen);
-		xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+		xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	}
 	
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_SET);
@@ -81,17 +81,17 @@ static void write_SPI_flash_data(uint32_t unAddr, uint8_t* pWR_Data, uint32_t un
 	
 	unBuf[0] = (uint8_t)WR_FLASH_PAGE_PROGRAM;
 	HAL_SPI_Transmit_DMA(&hspi3, unBuf, 1);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	unBuf[0] = (unAddr >> 16) & 0xFF;
 	unBuf[1] = (unAddr >> 8) & 0xFF;
 	unBuf[2] = unAddr & 0xFF;
 	HAL_SPI_Transmit_DMA(&hspi3, unBuf, 3);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	if ((pWR_Data != NULL) && (unDataLen > 0) ){
 		HAL_SPI_Transmit_DMA(&hspi3, pWR_Data, unDataLen);
-		xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+		xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	}
 	
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_SET);
@@ -102,10 +102,10 @@ static void read_SPI_flash_chip(uint8_t unCMD, uint8_t* pRD_Data, uint32_t unDat
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_RESET);
 	
 	HAL_SPI_Transmit_DMA(&hspi3, &unCMD, 1);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	HAL_SPI_Receive_DMA(&hspi3, pRD_Data, unDataLen);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_SET);
 }
@@ -118,16 +118,16 @@ static void read_SPI_flash_data(uint32_t unAddr, uint8_t* pRD_Data, uint32_t unD
 	
 	unBuf[0] = (uint8_t)RD_FLASH_READ_DATA;
 	HAL_SPI_Transmit_DMA(&hspi3, unBuf, 1);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 
 	unBuf[0] = (unAddr >> 16) & 0xFF;
 	unBuf[1] = (unAddr >> 8) & 0xFF;
 	unBuf[2] = unAddr & 0xFF;
 	HAL_SPI_Transmit_DMA(&hspi3, unBuf, 3);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	HAL_SPI_Receive_DMA(&hspi3, pRD_Data, unDataLen);
-	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_OCCUPY_BIT, pdTRUE, pdFALSE, osWaitForever );
+	xEventGroupWaitBits(xComEventGroup, EG_EXT_FLASH_SPI_DMA_DONE_BIT, pdTRUE, pdFALSE, osWaitForever );
 	
 	HAL_GPIO_WritePin(SPI_FLASH_CS_GPIO_Port, SPI_FLASH_CS_Pin, GPIO_PIN_SET);
 }
