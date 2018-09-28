@@ -38,9 +38,16 @@ namespace config
 		    scan_result.Columns["isSelected"].DisplayIndex = 0;
 		    scan_result.Columns["isSelected"].Width = 40;
 		    scan_result.Columns["device_ip"].DisplayIndex = 1;
+		    scan_result.Columns["device_ip"].Width = 80;
 //		    scan_result.Columns["device_ip"].ReadOnly = true;
 		    scan_result.Columns["device_mac"].DisplayIndex = 2;
 //		    scan_result.Columns["device_mac"].ReadOnly = true;
+		    scan_result.Columns["isStaticIP"].DisplayIndex = 4;
+		    scan_result.Columns["isStaticIP"].Width = 50;
+		    scan_result.Columns["device_gateway"].DisplayIndex = 5;
+		    scan_result.Columns["device_gateway"].Width = 80;
+		    scan_result.Columns["device_netmask"].DisplayIndex = 6;
+		    scan_result.Columns["device_netmask"].Width = 80;
 		    if (!scan_result.Columns.Contains(Progress)) {
 		    	scan_result.Columns.Add(Progress);
 		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
@@ -54,7 +61,8 @@ namespace config
 	            Progress.Name = "dev_up_progress";
 	            Progress.ProgressBarColor = System.Drawing.Color.Lime;
 	            Progress.DisplayIndex = 3;
-	            Progress.ReadOnly = true;		    	
+	            Progress.ReadOnly = true;
+				scan_result.Columns["dev_up_progress"].Width = 80;	            
 		    }
 		}
 				
@@ -74,14 +82,19 @@ namespace config
 //			scan_result.DataSource = sh_z_002_devices;	
 			info_label.Text = "Click scan to start";
 		}
-
+		
+		void enableButtons(bool enable) 
+		{
+			start_scan.Enabled = enable;
+			openUpdate.Enabled = enable;
+			startUpdate.Enabled = enable;
+			scan_result.Enabled = enable;
+			set_device.Enabled = enable;					
+		}
+		
 		void Start_scanClick(object sender, EventArgs e)
 		{
-			start_scan.Enabled = false;
-			openUpdate.Enabled = false;
-			startUpdate.Enabled = false;
-			scan_result.Enabled = false;
-			set_device.Enabled = false;
+			enableButtons(false);
 			scan_progress.Visible = true;
 			
 			CaptureDeviceList network_devices = CaptureDeviceList.Instance;
@@ -119,11 +132,7 @@ namespace config
 				scan_result.DataSource = sh_z_002_devices;
 				AdjustColumnOrder();						
 			}
-			start_scan.Enabled = true;
-			openUpdate.Enabled = true;
-			startUpdate.Enabled = true;
-			scan_result.Enabled = true;
-			set_device.Enabled = true;
+			enableButtons(true);
 			scan_progress.Visible = false;			
 		}
 
@@ -160,11 +169,7 @@ namespace config
 		
 		void StartUpdateClick(object sender, EventArgs e)
 		{
-			start_scan.Enabled = false;
-			openUpdate.Enabled = false;
-			startUpdate.Enabled = false;
-			set_device.Enabled = false;
-			scan_result.Enabled = false;
+			enableButtons(false);
 			if ((update_file_name != "") && File.Exists(update_file_name)) {	// && is_sh_z_002_fw(update_file_name)) {
 				var tasks = new List<Task>();
 				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
@@ -200,20 +205,12 @@ namespace config
 				}				
 				Task.WaitAll(tasks.ToArray());
 			}
-			start_scan.Enabled = true;
-			openUpdate.Enabled = true;
-			startUpdate.Enabled = true;
-			set_device.Enabled = true;
-			scan_result.Enabled = true;
+			enableButtons(true);
 		}
 		
 		void Set_deviceClick(object sender, EventArgs e)
 		{
-			start_scan.Enabled = false;
-			openUpdate.Enabled = false;
-			startUpdate.Enabled = false;
-			set_device.Enabled = false;
-			scan_result.Enabled = false;
+			enableButtons(false);
 
 			var tasks = new List<Task>();
 			int non_main_app_count = 0;
@@ -230,11 +227,7 @@ namespace config
 			}			
 			Task.WaitAll(tasks.ToArray());
 
-			start_scan.Enabled = true;
-			openUpdate.Enabled = true;
-			startUpdate.Enabled = true;
-			set_device.Enabled = true;
-			scan_result.Enabled = true;				
+			enableButtons(true);			
 		}
 	}
 }

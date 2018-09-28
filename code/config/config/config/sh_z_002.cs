@@ -14,6 +14,9 @@ using System.Net;
 using TFTPClient;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Globalization;
+using System.Linq;
 using ModbusTCP;
 
 namespace config
@@ -31,17 +34,21 @@ namespace config
 		private int update_progress;
 		private object _sync = new object();
 		private static AutoResetEvent TransferFinishedEvent = new AutoResetEvent(false);
-		private ushort mb_id = 0;
+		private ushort mb_tcp_id = 0;
 		private const byte SH_Z_002_SLAVE_ID = 2;
 		
 		[System.ComponentModel.DisplayName("MAC Address")]
 		public string device_mac { get; set; }
-		[System.ComponentModel.DisplayName("升级")]
+		[System.ComponentModel.DisplayName("选择")]
 		public bool isSelected { get; set; }
 		[System.ComponentModel.DisplayName("静态IP")]
 		public bool isStaticIP { get; set; }		
-		[System.ComponentModel.DisplayName("IP Address")]
+		[System.ComponentModel.DisplayName("IP地址")]
 		public IPAddress device_ip { get; set; }
+		[System.ComponentModel.DisplayName("网关")]
+		public IPAddress device_gateway { get; set; }
+		[System.ComponentModel.DisplayName("子网掩码")]
+		public IPAddress device_netmask { get; set; }
 	
 		public int device_port { get; set; }		
 		public DeviceStatus device_status { get; set; }
@@ -117,9 +124,81 @@ namespace config
 //			TransferFinishedEvent.WaitOne();			
         }
         
+        public struct EthConfig_t
+		{
+			public ushort conf;
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+			public byte[] uIP_Addr;
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+			public byte[] uNetmask;
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+			public byte[] uGateway;
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst=6)]
+			public byte[] uMAC_Addr;
+		}
+        
+        byte[] getBytes(EthConfig_t str) {
+		    int size = Marshal.SizeOf(str);
+		    byte[] arr = new byte[size];
+		
+		    IntPtr ptr = Marshal.AllocHGlobal(size);
+		    Marshal.StructureToPtr(str, ptr, true);
+		    Marshal.Copy(ptr, arr, 0, size);
+		    Marshal.FreeHGlobal(ptr);
+		    return arr;
+		}
+        
         public void config_device()	//, Action<string, int> updatProgress)
         {
-        			
+        	bool bParseError = false;
+        	byte[] EthConfByteArray;
+        	EthConfig_t EthConf = new EthConfig_t();
+        	try {
+        		EthConf.uIP_Addr = device_ip.GetAddressBytes();
+        	} catch (Exception) {
+        		return;
+        	}
+        	
+        	try {
+        		EthConf.uGateway = device_gateway.GetAddressBytes();
+        	} catch (Exception) {
+        		EthConf.uGateway = new byte[4];
+        		bParseError = true;
+        	}
+        	
+        	try {
+        		EthConf.uNetmask = device_netmask.GetAddressBytes();
+        	} catch (Exception) {
+        		EthConf.uNetmask = new byte[4];
+        		bParseError = true;
+        	}
+	
+        	if (bParseError) {
+        		EthConf.conf = 0x00;
+        	} else {
+	         	if (isStaticIP) {
+	        		EthConf.conf = 0x01;
+	        	} else {
+	        		EthConf.conf = 0x00;
+	        	}       		
+        	}
+     	
+        	try {
+	        	string[] strings = device_mac.Split(':');
+	        	EthConf.uMAC_Addr = strings.Select(s => byte.Parse(s, NumberStyles.AllowHexSpecifier)).ToArray();       	
+	        	EthConfByteArray = getBytes(EthConf);
+        	} catch (Exception) {
+        		return;
+        	}
+        	
+        	var modebus_client = new Master();
+        	byte[] mb_write_resp = null;
+			modebus_client.timeout = 300;
+			modebus_client.connect(device_ip.ToString(), (ushort)device_port, false);
+			if (modebus_client.connected) {
+				modebus_client.WriteMultipleRegister(mb_tcp_id++, 1, 1000, EthConfByteArray, ref mb_write_resp);
+				modebus_client.disconnect();
+			}
         }
 		
 		public bool is_sh_z_002()
@@ -128,11 +207,11 @@ namespace config
 //			byte byte_count;
 			byte[] device_info = null;
 			
-			var modebus_client = new ModbusTCP.Master();
+			var modebus_client = new Master();
 			modebus_client.timeout = 300;
-			modebus_client.connect(this.device_ip.ToString(), (ushort)this.device_port, false);
+			modebus_client.connect(device_ip.ToString(), (ushort)device_port, false);
 			if (modebus_client.connected) {
-				modebus_client.ReportSlaveID(mb_id++, 1, ref device_info);
+				modebus_client.ReportSlaveID(mb_tcp_id++, 1, ref device_info);
 				if (device_info != null) {
 					// check slave ID and maybe also sub slave ID	
 					if (device_info[0] == SH_Z_002_SLAVE_ID) {

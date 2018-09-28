@@ -18,7 +18,6 @@ extern char SH_Z_002_SN[SH_Z_SN_LEN + 1];
 /**********************  ETH part  *************************/
 extern ETH_Conf_t tEthConf;
 
-
 /**********************  AI part  *************************/
 static uint16_t unADCxConvertedValueBuf[SH_Z_002_AI_NUM];
 static int32_t nCurrentValueBuf[SH_Z_002_AI_NUM];	// with two digital. e.g. 8.54mA is 854 in register
