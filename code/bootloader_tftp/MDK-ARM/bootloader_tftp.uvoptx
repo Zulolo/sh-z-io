@@ -120,9 +120,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>?剋鴩c
-?剋鴩c
-</Name>
+          <Name>?騰???騰??</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -274,7 +272,7 @@
 
   <Group>
     <GroupName>Middlewares/SPIFFS</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

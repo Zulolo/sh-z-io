@@ -398,6 +398,7 @@ void StartDefaultTask(void const * argument)
 		printf("FW found in external flash, upgrade!\n");
 		FWU_upgrade(UPDATE_FILE_NAME);
 		SPIFFS_remove(&SPI_FFS_fs, UPDATE_FILE_NAME);
+		SPIFFS_unmount(&SPI_FFS_fs);
 		FWU_run_app();
 //	will never be here		
 	}
@@ -407,6 +408,7 @@ void StartDefaultTask(void const * argument)
 		printf("No FW was found neither in internal flash nor external FS.\n");
 		tftp_init(&TFTP_Ctx);		
 	} else {
+		SPIFFS_unmount(&SPI_FFS_fs);
 		FWU_run_app();
 	}
 		

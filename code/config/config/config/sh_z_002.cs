@@ -53,8 +53,6 @@ namespace config
 		public int device_port { get; set; }		
 		public DeviceStatus device_status { get; set; }
 		
-		private TFTPSession tftp_client = new TFTPSession();
-		
 		public int progress { 
 			get {lock (_sync) { return update_progress; }}
 			set {lock (_sync) { update_progress = value; }} 
@@ -106,6 +104,7 @@ namespace config
         
         public void update(string update_file_name)	//, Action<string, int> updatProgress)
         {
+        	TFTPSession tftp_client = new TFTPSession();
         	tftp_client.Connected += new TFTPSession.ConnectedHandler(_session_Connected);
             tftp_client.Transferring += new TFTPSession.TransferringHandler(_session_Transferring);
             tftp_client.TransferFailed += new TFTPSession.TransferFailedHandler(_session_TransferFailed);

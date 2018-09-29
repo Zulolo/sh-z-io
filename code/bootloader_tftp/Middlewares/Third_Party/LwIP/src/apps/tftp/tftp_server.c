@@ -244,6 +244,7 @@ recv(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16
         send_error(addr, port, TFTP_ERROR_ACCESS_VIOLATION, "Filename too long/not NULL terminated");
         break;
       }
+			memset(filename, 0, sizeof(filename));
       pbuf_copy_partial(p, filename, filename_end_offset-2, 2);
 
       /* find \0 in pbuf -> end of mode string */

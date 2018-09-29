@@ -170,10 +170,12 @@ namespace config
 		void StartUpdateClick(object sender, EventArgs e)
 		{
 			enableButtons(false);
+			
 			if ((update_file_name != "") && File.Exists(update_file_name)) {	// && is_sh_z_002_fw(update_file_name)) {
 				var tasks = new List<Task>();
 				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
 					if (sh_z_002_obj.isSelected) {
+						sh_z_002_obj.progress = 0;
 						tasks.Add(Task.Factory.StartNew(() => update_sh_z_002(sh_z_002_obj)));
 					}					
 				}
