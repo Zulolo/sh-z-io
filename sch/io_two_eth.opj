@@ -83,8 +83,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 78 1613 78 755")
-        (Scroll "3259 418")
-        (Zoom "536")
+        (Scroll "-93 0")
+        (Zoom "134")
         (Occurrence "/"))
       (Path "G:\WORK\IO\DESIGN\SCH\IO_TWO_ETH.DSN")
       (Schematic "SCHEMATIC1")
