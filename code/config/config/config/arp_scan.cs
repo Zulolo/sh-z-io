@@ -31,12 +31,12 @@ namespace config
         static public int scanDelay = 1200000; // 1.2 sec
         static public int maxRange = 64; // Default to 0-64 range
         private ICaptureDevice network_dev;
-        private List<sh_z_002> sh_z_002_list;
+        private List<sh_z_device> sh_z_device_list;
 
-        public List<sh_z_002> result
+        public List<sh_z_device> result
 		{
 			get {
-				return sh_z_002_list;
+				return sh_z_device_list;
 			}
 		}       
 
@@ -54,10 +54,10 @@ namespace config
             return mac.Remove(mac.Length - 1);
         }
         
-        public List<sh_z_002> start_scan(int scan_time)
+        public List<sh_z_device> start_scan(int scan_time)
         {
         	var arp_devices_ip = new List<IPAddress>();
-        	var arp_devices = new List<sh_z_002>();
+        	var arp_devices = new List<sh_z_device>();
         	
         	network_dev.Open(DeviceMode.Promiscuous, 4000);
 			RawCapture raw_packet = null;
@@ -77,7 +77,7 @@ namespace config
 				 		if ((0x02 == from_hw_addr.GetAddressBytes()[0]) && (0x80 == from_hw_addr.GetAddressBytes()[1]) && (0xE1 == from_hw_addr.GetAddressBytes()[2])) {
 				 			if (!arp_devices_ip.Contains(from_ip_addr)) {
 				 				arp_devices_ip.Add(from_ip_addr);
-				 				arp_devices.Add(new sh_z_002(from_ip_addr, 502, from_hw_addr));
+				 				arp_devices.Add(new sh_z_device(from_ip_addr, 502, from_hw_addr));
 				 			}				 			
 //				 			MessageBox.Show("From HW: " + from_hw_addr.ToString() + "\r\n" + "From IP: " + from_ip_addr.ToString(), "ARP", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				 		}
@@ -90,13 +90,13 @@ namespace config
     		if (arp_devices.Count > 0) 
 			{
 				foreach (var arp_dev in arp_devices) {
-					if (arp_dev.is_sh_z_002(arp_dev.device_mac)) {
-						sh_z_002_list.Add(arp_dev);				
+					if (arp_dev.is_sh_z_device(arp_dev.device_mac)) {
+						sh_z_device_list.Add(arp_dev);				
 					}
 				}
 
 			}
-        	return sh_z_002_list;
+        	return sh_z_device_list;
         }
         
         public bool ready_to_scan()
@@ -111,7 +111,7 @@ namespace config
         public arp_scan(ICaptureDevice network_device)
         {
         	network_dev = network_device;
-        	sh_z_002_list = new List<sh_z_002>();
+        	sh_z_device_list = new List<sh_z_device>();
         }
 	}
 }

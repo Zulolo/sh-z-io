@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Net;
+using System.Net.NetworkInformation;
 using SharpPcap;
 
 namespace config
@@ -24,9 +26,9 @@ namespace config
 	{
 //		delegate void BollArgReturningVoidDelegate(bool enable); 
 //		private Thread scanThread = null; 
-		private BindingList<sh_z_002> sh_z_002_devices = new BindingList<sh_z_002>();
+		private BindingList<sh_z_device> sh_z_devices = new BindingList<sh_z_device>();
 		private List<arp_scan> arp_scan_list = new List<arp_scan>();
-		private BindingSource sh_z_002_dev_list = new BindingSource();
+		private BindingSource sh_z_device_list = new BindingSource();
 		private Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
 		private string update_file_name = "";
 		
@@ -78,8 +80,6 @@ namespace config
 			//
 			start_scan.Enabled = true;
 			scan_progress.Visible = false;
-//				scan_result.AutoGenerateColumn = false;  
-//			scan_result.DataSource = sh_z_002_devices;	
 			info_label.Text = "Click scan to start";
 		}
 		
@@ -109,7 +109,7 @@ namespace config
 				{
 					var my_arp_scan = new arp_scan(network_dev);
 					arp_scan_list.Add(my_arp_scan);
-					tasks.Add(Task.Factory.StartNew(() => scan_sh_z_002(my_arp_scan)));
+					tasks.Add(Task.Factory.StartNew(() => scan_sh_z_devices(my_arp_scan)));
 				}
 				this.scan_progress.Maximum = 100;
 				for (int i = 1; i <= 100; i++)
@@ -119,33 +119,39 @@ namespace config
 				}
 				Task.WaitAll(tasks.ToArray());
 				
-				sh_z_002_devices.Clear();
+				sh_z_devices.Clear();
 				foreach(arp_scan arp_scan_obj in arp_scan_list) 
 				{
 					if (arp_scan_obj.result.Count > 0) {
-						foreach (sh_z_002 sh_z_002_obj in arp_scan_obj.result) {
-							sh_z_002_devices.Add(sh_z_002_obj);
+						foreach (sh_z_device sh_z_device_obj in arp_scan_obj.result) {
+							if (sh_z_002.is_sh_z_002(sh_z_device_obj.device_ip, sh_z_device_obj.device_port)) {
+								sh_z_devices.Add(new sh_z_002(sh_z_device_obj.device_ip, sh_z_device_obj.device_port, 
+								                              PhysicalAddress.Parse(sh_z_device_obj.device_mac)));
+							}
+							
 						}						
 					}
 				}
 				scan_result.DataSource = null;
-				scan_result.DataSource = sh_z_002_devices;
+				scan_result.DataSource = sh_z_devices;
 				AdjustColumnOrder();						
 			}
 			enableButtons(true);
 			scan_progress.Visible = false;			
 		}
 
-		private void scan_sh_z_002(arp_scan my_arp_scan) 
+		private void scan_sh_z_devices(arp_scan my_arp_scan) 
 		{			
 			if(my_arp_scan.ready_to_scan()) {
 				my_arp_scan.start_scan(6000);
 			}
 		}
-		private bool is_sh_z_002_fw(string filename) 
+		
+		private bool is_sh_z_fw(string filename) 
 		{			
 			return true;
 		}
+		
 		void OpenUpdateClick(object sender, EventArgs e)
 		{
 		   if(openUpdateFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) {  
@@ -153,17 +159,17 @@ namespace config
 		   } 			
 		}
 
-		private void update_sh_z_002(sh_z_002 sh_z_002_dev) 
+		private void update_sh_z_device(sh_z_device sh_z_device) 
 		{			
-			if(sh_z_002_dev.ok_to_update()) {
-				sh_z_002_dev.update(update_file_name);	//, update_dev_up_progress);
+			if(sh_z_device.ok_to_update()) {
+				sh_z_device.update(update_file_name);	//, update_dev_up_progress);
 			}
 		}
 		
-		private void set_sh_z_002(sh_z_002 sh_z_002_dev) 
+		private void set_sh_z_device(sh_z_device sh_z_device) 
 		{			
-			if(sh_z_002_dev.ok_to_config()) {
-				sh_z_002_dev.config_device();	//, update_dev_up_progress);
+			if(sh_z_device.ok_to_config()) {
+				sh_z_device.config_device_eth();	//, update_dev_up_progress);
 			}
 		}
 		
@@ -173,22 +179,22 @@ namespace config
 			
 			if ((update_file_name != "") && File.Exists(update_file_name)) {	// && is_sh_z_002_fw(update_file_name)) {
 				var tasks = new List<Task>();
-				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
-					if (sh_z_002_obj.isSelected) {
-						sh_z_002_obj.progress = 0;
-						tasks.Add(Task.Factory.StartNew(() => update_sh_z_002(sh_z_002_obj)));
+				foreach (sh_z_device sh_z_obj in sh_z_devices ) {
+					if (sh_z_obj.isSelected) {
+						sh_z_obj.progress = 0;
+						tasks.Add(Task.Factory.StartNew(() => update_sh_z_device(sh_z_obj)));
 					}					
 				}
 				bool all_dev_up_done = false;
 				while (false == all_dev_up_done) {
 					all_dev_up_done = true;
-					foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
-						if (sh_z_002_obj.isSelected) {
-							if (sh_z_002_obj.progress < 100) {
+					foreach (sh_z_device sh_z_obj in sh_z_devices ) {
+						if (sh_z_obj.isSelected) {
+							if (sh_z_obj.progress < 100) {
 								all_dev_up_done = false;
 								foreach (DataGridViewRow data_row in scan_result.Rows) {
-									if (sh_z_002_obj.device_mac == data_row.Cells["device_mac"].Value) {
-										data_row.Cells["dev_up_progress"].Value = sh_z_002_obj.progress;
+									if (sh_z_obj.device_mac == data_row.Cells["device_mac"].Value) {
+										data_row.Cells["dev_up_progress"].Value = sh_z_obj.progress;
 										scan_result.Refresh();
 									}
 								}															
@@ -197,10 +203,10 @@ namespace config
 					}
 					Thread.Sleep(100);
 				}	
-				foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
-					if (sh_z_002_obj.isSelected) {
+				foreach (sh_z_device sh_z_obj in sh_z_devices ) {
+					if (sh_z_obj.isSelected) {
 						foreach (DataGridViewRow data_row in scan_result.Rows) {
-							data_row.Cells["dev_up_progress"].Value = sh_z_002_obj.progress;
+							data_row.Cells["dev_up_progress"].Value = sh_z_obj.progress;
 							scan_result.Refresh();
 						}															
 					}					
@@ -215,18 +221,14 @@ namespace config
 			enableButtons(false);
 
 			var tasks = new List<Task>();
-			int non_main_app_count = 0;
-			foreach (sh_z_002 sh_z_002_obj in sh_z_002_devices ) {
-				if (sh_z_002_obj.isSelected && (sh_z_002_obj.device_status == DeviceStatus.sh_z_002_main_app)) {
-					tasks.Add(Task.Factory.StartNew(() => set_sh_z_002(sh_z_002_obj)));
+
+			foreach (sh_z_device sh_z_obj in sh_z_devices ) {
+				if (sh_z_obj.isSelected) {
+					tasks.Add(Task.Factory.StartNew(() => set_sh_z_device(sh_z_obj)));
 				}
-				if (sh_z_002_obj.device_status != DeviceStatus.sh_z_002_main_app) {
-					non_main_app_count++;
-				}
+
 			}
-			if (non_main_app_count != 0) {
-				MessageBox.Show("有设备缺少主程序，请先进行升级！", "参数设置", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}			
+		
 			Task.WaitAll(tasks.ToArray());
 
 			enableButtons(true);			
