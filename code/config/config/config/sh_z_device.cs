@@ -16,6 +16,8 @@ using System.Runtime.InteropServices;
 using System.Globalization;
 using System.Linq;
 using ModbusTCP;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace config
 {
@@ -112,6 +114,7 @@ namespace config
 //			TransferFinishedEvent.WaitOne();			
         }
         
+        [StructLayout(LayoutKind.Sequential)]
         public struct EthConfig_t
 		{
 			public ushort conf;
@@ -124,16 +127,55 @@ namespace config
 			[MarshalAs(UnmanagedType.ByValArray, SizeConst=6)]
 			public byte[] uMAC_Addr;
 		}
-        
-        byte[] getBytes(EthConfig_t str) {
-		    int size = Marshal.SizeOf(str);
+		public byte[] Serialize<T>(T s) where T : struct
+		{
+		    var size = Marshal.SizeOf(typeof(T));
+		    var array = new byte[size];
+		    var ptr = Marshal.AllocHGlobal(size);
+		    Marshal.StructureToPtr(s, ptr, true);
+		    Marshal.Copy(ptr, array, 0, size);
+		    Marshal.FreeHGlobal(ptr);
+		    return array;
+		}
+		
+		public T Deserialize<T>(byte[] array) where T : struct
+		{
+			var size = Marshal.SizeOf(typeof(T));
+		    var ptr = Marshal.AllocHGlobal(size);
+		    Marshal.Copy(array, 0, ptr, size);
+		    var s = (T)Marshal.PtrToStructure(ptr, typeof(T));
+		    Marshal.FreeHGlobal(ptr);
+		    return s;
+		}
+
+        byte[] getBytes(EthConfig_t myEthConfig) {
+		    int size = Marshal.SizeOf(myEthConfig);
 		    byte[] arr = new byte[size];
 		
 		    IntPtr ptr = Marshal.AllocHGlobal(size);
-		    Marshal.StructureToPtr(str, ptr, true);
+		    Marshal.StructureToPtr(myEthConfig, ptr, true);
 		    Marshal.Copy(ptr, arr, 0, size);
 		    Marshal.FreeHGlobal(ptr);
 		    return arr;
+		}
+        
+        T ByteArrayToStructure<T>(byte[] bytes) where T: struct
+		{
+		    T stuff;
+		    GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+		    try
+		    {
+		        stuff = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
+		    }
+		    finally
+		    {
+		        handle.Free();
+		    }
+		    return stuff;
+		}
+        
+        EthConfig_t getEthConfig(byte[] EthConfigBytes) {
+        	return Deserialize<EthConfig_t>(EthConfigBytes);
 		}
         
         public void config_device_eth()	//, Action<string, int> updatProgress)
@@ -187,6 +229,20 @@ namespace config
 				modebus_client.WriteMultipleRegister(mb_tcp_id++, 1, 1000, EthConfByteArray, ref mb_write_resp);
 				modebus_client.disconnect();
 			}
+        }
+        public Boolean get_device_MAC() {
+          	var modebus_client = new Master();
+        	byte[] mb_read_resp = null;
+			modebus_client.timeout = 300;
+			modebus_client.connect(device_ip.ToString(), (ushort)device_port, false);
+			if (modebus_client.connected) {
+				modebus_client.ReadInputRegister(mb_tcp_id++, 1, 1000, 10, ref mb_read_resp);
+				modebus_client.disconnect();
+				var myEthConfig = getEthConfig(mb_read_resp);
+				return true;
+			} else {
+				return false;
+			}	
         }
         
         public bool is_sh_z_device(string mac_address)

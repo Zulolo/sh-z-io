@@ -2,6 +2,7 @@
 #include "stm32f4xx_hal.h"
 #include "cmsis_os.h"
 #include "lwip.h"
+#include "sockets.h"
 #include "cJSON.h"
 #include "spiffs.h"
 #include "lwip/apps/tftp_server.h"
@@ -9,6 +10,7 @@
 
 extern osMutexId WebServerFileMutexHandle;
 extern spiffs SPI_FFS_fs;
+extern EventGroupHandle_t xComEventGroup;
 
 char SH_Z_002_SN[SH_Z_SN_LEN + 1] = "SHZ002.201809190";
 ETH_Conf_t tEthConf;
@@ -339,4 +341,43 @@ void UTL_sh_z_002_eth_conf_init(void) {
 		SPIFFS_close(&SPI_FFS_fs, tFileDesc);
 	}	
 }
+
+void UTL_start_udp_broadcast(void const * argument){
+	static char cReportSlaveID[sizeof("sh-z-002") - 1 + 4 + sizeof(SH_Z_002_SN)];
+	int udpSocket;
+	struct sockaddr_in sDestAddr;
+	int broadcast=1;
+
+	memset(cReportSlaveID, 0, sizeof(cReportSlaveID));
+	sprintf(cReportSlaveID, "%s%04X%s", "sh-z-002", SH_Z_002_VERSION, SH_Z_002_SN);
+		
+	xEventGroupWaitBits(xComEventGroup, EG_ETH_NETIF_UP_BIT, pdFALSE, pdFALSE, osWaitForever );
+	
+	udpSocket = socket(AF_INET, SOCK_DGRAM, 0);
+	if(udpSocket < 0) {
+		printf("socket() failed!!\n");
+		return;
+	}
+	
+	int rslt = setsockopt(udpSocket, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast));
+	if(rslt < 0) {
+		printf("Error in setting broadcast option, %d.\n", rslt);
+		close(udpSocket);
+		return;
+	}
+		
+	/*Destination*/
+	memset((char *)&sDestAddr, 0, sizeof(sDestAddr));
+	sDestAddr.sin_family = AF_INET;
+	sDestAddr.sin_len = sizeof(sDestAddr);
+	sDestAddr.sin_addr.s_addr = htonl(INADDR_BROADCAST);
+	sDestAddr.sin_port = htons(52018);
+
+	while (1) {
+		sendto(udpSocket, cReportSlaveID, sizeof(cReportSlaveID), 0, (struct sockaddr *)&sDestAddr, sizeof(sDestAddr));
+		osDelay( 5000 );  //some delay!
+	}
+	close(udpSocket);
+}
+
 

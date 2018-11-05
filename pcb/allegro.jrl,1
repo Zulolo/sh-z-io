@@ -1,68 +1,217 @@
-\t (00:00:01) allegro 17.2 S007 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Wed Sep 05 22:06:25 2018
-\t (00:00:01)         Host=ZULOLO-PC User=dodol Pid=15436 CPUs=8
-\t (00:00:01) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
-\t (00:00:01) 
-   (00:00:01) Loading axlcore.cxt 
-   (00:00:01) *Error* load: can't access file - "J:\\Cadence\\pcbenv\\DstCxi.il"
-\t (00:00:03) Opening existing design...
-\d (00:00:03) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor_2.brd
-\t (00:00:03) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
-\i (00:00:03) trapsize 2205
-\i (00:00:04) trapsize 2291
-\t (00:00:04) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
-\i (00:00:04) trapsize 2291
-\i (00:00:04) etchedit 
-\i (00:00:16) status 
-\i (00:00:16) etchedit 
-\i (00:00:18) setwindow form.status
-\i (00:00:18) FORM status drc_update  
-\t (00:00:18) Running DRC, wait...
-\t (00:00:18) Performing DRC...
-\t (00:00:18) Multithreaded DRC update (8 threads).
-\t (00:00:18) No DRC errors detected.
-\t (00:00:18) DRC done.
-\i (00:00:19) FORM status refresh  
-\i (00:00:21) FORM status done  
-\i (00:00:26) setwindow pcb
-\i (00:00:26) nctape_full 
-\i (00:00:28) setwindow form.nc_drill
-\i (00:00:28) FORM nc_drill execute  
-\t (00:00:28) Starting Generating NC Drill...
-\i (00:00:33) FORM nc_drill close  
-\i (00:00:33) setwindow pcb
-\i (00:00:33) etchedit 
-\i (00:00:38) ncdrill legend 
-   (00:00:38) Loading mfg.cxt 
-\i (00:00:40) setwindow form.nc_drilllegend
-\i (00:00:40) FORM nc_drilllegend done  
-\i (00:00:42) setwindow pcb
-\i (00:00:42) pick grid 4.284 194.433
-\t (00:00:42) last pick:  4.300 194.400
-\t (00:00:42) NC Drill Legend generation successful
-\i (00:00:42) etchedit 
-\i (00:00:48) artwork 
-\i (00:00:49) setwindow form.film_control
-\i (00:00:49) FORM film_control select_all  
-\i (00:00:51) FORM film_control create  
-\i (00:00:53) fillin yes 
-\t (00:00:53) Checking db records
-\t (00:00:53)     checking for orphans...
-\t (00:00:53)     Checked  50 percent
-\t (00:00:53)     Checked 100 percent
-\t (00:00:53) Done dbdoctor.
-\t (00:00:53) Starting Create artwork films...
-\w (00:00:53) WARNING(SPMHGE-269): artwork had warnings, use Viewlog to review the log file.
-\w (00:00:54) Artwork generated with warnings.
-\i (00:01:02) setwindow text
-\i (00:01:02) close 
-\i (00:01:03) setwindow form.film_control
-\i (00:01:03) FORM film_control ok  
-\i (00:01:03) setwindow pcb
-\i (00:01:03) etchedit 
-\i (00:01:04) save 
-\i (00:01:06) fillin yes 
-   (00:01:06) Loading signal.cxt 
-\i (00:01:06) etchedit 
-\i (00:02:55) exit 
-\t (00:02:55)     Journal end - Wed Sep 05 22:09:19 2018
+\t (00:00:00) allegro 17.2 S007 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Tue Sep 11 21:00:39 2018
+\t (00:00:00)         Host=ZULOLO-PC User=dodol Pid=6544 CPUs=8
+\t (00:00:00) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:00:00) 
+   (00:00:00) Loading axlcore.cxt 
+   (00:00:00) *Error* load: can't access file - "J:\\Cadence\\pcbenv\\DstCxi.il"
+\t (00:00:02) Opening existing design...
+\d (00:00:02) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor_2.brd
+\t (00:00:02) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
+\i (00:00:02) trapsize 2205
+\i (00:00:02) trapsize 2291
+\t (00:00:02) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
+\i (00:00:02) trapsize 2291
+\i (00:00:02) etchedit 
+\i (00:00:06) zoom in 1 
+\i (00:00:06) setwindow pcb
+\i (00:00:06) zoom in 18.030 34.525
+\t (00:00:06) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
+\i (00:00:06) trapsize 1145
+\i (00:00:06) zoom in 1 
+\i (00:00:06) setwindow pcb
+\i (00:00:06) zoom in 18.030 34.525
+\t (00:00:06) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:00:06) trapsize 573
+\i (00:00:07) roam start
+\i (00:00:07) roam y 48
+\i (00:00:07) roam y 16
+\i (00:00:07) roam end
+\i (00:00:07) zoom in 1 
+\i (00:00:07) setwindow pcb
+\i (00:00:07) zoom in 43.345 34.868
+\t (00:00:07) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:07) trapsize 286
+\i (00:00:08) zoom in 1 
+\i (00:00:08) setwindow pcb
+\i (00:00:08) zoom in 43.345 34.868
+\t (00:00:08) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:00:08) trapsize 143
+\i (00:00:08) roam start
+\i (00:00:08) roam x -48
+\i (00:00:08) roam y 64
+\i (00:00:08) roam x -64
+\i (00:00:08) roam y 64
+\i (00:00:08) roam x -16
+\i (00:00:08) roam y 32
+\i (00:00:08) roam end
+\i (00:00:09) zoom out 1 
+\i (00:00:09) setwindow pcb
+\i (00:00:09) zoom out 40.854 32.091
+\t (00:00:09) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:09) trapsize 286
+\i (00:00:09) zoom out 1 
+\i (00:00:09) setwindow pcb
+\i (00:00:09) zoom out 40.854 32.149
+\t (00:00:09) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:00:09) trapsize 573
+\i (00:00:10) roam start
+\i (00:00:10) roam x -64
+\i (00:00:10) roam x -64
+\i (00:00:10) roam x -16
+\i (00:00:10) roam x -32
+\i (00:00:10) roam end
+\i (00:00:13) color192 
+\i (00:00:13) etchedit 
+\i (00:00:15) QtSignal CVDLayerTable VertHeader clickedCheckBox 2
+\i (00:00:15) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Top Pin
+\i (00:00:16) QtSignal CVDLayerTable VertHeader clickedCheckBox 3
+\i (00:00:16) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Bottom Pin
+\i (00:00:18) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 1
+\i (00:00:18) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Via
+\i (00:00:18) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:19) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:20) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 0 1
+\i (00:00:20) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Top Via
+\i (00:00:20) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:22) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
+\i (00:00:24) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 13 0
+\i (00:00:24) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Silkscreen_Bottom BrdGeo
+\i (00:00:24) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:25) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 14 0
+\i (00:00:25) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Silkscreen_Top BrdGeo
+\i (00:00:25) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:25) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:26) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 15 0
+\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Bottom BrdGeo
+\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:27) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 16 0
+\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Top BrdGeo
+\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:29) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
+\i (00:00:33) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 16 0
+\i (00:00:33) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Bottom PkgGeo
+\i (00:00:33) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:34) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 17 0
+\i (00:00:34) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Top PkgGeo
+\i (00:00:34) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:35) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Embedded geometry"
+\i (00:00:36) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Manufacturing
+\i (00:00:39) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 0 0
+\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Autosilk_Bottom Mfg
+\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:39) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 0
+\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Autosilk_Top Mfg
+\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:41) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:00:43) zoom in 1 
+\i (00:00:43) setwindow pcb
+\i (00:00:43) zoom in 56.518 53.340
+\t (00:00:43) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:43) trapsize 286
+\i (00:00:43) zoom in 1 
+\i (00:00:43) setwindow pcb
+\i (00:00:43) zoom in 56.633 53.111
+\t (00:00:43) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:00:43) trapsize 143
+\i (00:00:43) zoom in 1 
+\i (00:00:43) setwindow pcb
+\i (00:00:43) zoom in 56.662 53.083
+\i (00:00:43) trapsize 72
+\i (00:00:44) zoom out 1 
+\i (00:00:44) setwindow pcb
+\i (00:00:44) zoom out 58.094 53.040
+\i (00:00:44) trapsize 143
+\i (00:00:45) move 
+\t (00:00:45) Select element(s) to move.
+\i (00:00:48) pick grid 58.381 57.021
+\t (00:00:48) last pick:  58.400 57.000
+\t (00:00:48) last pick:  57.800 55.000
+\t (00:00:48) Element has no pins, using origin.
+\t (00:00:48) Pick new location for the element(s).
+\i (00:00:49) iangle 90 
+\t (00:00:49) last pick:  90.000 0.000
+\i (00:00:50) iangle 90 
+\t (00:00:50) last pick:  90.000 0.000
+\i (00:00:50) iangle 90 
+\t (00:00:50) last pick:  90.000 0.000
+\i (00:00:51) iangle 90 
+\t (00:00:51) last pick:  90.000 0.000
+\i (00:00:52) iangle 90 
+\t (00:00:52) last pick:  90.000 0.000
+\i (00:00:56) pick grid 63.221 54.759
+\t (00:00:56) last pick:  63.200 54.800
+\i (00:00:56) pick grid 58.639 54.043
+\t (00:00:56) last pick:  58.600 54.000
+\t (00:00:56) last pick:  57.800 52.111
+\t (00:00:56) Element has no pins, using origin.
+\t (00:00:56) Pick new location for the element(s).
+\i (00:00:57) iangle 90 
+\t (00:00:57) last pick:  90.000 0.000
+\i (00:01:03) pick grid 52.052 52.668
+\t (00:01:03) last pick:  52.100 52.700
+\i (00:01:04) pick grid 60.243 51.723
+\t (00:01:04) last pick:  60.200 51.700
+\i (00:01:04) pick grid 59.727 51.752
+\t (00:01:04) last pick:  59.700 51.800
+\t (00:01:04) last pick:  58.689 50.111
+\t (00:01:04) Element has no pins, using origin.
+\t (00:01:04) Pick new location for the element(s).
+\i (00:01:04) iangle 90 
+\t (00:01:04) last pick:  90.000 0.000
+\i (00:01:06) pick grid 62.190 50.578
+\t (00:01:06) last pick:  62.200 50.600
+\i (00:01:07) pick grid 59.097 49.318
+\t (00:01:07) last pick:  59.100 49.300
+\t (00:01:07) last pick:  57.800 49.000
+\t (00:01:07) Element has no pins, using origin.
+\t (00:01:07) Pick new location for the element(s).
+\i (00:01:07) iangle 90 
+\t (00:01:07) last pick:  90.000 0.000
+\i (00:01:10) pick grid 53.370 48.545
+\t (00:01:10) last pick:  53.400 48.500
+\i (00:01:12) pick grid 62.992 54.644
+\t (00:01:12) last pick:  63.000 54.600
+\t (00:01:12) last pick:  63.200 54.800
+\t (00:01:12) Element has no pins, using origin.
+\t (00:01:12) Pick new location for the element(s).
+\i (00:01:15) pick grid 52.539 55.074
+\t (00:01:15) last pick:  52.500 55.100
+\i (00:01:17) pick grid 61.331 51.007
+\t (00:01:17) last pick:  61.300 51.000
+\t (00:01:17) last pick:  62.200 50.600
+\t (00:01:17) Element has no pins, using origin.
+\t (00:01:17) Pick new location for the element(s).
+\i (00:01:24) pick grid 61.789 50.721
+\t (00:01:24) last pick:  61.800 50.700
+\i (00:01:24) prepopup 67.001 51.809
+\i (00:01:25) done 
+\i (00:01:25) etchedit 
+\i (00:01:26) save 
+\i (00:01:28) fillin yes 
+\i (00:01:28) etchedit 
+\i (00:01:33) artwork 
+\i (00:01:34) setwindow form.film_control
+\i (00:01:34) FORM film_control select_all  
+\i (00:01:35) FORM film_control create  
+\i (00:01:39) fillin yes 
+\t (00:01:39) Checking db records
+\t (00:01:39)     checking for orphans...
+\t (00:01:39)     Checked  50 percent
+\t (00:01:39)     Checked 100 percent
+\t (00:01:39) Done dbdoctor.
+\t (00:01:39) Starting Create artwork films...
+\w (00:01:40) WARNING(SPMHGE-269): artwork had warnings, use Viewlog to review the log file.
+\w (00:01:41) Artwork generated with warnings.
+\i (00:01:44) setwindow text
+\i (00:01:44) close 
+\i (00:01:45) setwindow form.film_control
+\i (00:01:45) FORM film_control ok  
+\i (00:01:45) setwindow pcb
+\i (00:01:45) etchedit 
+\i (00:01:47) save 
+\i (00:01:48) fillin yes 
+   (00:01:48) Loading signal.cxt 
+\i (00:01:48) etchedit 
+\i (00:01:49) exit 
+\t (00:01:49)     Journal end - Tue Sep 11 21:02:29 2018

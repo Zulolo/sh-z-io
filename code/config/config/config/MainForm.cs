@@ -13,9 +13,6 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using System.Net;
-using System.Net.NetworkInformation;
-using SharpPcap;
 
 namespace config
 {
@@ -26,11 +23,11 @@ namespace config
 	{
 //		delegate void BollArgReturningVoidDelegate(bool enable); 
 //		private Thread scanThread = null; 
-		private BindingList<sh_z_device> sh_z_devices = new BindingList<sh_z_device>();
-		private List<arp_scan> arp_scan_list = new List<arp_scan>();
-		private BindingSource sh_z_device_list = new BindingSource();
-		private Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
-		private string update_file_name = "";
+		BindingList<sh_z_device> sh_z_devices = new BindingList<sh_z_device>();
+		BindingSource sh_z_device_list = new BindingSource();
+		Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
+		string update_file_name = "";
+		List<sh_z_002> sh_z_002_list = null; 
 		
 		private void AdjustColumnOrder()
 		{
@@ -96,58 +93,35 @@ namespace config
 		{
 			enableButtons(false);
 			scan_progress.Visible = true;
-			
-			CaptureDeviceList network_devices = CaptureDeviceList.Instance;
-			if(network_devices.Count < 1)
+			var tasks = new List<Task>();
+			tasks.Add(Task.Factory.StartNew(() => scan_sh_z_devices()));
+			this.scan_progress.Maximum = 100;
+			for (int i = 1; i <= 100; i++)
 			{
-			    MessageBox.Show(this, "No devices were found on this machine", "no network", MessageBoxButtons.OK, 
-				                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
-			} else {				
-				arp_scan_list.Clear();
-				var tasks = new List<Task>();
-				foreach(ICaptureDevice network_dev in network_devices) 
-				{
-					var my_arp_scan = new arp_scan(network_dev);
-					arp_scan_list.Add(my_arp_scan);
-					tasks.Add(Task.Factory.StartNew(() => scan_sh_z_devices(my_arp_scan)));
-				}
-				this.scan_progress.Maximum = 100;
-				for (int i = 1; i <= 100; i++)
-				{
-					this.scan_progress.Value = i;
-					Thread.Sleep(70);
-				}
-				Task.WaitAll(tasks.ToArray());
-				
-				sh_z_devices.Clear();
-				foreach(arp_scan arp_scan_obj in arp_scan_list) 
-				{
-					if (arp_scan_obj.result.Count > 0) {
-						foreach (sh_z_device sh_z_device_obj in arp_scan_obj.result) {
-							if (sh_z_002.is_sh_z_002(sh_z_device_obj.device_ip, sh_z_device_obj.device_port)) {
-								sh_z_devices.Add(new sh_z_002(sh_z_device_obj.device_ip, sh_z_device_obj.device_port, 
-								                              PhysicalAddress.Parse(sh_z_device_obj.device_mac)));
-							}
-							
-						}						
-					}
-				}
-				scan_result.DataSource = null;
-				scan_result.DataSource = sh_z_devices;
-				AdjustColumnOrder();						
+				scan_progress.Value = i;
+				Thread.Sleep(70);
 			}
+			Task.WaitAll(tasks.ToArray());
+			foreach(sh_z_002 sh_z_002_device in sh_z_002_list){
+				sh_z_002_device.device_port = 502;
+				if (sh_z_002_device.get_device_MAC() != true) {
+					sh_z_002_list.Remove(sh_z_002_device);
+				}
+			}
+//				scan_result.DataSource = null;
+//				scan_result.DataSource = sh_z_devices;
+//				AdjustColumnOrder();						
 			enableButtons(true);
 			scan_progress.Visible = false;			
 		}
-
-		private void scan_sh_z_devices(arp_scan my_arp_scan) 
+		
+		void scan_sh_z_devices() 
 		{			
-			if(my_arp_scan.ready_to_scan()) {
-				my_arp_scan.start_scan(6000);
-			}
+			var my_sh_z_002_scan = new sh_z_002_scan();
+			sh_z_002_list = my_sh_z_002_scan.udp_discovery();
 		}
 		
-		private bool is_sh_z_fw(string filename) 
+		 bool is_sh_z_fw(string filename) 
 		{			
 			return true;
 		}
@@ -159,14 +133,14 @@ namespace config
 		   } 			
 		}
 
-		private void update_sh_z_device(sh_z_device sh_z_device) 
+		void update_sh_z_device(sh_z_device sh_z_device) 
 		{			
 			if(sh_z_device.ok_to_update()) {
 				sh_z_device.update(update_file_name);	//, update_dev_up_progress);
 			}
 		}
 		
-		private void set_sh_z_device(sh_z_device sh_z_device) 
+		void set_sh_z_device(sh_z_device sh_z_device) 
 		{			
 			if(sh_z_device.ok_to_config()) {
 				sh_z_device.config_device_eth();	//, update_dev_up_progress);

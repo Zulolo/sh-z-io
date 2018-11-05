@@ -1,217 +1,208 @@
-\t (00:00:00) allegro 17.2 S007 Windows SPB 64-bit Edition
-\t (00:00:00)     Journal start - Tue Sep 11 21:00:39 2018
-\t (00:00:00)         Host=ZULOLO-PC User=dodol Pid=6544 CPUs=8
-\t (00:00:00) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
-\t (00:00:00) 
-   (00:00:00) Loading axlcore.cxt 
-   (00:00:00) *Error* load: can't access file - "J:\\Cadence\\pcbenv\\DstCxi.il"
-\t (00:00:02) Opening existing design...
-\d (00:00:02) Design opened: G:/Work/io/design/pcb/io_4di_4aic_dbdoctor_2.brd
-\t (00:00:02) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
-\i (00:00:02) trapsize 2205
-\i (00:00:02) trapsize 2291
-\t (00:00:02) Grids are drawn 3.200, 3.200 apart for enhanced viewability.
-\i (00:00:02) trapsize 2291
-\i (00:00:02) etchedit 
-\i (00:00:06) zoom in 1 
-\i (00:00:06) setwindow pcb
-\i (00:00:06) zoom in 18.030 34.525
-\t (00:00:06) Grids are drawn 1.600, 1.600 apart for enhanced viewability.
-\i (00:00:06) trapsize 1145
-\i (00:00:06) zoom in 1 
-\i (00:00:06) setwindow pcb
-\i (00:00:06) zoom in 18.030 34.525
-\t (00:00:06) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
-\i (00:00:06) trapsize 573
-\i (00:00:07) roam start
-\i (00:00:07) roam y 48
-\i (00:00:07) roam y 16
-\i (00:00:07) roam end
-\i (00:00:07) zoom in 1 
-\i (00:00:07) setwindow pcb
-\i (00:00:07) zoom in 43.345 34.868
-\t (00:00:07) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
-\i (00:00:07) trapsize 286
-\i (00:00:08) zoom in 1 
-\i (00:00:08) setwindow pcb
-\i (00:00:08) zoom in 43.345 34.868
-\t (00:00:08) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
-\i (00:00:08) trapsize 143
-\i (00:00:08) roam start
-\i (00:00:08) roam x -48
-\i (00:00:08) roam y 64
-\i (00:00:08) roam x -64
-\i (00:00:08) roam y 64
-\i (00:00:08) roam x -16
-\i (00:00:08) roam y 32
-\i (00:00:08) roam end
-\i (00:00:09) zoom out 1 
-\i (00:00:09) setwindow pcb
-\i (00:00:09) zoom out 40.854 32.091
-\t (00:00:09) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
-\i (00:00:09) trapsize 286
-\i (00:00:09) zoom out 1 
-\i (00:00:09) setwindow pcb
-\i (00:00:09) zoom out 40.854 32.149
-\t (00:00:09) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
-\i (00:00:09) trapsize 573
-\i (00:00:10) roam start
-\i (00:00:10) roam x -64
-\i (00:00:10) roam x -64
-\i (00:00:10) roam x -16
-\i (00:00:10) roam x -32
-\i (00:00:10) roam end
-\i (00:00:13) color192 
-\i (00:00:13) etchedit 
-\i (00:00:15) QtSignal CVDLayerTable VertHeader clickedCheckBox 2
-\i (00:00:15) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Top Pin
-\i (00:00:16) QtSignal CVDLayerTable VertHeader clickedCheckBox 3
-\i (00:00:16) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Bottom Pin
-\i (00:00:18) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 1
-\i (00:00:18) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Via
-\i (00:00:18) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:19) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:20) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 0 1
-\i (00:00:20) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Top Via
-\i (00:00:20) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:22) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
-\i (00:00:24) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 13 0
-\i (00:00:24) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Silkscreen_Bottom BrdGeo
-\i (00:00:24) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:25) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 14 0
-\i (00:00:25) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Silkscreen_Top BrdGeo
-\i (00:00:25) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:25) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:26) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 15 0
-\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Bottom BrdGeo
-\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:27) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 16 0
-\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Top BrdGeo
-\i (00:00:27) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:29) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
-\i (00:00:33) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 16 0
-\i (00:00:33) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Bottom PkgGeo
-\i (00:00:33) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:34) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 17 0
-\i (00:00:34) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Soldermask_Top PkgGeo
-\i (00:00:34) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:35) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Embedded geometry"
-\i (00:00:36) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Manufacturing
-\i (00:00:39) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 0 0
-\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Autosilk_Bottom Mfg
-\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:39) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 0
-\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Autosilk_Top Mfg
-\i (00:00:39) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
-\i (00:00:41) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\t (00:00:24) allegro 17.2 S007 Windows SPB 64-bit Edition
+\t (00:00:24)     Journal start - Sun Oct 14 10:12:58 2018
+\t (00:00:24)         Host=ZULOLO-PC User=dodol Pid=13336 CPUs=8
+\t (00:00:24) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:00:24) 
+\d (00:00:24) Design opened: G:/Work/sh-z-002/design/pcb/io_4di_4aic_dbdoctor_2.brd
+\i (00:00:24) etchedit 
+\i (00:00:25) zoom out 1 
+\i (00:00:25) setwindow pcb
+\i (00:00:25) zoom out 67.087 51.580
+\t (00:00:25) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:25) trapsize 286
+\i (00:00:25) zoom out 1 
+\i (00:00:25) setwindow pcb
+\i (00:00:25) zoom out 67.087 51.580
+\t (00:00:25) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:00:25) trapsize 573
+\i (00:00:27) roam start
+\i (00:00:27) roam y 80
+\i (00:00:27) roam y 48
+\i (00:00:27) roam y 32
+\i (00:00:28) roam end
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom in 84.239 26.392
+\t (00:00:29) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:29) trapsize 286
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom in 84.240 26.449
+\t (00:00:29) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:00:29) trapsize 143
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom out 81.319 34.210
+\t (00:00:30) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:30) trapsize 286
+\i (00:00:32) zoom in 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom in 80.059 45.264
+\t (00:00:32) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:00:32) trapsize 143
+\i (00:00:32) zoom in 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom in 80.059 45.264
+\i (00:00:32) trapsize 72
+\i (00:00:32) zoom in 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom in 80.059 45.264
+\i (00:00:32) trapsize 36
+\i (00:00:34) zoom in 1 
+\i (00:00:34) setwindow pcb
+\i (00:00:34) zoom in 79.995 43.088
+\i (00:00:34) trapsize 18
+\i (00:00:34) zoom in 1 
+\i (00:00:34) setwindow pcb
+\i (00:00:34) zoom in 79.996 43.089
+\i (00:00:34) trapsize 9
+\i (00:00:38) zoom out 1 
+\i (00:00:38) setwindow pcb
+\i (00:00:38) zoom out 80.004 43.000
+\i (00:00:38) trapsize 18
+\i (00:00:38) zoom out 1 
+\i (00:00:38) setwindow pcb
+\i (00:00:38) zoom out 80.004 43.000
+\i (00:00:38) trapsize 36
+\i (00:00:38) zoom out 1 
+\i (00:00:38) setwindow pcb
+\i (00:00:38) zoom out 80.005 42.999
+\i (00:00:38) trapsize 72
+\i (00:00:39) roam start
+\i (00:00:39) roam y 112
+\i (00:00:39) roam x 16
+\i (00:00:39) roam y 208
+\i (00:00:39) roam x 16
+\i (00:00:39) roam y 288
+\i (00:00:39) roam y 256
+\i (00:00:39) roam y 144
+\i (00:00:39) roam x -16
+\i (00:00:39) roam y 80
+\i (00:00:39) roam y 80
+\i (00:00:39) roam y 32
+\i (00:00:39) roam x -16
+\i (00:00:39) roam y 48
+\i (00:00:39) roam y 48
+\i (00:00:39) roam y 32
+\i (00:00:39) roam end
+\i (00:00:40) roam start
+\i (00:00:40) roam y 16
+\i (00:00:40) roam y 240
+\i (00:00:40) roam y 288
+\i (00:00:40) roam y 80
+\i (00:00:40) roam x -32
+\i (00:00:40) roam y 80
+\i (00:00:40) roam x -16
+\i (00:00:40) roam y 80
+\i (00:00:40) roam x -16
+\i (00:00:40) roam y 64
+\i (00:00:40) roam y 48
+\i (00:00:40) roam x -16
+\i (00:00:40) roam y 48
+\i (00:00:40) roam x -16
+\i (00:00:40) roam y 32
+\i (00:00:40) roam end
+\i (00:00:41) roam start
+\i (00:00:41) roam y -32
+\i (00:00:41) roam x -16
+\i (00:00:41) roam y -208
+\i (00:00:41) roam x -32
+\i (00:00:41) roam y -224
+\i (00:00:41) roam x -16
+\i (00:00:41) roam y -160
+\i (00:00:41) roam x -16
+\i (00:00:41) roam y -48
+\i (00:00:41) roam end
 \i (00:00:43) zoom in 1 
 \i (00:00:43) setwindow pcb
-\i (00:00:43) zoom in 56.518 53.340
-\t (00:00:43) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
-\i (00:00:43) trapsize 286
-\i (00:00:43) zoom in 1 
-\i (00:00:43) setwindow pcb
-\i (00:00:43) zoom in 56.633 53.111
-\t (00:00:43) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
-\i (00:00:43) trapsize 143
-\i (00:00:43) zoom in 1 
-\i (00:00:43) setwindow pcb
-\i (00:00:43) zoom in 56.662 53.083
-\i (00:00:43) trapsize 72
-\i (00:00:44) zoom out 1 
+\i (00:00:43) zoom in 81.986 15.628
+\i (00:00:43) trapsize 36
+\i (00:00:44) zoom in 1 
 \i (00:00:44) setwindow pcb
-\i (00:00:44) zoom out 58.094 53.040
-\i (00:00:44) trapsize 143
-\i (00:00:45) move 
-\t (00:00:45) Select element(s) to move.
-\i (00:00:48) pick grid 58.381 57.021
-\t (00:00:48) last pick:  58.400 57.000
-\t (00:00:48) last pick:  57.800 55.000
-\t (00:00:48) Element has no pins, using origin.
-\t (00:00:48) Pick new location for the element(s).
-\i (00:00:49) iangle 90 
-\t (00:00:49) last pick:  90.000 0.000
-\i (00:00:50) iangle 90 
-\t (00:00:50) last pick:  90.000 0.000
-\i (00:00:50) iangle 90 
-\t (00:00:50) last pick:  90.000 0.000
-\i (00:00:51) iangle 90 
-\t (00:00:51) last pick:  90.000 0.000
-\i (00:00:52) iangle 90 
-\t (00:00:52) last pick:  90.000 0.000
-\i (00:00:56) pick grid 63.221 54.759
-\t (00:00:56) last pick:  63.200 54.800
-\i (00:00:56) pick grid 58.639 54.043
-\t (00:00:56) last pick:  58.600 54.000
-\t (00:00:56) last pick:  57.800 52.111
-\t (00:00:56) Element has no pins, using origin.
-\t (00:00:56) Pick new location for the element(s).
-\i (00:00:57) iangle 90 
-\t (00:00:57) last pick:  90.000 0.000
-\i (00:01:03) pick grid 52.052 52.668
-\t (00:01:03) last pick:  52.100 52.700
-\i (00:01:04) pick grid 60.243 51.723
-\t (00:01:04) last pick:  60.200 51.700
-\i (00:01:04) pick grid 59.727 51.752
-\t (00:01:04) last pick:  59.700 51.800
-\t (00:01:04) last pick:  58.689 50.111
-\t (00:01:04) Element has no pins, using origin.
-\t (00:01:04) Pick new location for the element(s).
-\i (00:01:04) iangle 90 
-\t (00:01:04) last pick:  90.000 0.000
-\i (00:01:06) pick grid 62.190 50.578
-\t (00:01:06) last pick:  62.200 50.600
-\i (00:01:07) pick grid 59.097 49.318
-\t (00:01:07) last pick:  59.100 49.300
-\t (00:01:07) last pick:  57.800 49.000
-\t (00:01:07) Element has no pins, using origin.
-\t (00:01:07) Pick new location for the element(s).
-\i (00:01:07) iangle 90 
-\t (00:01:07) last pick:  90.000 0.000
-\i (00:01:10) pick grid 53.370 48.545
-\t (00:01:10) last pick:  53.400 48.500
-\i (00:01:12) pick grid 62.992 54.644
-\t (00:01:12) last pick:  63.000 54.600
-\t (00:01:12) last pick:  63.200 54.800
-\t (00:01:12) Element has no pins, using origin.
-\t (00:01:12) Pick new location for the element(s).
-\i (00:01:15) pick grid 52.539 55.074
-\t (00:01:15) last pick:  52.500 55.100
-\i (00:01:17) pick grid 61.331 51.007
-\t (00:01:17) last pick:  61.300 51.000
-\t (00:01:17) last pick:  62.200 50.600
-\t (00:01:17) Element has no pins, using origin.
-\t (00:01:17) Pick new location for the element(s).
-\i (00:01:24) pick grid 61.789 50.721
-\t (00:01:24) last pick:  61.800 50.700
-\i (00:01:24) prepopup 67.001 51.809
-\i (00:01:25) done 
-\i (00:01:25) etchedit 
-\i (00:01:26) save 
-\i (00:01:28) fillin yes 
-\i (00:01:28) etchedit 
-\i (00:01:33) artwork 
-\i (00:01:34) setwindow form.film_control
-\i (00:01:34) FORM film_control select_all  
-\i (00:01:35) FORM film_control create  
-\i (00:01:39) fillin yes 
-\t (00:01:39) Checking db records
-\t (00:01:39)     checking for orphans...
-\t (00:01:39)     Checked  50 percent
-\t (00:01:39)     Checked 100 percent
-\t (00:01:39) Done dbdoctor.
-\t (00:01:39) Starting Create artwork films...
-\w (00:01:40) WARNING(SPMHGE-269): artwork had warnings, use Viewlog to review the log file.
-\w (00:01:41) Artwork generated with warnings.
-\i (00:01:44) setwindow text
-\i (00:01:44) close 
-\i (00:01:45) setwindow form.film_control
-\i (00:01:45) FORM film_control ok  
-\i (00:01:45) setwindow pcb
-\i (00:01:45) etchedit 
-\i (00:01:47) save 
-\i (00:01:48) fillin yes 
-   (00:01:48) Loading signal.cxt 
-\i (00:01:48) etchedit 
-\i (00:01:49) exit 
-\t (00:01:49)     Journal end - Tue Sep 11 21:02:29 2018
+\i (00:00:44) zoom in 81.986 15.621
+\i (00:00:44) trapsize 18
+\i (00:00:46) zoom out 1 
+\i (00:00:46) setwindow pcb
+\i (00:00:46) zoom out 80.071 16.259
+\i (00:00:46) trapsize 36
+\i (00:00:46) zoom out 1 
+\i (00:00:46) setwindow pcb
+\i (00:00:46) zoom out 80.121 16.230
+\i (00:00:46) trapsize 72
+\i (00:00:47) zoom out 1 
+\i (00:00:47) setwindow pcb
+\i (00:00:47) zoom out 80.177 16.186
+\i (00:00:47) trapsize 143
+\i (00:00:47) zoom out 1 
+\i (00:00:47) setwindow pcb
+\i (00:00:47) zoom out 80.178 16.187
+\t (00:00:47) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:00:47) trapsize 286
+\i (00:01:16) zoom in 1 
+\i (00:01:16) setwindow pcb
+\i (00:01:16) zoom in 78.860 17.733
+\t (00:01:16) Grids are drawn 0.200, 0.200 apart for enhanced viewability.
+\i (00:01:16) trapsize 143
+\i (00:01:16) zoom in 1 
+\i (00:01:16) setwindow pcb
+\i (00:01:16) zoom in 79.089 17.389
+\i (00:01:16) trapsize 72
+\i (00:01:16) zoom in 1 
+\i (00:01:16) setwindow pcb
+\i (00:01:16) zoom in 79.233 17.232
+\i (00:01:16) trapsize 36
+\i (00:01:18) zoom in 1 
+\i (00:01:18) setwindow pcb
+\i (00:01:18) zoom in 79.977 16.322
+\i (00:01:18) trapsize 18
+\i (00:01:33) zoom out 1 
+\i (00:01:33) setwindow pcb
+\i (00:01:33) zoom out 80.264 15.993
+\i (00:01:33) trapsize 36
+\i (00:01:33) zoom out 1 
+\i (00:01:33) setwindow pcb
+\i (00:01:33) zoom out 80.264 15.993
+\i (00:01:33) trapsize 72
+\i (00:01:34) zoom out 1 
+\i (00:01:34) setwindow pcb
+\i (00:01:34) zoom out 80.092 15.950
+\i (00:01:34) trapsize 143
+\i (00:01:34) roam start
+\i (00:01:34) roam x -16
+\i (00:01:34) roam y 160
+\i (00:01:34) roam x -16
+\i (00:01:34) roam y 80
+\i (00:01:34) roam y 64
+\i (00:01:34) roam y 16
+\i (00:01:34) roam x -16
+\i (00:01:34) roam y 64
+\i (00:01:35) roam end
+\i (00:01:35) zoom out 1 
+\i (00:01:35) setwindow pcb
+\i (00:01:35) zoom out 79.580 6.578
+\t (00:01:35) Grids are drawn 0.400, 0.400 apart for enhanced viewability.
+\i (00:01:35) trapsize 286
+\i (00:01:35) zoom out 1 
+\i (00:01:35) setwindow pcb
+\i (00:01:35) zoom out 83.762 4.687
+\t (00:01:35) Grids are drawn 0.800, 0.800 apart for enhanced viewability.
+\i (00:01:36) trapsize 573
+\i (00:01:37) roam start
+\i (00:01:37) roam y -16
+\i (00:01:37) roam end
+\i (00:42:21) xdehilite 
+\i (00:42:21) xrefdes R18 
+\i (00:42:21) xname_flush 
+\i (00:42:21) done 
+\i (00:42:21) etchedit 
+\i (00:42:24) xhilite 
+\i (00:42:25) xrefdes R50 
+\i (00:42:25) xname_flush 
+\i (00:42:25) trapsize 31
+\t (00:42:25) Symbol "R50" highlighted.
+\i (00:42:25) done 
+\i (00:42:25) etchedit 
+\i (00:42:29) exit 
+\e (00:42:29) Do you want to save the changes you made to io_4di_4aic_dbdoctor_2.brd?
+\i (00:42:36) fillin no 
+\t (00:42:36)     Journal end - Sun Oct 14 10:55:10 2018

@@ -34,12 +34,8 @@ G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\config.exe.config
 G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\config.exe
 G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\config.pdb
 G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\ModbusTCP.dll
-G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\PacketDotNet.dll
-G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\SharpPcap.dll
 G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\TFTPClient.dll
 G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\ModbusTCP.pdb
-G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\PacketDotNet.xml
-G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\SharpPcap.xml
 G:\Work\sh-z-002\design\code\config\config\config\bin\Debug\TFTPClient.pdb
 G:\Work\sh-z-002\design\code\config\config\config\obj\Debug\config.csprojResolveAssemblyReference.cache
 G:\Work\sh-z-002\design\code\config\config\config\obj\Debug\config.MainForm.resources

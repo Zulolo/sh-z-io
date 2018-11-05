@@ -11,7 +11,6 @@
 using System;
 
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Linq;
 using ModbusTCP;
 
@@ -25,10 +24,10 @@ namespace config
 	
 	public class sh_z_002 : sh_z_device
 	{
-		private const int SH_Z_002_DEV_INFO_REG_ADDR = 30000;
-		private const int SH_Z_002_DEV_INFO_REG_LENTH = 8;
-		private const byte SH_Z_002_SLAVE_ID = 2;
-		static private ushort mb_tcp_id = 0;
+		const int SH_Z_002_DEV_INFO_REG_ADDR = 30000;
+		const int SH_Z_002_DEV_INFO_REG_LENTH = 8;
+		const byte SH_Z_002_SLAVE_ID = 2;
+		static ushort mb_tcp_id = 0;
 			     	
 		static public bool is_sh_z_002(IPAddress ip_address, int mb_port)
 		{
@@ -55,11 +54,9 @@ namespace config
 			return false;
 		}
 					
-		public sh_z_002(IPAddress ipAddress, int port, PhysicalAddress physicalAddress)
+		public sh_z_002(IPAddress ipAddress)
 		{
 			this.device_ip = ipAddress;
-			this.device_port = port;
-			this.device_mac = BitConverter.ToString(physicalAddress.GetAddressBytes()).Replace('-', ':');
 		}
 	}
 }
