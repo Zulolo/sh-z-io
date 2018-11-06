@@ -39,6 +39,8 @@ namespace config
 		public bool isStaticIP { get; set; }		
 		[System.ComponentModel.DisplayName("IP地址")]
 		public IPAddress device_ip { get; set; }
+		[System.ComponentModel.DisplayName("静态IP")]
+		public IPAddress static_ip { get; set; }
 		[System.ComponentModel.DisplayName("网关")]
 		public IPAddress device_gateway { get; set; }
 		[System.ComponentModel.DisplayName("子网掩码")]
@@ -114,6 +116,7 @@ namespace config
 //			TransferFinishedEvent.WaitOne();			
         }
         
+        const ushort ETH_INFO_CONF_STATIC_IP = 0x01;
         [StructLayout(LayoutKind.Sequential)]
         public struct EthConfig_t
 		{
@@ -147,36 +150,6 @@ namespace config
 		    Marshal.FreeHGlobal(ptr);
 		    return s;
 		}
-
-        byte[] getBytes(EthConfig_t myEthConfig) {
-		    int size = Marshal.SizeOf(myEthConfig);
-		    byte[] arr = new byte[size];
-		
-		    IntPtr ptr = Marshal.AllocHGlobal(size);
-		    Marshal.StructureToPtr(myEthConfig, ptr, true);
-		    Marshal.Copy(ptr, arr, 0, size);
-		    Marshal.FreeHGlobal(ptr);
-		    return arr;
-		}
-        
-        T ByteArrayToStructure<T>(byte[] bytes) where T: struct
-		{
-		    T stuff;
-		    GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-		    try
-		    {
-		        stuff = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
-		    }
-		    finally
-		    {
-		        handle.Free();
-		    }
-		    return stuff;
-		}
-        
-        EthConfig_t getEthConfig(byte[] EthConfigBytes) {
-        	return Deserialize<EthConfig_t>(EthConfigBytes);
-		}
         
         public void config_device_eth()	//, Action<string, int> updatProgress)
         {
@@ -184,7 +157,7 @@ namespace config
         	byte[] EthConfByteArray;
         	EthConfig_t EthConf = new EthConfig_t();
         	try {
-        		EthConf.uIP_Addr = device_ip.GetAddressBytes();
+        		EthConf.uIP_Addr = static_ip.GetAddressBytes();
         	} catch (Exception) {
         		return;
         	}
@@ -216,7 +189,7 @@ namespace config
         	try {
 	        	string[] strings = device_mac.Split(':');
 	        	EthConf.uMAC_Addr = strings.Select(s => byte.Parse(s, NumberStyles.AllowHexSpecifier)).ToArray();       	
-	        	EthConfByteArray = getBytes(EthConf);
+	        	EthConfByteArray = Serialize<EthConfig_t>(EthConf);
         	} catch (Exception) {
         		return;
         	}
@@ -230,7 +203,8 @@ namespace config
 				modebus_client.disconnect();
 			}
         }
-        public Boolean get_device_MAC() {
+        
+        public Boolean get_eth_info() {
           	var modebus_client = new Master();
         	byte[] mb_read_resp = null;
 			modebus_client.timeout = 300;
@@ -238,25 +212,29 @@ namespace config
 			if (modebus_client.connected) {
 				modebus_client.ReadInputRegister(mb_tcp_id++, 1, 1000, 10, ref mb_read_resp);
 				modebus_client.disconnect();
-				var myEthConfig = getEthConfig(mb_read_resp);
-				return true;
+				var myEthConfig = Deserialize<EthConfig_t>(mb_read_resp);
+				if ((BitConverter.ToString(myEthConfig.uMAC_Addr).Replace('-', ':')).StartsWith("02:80:E1:")) {
+					device_mac = BitConverter.ToString(myEthConfig.uMAC_Addr).Replace('-', ':');
+					device_gateway = new IPAddress(myEthConfig.uGateway);
+					static_ip = new IPAddress(myEthConfig.uIP_Addr);
+					device_netmask = new IPAddress(myEthConfig.uNetmask);
+					isStaticIP = ((myEthConfig.conf & ETH_INFO_CONF_STATIC_IP) == ETH_INFO_CONF_STATIC_IP);
+					return true;
+				} else {
+					return false;					
+				}
 			} else {
 				return false;
 			}	
         }
-        
-        public bool is_sh_z_device(string mac_address)
+ 		public sh_z_device()
 		{
-			if (mac_address.StartsWith("02:80:E1:")) {
-				return true;		
-			} else {
-				return false;
-			}			
+ 			
 		}
- 
-		public sh_z_device()
+ 		
+		public sh_z_device(IPAddress ipAddress)
 		{
-
+			this.device_ip = ipAddress;
 		}
 		
 		public sh_z_device(IPAddress ipAddress, int port, PhysicalAddress physicalAddress)

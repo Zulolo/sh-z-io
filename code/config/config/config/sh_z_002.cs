@@ -20,7 +20,7 @@ namespace config
 	/// Description of sh_z_002.
 	/// </summary>
 	/// 
-	public enum DeviceStatus {Unknow, sh_z_002, sh_z_002_boot, sh_z_002_main_app};
+//	public enum DeviceStatus {Unknow, sh_z_002, sh_z_002_boot, sh_z_002_main_app};
 	
 	public class sh_z_002 : sh_z_device
 	{

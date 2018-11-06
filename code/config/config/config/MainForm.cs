@@ -27,13 +27,13 @@ namespace config
 		BindingSource sh_z_device_list = new BindingSource();
 		Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
 		string update_file_name = "";
-		List<sh_z_002> sh_z_002_list = null; 
+		List<sh_z_device> sh_z_dev_list = null; 
 		
 		private void AdjustColumnOrder()
 		{
 		    scan_result.Columns["device_port"].Visible = false;
 		    scan_result.Columns["progress"].Visible = false;
-		    scan_result.Columns["device_status"].Visible = false;
+//		    scan_result.Columns["device_status"].Visible = false;
 		    scan_result.Columns["isSelected"].DisplayIndex = 0;
 		    scan_result.Columns["isSelected"].Width = 40;
 		    scan_result.Columns["device_ip"].DisplayIndex = 1;
@@ -43,26 +43,28 @@ namespace config
 //		    scan_result.Columns["device_mac"].ReadOnly = true;
 		    scan_result.Columns["isStaticIP"].DisplayIndex = 4;
 		    scan_result.Columns["isStaticIP"].Width = 50;
-		    scan_result.Columns["device_gateway"].DisplayIndex = 5;
+		    scan_result.Columns["static_ip"].DisplayIndex = 5;
+		    scan_result.Columns["static_ip"].Width = 80;
+		    scan_result.Columns["device_gateway"].DisplayIndex = 6;
 		    scan_result.Columns["device_gateway"].Width = 80;
-		    scan_result.Columns["device_netmask"].DisplayIndex = 6;
+		    scan_result.Columns["device_netmask"].DisplayIndex = 7;
 		    scan_result.Columns["device_netmask"].Width = 80;
-		    if (!scan_result.Columns.Contains(Progress)) {
-		    	scan_result.Columns.Add(Progress);
-		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
-		    	var resources = new ComponentResourceManager(typeof(MainForm));
-				dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-	            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-	            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
-	            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-	            Progress.DefaultCellStyle = dataGridViewCellStyle1;
-	            Progress.HeaderText = "进度 [%]";
-	            Progress.Name = "dev_up_progress";
-	            Progress.ProgressBarColor = System.Drawing.Color.Lime;
-	            Progress.DisplayIndex = 3;
-	            Progress.ReadOnly = true;
-				scan_result.Columns["dev_up_progress"].Width = 80;	            
-		    }
+//		    if (!scan_result.Columns.Contains(Progress)) {
+//		    	scan_result.Columns.Add(Progress);
+//		    	var dataGridViewCellStyle1 = new DataGridViewCellStyle(); 
+//		    	var resources = new ComponentResourceManager(typeof(MainForm));
+//				dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+//	            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+//	            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+//	            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+//	            Progress.DefaultCellStyle = dataGridViewCellStyle1;
+//	            Progress.HeaderText = "进度 [%]";
+//	            Progress.Name = "dev_up_progress";
+//	            Progress.ProgressBarColor = System.Drawing.Color.Lime;
+//	            Progress.DisplayIndex = 3;
+//	            Progress.ReadOnly = true;
+//				scan_result.Columns["dev_up_progress"].Width = 80;	            
+//		    }
 		}
 				
 		public MainForm()
@@ -102,23 +104,24 @@ namespace config
 				Thread.Sleep(70);
 			}
 			Task.WaitAll(tasks.ToArray());
-			foreach(sh_z_002 sh_z_002_device in sh_z_002_list){
-				sh_z_002_device.device_port = 502;
-				if (sh_z_002_device.get_device_MAC() != true) {
-					sh_z_002_list.Remove(sh_z_002_device);
+			foreach(sh_z_device sh_z_dev in sh_z_dev_list){
+				sh_z_dev.device_port = 502;
+				if (sh_z_dev.get_eth_info() != true) {
+					sh_z_dev_list.Remove(sh_z_dev);
 				}
 			}
-//				scan_result.DataSource = null;
-//				scan_result.DataSource = sh_z_devices;
-//				AdjustColumnOrder();						
+			scan_result.DataSource = null;
+			scan_result.DataSource = sh_z_dev_list;
+			AdjustColumnOrder();	
+			
 			enableButtons(true);
 			scan_progress.Visible = false;			
 		}
 		
 		void scan_sh_z_devices() 
 		{			
-			var my_sh_z_002_scan = new sh_z_002_scan();
-			sh_z_002_list = my_sh_z_002_scan.udp_discovery();
+			var my_sh_z_scan = new sh_z_scan();
+			sh_z_dev_list = my_sh_z_scan.udp_discovery();
 		}
 		
 		 bool is_sh_z_fw(string filename) 
@@ -162,13 +165,13 @@ namespace config
 				bool all_dev_up_done = false;
 				while (false == all_dev_up_done) {
 					all_dev_up_done = true;
-					foreach (sh_z_device sh_z_obj in sh_z_devices ) {
-						if (sh_z_obj.isSelected) {
-							if (sh_z_obj.progress < 100) {
+					foreach (sh_z_device sh_z_dev in sh_z_devices ) {
+						if (sh_z_dev.isSelected) {
+							if (sh_z_dev.progress < 100) {
 								all_dev_up_done = false;
 								foreach (DataGridViewRow data_row in scan_result.Rows) {
-									if (sh_z_obj.device_mac == data_row.Cells["device_mac"].Value) {
-										data_row.Cells["dev_up_progress"].Value = sh_z_obj.progress;
+									if (sh_z_dev.device_mac == data_row.Cells["device_mac"].Value) {
+										data_row.Cells["dev_up_progress"].Value = sh_z_dev.progress;
 										scan_result.Refresh();
 									}
 								}															
@@ -193,16 +196,12 @@ namespace config
 		void Set_deviceClick(object sender, EventArgs e)
 		{
 			enableButtons(false);
-
 			var tasks = new List<Task>();
-
-			foreach (sh_z_device sh_z_obj in sh_z_devices ) {
-				if (sh_z_obj.isSelected) {
-					tasks.Add(Task.Factory.StartNew(() => set_sh_z_device(sh_z_obj)));
+			foreach (sh_z_device sh_z_dev in sh_z_dev_list ) {
+				if (sh_z_dev.isSelected) {
+					tasks.Add(Task.Factory.StartNew(() => set_sh_z_device(sh_z_dev)));
 				}
-
-			}
-		
+			}		
 			Task.WaitAll(tasks.ToArray());
 
 			enableButtons(true);			

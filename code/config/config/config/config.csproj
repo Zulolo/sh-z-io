@@ -66,7 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sh_z_002.cs" />
     <Compile Include="sh_z_device.cs" />
-    <Compile Include="sh_z_002_scan.cs" />
+    <Compile Include="sh_z_scan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

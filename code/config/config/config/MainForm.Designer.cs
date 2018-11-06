@@ -101,6 +101,7 @@ namespace config
 			this.openUpdate.TabIndex = 4;
 			this.openUpdate.Text = "Select file";
 			this.openUpdate.UseVisualStyleBackColor = true;
+			this.openUpdate.Visible = false;
 			this.openUpdate.Click += new System.EventHandler(this.OpenUpdateClick);
 			// 
 			// startUpdate
@@ -111,6 +112,7 @@ namespace config
 			this.startUpdate.TabIndex = 5;
 			this.startUpdate.Text = "Update";
 			this.startUpdate.UseVisualStyleBackColor = true;
+			this.startUpdate.Visible = false;
 			this.startUpdate.Click += new System.EventHandler(this.StartUpdateClick);
 			// 
 			// set_device
