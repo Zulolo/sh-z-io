@@ -28,12 +28,7 @@ namespace config
 		List<sh_z_device> sh_z_list = new List<sh_z_device>();
 		readonly UdpClient udpClient;
 		const string UDP_BROADCAST_DEV_NAME = "sh-z-";
-		
-		public struct UdpState
-		{
-			public UdpClient u;
-			public IPEndPoint e;
-		}
+
 		Boolean dev_not_in_list(List<sh_z_device> dev_list, IPAddress dev_ip)
 		{
 			foreach(sh_z_device dev in dev_list) {
@@ -62,8 +57,7 @@ namespace config
 				/*do nothing*/
 			}
 		}
-		
-		
+			
 		public List<sh_z_device> udp_discovery() {
 			var broadcastAddress = new IPEndPoint(IPAddress.Any, 52018);
 			

@@ -86,7 +86,7 @@ namespace config
 			this.scan_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.scan_result.Location = new System.Drawing.Point(12, 41);
 			this.scan_result.Name = "scan_result";
-			this.scan_result.Size = new System.Drawing.Size(523, 264);
+			this.scan_result.Size = new System.Drawing.Size(564, 264);
 			this.scan_result.TabIndex = 3;
 			// 
 			// openUpdateFileDialog
@@ -95,7 +95,7 @@ namespace config
 			// 
 			// openUpdate
 			// 
-			this.openUpdate.Location = new System.Drawing.Point(348, 12);
+			this.openUpdate.Location = new System.Drawing.Point(420, 12);
 			this.openUpdate.Name = "openUpdate";
 			this.openUpdate.Size = new System.Drawing.Size(75, 23);
 			this.openUpdate.TabIndex = 4;
@@ -106,7 +106,7 @@ namespace config
 			// 
 			// startUpdate
 			// 
-			this.startUpdate.Location = new System.Drawing.Point(441, 12);
+			this.startUpdate.Location = new System.Drawing.Point(501, 12);
 			this.startUpdate.Name = "startUpdate";
 			this.startUpdate.Size = new System.Drawing.Size(75, 23);
 			this.startUpdate.TabIndex = 5;
@@ -117,7 +117,7 @@ namespace config
 			// 
 			// set_device
 			// 
-			this.set_device.Location = new System.Drawing.Point(251, 12);
+			this.set_device.Location = new System.Drawing.Point(310, 12);
 			this.set_device.Name = "set_device";
 			this.set_device.Size = new System.Drawing.Size(75, 23);
 			this.set_device.TabIndex = 6;
@@ -129,7 +129,7 @@ namespace config
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(548, 331);
+			this.ClientSize = new System.Drawing.Size(588, 331);
 			this.Controls.Add(this.set_device);
 			this.Controls.Add(this.startUpdate);
 			this.Controls.Add(this.openUpdate);

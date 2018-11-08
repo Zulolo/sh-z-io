@@ -27,7 +27,8 @@ namespace config
 		BindingSource sh_z_device_list = new BindingSource();
 		Sample.DataGridViewProgressColumn Progress = new Sample.DataGridViewProgressColumn();
 		string update_file_name = "";
-		List<sh_z_device> sh_z_dev_list = null; 
+		List<sh_z_device> sh_z_dev_list_tmp = null; 
+		List<sh_z_device> sh_z_dev_list = new List<sh_z_device>();
 		
 		private void AdjustColumnOrder()
 		{
@@ -104,10 +105,11 @@ namespace config
 				Thread.Sleep(70);
 			}
 			Task.WaitAll(tasks.ToArray());
-			foreach(sh_z_device sh_z_dev in sh_z_dev_list){
+			sh_z_dev_list.Clear();
+			foreach(sh_z_device sh_z_dev in sh_z_dev_list_tmp){
 				sh_z_dev.device_port = 502;
-				if (sh_z_dev.get_eth_info() != true) {
-					sh_z_dev_list.Remove(sh_z_dev);
+				if (sh_z_dev.get_eth_info() == true) {
+					sh_z_dev_list.Add(sh_z_dev);
 				}
 			}
 			scan_result.DataSource = null;
@@ -121,7 +123,7 @@ namespace config
 		void scan_sh_z_devices() 
 		{			
 			var my_sh_z_scan = new sh_z_scan();
-			sh_z_dev_list = my_sh_z_scan.udp_discovery();
+			sh_z_dev_list_tmp = my_sh_z_scan.udp_discovery();
 		}
 		
 		 bool is_sh_z_fw(string filename) 

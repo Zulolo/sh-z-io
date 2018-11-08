@@ -39,7 +39,7 @@ namespace config
 		public bool isStaticIP { get; set; }		
 		[System.ComponentModel.DisplayName("IP地址")]
 		public IPAddress device_ip { get; set; }
-		[System.ComponentModel.DisplayName("静态IP")]
+		[System.ComponentModel.DisplayName("静态地址")]
 		public IPAddress static_ip { get; set; }
 		[System.ComponentModel.DisplayName("网关")]
 		public IPAddress device_gateway { get; set; }

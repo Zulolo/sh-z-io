@@ -11,8 +11,6 @@ G:\Work\io\design\code\config\config\test_sharpPcap\obj\Debug\test_sharpPcap.pdb
 G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\test_sharpPcap.exe.config
 G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\test_sharpPcap.exe
 G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\test_sharpPcap.pdb
-G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\PacketDotNet.dll
-G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\SharpPcap.dll
 G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\PacketDotNet.xml
 G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\bin\Debug\SharpPcap.xml
 G:\Work\sh-z-002\design\code\config\config\test_sharpPcap\obj\Debug\test_sharpPcap.csprojResolveAssemblyReference.cache
