@@ -51,7 +51,7 @@
       (FullPartName "PS2801-4/SM.Normal")
       (LibraryName "D:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
       (DeviceIndex "3")))
-  (MPSSessionName "Zulolo")
+  (MPSSessionName "dodol")
   (GlobalState
     (FileView
       (Path "Design Resources")
@@ -63,15 +63,5 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 0 360 0 1008"))
-      (Tab 0))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 182 1739 182 881")
-        (Scroll "-270 42")
-        (Zoom "134")
-        (Occurrence "/"))
-      (Path "G:\WORK\IO\DESIGN\SCH\IO_OPI_4DI_4ACI.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))))
+        (Placement "44 2 3 -1 -1 -8 -31 0 360 0 1008"))
+      (Tab 0))))
